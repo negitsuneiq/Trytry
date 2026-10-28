@@ -18,27 +18,36 @@
   size-adjust: 83.7%;
 }
 
-/* ── Tokens ─────────────────────────────────────────────────────────────── */
+/* ── Tokens ─────────────────────────────────────────────────────────────────
+   Paper and ink, with one red pencil for corrections. Sections marked .ink
+   swap the same tokens, so every component works on either ground. */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --bg: #0a0a0b;
-  --bg-raised: #111113;
-  --bg-sunken: #070708;
-  --fg: #ede9e0;
-  --fg-muted: #a8a49b; /* 7.9:1 on --bg */
-  --fg-faint: #75726b; /* 4.1:1 on --bg, large/decorative text only */
-  --line: rgb(237 233 224 / 0.1);
-  --line-strong: rgb(237 233 224 / 0.22);
+  --paper: #f2eee5;
+  --paper-raised: #f8f5ee;
+  --paper-sunken: #e8e2d5;
+  --ink: #17140f;
 
-  --accent: #4d7cff; /* electric blue, 5.3:1 on --bg */
-  --accent-soft: rgb(77 124 255 / 0.14);
-  --accent-ink: #0a0a0b; /* text on accent fills */
-  --accent-rgb: 77 124 255;
+  --bg: var(--paper);
+  --bg-raised: var(--paper-raised);
+  --bg-sunken: var(--paper-sunken);
+  --fg: var(--ink);
+  --fg-muted: #5c564c; /* 6.6:1 on paper */
+  --fg-faint: #8f887b; /* 3.2:1, large or decorative text only */
+  --line: rgb(23 20 15 / 0.12);
+  --line-strong: rgb(23 20 15 / 0.28);
 
-  --ok: #6fd3a1;
-  --warn: #f2c96b;
-  --bad: #ff7a70;
+  --accent: #bf321b; /* red pencil, 4.9:1 on paper */
+  --accent-soft: rgb(191 50 27 / 0.1);
+  --accent-ink: #f8f5ee; /* text on accent fills */
+  --accent-rgb: 191 50 27;
+
+  --ok: #2f7a4f;
+  --warn: #9a6b00;
+  --bad: #b3261e;
+
+  --shadow-sheet: 0 1px 1px rgb(23 20 15 / 0.06), 0 6px 14px -6px rgb(23 20 15 / 0.22), 0 24px 40px -24px rgb(23 20 15 / 0.3);
 
   --font-display: 'Instrument Serif', 'Instrument Serif Fallback', serif;
   --font-body: 'Inter Tight', 'Inter Tight Fallback', system-ui, sans-serif;
@@ -49,6 +58,23 @@
   --radius: 2px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --header-h: 64px;
+}
+.ink {
+  --bg: #15130f;
+  --bg-raised: #1d1a15;
+  --bg-sunken: #0f0d0a;
+  --fg: #efe9dc;
+  --fg-muted: #b2aa9a; /* 8.1:1 on ink */
+  --fg-faint: #7a7365;
+  --line: rgb(239 233 220 / 0.12);
+  --line-strong: rgb(239 233 220 / 0.26);
+  --accent: #ff6e52; /* 6.4:1 on ink */
+  --accent-soft: rgb(255 110 82 / 0.14);
+  --accent-ink: #15130f;
+  --accent-rgb: 255 110 82;
+  color-scheme: dark;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 /* ── Reset ──────────────────────────────────────────────────────────────── */
@@ -121,22 +147,23 @@ button {
   border-radius: var(--radius);
 }
 
-/* Grain: a tiny inline SVG noise, fixed so it never repaints on scroll. */
+/* Paper tooth: a tiny inline SVG noise, fixed so it never repaints on scroll. */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .28 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ── Typography ─────────────────────────────────────────────────────────── */
 .display {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 0.95;
   letter-spacing: -0.02em;
 }
 .display em,
@@ -144,7 +171,7 @@ body::after {
   font-style: italic;
 }
 .h-mega {
-  font-size: clamp(3.2rem, min(9.2vw, 13.5vh), 10.5rem);
+  font-size: clamp(3.2rem, min(10vw, 15vh), 11.5rem);
 }
 .h-xl {
   font-size: clamp(2.8rem, 8vw, 7.5rem);
@@ -157,10 +184,10 @@ body::after {
   line-height: 1.05;
 }
 .lede {
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
   line-height: 1.5;
   color: var(--fg-muted);
-  max-width: 38ch;
+  max-width: 40ch;
 }
 .mono {
   font-family: var(--font-mono);
@@ -179,6 +206,30 @@ body::after {
   color: var(--accent);
 }
 
+/* Theorem-style labels: "Lemma 2." with the number in red pencil. */
+.thm {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  line-height: 1;
+}
+.thm b {
+  font-weight: 400;
+  font-style: normal;
+  color: var(--accent);
+}
+.thm::after {
+  content: '';
+  width: clamp(40px, 6vw, 96px);
+  height: 1px;
+  align-self: center;
+  background: var(--line-strong);
+  margin-left: 0.4em;
+}
+
 /* ── Layout ─────────────────────────────────────────────────────────────── */
 .wrap {
   width: 100%;
@@ -190,11 +241,6 @@ body::after {
   padding-block: clamp(72px, 12vw, 160px);
   border-top: 1px solid var(--line);
   position: relative;
-}
-/* Below-the-fold sections skip rendering until they approach the viewport. */
-.section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1400px;
 }
 .page-top {
   padding-top: calc(var(--header-h) + clamp(48px, 8vw, 112px));
@@ -238,6 +284,19 @@ body::after {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(12px, 2vw, 24px);
 }
+/* Graph paper, for surfaces that hold figures. */
+.graph {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+/* A loose sheet of paper. */
+.sheet {
+  background: #fffdf8;
+  box-shadow: var(--shadow-sheet);
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -260,7 +319,7 @@ body::after {
   transform: none;
 }
 
-/* Section header with a coordinate-axis tick rule. */
+/* Section header: a theorem label over the title. */
 .sec-head {
   display: grid;
   grid-template-columns: 1fr;
@@ -269,7 +328,7 @@ body::after {
 }
 @media (min-width: 900px) {
   .sec-head {
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 7fr 5fr;
     align-items: end;
   }
 }
@@ -293,21 +352,21 @@ body::after {
 .rule-ticks {
   height: 10px;
   background:
-    linear-gradient(var(--line), var(--line)) 0 100% / 100% 1px no-repeat,
+    linear-gradient(var(--line-strong), var(--line-strong)) 0 100% / 100% 1px no-repeat,
     repeating-linear-gradient(90deg, var(--line-strong) 0 1px, transparent 1px 8.333%) 0 100% / 100% 10px no-repeat;
 }
 
 /* ── Buttons ────────────────────────────────────────────────────────────── */
 .btn {
-  --h: 52px;
+  --h: 50px;
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   min-height: var(--h);
-  padding: 0 26px;
+  padding: 0 24px;
   border-radius: 999px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--fg);
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   overflow: hidden;
@@ -339,7 +398,6 @@ body::after {
 .btn-primary {
   background: var(--fg);
   color: var(--bg);
-  border-color: var(--fg);
 }
 .btn .arrow {
   transition: transform 0.5s var(--ease-out);
@@ -369,9 +427,18 @@ body::after {
   color: var(--fg-muted);
   white-space: nowrap;
 }
+a.chip {
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+a.chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 .chip-accent {
-  border-color: rgb(var(--accent-rgb) / 0.5);
-  color: var(--fg);
+  border-color: rgb(var(--accent-rgb) / 0.45);
+  color: var(--accent);
   background: var(--accent-soft);
 }
 .chip .dot {
@@ -416,81 +483,16 @@ body::after {
   will-change: transform;
 }
 
-/* ── Custom cursor (fine pointers only) ─────────────────────────────────── */
-.cursor {
-  display: none;
-}
-@media (hover: hover) and (pointer: fine) {
-  .has-cursor,
-  .has-cursor a,
-  .has-cursor button,
-  .has-cursor [role='button'] {
-    cursor: none;
-  }
-  .has-cursor input,
-  .has-cursor select,
-  .has-cursor textarea {
-    cursor: auto;
-  }
-  .cursor {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 150;
-    pointer-events: none;
-  }
-  .cursor-dot,
-  .cursor-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    transform: translate3d(-100px, -100px, 0);
-  }
-  .cursor-dot {
-    width: 6px;
-    height: 6px;
-    margin: -3px 0 0 -3px;
-    background: var(--fg);
-  }
-  .cursor-ring {
-    width: 36px;
-    height: 36px;
-    margin: -18px 0 0 -18px;
-    border: 1px solid rgb(237 233 224 / 0.4);
-    transition:
-      width 0.35s var(--ease-out),
-      height 0.35s var(--ease-out),
-      margin 0.35s var(--ease-out),
-      background-color 0.35s,
-      border-color 0.35s;
-  }
-  .cursor.is-hover .cursor-ring {
-    width: 64px;
-    height: 64px;
-    margin: -32px 0 0 -32px;
-    background: rgb(var(--accent-rgb) / 0.12);
-    border-color: var(--accent);
-  }
-  .cursor-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate3d(-100px, -100px, 0);
-    font-family: var(--font-mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--fg);
-    white-space: nowrap;
-    padding-left: 40px;
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-  .cursor.is-hover .cursor-label:not(:empty) {
-    opacity: 1;
-  }
+/* Reading progress: a red pencil line under the header. */
+.progress {
+  position: fixed;
+  inset: var(--header-h) 0 auto;
+  height: 2px;
+  z-index: 91;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  pointer-events: none;
 }
 
 /* ── View transitions ───────────────────────────────────────────────────── */

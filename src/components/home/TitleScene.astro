@@ -1,0 +1,244 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { t, type Lang } from '../../i18n/strings';
+import { href, asset } from '../../lib/paths';
+import { stats, universities } from '../../lib/data';
+import { stormPages, stormLayout } from '../../lib/home';
+import { TOPIC_BY_SLUG } from '../../lib/topics';
+import { coverSvg, COVER_VIEWBOX } from '../../lib/cover';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+const pages = stormPages(24);
+const layout = stormLayout(pages.length);
+const small = (id: string) => `thumbs/sm/${id}.webp`;
+const hasSmall = (id: string) => existsSync(join(process.cwd(), 'public', small(id)));
+---
+
+<section class="scene title-scene" data-scene="title" data-label={s.home.margin.title} aria-labelledby="hero-title">
+  <div class="stage" data-title-stage>
+    <div class="storm" aria-hidden="true">
+      <div class="storm-inner" data-storm>
+        {
+          pages.map((d, i) => {
+            const l = layout[i];
+            const motif = (TOPIC_BY_SLUG.get(d.topics[0]) ?? TOPIC_BY_SLUG.get('analysis')!).motif;
+            return (
+              <figure class="pg sheet" style={`--x:${l.x.toFixed(2)};--y:${l.y.toFixed(2)};--z:${l.z};--r:${l.r.toFixed(1)}deg`} data-z={l.z}>
+                {hasSmall(d.id) ? (
+                  <img src={asset(small(d.id))} alt="" width="240" height="320" loading={i < 12 ? 'eager' : 'lazy'} decoding="async" />
+                ) : (
+                  <svg viewBox={COVER_VIEWBOX} preserveAspectRatio="xMidYMid slice" set:html={coverSvg(d.id, motif)} />
+                )}
+              </figure>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <div class="titlepage wrap" data-titlepage>
+      <p class="running mono" data-fade>
+        <span>{s.hero.running}</span>
+        <span>{s.home.docsCount(stats.documents)} · {universities.length} {s.counters.universities}</span>
+      </p>
+
+      <h1 id="hero-title" class="display h-mega title">
+        <span class="ln" style="--i:0"><span>{s.hero.titleA}</span></span>
+        <span class="ln" style="--i:1"><span>{s.hero.titleB}</span></span>
+        <span class="ln" style="--i:2"><span><em>{s.hero.titleC}</em></span></span>
+      </h1>
+
+      <div class="abstract" data-rise style="--d:.35s">
+        <p class="thm">{s.hero.abstract}</p>
+        <p class="lede">{s.hero.lede}</p>
+      </div>
+
+      <div class="ctas" data-rise style="--d:.5s">
+        <a class="btn btn-primary" href={href(lang, 'library')}>{s.hero.cta}<span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href={href(lang, 'about')}>{s.hero.ctaSecondary}</a>
+      </div>
+    </div>
+
+    <p class="cue mono" aria-hidden="true" data-fade><span class="cue-line"></span>{s.hero.scroll}</p>
+  </div>
+</section>
+
+<style>
+  .title-scene {
+    position: relative;
+  }
+  .stage {
+    position: relative;
+    height: 100svh;
+    min-height: 620px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* The desk: real first pages at different depths. Positions are given in
+     screen space and pushed back along z, scaled so perspective does not
+     pull them into the title. */
+  .storm {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    perspective: 1000px;
+    perspective-origin: 50% 48%;
+  }
+  .storm-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+  }
+  .pg {
+    --w: clamp(96px, 10.5vw, 176px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--w);
+    aspect-ratio: 3 / 4;
+    margin: calc(var(--w) * -0.6667) 0 0 calc(var(--w) * -0.5);
+    overflow: hidden;
+    transform: translate3d(calc(var(--x) * 1vw * (1000 - var(--z)) / 1000), calc(var(--y) * 1vh * (1000 - var(--z)) / 1000), calc(var(--z) * 1px)) rotate(var(--r));
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  .pg img,
+  .pg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .pg svg {
+    stroke-width: 1;
+  }
+
+  .titlepage {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--header-h);
+    gap: clamp(20px, 3vh, 36px);
+  }
+  /* A pool of clean paper behind the type, so the pages never fight it. */
+  .titlepage::before {
+    content: '';
+    position: absolute;
+    inset: 12% 8%;
+    z-index: -1;
+    background: radial-gradient(closest-side, var(--bg) 52%, rgb(242 238 229 / 0.86) 72%, transparent);
+    pointer-events: none;
+  }
+  .running {
+    position: absolute;
+    top: calc(var(--header-h) + 18px);
+    left: var(--gutter);
+    right: var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    color: var(--fg-muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+  }
+  .title {
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+  .title em {
+    color: var(--accent);
+  }
+  /* Lines rise from behind a mask. Pure CSS, so the headline (the LCP
+     element) paints without waiting for JavaScript. */
+  .ln {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+  }
+  .ln > span {
+    display: inline-block;
+    animation: ln-rise 1.3s var(--ease-out) both;
+    animation-delay: calc(var(--i) * 0.09s + 0.05s);
+  }
+  @keyframes ln-rise {
+    from {
+      transform: translateY(102%);
+    }
+  }
+  .abstract {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    max-width: 46ch;
+  }
+  .abstract .thm::after {
+    display: none;
+  }
+  .abstract .lede {
+    max-width: none;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .cue {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    color: var(--fg-muted);
+  }
+  .cue-line {
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(var(--fg) 50%, transparent 50%) 0 0 / 1px 200% no-repeat;
+    animation: cue 2.2s var(--ease-out) infinite;
+  }
+  @keyframes cue {
+    from {
+      background-position: 0 100%;
+    }
+    to {
+      background-position: 0 -100%;
+    }
+  }
+  @media (max-width: 640px) {
+    .pg {
+      --w: 84px;
+    }
+    .pg:nth-child(n + 15) {
+      display: none;
+    }
+    .running span:last-child {
+      display: none;
+    }
+    .ctas {
+      flex-direction: column;
+      align-items: stretch;
+      width: min(100%, 320px);
+    }
+    .ctas .btn {
+      justify-content: center;
+    }
+  }
+  @media (max-height: 700px) {
+    .cue {
+      display: none;
+    }
+  }
+</style>

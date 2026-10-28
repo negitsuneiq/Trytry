@@ -9,8 +9,6 @@ import Lenis from 'lenis';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-const fine = matchMedia('(hover: hover) and (pointer: fine)');
-const coarse = matchMedia('(pointer: coarse)');
 
 let lenis: Lenis | null = null;
 let cleanups: (() => void)[] = [];
@@ -22,42 +20,6 @@ function initLenis() {
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis?.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
-}
-
-function initCursor() {
-  const el = document.querySelector<HTMLElement>('.cursor');
-  if (!el || !fine.matches || el.dataset.bound) return;
-  el.dataset.bound = '1';
-  document.documentElement.classList.add('has-cursor');
-  const dot = el.querySelector<HTMLElement>('.cursor-dot')!;
-  const ring = el.querySelector<HTMLElement>('.cursor-ring')!;
-  const label = el.querySelector<HTMLElement>('.cursor-label')!;
-  let x = -100;
-  let y = -100;
-  let rx = x;
-  let ry = y;
-  addEventListener(
-    'pointermove',
-    (e) => {
-      if (e.pointerType !== 'mouse') return;
-      x = e.clientX;
-      y = e.clientY;
-      dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    },
-    { passive: true },
-  );
-  gsap.ticker.add(() => {
-    rx += (x - rx) * 0.18;
-    ry += (y - ry) * 0.18;
-    const t = `translate3d(${rx}px, ${ry}px, 0)`;
-    ring.style.transform = t;
-    label.style.transform = t;
-  });
-  document.addEventListener('pointerover', (e) => {
-    const target = (e.target as Element).closest<HTMLElement>('a, button, [data-cursor], label, select');
-    el.classList.toggle('is-hover', !!target);
-    label.textContent = target?.dataset.cursor ?? '';
-  });
 }
 
 function initReveals() {
@@ -124,46 +86,15 @@ function initCounters() {
   });
 }
 
-function initMagnetic() {
-  if (!fine.matches || reduced.matches) return;
-  document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach((el) => {
-    const strength = Number(el.dataset.magnetic) || 0.3;
-    const xTo = gsap.quickTo(el, 'x', { duration: 0.6, ease: 'power3.out' });
-    const yTo = gsap.quickTo(el, 'y', { duration: 0.6, ease: 'power3.out' });
-    const move = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      xTo((e.clientX - r.left - r.width / 2) * strength);
-      yTo((e.clientY - r.top - r.height / 2) * strength);
-    };
-    const leave = () => {
-      xTo(0);
-      yTo(0);
-    };
-    el.addEventListener('pointermove', move);
-    el.addEventListener('pointerleave', leave);
-    cleanups.push(() => {
-      el.removeEventListener('pointermove', move);
-      el.removeEventListener('pointerleave', leave);
-    });
+function initProgress() {
+  const bar = document.querySelector<HTMLElement>('[data-progress]');
+  if (!bar) return;
+  const st = ScrollTrigger.create({
+    start: 0,
+    end: 'max',
+    onUpdate: (self) => bar.style.setProperty('--p', self.progress.toFixed(4)),
   });
-}
-
-function initHero() {
-  const canvas = document.querySelector<HTMLCanvasElement>('canvas[data-lorenz]');
-  if (!canvas) return;
-  let destroy: (() => void) | null = null;
-  let cancelled = false;
-  const go = () =>
-    import('./lorenz').then(({ mountLorenz }) => {
-      if (!cancelled) destroy = mountLorenz(canvas, { reducedMotion: reduced.matches, coarse: coarse.matches });
-    });
-  // Defer WebGL until the page is idle so it never competes with first paint.
-  const id = 'requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 400);
-  cleanups.push(() => {
-    cancelled = true;
-    'cancelIdleCallback' in window ? cancelIdleCallback(id as number) : clearTimeout(id as number);
-    destroy?.();
-  });
+  cleanups.push(() => st.kill());
 }
 
 function initLangMemory() {
@@ -258,7 +189,7 @@ document.addEventListener('astro:page-load', () => {
   initCounters();
   // Heavier set-up runs as separate idle tasks so no single task blocks input.
   const gen = ++generation;
-  const tasks = [initLenis, initCursor, initSplits, initMagnetic, initHero, () => ScrollTrigger.refresh()];
+  const tasks = [initLenis, initSplits, initProgress, () => ScrollTrigger.refresh()];
   const next = () => {
     if (gen !== generation) return; // navigated away meanwhile
     tasks.shift()?.();

@@ -1,0 +1,306 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { t, type Lang } from '../../i18n/strings';
+import { href, asset } from '../../lib/paths';
+import { departmentPlates } from '../../lib/home';
+import { country } from '../../lib/format';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+const source = departmentPlates[0]?.u;
+const small = (id: string) => `thumbs/sm/${id}.webp`;
+const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)));
+---
+
+<section class="scene rail-scene" data-scene="departments" data-label={s.home.margin.departments} aria-labelledby="rail-h">
+  <div class="rail-stage graph" data-rail-stage>
+    <div class="rail-track" data-track>
+      <header class="plate intro">
+        <h2 id="rail-h">
+          <span class="thm">{s.home.deptLabel} <b>2.</b></span>
+          <span class="display h-lg rail-title">{s.home.deptTitle}</span>
+        </h2>
+        <p class="lede">{s.home.deptLede}</p>
+        {
+          source && (
+            <p class="mono-plain muted src">
+              <a class="link-u" href={source.ranking_url} rel="noopener">
+                {source.ranking_source} {source.ranking_year}
+              </a>
+            </p>
+          )
+        }
+        <p class="mono hint" aria-hidden="true">{s.home.deptScroll} <span class="arrow">→</span></p>
+      </header>
+
+      <ol class="plates">
+        {
+          departmentPlates.map(({ u, count, samples }) => (
+            <li class:list={['plate', { 'has-docs': count > 0 }]}>
+              <a href={href(lang, `universities/${u.slug}`)} class="plate-link">
+                <span class="rank display" data-rank>
+                  {u.rank_label.replace(/^=/, '').padStart(2, '0')}
+                  {u.rank_label.startsWith('=') && <sup class="tie">=</sup>}
+                </span>
+                <span class="who">
+                  <span class="name display" lang="en">
+                    {u.name}
+                  </span>
+                  <span class="mono muted where">
+                    {country(u.country, lang)} · <span lang="en">{u.department}</span>
+                  </span>
+                </span>
+                <span class="holdings">
+                  {count > 0 ? (
+                    <>
+                      <span class="fan" aria-hidden="true">
+                        {samples.map((d, i) =>
+                          has(d.id) ? <img class="sheet" src={asset(small(d.id))} alt="" width="240" height="320" loading="lazy" decoding="async" style={`--i:${i}`} /> : null,
+                        )}
+                      </span>
+                      <span class="count">
+                        <span class="display">{count}</span>
+                        <span class="mono muted">{s.home.docsCount(count).replace(/^\d+\s*/, '')}</span>
+                      </span>
+                    </>
+                  ) : (
+                    <span class="pending mono">{s.home.deptPending}</span>
+                  )}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <div class="axis" aria-hidden="true" data-axis>
+      <div class="ticks">
+        {departmentPlates.map((p) => <span class:list={{ on: p.count > 0 }} />)}
+      </div>
+      <span class="marker" data-marker><span class="mono" data-marker-label>01</span></span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rail-stage {
+    position: relative;
+    height: 100svh;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--header-h);
+    border-block: 1px solid var(--line);
+    background-color: var(--bg);
+  }
+  /* Without scripts (or with reduced motion) the rail is a native
+     horizontal scroller; with motion it is pinned and driven by the page. */
+  .rail-track {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+  .rail-track:global(.is-driven) {
+    overflow: visible;
+    scroll-snap-type: none;
+    will-change: transform;
+  }
+  .plates {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  .plate {
+    flex: none;
+    width: clamp(260px, 23vw, 360px);
+    border-right: 1px solid var(--line);
+    scroll-snap-align: start;
+  }
+  .intro {
+    width: clamp(320px, 42vw, 640px);
+    padding: clamp(24px, 4vh, 56px) var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    background: var(--bg);
+  }
+  .intro h2 {
+    display: grid;
+    gap: 18px;
+    font-weight: 400;
+  }
+  .rail-title {
+    max-width: 12ch;
+  }
+  .hint {
+    margin-top: auto;
+    color: var(--fg-muted);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .hint .arrow {
+    color: var(--accent);
+    animation: nudge 1.8s var(--ease-out) infinite;
+  }
+  @keyframes nudge {
+    50% {
+      transform: translateX(6px);
+    }
+  }
+  .plate-link {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    gap: 18px;
+    padding: clamp(20px, 3vh, 40px) clamp(20px, 2vw, 32px) clamp(28px, 5vh, 64px);
+    background: rgb(242 238 229 / 0.82);
+    transition: background-color 0.4s;
+  }
+  .plate-link:hover,
+  .plate-link:focus-visible {
+    background: var(--bg-raised);
+  }
+  .rank {
+    align-self: start;
+    font-size: clamp(6rem, min(15vw, 30vh), 16rem);
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--fg-faint);
+    font-variant-numeric: tabular-nums;
+    display: inline-block;
+    will-change: transform;
+  }
+  .has-docs .rank {
+    color: var(--fg);
+    -webkit-text-stroke: 0;
+  }
+  .plate-link:hover .rank {
+    -webkit-text-stroke-color: var(--accent);
+  }
+  .has-docs .plate-link:hover .rank {
+    color: var(--accent);
+  }
+  .tie {
+    font-size: 0.3em;
+    vertical-align: top;
+    color: var(--accent);
+    -webkit-text-stroke: 0;
+  }
+  .who {
+    display: grid;
+    gap: 8px;
+  }
+  .name {
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+  .where {
+    font-size: 0.6875rem;
+    line-height: 1.5;
+  }
+  .holdings {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 72px;
+    border-top: 1px solid var(--line-strong);
+    padding-top: 14px;
+  }
+  .fan {
+    position: relative;
+    width: 96px;
+    height: 64px;
+  }
+  .fan img {
+    position: absolute;
+    left: calc(var(--i) * 22px);
+    bottom: 0;
+    width: 46px;
+    height: 62px;
+    object-fit: cover;
+    object-position: top;
+    transform: rotate(calc((var(--i) - 1) * 7deg));
+    transform-origin: 50% 100%;
+    transition: transform 0.6s var(--ease-out);
+  }
+  .plate-link:hover .fan img {
+    transform: rotate(calc((var(--i) - 1) * 14deg)) translateY(-6px);
+  }
+  .count {
+    display: grid;
+    justify-items: end;
+    gap: 4px;
+  }
+  .count .display {
+    font-size: 3rem;
+    line-height: 0.9;
+  }
+  .pending {
+    color: var(--fg-faint);
+    border: 1px dashed var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 12px;
+  }
+
+  .axis {
+    position: relative;
+    height: 56px;
+    margin-inline: var(--gutter);
+    border-top: 1px solid var(--line-strong);
+    display: none;
+  }
+  .axis:global(.is-driven) {
+    display: block;
+  }
+  .ticks {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ticks span {
+    width: 1px;
+    height: 9px;
+    background: var(--line-strong);
+  }
+  .ticks span.on {
+    height: 14px;
+    background: var(--fg);
+  }
+  .marker {
+    position: absolute;
+    top: -5px;
+    left: calc(var(--p, 0) * 100%);
+    width: 9px;
+    height: 9px;
+    margin-left: -4.5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .marker span {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent);
+  }
+  @media (max-width: 640px) {
+    .intro {
+      width: 86vw;
+    }
+    .plate {
+      width: 78vw;
+    }
+  }
+</style>

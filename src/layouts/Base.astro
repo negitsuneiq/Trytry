@@ -37,8 +37,8 @@ const preloadFonts = lang === 'tr' ? [serifLatin, serifLatinExt] : [serifLatin];
     <link rel="alternate" hreflang="en" href={alt('en')} />
     <link rel="alternate" hreflang="tr" href={alt('tr')} />
     <link rel="alternate" hreflang="x-default" href={new URL(asset(''), Astro.site).href} />
-    <meta name="theme-color" content="#0a0a0b" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#f2eee5" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
     {preloadFonts.map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
     <meta property="og:type" content="website" />
@@ -59,11 +59,7 @@ const preloadFonts = lang === 'tr' ? [serifLatin, serifLatinExt] : [serifLatin];
       <slot />
     </main>
     <Footer lang={lang} />
-    <div class="cursor" aria-hidden="true" transition:persist="cursor">
-      <span class="cursor-ring"></span>
-      <span class="cursor-dot"></span>
-      <span class="cursor-label"></span>
-    </div>
+    <div class="progress" aria-hidden="true" data-progress></div>
     <script>
       import '../scripts/app';
     </script>

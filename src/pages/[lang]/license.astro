@@ -50,7 +50,7 @@ const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)
           <h2 id="tk" class="display h-md">{s.license.takedownTitle}</h2>
           <p class="muted">{s.license.takedown}</p>
           <p class="mono muted contact-label">{s.license.contact}</p>
-          <a class="btn btn-primary" href={contactHref} rel="noopener" data-magnetic="0.2">
+          <a class="btn btn-primary" href={contactHref} rel="noopener">
             {contactText} <span class="arrow" aria-hidden="true">→</span>
           </a>
           <h3 class="mono sec-index site">{s.license.siteLicenseTitle}</h3>

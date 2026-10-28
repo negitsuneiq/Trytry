@@ -1,4 +1,5 @@
-// Renders page 1 of every hosted PDF to public/thumbs/<id>.webp.
+// Renders page 1 of every hosted PDF to public/thumbs/<id>.webp, plus a
+// small copy in public/thumbs/sm/ for the home page's paper scenes.
 // Needs poppler's `pdftoppm` (apt install poppler-utils). Run: npm run thumbnails
 
 import { execFileSync } from 'node:child_process';
@@ -11,7 +12,8 @@ import { DATA_DIR, PUBLIC_DIR, readJson } from './lib/io.ts';
 
 const docs = readJson<DocumentRecord[]>(join(DATA_DIR, 'documents.json')).filter((d) => d.hosted && d.file_path);
 const outDir = join(PUBLIC_DIR, 'thumbs');
-mkdirSync(outDir, { recursive: true });
+const smallDir = join(outDir, 'sm');
+mkdirSync(smallDir, { recursive: true });
 
 function hasPdftoppm() {
   try {
@@ -36,11 +38,13 @@ let made = 0;
 for (const d of docs) {
   const pdf = join(PUBLIC_DIR, d.file_path!);
   const out = join(outDir, `${d.id}.webp`);
-  if (existsSync(out) && statSync(out).mtimeMs > statSync(pdf).mtimeMs) continue;
+  const small = join(smallDir, `${d.id}.webp`);
+  if (existsSync(out) && existsSync(small) && statSync(out).mtimeMs > statSync(pdf).mtimeMs) continue;
   const prefix = join(tmp, d.id);
   try {
     execFileSync('pdftoppm', ['-f', '1', '-l', '1', '-singlefile', '-png', '-scale-to', '900', pdf, prefix], { stdio: 'ignore', timeout: 60_000 });
     await sharp(`${prefix}.png`).resize(600, 800, { fit: 'cover', position: 'top' }).webp({ quality: 72 }).toFile(out);
+    await sharp(`${prefix}.png`).resize(240, 320, { fit: 'cover', position: 'top' }).webp({ quality: 60 }).toFile(small);
     made++;
   } catch (e) {
     console.warn(`thumbnails: ${d.id} failed (${(e as Error).message}); using generated cover`);

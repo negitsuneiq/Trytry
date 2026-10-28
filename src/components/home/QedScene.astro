@@ -1,0 +1,76 @@
+---
+import { t, type Lang } from '../../i18n/strings';
+import { href } from '../../lib/paths';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+---
+
+<section class="scene qed-scene" data-scene="qed" data-label={s.home.margin.qed} aria-labelledby="qed-h">
+  <div class="wrap inner">
+    <h2 id="qed-h" class="display h-xl words" data-reveal>
+      <span>{s.home.qedA}</span>
+      <span class="muted">{s.home.qedB}</span>
+    </h2>
+    <div class="side">
+      <div class="tomb" aria-hidden="true" data-tomb><span class="fill" data-tomb-fill></span></div>
+      <div class="ctas">
+        <a class="btn btn-primary" href={href(lang, 'library')}>{s.hero.cta}<span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href={href(lang, 'universities')}>{s.nav.universities}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .qed-scene {
+    padding-block: clamp(80px, 14vw, 200px) clamp(40px, 6vw, 80px);
+    border-top: 1px solid var(--line);
+  }
+  .inner {
+    display: grid;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: end;
+  }
+  @media (min-width: 1000px) {
+    .inner {
+      grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    }
+  }
+  .words {
+    display: grid;
+    gap: 0.1em;
+    font-weight: 400;
+  }
+  .side {
+    display: grid;
+    gap: 28px;
+    justify-items: start;
+  }
+  @media (min-width: 1000px) {
+    .side {
+      justify-items: end;
+    }
+  }
+  .tomb {
+    position: relative;
+    width: clamp(96px, 12vw, 168px);
+    aspect-ratio: 1;
+    border: 2px solid var(--fg);
+    overflow: hidden;
+  }
+  .fill {
+    position: absolute;
+    inset: 0;
+    background: var(--fg);
+    transform-origin: 50% 100%;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>
