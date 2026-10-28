@@ -1,0 +1,122 @@
+---
+import type { University } from '../lib/schema';
+import { t, type Lang } from '../i18n/strings';
+import { href } from '../lib/paths';
+import { docsForUniversity } from '../lib/data';
+import { country } from '../lib/format';
+
+interface Props {
+  universities: University[];
+  lang: Lang;
+}
+const { universities, lang } = Astro.props;
+const s = t(lang);
+---
+
+<ol class="unis">
+  {
+    universities.map((u) => (
+      <li data-reveal>
+        <a href={href(lang, `universities/${u.slug}`)}>
+          <span class="rank mono">{u.rank_label.padStart(2, '0')}</span>
+          <span class="name display" lang="en">{u.name}</span>
+          <span class="country mono">{country(u.country, lang)}</span>
+          <span class="docs mono">{s.home.docsCount(docsForUniversity(u.slug).length)}</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .unis {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  li {
+    border-bottom: 1px solid var(--line);
+  }
+  a {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.2rem 1fr auto;
+    align-items: baseline;
+    gap: 4px 16px;
+    padding: 18px 0;
+    isolation: isolate;
+  }
+  a::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(-1 * var(--gutter));
+    z-index: -1;
+    background: var(--bg-raised);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s var(--ease-out);
+  }
+  a:hover::before,
+  a:focus-visible::before {
+    transform: none;
+  }
+  .rank {
+    color: var(--accent);
+    grid-row: span 2;
+  }
+  .name {
+    font-size: clamp(1.5rem, 3.6vw, 3rem);
+    line-height: 1.02;
+    transition: transform 0.6s var(--ease-out);
+  }
+  a:hover .name {
+    transform: translateX(10px);
+  }
+  .country,
+  .docs {
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+  }
+  .country {
+    grid-column: 2;
+  }
+  .docs {
+    display: none;
+  }
+  .arrow {
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 1.3rem;
+    color: var(--fg-muted);
+    transition:
+      transform 0.5s var(--ease-out),
+      color 0.3s;
+  }
+  a:hover .arrow {
+    transform: translate(3px, -3px);
+    color: var(--accent);
+  }
+  @media (min-width: 900px) {
+    a {
+      grid-template-columns: 4rem 1fr 14rem 9rem 2rem;
+      align-items: center;
+      padding: 22px 0;
+    }
+    .rank {
+      grid-row: auto;
+    }
+    .country {
+      grid-column: auto;
+    }
+    .docs {
+      display: block;
+      text-align: right;
+    }
+    .arrow {
+      grid-row: auto;
+      grid-column: auto;
+      text-align: right;
+    }
+  }
+</style>

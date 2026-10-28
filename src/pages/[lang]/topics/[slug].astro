@@ -1,0 +1,81 @@
+---
+import Base from '../../../layouts/Base.astro';
+import DocCard from '../../../components/DocCard.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langCross } from '../../../lib/routes';
+import { TOPICS, type Topic } from '../../../lib/topics';
+import { docsForTopic } from '../../../lib/data';
+import { coverSvg, COVER_VIEWBOX } from '../../../lib/cover';
+import { href } from '../../../lib/paths';
+
+export function getStaticPaths() {
+  return langCross(TOPICS.map((topic) => ({ params: { slug: topic.slug }, props: { topic } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const { topic } = Astro.props as { topic: Topic };
+const s = t(lang);
+const docs = docsForTopic(topic.slug).sort((a, b) => a.title.localeCompare(b.title));
+const other = lang === 'tr' ? 'en' : 'tr';
+---
+
+<Base lang={lang} title={topic[lang]} description={`${topic[lang]} — ${s.home.docsCount(docs.length)}.`}>
+  <section class="page-top">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="mono muted"><a href={href(lang, 'topics')}>{s.nav.topics}</a> / MSC {topic.msc.map((m) => `${m}-XX`).join(', ')}</p>
+          <h1 class="display h-xl name" data-rise>{topic[lang]}</h1>
+          <p class="lede"><span lang={other}>{topic[other]}</span> · {s.home.docsCount(docs.length)}</p>
+        </div>
+        <svg class="art" viewBox={COVER_VIEWBOX} aria-hidden="true" set:html={coverSvg(topic.slug, topic.motif)} />
+      </div>
+
+      <div class="docs">
+        {
+          docs.length ? (
+            <div class="card-grid">
+              {docs.map((d) => (
+                <div data-reveal>
+                  <DocCard doc={d} lang={lang} heading="h2" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState lang={lang} />
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    display: grid;
+    gap: 32px;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .head {
+      grid-template-columns: 1fr 280px;
+    }
+  }
+  .name {
+    margin: 14px 0 18px;
+    hyphens: auto;
+  }
+  .head a:hover {
+    color: var(--fg);
+  }
+  .art {
+    width: 100%;
+    max-width: 280px;
+    border: 1px solid var(--line);
+    stroke-width: 1;
+  }
+  .docs {
+    margin-top: clamp(48px, 7vw, 96px);
+  }
+</style>

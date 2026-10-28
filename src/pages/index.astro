@@ -1,0 +1,50 @@
+---
+import { asset } from '../lib/paths';
+const base = asset('');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Lemma</title>
+    <meta name="description" content="A non-commercial library of open mathematics from the world’s top 20 departments." />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="alternate" hreflang="en" href={`${base}en/`} />
+    <link rel="alternate" hreflang="tr" href={`${base}tr/`} />
+    <noscript><meta http-equiv="refresh" content={`0; url=${base}en/`} /></noscript>
+    <script is:inline define:vars={{ base }}>
+      // Remembered choice first, then the browser language.
+      let lang = null;
+      try {
+        lang = localStorage.getItem('ol-lang');
+      } catch {}
+      if (lang !== 'en' && lang !== 'tr') {
+        const prefs = navigator.languages || [navigator.language || 'en'];
+        lang = prefs.some((l) => /^tr\b/i.test(l)) ? 'tr' : 'en';
+      }
+      location.replace(base + lang + '/' + location.search + location.hash);
+    </script>
+    <style>
+      html {
+        background: #0a0a0b;
+        color: #ede9e0;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      a {
+        color: #4d7cff;
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href={`${base}en/`}>English</a> · <a href={`${base}tr/`}>Türkçe</a></p>
+  </body>
+</html>

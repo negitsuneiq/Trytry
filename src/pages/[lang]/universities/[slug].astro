@@ -1,0 +1,143 @@
+---
+import Base from '../../../layouts/Base.astro';
+import DocCard from '../../../components/DocCard.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langCross } from '../../../lib/routes';
+import { universities, docsForUniversity } from '../../../lib/data';
+import type { University } from '../../../lib/schema';
+import { topicName } from '../../../lib/topics';
+import { href } from '../../../lib/paths';
+import { country } from '../../../lib/format';
+
+export function getStaticPaths() {
+  return langCross(universities.map((u) => ({ params: { slug: u.slug }, props: { u } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const { u } = Astro.props as { u: University };
+const s = t(lang);
+const docs = docsForUniversity(u.slug).sort((a, b) => a.title.localeCompare(b.title));
+const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp, (m.get(tp) ?? 0) + 1), new Map<string, number>())].sort(
+  (a, b) => b[1] - a[1],
+);
+---
+
+<Base lang={lang} title={u.name} description={`${u.department}, ${u.name}. ${s.home.docsCount(docs.length)}.`}>
+  <section class="page-top">
+    <div class="wrap">
+      <div class="head">
+        <p class="rank display" aria-hidden="true">{u.rank_label}</p>
+        <div>
+          <p class="mono muted">{s.university.rank} {u.rank_label} · {country(u.country, lang)}</p>
+          <h1 class="display h-xl name" data-rise lang="en">{u.name}</h1>
+          <p class="lede" lang="en">{u.department}</p>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div>
+          <dt class="mono muted">{s.university.documents}</dt>
+          <dd class="display">{docs.length}</dd>
+        </div>
+        <div>
+          <dt class="mono muted">{s.university.department}</dt>
+          <dd>
+            <a class="link-u" href={u.department_url} rel="noopener" target="_blank">{new URL(u.department_url).host}</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="mono muted">{s.university.source}</dt>
+          <dd>
+            <a class="link-u" href={u.ranking_url} rel="noopener" target="_blank">{u.ranking_source} {u.ranking_year}</a>
+          </dd>
+        </div>
+      </dl>
+
+      {
+        topicCounts.length > 0 && (
+          <ul class="tps">
+            {topicCounts.map(([tp, n]) => (
+              <li>
+                <a class="chip" href={href(lang, `topics/${tp}`)}>
+                  {topicName(tp, lang)} <span class="accent">{n}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+
+      <div class="docs">
+        {
+          docs.length ? (
+            <div class="card-grid">
+              {docs.map((d) => (
+                <div data-reveal>
+                  <DocCard doc={d} lang={lang} heading="h2" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState lang={lang} />
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    display: grid;
+    gap: 16px;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .head {
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+    }
+  }
+  .rank {
+    font-size: clamp(6rem, 22vw, 18rem);
+    line-height: 0.75;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+  }
+  .name {
+    margin: 12px 0 16px;
+    text-wrap: balance;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: clamp(40px, 6vw, 80px);
+    border-top: 1px solid var(--line);
+  }
+  .facts > div {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dd {
+    margin-top: 8px;
+  }
+  .facts dd.display {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .tps {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 28px;
+  }
+  .tps .chip {
+    height: 32px;
+  }
+  .docs {
+    margin-top: clamp(48px, 7vw, 96px);
+  }
+</style>

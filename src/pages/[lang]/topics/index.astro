@@ -1,0 +1,21 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import TopicGrid from '../../../components/TopicGrid.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langPaths } from '../../../lib/routes';
+import { TOPICS } from '../../../lib/topics';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+---
+
+<Base lang={lang} title={s.topicsPage.title} description={s.topicsPage.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index="MSC2020" title={s.topicsPage.title} lede={s.topicsPage.lede} level="h1" />
+      <TopicGrid topics={TOPICS} lang={lang} />
+    </div>
+  </section>
+</Base>

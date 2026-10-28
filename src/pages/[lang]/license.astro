@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import { t, type Lang } from '../../i18n/strings';
+import { langPaths } from '../../lib/routes';
+import { SITE } from '../../site.config';
+import { REDISTRIBUTABLE, LICENSE_INFO } from '../../lib/schema';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const contactHref = SITE.contactEmail
+  ? `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(s.license.contactSubject)}`
+  : `${SITE.repo}/issues/new?title=${encodeURIComponent(s.license.contactSubject)}`;
+const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)} · GitHub Issues`;
+---
+
+<Base lang={lang} title={s.license.title} description={s.license.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index="©" title={s.license.title} lede={s.license.lede} level="h1" />
+
+      <div class="cols">
+        <section aria-labelledby="pol">
+          <h2 id="pol" class="mono sec-index">{s.license.policyTitle}</h2>
+          <ol class="policy">
+            {
+              s.license.policy.map((p, i) => (
+                <li data-reveal>
+                  <span class="mono accent">{String(i + 1).padStart(2, '0')}</span>
+                  <p>{p}</p>
+                </li>
+              ))
+            }
+          </ol>
+          <ul class="lics">
+            {
+              REDISTRIBUTABLE.map((l) => (
+                <li>
+                  <a class="chip" href={LICENSE_INFO[l].url ?? '#'} rel="noopener" target="_blank">
+                    {LICENSE_INFO[l].label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <aside class="take" aria-labelledby="tk">
+          <h2 id="tk" class="display h-md">{s.license.takedownTitle}</h2>
+          <p class="muted">{s.license.takedown}</p>
+          <p class="mono muted contact-label">{s.license.contact}</p>
+          <a class="btn btn-primary" href={contactHref} rel="noopener" data-magnetic="0.2">
+            {contactText} <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <h3 class="mono sec-index site">{s.license.siteLicenseTitle}</h3>
+          <p class="muted">{s.license.siteLicense}</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cols {
+    display: grid;
+    gap: 56px;
+  }
+  @media (min-width: 1000px) {
+    .cols {
+      grid-template-columns: 7fr 5fr;
+      gap: 80px;
+    }
+  }
+  .policy {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .policy li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .policy p {
+    max-width: 62ch;
+  }
+  .lics {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 28px;
+  }
+  .lics .chip:hover {
+    color: var(--fg);
+    border-color: var(--accent);
+  }
+  .take {
+    display: grid;
+    gap: 18px;
+    align-content: start;
+    padding: clamp(24px, 4vw, 40px);
+    border: 1px solid var(--line-strong);
+    background: var(--bg-raised);
+  }
+  @media (min-width: 1000px) {
+    .take {
+      position: sticky;
+      top: calc(var(--header-h) + 32px);
+    }
+  }
+  .take .btn {
+    justify-self: start;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .contact-label {
+    margin-top: 8px;
+  }
+  .site {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+</style>

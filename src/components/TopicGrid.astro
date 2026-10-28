@@ -1,0 +1,107 @@
+---
+import type { Topic } from '../lib/topics';
+import { t, type Lang } from '../i18n/strings';
+import { href } from '../lib/paths';
+import { coverSvg, COVER_VIEWBOX } from '../lib/cover';
+import { docsForTopic } from '../lib/data';
+
+interface Props {
+  topics: Topic[];
+  lang: Lang;
+}
+const { topics, lang } = Astro.props;
+const s = t(lang);
+---
+
+<ul class="topics">
+  {
+    topics.map((tp, i) => (
+      <li data-reveal style={`--d:${(i % 4) * 0.06}s`}>
+        <a href={href(lang, `topics/${tp.slug}`)} data-cursor={tp.msc.slice(0, 3).join(' ')}>
+          <svg viewBox={COVER_VIEWBOX} preserveAspectRatio="xMidYMid slice" aria-hidden="true" set:html={coverSvg(tp.slug, tp.motif)} />
+          <span class="mono n">{String(i + 1).padStart(2, '0')}</span>
+          <span class="name display">{tp[lang]}</span>
+          <span class="mono count">{s.home.docsCount(docsForTopic(tp.slug).length)}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .topics {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+  }
+  @media (min-width: 720px) {
+    .topics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1100px) {
+    .topics {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  li {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  a {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: clamp(190px, 26vw, 300px);
+    padding: clamp(14px, 2vw, 24px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.32;
+    stroke-width: 1;
+    transition:
+      opacity 0.6s,
+      transform 1.2s var(--ease-out);
+  }
+  a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(120% 80% at 0% 100%, rgb(var(--accent-rgb) / 0.16), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+  a:hover svg,
+  a:focus-visible svg {
+    opacity: 0.75;
+    transform: scale(1.06) rotate(-1deg);
+  }
+  a:hover::before,
+  a:focus-visible::before {
+    opacity: 1;
+  }
+  .n {
+    color: var(--accent);
+  }
+  .name {
+    align-self: end;
+    font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+    line-height: 1;
+    hyphens: auto;
+  }
+  .count {
+    margin-top: 10px;
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+  }
+</style>

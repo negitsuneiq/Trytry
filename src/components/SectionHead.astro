@@ -1,0 +1,39 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  lede?: string;
+  level?: 'h1' | 'h2';
+  id?: string;
+}
+const { index, title, lede, level = 'h2', id } = Astro.props;
+const H = level;
+---
+
+<div class="sec-head">
+  <div>
+    <p class="sec-index mono"><span>{index}</span></p>
+    <H class:list={['display', level === 'h1' ? 'h-xl' : 'h-lg']} id={id} data-split>{title}</H>
+  </div>
+  <div class="side">
+    {lede && <p class="lede" data-reveal>{lede}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .side {
+    display: grid;
+    gap: 20px;
+    justify-items: start;
+  }
+  @media (min-width: 900px) {
+    .side {
+      justify-items: end;
+      text-align: right;
+    }
+    .side .lede {
+      margin-left: auto;
+    }
+  }
+</style>

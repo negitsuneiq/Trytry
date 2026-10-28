@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import { t, type Lang } from '../../i18n/strings';
+import { langPaths } from '../../lib/routes';
+import { universities } from '../../lib/data';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const src = universities[0];
+---
+
+<Base lang={lang} title={s.about.title} description={s.about.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index="∴" title={s.about.title} lede={s.about.lede} level="h1" />
+      <ol class="points">
+        {
+          s.about.sections.map((sec, i) => (
+            <li data-reveal>
+              <span class="mono accent">{String(i + 1).padStart(2, '0')}</span>
+              <h2 class="display h-md">{sec.h}</h2>
+              <p class="muted">{sec.p}</p>
+            </li>
+          ))
+        }
+        {
+          src && (
+            <li data-reveal>
+              <span class="mono accent">{String(s.about.sections.length + 1).padStart(2, '0')}</span>
+              <h2 class="display h-md">{s.about.rankingNote}</h2>
+              <p class="muted">
+                <a class="link-u" href={src.ranking_url} rel="noopener">
+                  {src.ranking_source} {src.ranking_year}
+                </a>
+              </p>
+            </li>
+          )
+        }
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .points {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .points li {
+    display: grid;
+    gap: 12px 32px;
+    padding: clamp(28px, 4vw, 48px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 900px) {
+    .points li {
+      grid-template-columns: 4rem 4fr 7fr;
+      align-items: baseline;
+    }
+  }
+  .points p {
+    max-width: 62ch;
+  }
+</style>

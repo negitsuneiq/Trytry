@@ -1,0 +1,289 @@
+---
+import { t, type Lang } from '../i18n/strings';
+import { href } from '../lib/paths';
+import { tex } from '../lib/math';
+import { stats } from '../lib/data';
+import { pad } from '../lib/format';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+const eqs = [String.raw`\dot{x} = \sigma(y - x)`, String.raw`\dot{y} = x(\rho - z) - y`, String.raw`\dot{z} = xy - \beta z`];
+const counters = [
+  { n: stats.documents, label: s.counters.documents },
+  { n: stats.universities, label: s.counters.universities },
+  { n: stats.topics, label: s.counters.topics },
+  { n: stats.hosted, label: s.counters.hosted },
+];
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="lorenz" data-lorenz aria-label={s.a11y.heroCanvas} role="img"></canvas>
+  <div class="axes" aria-hidden="true">
+    <span class="ax ax-x"></span><span class="ax ax-y"></span>
+    <span class="mono lbl lbl-x">x</span><span class="mono lbl lbl-z">z</span>
+  </div>
+
+  <div class="wrap inner">
+    <p class="mono eyebrow"><span class="pulse" aria-hidden="true"></span>{s.hero.eyebrow}</p>
+    <h1 id="hero-title" class="display h-mega title">
+      <span class="ln" style="--i:0"><span>{s.hero.titleA}</span></span>
+      <span class="ln" style="--i:1"><span>{s.hero.titleB}</span></span>
+      <span class="ln" style="--i:2"><span><em>{s.hero.titleC}</em></span></span>
+    </h1>
+
+    <div class="below">
+      <p class="lede" data-rise style="--d:.35s">{s.hero.lede}</p>
+      <div class="ctas" data-rise style="--d:.5s">
+        <a class="btn btn-primary" href={href(lang, 'library')} data-magnetic="0.25">
+          {s.hero.cta}<span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn" href={href(lang, 'about')} data-magnetic="0.25">{s.hero.ctaSecondary}</a>
+      </div>
+    </div>
+
+    <dl class="counters" data-rise style="--d:.65s">
+      {
+        counters.map((c, i) => (
+          <div class="counter">
+            <dt class="mono muted">
+              <span class="idx">{pad(i + 1)}</span> {c.label}
+            </dt>
+            <dd class="display" data-count={c.n} data-pad="2">
+              {pad(c.n)}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <figure class="eqs" aria-label={s.a11y.lorenzEqs} data-rise style="--d:.8s">
+      {eqs.map((e) => <div set:html={tex(e)} />)}
+      <figcaption class="mono muted">σ = 10 · ρ = 28 · β = 8/3</figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding-top: calc(var(--header-h) + clamp(40px, 8vh, 104px));
+    padding-bottom: 40px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .lorenz {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 2.4s var(--ease-out);
+  }
+  .lorenz:global(.is-ready) {
+    opacity: 1;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+  }
+  .axes {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .ax {
+    position: absolute;
+    background: var(--line);
+  }
+  .ax-x {
+    left: 0;
+    right: 0;
+    top: 74%;
+    height: 1px;
+    background-image: repeating-linear-gradient(90deg, var(--line-strong) 0 1px, transparent 1px 64px);
+    background-size: 100% 7px;
+    background-repeat: no-repeat;
+    background-position: 0 -3px;
+    background-color: var(--line);
+  }
+  .ax-y {
+    top: 0;
+    bottom: 0;
+    left: 66%;
+    width: 1px;
+  }
+  .lbl {
+    position: absolute;
+    color: var(--fg-faint);
+    text-transform: none;
+    font-style: italic;
+  }
+  .lbl-x {
+    right: var(--gutter);
+    top: calc(74% + 8px);
+  }
+  .lbl-z {
+    left: calc(66% + 10px);
+    top: calc(var(--header-h) + 12px);
+  }
+  .inner {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3.4vh, 40px);
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--fg-muted);
+  }
+  .pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.6);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse {
+    70% {
+      box-shadow: 0 0 0 10px rgb(var(--accent-rgb) / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0);
+    }
+  }
+  .title {
+    text-wrap: balance;
+  }
+  /* Lines rise from behind a mask. Pure CSS, so the headline (the LCP
+     element) paints without waiting for JavaScript. */
+  .ln {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+  }
+  .ln > span {
+    display: inline-block;
+    animation: ln-rise 1.3s var(--ease-out) both;
+    animation-delay: calc(var(--i) * 0.09s + 0.05s);
+  }
+  @keyframes ln-rise {
+    from {
+      transform: translateY(102%);
+    }
+  }
+  .title em {
+    color: var(--fg);
+  }
+  .below {
+    display: grid;
+    gap: 28px;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .below {
+      grid-template-columns: minmax(0, 44ch) auto;
+      justify-content: space-between;
+    }
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  /* Phones: always stacked, so the late web font can't re-wrap the row and
+     shift everything below it (CLS). */
+  @media (max-width: 480px) {
+    .ctas {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+  }
+  @media (min-width: 720px) {
+    .counters {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .counter {
+    padding: 18px 16px 6px 0;
+    border-right: 1px solid var(--line);
+    padding-left: 16px;
+  }
+  .counter:first-child,
+  .counter:nth-child(3) {
+    padding-left: 0;
+  }
+  @media (min-width: 720px) {
+    .counter:nth-child(3) {
+      padding-left: 16px;
+    }
+  }
+  .counter:last-child {
+    border-right: 0;
+  }
+  .counter dt {
+    display: flex;
+    gap: 8px;
+  }
+  .idx {
+    color: var(--accent);
+  }
+  .counter dd {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    margin-top: 6px;
+  }
+  .eqs {
+    display: none;
+    position: absolute;
+    right: var(--gutter);
+    top: 0;
+    font-size: 0.92rem;
+    color: var(--fg-muted);
+    text-align: right;
+    gap: 4px;
+  }
+  .eqs figcaption {
+    margin-top: 8px;
+    text-transform: none;
+  }
+  @media (min-width: 1100px) {
+    .eqs {
+      display: grid;
+    }
+  }
+  /* On wide screens the counters' rule doubles as the x-axis. */
+  @media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+    .ax-x,
+    .lbl-x {
+      display: none;
+    }
+    .counters {
+      background: repeating-linear-gradient(90deg, var(--line-strong) 0 1px, transparent 1px 64px) 0 -3px / 100% 7px no-repeat;
+    }
+  }
+</style>

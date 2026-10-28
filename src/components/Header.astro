@@ -1,0 +1,264 @@
+---
+import { t, type Lang } from '../i18n/strings';
+import { href, swapLang } from '../lib/paths';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+const path = Astro.url.pathname;
+const links = [
+  { key: 'library', label: s.nav.library },
+  { key: 'universities', label: s.nav.universities },
+  { key: 'topics', label: s.nav.topics },
+  { key: 'about', label: s.nav.about },
+  { key: 'license', label: s.nav.license },
+] as const;
+const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
+---
+
+<header class="site-header">
+  <div class="bar wrap">
+    <a href={href(lang)} class="brand" aria-label="Open Lemma" data-cursor="↖">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <path d="M8 6.5v11h8" fill="none" stroke="var(--accent)" stroke-width="1.6"></path>
+      </svg>
+      <span class="word">Open&nbsp;<em>Lemma</em></span>
+    </a>
+
+    <nav class="nav" aria-label={s.a11y.navPrimary}>
+      {
+        links.slice(0, 4).map((l) => (
+          <a href={href(lang, l.key)} aria-current={isActive(l.key) ? 'page' : undefined}>
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="tools">
+      <div class="lang" role="group" aria-label={s.a11y.langSwitch}>
+        {
+          (['tr', 'en'] as const).map((l) => (
+            <a
+              href={swapLang(path, l)}
+              hreflang={l}
+              lang={l}
+              data-lang-link={l}
+              aria-current={l === lang ? 'true' : undefined}
+              class:list={{ on: l === lang }}
+            >
+              {l.toUpperCase()}
+            </a>
+          ))
+        }
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="sr-only">{s.a11y.menu}</span>
+        <span class="burger" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="site-menu" class="menu" data-open="false">
+    <nav class="wrap" aria-label={s.a11y.navMobile}>
+      <ol>
+        {
+          links.map((l, i) => (
+            <li>
+              <span class="mono muted">{String(i + 1).padStart(2, '0')}</span>
+              <a href={href(lang, l.key)} class="display" aria-current={isActive(l.key) ? 'page' : undefined}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 90;
+  }
+  .bar {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    position: relative;
+  }
+  .bar::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(50% - 50vw);
+    z-index: -1;
+    background: rgb(10 10 11 / 0.72);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+  }
+  .mark {
+    width: 22px;
+    height: 22px;
+  }
+  .word {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .nav {
+    display: none;
+    gap: 32px;
+    font-size: 0.9rem;
+  }
+  .nav a {
+    position: relative;
+    padding: 10px 0;
+    color: var(--fg-muted);
+    transition: color 0.3s;
+  }
+  .nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .nav a:hover,
+  .nav a[aria-current='page'] {
+    color: var(--fg);
+  }
+  .nav a:hover::after,
+  .nav a[aria-current='page']::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lang {
+    display: flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  .lang a {
+    display: grid;
+    place-items: center;
+    min-width: 40px;
+    height: 34px;
+    border-radius: 999px;
+    color: var(--fg-muted);
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+  .lang a.on {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .lang a:not(.on):hover {
+    color: var(--fg);
+  }
+  .menu-btn {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+  }
+  .burger {
+    width: 22px;
+    height: 10px;
+    position: relative;
+  }
+  .burger i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: var(--fg);
+    transition: transform 0.5s var(--ease-out);
+  }
+  .burger i:first-child {
+    top: 0;
+  }
+  .burger i:last-child {
+    bottom: 0;
+  }
+  [aria-expanded='true'] .burger i:first-child {
+    transform: translateY(4.25px) rotate(45deg);
+  }
+  [aria-expanded='true'] .burger i:last-child {
+    transform: translateY(-4.25px) rotate(-45deg);
+  }
+
+  .menu {
+    position: fixed;
+    inset: var(--header-h) 0 0;
+    background: var(--bg);
+    padding-top: 32px;
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition:
+      clip-path 0.7s var(--ease-out),
+      visibility 0s 0.7s;
+    overflow-y: auto;
+  }
+  .menu[data-open='true'] {
+    clip-path: inset(0);
+    visibility: visible;
+    transition: clip-path 0.7s var(--ease-out);
+  }
+  .menu ol {
+    list-style: none;
+    padding: 0;
+  }
+  .menu li {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+  }
+  .menu li a {
+    font-size: clamp(2.4rem, 9vw, 4.5rem);
+    line-height: 1.05;
+  }
+  .menu li a[aria-current='page'] {
+    color: var(--accent);
+  }
+
+  @media (min-width: 1024px) {
+    .nav {
+      display: flex;
+    }
+    .menu-btn,
+    .menu {
+      display: none;
+    }
+  }
+</style>

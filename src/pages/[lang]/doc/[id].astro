@@ -1,0 +1,332 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Cover from '../../../components/Cover.astro';
+import DocCard from '../../../components/DocCard.astro';
+import LicenseBadge from '../../../components/LicenseBadge.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langCross } from '../../../lib/routes';
+import { documents, universityBySlug, similarDocuments } from '../../../lib/data';
+import { LICENSE_INFO, licenseLabel, type DocumentRecord } from '../../../lib/schema';
+import { href, asset } from '../../../lib/paths';
+import { inlineTex, plainTex } from '../../../lib/math';
+import { topicName } from '../../../lib/topics';
+import { bibtex, plainCitation } from '../../../lib/cite';
+import { bytes, date, authorsLine } from '../../../lib/format';
+
+export function getStaticPaths() {
+  return langCross(documents.map((doc) => ({ params: { id: doc.id }, props: { doc } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const { doc } = Astro.props as { doc: DocumentRecord };
+const s = t(lang);
+const uni = universityBySlug.get(doc.university);
+const lic = LICENSE_INFO[doc.license];
+const licUrl = doc.license_url ?? lic.url;
+const similar = similarDocuments(doc);
+const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected: s.doc.statusRedirected, unchecked: s.doc.statusUnchecked }[doc.link_status];
+const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
+
+const rows: [string, string | null, string?][] = [
+  [s.doc.authors, doc.authors.length ? authorsLine(doc.authors) : null],
+  [s.doc.university, uni?.name ?? doc.university, href(lang, `universities/${doc.university}`)],
+  [s.doc.department, doc.department],
+  [s.doc.course, [doc.course_code, doc.course_title].filter(Boolean).join(' — ') || null],
+  [s.doc.level, s.levels[doc.level]],
+  [s.doc.type, s.types[doc.type]],
+  [s.doc.year, doc.year ? String(doc.year) : null],
+  [s.doc.pages, doc.pages ? String(doc.pages) : null],
+  [s.doc.language, s.doc.english],
+  [s.doc.fileSize, doc.file_size ? bytes(doc.file_size) : null],
+  [s.doc.accessed, date(doc.accessed_at, lang)],
+  [s.doc.checked, `${date(doc.last_checked, lang)} · ${statusLabel}`],
+];
+---
+
+<Base lang={lang} title={plainTex(doc.title)} description={`${doc.authors.join(', ')} — ${uni?.name ?? ''}. ${s.types[doc.type]}, ${s.levels[doc.level]}.`}>
+  <article class="doc">
+    <div class="wrap">
+      <nav class="crumbs mono" aria-label={s.a11y.breadcrumb}>
+        <a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
+        <a href={href(lang, `universities/${doc.university}`)} lang="en">{uni?.name ?? doc.university}</a>
+      </nav>
+
+      <div class="top">
+        <div class="cover-col" data-reveal>
+          <a href={primary} rel="noopener" data-cursor={doc.hosted ? 'PDF' : '↗'} target="_blank" tabindex="-1" aria-hidden="true">
+            <Cover doc={doc} eager />
+          </a>
+        </div>
+
+        <div class="main-col">
+          <LicenseBadge doc={doc} lang={lang} />
+          <h1 class="display title" data-rise set:html={inlineTex(doc.title)} />
+          {doc.authors.length > 0 && <p class="by">{authorsLine(doc.authors)}</p>}
+          {doc.description && <p class="desc muted" lang="en">{doc.description}</p>}
+
+          <div class="actions">
+            <a class="btn btn-primary" href={primary} target="_blank" rel="noopener" data-magnetic="0.2">
+              {doc.hosted ? s.doc.openPdf : s.doc.openSource}
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            {
+              doc.hosted && (
+                <a class="btn" href={doc.source_url} target="_blank" rel="noopener" data-magnetic="0.2">
+                  {s.doc.sourcePage}
+                </a>
+              )
+            }
+          </div>
+
+          <p class="note mono-plain muted">{doc.hosted ? s.doc.hostedNote : s.doc.externalNote}</p>
+
+          <ul class="topics" aria-label={s.doc.topics}>
+            {
+              doc.topics.map((tp) => (
+                <li>
+                  <a class="chip" href={href(lang, `topics/${tp}`)}>
+                    {topicName(tp, lang)}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="details">
+        <section aria-labelledby="meta-h">
+          <h2 id="meta-h" class="mono sec-index">{s.doc.metadata}</h2>
+          <dl class="meta">
+            {
+              rows.map(([k, v, link]) => (
+                <div>
+                  <dt class="mono muted">{k}</dt>
+                  <dd>{v == null ? s.doc.unknown : link ? <a class="u" href={link}>{v}</a> : v}</dd>
+                </div>
+              ))
+            }
+            <div>
+              <dt class="mono muted">{s.doc.license}</dt>
+              <dd>
+                {licUrl ? <a class="u" href={licUrl} rel="license noopener" target="_blank">{lic.label}</a> : licenseLabel(doc.license, s.licenseStatus)}
+                {doc.license_evidence && (
+                  <span class="mono-plain muted ev">
+                    {s.doc.licenseEvidence}: <a class="u" href={doc.license_evidence} rel="noopener" target="_blank">{new URL(doc.license_evidence).host}</a>
+                  </span>
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt class="mono muted">{s.doc.sourcePage}</dt>
+              <dd class="break"><a class="u" href={doc.source_url} rel="noopener" target="_blank">{doc.source_url}</a></dd>
+            </div>
+            {
+              doc.sha256 && (
+                <div>
+                  <dt class="mono muted">{s.doc.sha256}</dt>
+                  <dd class="mono-plain break">{doc.sha256}</dd>
+                </div>
+              )
+            }
+          </dl>
+        </section>
+
+        <section aria-labelledby="cite-h" class="cite">
+          <h2 id="cite-h" class="mono sec-index">{s.doc.cite}</h2>
+          <div role="tablist" aria-label={s.doc.cite} class="tabs">
+            <button role="tab" id="tab-bib" aria-controls="panel-bib" aria-selected="true" tabindex="0" class="mono">{s.doc.bibtex}</button>
+            <button role="tab" id="tab-plain" aria-controls="panel-plain" aria-selected="false" tabindex="-1" class="mono">{s.doc.plain}</button>
+          </div>
+          <div id="panel-bib" role="tabpanel" aria-labelledby="tab-bib" class="panel">
+            <pre id="cite-bib" class="mono-plain">{bibtex(doc, uni)}</pre>
+            <button class="btn btn-sm copy" type="button" data-copy="cite-bib" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
+          </div>
+          <div id="panel-plain" role="tabpanel" aria-labelledby="tab-plain" class="panel" hidden>
+            <p id="cite-plain" class="plain">{plainCitation(doc, uni)}</p>
+            <button class="btn btn-sm copy" type="button" data-copy="cite-plain" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
+          </div>
+        </section>
+      </div>
+
+      {
+        similar.length > 0 && (
+          <section class="similar" aria-labelledby="sim-h">
+            <h2 id="sim-h" class="display h-lg" data-split>
+              {s.doc.similar}
+            </h2>
+            <div class="grid">
+              {similar.map((d) => (
+                <div data-reveal>
+                  <DocCard doc={d} lang={lang} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </div>
+  </article>
+</Base>
+
+<style>
+  .doc {
+    padding-top: calc(var(--header-h) + clamp(32px, 6vw, 80px));
+    padding-bottom: clamp(64px, 10vw, 120px);
+  }
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--fg-muted);
+    margin-bottom: clamp(28px, 4vw, 48px);
+  }
+  .crumbs a:hover {
+    color: var(--fg);
+  }
+  .top {
+    display: grid;
+    gap: clamp(32px, 5vw, 72px);
+  }
+  @media (min-width: 820px) {
+    .top {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+      align-items: start;
+    }
+    .cover-col {
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+  }
+  .cover-col {
+    max-width: 420px;
+  }
+  .title {
+    font-size: clamp(2.6rem, 6.4vw, 6rem);
+    margin-top: 20px;
+    text-wrap: balance;
+  }
+  .by {
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    margin-top: 20px;
+  }
+  .desc {
+    margin-top: 16px;
+    max-width: 62ch;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .note {
+    margin-top: 18px;
+    max-width: 62ch;
+    line-height: 1.6;
+  }
+  .topics {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 28px;
+  }
+  .topics .chip {
+    height: 32px;
+  }
+  .topics .chip:hover {
+    color: var(--fg);
+    border-color: var(--accent);
+  }
+  .details {
+    display: grid;
+    gap: 56px;
+    margin-top: clamp(56px, 8vw, 112px);
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  @media (min-width: 1000px) {
+    .details {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 64px;
+    }
+  }
+  .meta > div {
+    display: grid;
+    grid-template-columns: minmax(110px, 2fr) 5fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta dd {
+    min-width: 0;
+  }
+  .break {
+    overflow-wrap: anywhere;
+  }
+  .ev {
+    display: block;
+    margin-top: 4px;
+  }
+  .u {
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+  .u:hover {
+    text-decoration-color: var(--accent);
+  }
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tabs button {
+    padding: 12px 14px;
+    min-height: 44px;
+    color: var(--fg-muted);
+    border-bottom: 1px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tabs button[aria-selected='true'] {
+    color: var(--fg);
+    border-color: var(--accent);
+  }
+  .panel {
+    position: relative;
+    background: var(--bg-sunken);
+    border: 1px solid var(--line);
+    border-top: 0;
+    padding: 20px 20px 72px;
+  }
+  .panel pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+    color: var(--fg-muted);
+  }
+  .plain {
+    color: var(--fg-muted);
+  }
+  .copy {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+  }
+  .similar {
+    margin-top: clamp(80px, 12vw, 160px);
+  }
+  .similar .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px clamp(14px, 2.4vw, 28px);
+    margin-top: 48px;
+  }
+  @media (min-width: 1000px) {
+    .similar .grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

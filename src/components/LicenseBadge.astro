@@ -1,0 +1,26 @@
+---
+import { licenseLabel, type DocumentRecord } from '../lib/schema';
+import { t, type Lang } from '../i18n/strings';
+
+interface Props {
+  doc: DocumentRecord;
+  lang: Lang;
+}
+const { doc, lang } = Astro.props;
+const s = t(lang);
+---
+
+<span class="badges">
+  <span class:list={['chip', { 'chip-accent': doc.hosted }]}>
+    <span class="dot" aria-hidden="true"></span>{doc.hosted ? s.doc.hosted : s.doc.external}
+  </span>
+  <span class="chip">{licenseLabel(doc.license, s.licenseStatus)}</span>
+</span>
+
+<style>
+  .badges {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+</style>

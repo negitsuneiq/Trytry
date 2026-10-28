@@ -1,0 +1,42 @@
+---
+import { t, type Lang } from '../i18n/strings';
+import { tex } from '../lib/math';
+
+interface Props {
+  lang: Lang;
+}
+const s = t(Astro.props.lang);
+---
+
+<div class="empty" data-reveal>
+  <div class="glyph" set:html={tex(String.raw`\varnothing`)} aria-hidden="true" />
+  <div>
+    <p class="display h-md">{s.empty.title}</p>
+    <p class="muted">{s.empty.body}</p>
+  </div>
+</div>
+
+<style>
+  .empty {
+    display: grid;
+    gap: 24px;
+    align-items: center;
+    padding: clamp(32px, 6vw, 64px);
+    border: 1px dashed var(--line-strong);
+  }
+  @media (min-width: 720px) {
+    .empty {
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+    }
+  }
+  .glyph {
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: var(--accent);
+    line-height: 1;
+  }
+  .empty p.muted {
+    max-width: 52ch;
+    margin-top: 12px;
+  }
+</style>

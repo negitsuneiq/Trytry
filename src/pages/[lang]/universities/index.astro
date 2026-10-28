@@ -1,0 +1,34 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import UniversityList from '../../../components/UniversityList.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langPaths } from '../../../lib/routes';
+import { universities } from '../../../lib/data';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const src = universities[0];
+---
+
+<Base lang={lang} title={s.universitiesPage.title} description={s.universitiesPage.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index="20" title={s.universitiesPage.title} lede={s.universitiesPage.lede} level="h1">
+        {
+          src && (
+            <p class="mono muted">
+              {s.university.source}:{' '}
+              <a class="link-u" href={src.ranking_url} rel="noopener">
+                {src.ranking_source} {src.ranking_year}
+              </a>
+            </p>
+          )
+        }
+      </SectionHead>
+      {universities.length ? <UniversityList universities={universities} lang={lang} /> : <EmptyState lang={lang} />}
+    </div>
+  </section>
+</Base>

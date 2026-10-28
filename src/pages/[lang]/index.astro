@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import TopicGrid from '../../components/TopicGrid.astro';
+import UniversityList from '../../components/UniversityList.astro';
+import DocCard from '../../components/DocCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { t, type Lang } from '../../i18n/strings';
+import { href } from '../../lib/paths';
+import { langPaths } from '../../lib/routes';
+import { TOPICS } from '../../lib/topics';
+import { universities, recentDocuments, docsForTopic } from '../../lib/data';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+
+// Featured: the eight topics with most documents (all topics tie at zero before the first crawl).
+const featured = [...TOPICS].sort((a, b) => docsForTopic(b.slug).length - docsForTopic(a.slug).length).slice(0, 8);
+const recent = recentDocuments.slice(0, 6);
+---
+
+<Base lang={lang}>
+  <Hero lang={lang} />
+
+  <section class="section" aria-labelledby="topics-h">
+    <div class="wrap">
+      <SectionHead index="§ 01" title={s.home.topicsTitle} lede={s.home.topicsLede} id="topics-h">
+        <a class="btn btn-sm" href={href(lang, 'topics')} data-magnetic>{s.home.viewAll} <span class="arrow" aria-hidden="true">→</span></a>
+      </SectionHead>
+      <TopicGrid topics={featured} lang={lang} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="unis-h">
+    <div class="wrap">
+      <SectionHead index="§ 02" title={s.home.universitiesTitle} lede={s.home.universitiesLede} id="unis-h" />
+      {universities.length ? <UniversityList universities={universities} lang={lang} /> : <EmptyState lang={lang} />}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="recent-h">
+    <div class="wrap">
+      <SectionHead index="§ 03" title={s.home.recentTitle} id="recent-h">
+        {
+          recent.length > 0 && (
+            <a class="btn btn-sm" href={href(lang, 'library')} data-magnetic>
+              {s.home.viewAll} <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          )
+        }
+      </SectionHead>
+      {
+        recent.length ? (
+          <div class="cards">
+            {recent.map((d) => (
+              <div data-reveal>
+                <DocCard doc={d} lang={lang} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <EmptyState lang={lang} />
+        )
+      }
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 48px) clamp(14px, 2.4vw, 32px);
+  }
+  @media (min-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .cards > div {
+    display: flex;
+  }
+</style>
