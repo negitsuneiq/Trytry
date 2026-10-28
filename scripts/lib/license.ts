@@ -2,7 +2,7 @@
 // main content). Site-wide footers, headers and navigation are stripped before
 // scanning, because a site-level notice is not enough under our policy.
 
-import type { License } from '../../src/lib/schema.ts';
+import { LICENSE_INFO, type License } from '../../src/lib/schema.ts';
 
 export type Scope = 'file' | 'page';
 
@@ -37,18 +37,20 @@ const EXCLUSION = /(excluded from (?:our|the) Creative Commons license|not cover
 const ARR = /(all rights reserved|may not be (?:reproduced|redistributed|copied)|do not (?:redistribute|distribute|post|share)|for (?:the )?(?:personal|private) use of (?:students|enrolled))/i;
 const PUBLIC_DOMAIN = /(?:is in|placed (?:in|into)|dedicated to) the public domain/i;
 
+/** The licence exactly as versioned in the source; a version we cannot name (e.g. 1.0) is `unknown`, never rounded. */
+function known(id: string): License {
+  return id in LICENSE_INFO ? (id as License) : 'unknown';
+}
+
 function versioned(base: License, ver: string | undefined): License {
   if (!ver || !base.startsWith('CC-BY')) return base;
-  const v = ver.startsWith('3') ? '3.0' : '4.0';
-  const id = base.replace(/-\d\.\d$/, `-${v}`) as License;
-  return id;
+  return known(base.replace(/-\d\.\d$/, `-${ver}`));
 }
 
 function fromUrl(m: RegExpMatchArray): License | null {
   const [, kind, code, ver] = m;
   if (kind.toLowerCase() === 'publicdomain') return code.toLowerCase() === 'zero' ? 'CC0-1.0' : 'Public-Domain';
-  const id = `CC-${code.toUpperCase()}-${ver.startsWith('3') ? '3.0' : '4.0'}`;
-  return id as License;
+  return known(`CC-${code.toUpperCase()}-${ver}`);
 }
 
 function snippetAround(text: string, idx: number) {
