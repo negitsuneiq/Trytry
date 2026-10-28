@@ -199,7 +199,8 @@ async function inspectPdf(
     await r.res?.body?.cancel();
     return skip(HTML_NOT_PDF);
   }
-  const buf = await readCapped(r.res!, PDF_DOWNLOAD_LIMIT);
+  const buf = await readCapped(r.res!, PDF_DOWNLOAD_LIMIT).catch(() => undefined);
+  if (buf === undefined) return skip('download failed or stalled');
   if (!buf) return skip('larger than 200 MB');
   if (!isPdf(buf)) return skip('not a PDF (bad magic bytes)');
 
@@ -314,7 +315,7 @@ async function crawlUniversity(src: Source): Promise<{ candidates: Candidate[]; 
       await r.res?.body?.cancel();
       continue;
     }
-    const body = await readCapped(r.res!, HTML_LIMIT);
+    const body = await readCapped(r.res!, HTML_LIMIT).catch(() => null);
     if (!body) continue;
     const html = body.toString('utf8');
     stats.pages++;

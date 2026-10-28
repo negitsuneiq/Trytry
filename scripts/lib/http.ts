@@ -22,6 +22,7 @@ export const USER_AGENT = 'OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Try
 export const BOT_TOKEN = 'OpenLemmaBot';
 const MIN_INTERVAL_MS = Number(process.env.OL_MIN_INTERVAL_MS ?? 2000);
 const TIMEOUT_MS = 30_000;
+const TRANSFER_TIMEOUT_MS = 5 * 60_000;
 const MAX_REDIRECTS = 6;
 
 /** Hosts and paths that are learning-management systems, SSO or student portals. */
@@ -91,7 +92,10 @@ async function throttle(origin: string) {
 
 async function rawFetch(url: string, init: RequestInit = {}): Promise<Response> {
   const ctrl = new AbortController();
+  // Headers must arrive within TIMEOUT_MS. The body keeps the same signal, so
+  // a download that stalls is aborted at TRANSFER_TIMEOUT_MS instead of hanging.
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  setTimeout(() => ctrl.abort(), TRANSFER_TIMEOUT_MS).unref();
   try {
     return await fetch(url, {
       ...init,
