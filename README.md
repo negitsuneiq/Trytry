@@ -77,6 +77,7 @@ Crawler hiçbir şeyi kendiliğinden yayımlamaz. Konu, seviye ve tür tahminler
    ```json
    { "university": "example", "seeds": ["https://maths.example.ac.uk/teaching/"], "scope": ["https://maths.example.ac.uk/"], "maxDepth": 2, "maxPages": 150 }
    ```
+   `scope`, crawler'ın gezebileceği URL önekleridir; PDF'ler bunun dışında da olabilir. `maxDepth` (varsayılan 2), `maxPages` (150) ve `maxPdfs` (120) isteğe bağlıdır. `notes` alanına erişim sorunlarını ve kapsam kararlarını yazın.
 3. `npm run crawl -- --only example` komutunu çalıştırın, `data/crawl-report.md`'yi ve `.cache/crawl/candidates.json`'ı inceleyin.
 
 ## Yeni belge eklemek
