@@ -52,7 +52,7 @@ Crawler hiçbir şeyi kendiliğinden yayımlamaz. Konu, seviye ve tür tahminler
 - `robots.txt`'ye uyar (Crawl-delay dahil). Alan adı başına en fazla **1 istek / 2 sn** (`scripts/lib/http.ts`).
 - User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; …)`.
 - Canvas, Moodle, Blackboard, Piazza, Gradescope, SSO/login yolları ve yayınevi paywall alanları kara listededir. Yönlendirmelerin her adımı ayrıca kontrol edilir. Şifre alanı içeren sayfalar terk edilir.
-- Sadece PDF: HTTP 200 + `%PDF-` imzası. Dil, ilk 3 sayfadan çıkarılan metinle doğrulanır.
+- Sadece PDF: HTTP 200 + `%PDF-` imzası. Dil, ilk 3 sayfadan çıkarılan metinle doğrulanır; bu sayfalar kapak ve içindekiler gibi yetersiz kalırsa ilk 10 sayfaya bakılır.
 - Tekrarlar SHA-256 ve aynı ders içinde başlık benzerliği (Jaccard ≥ 0.85) ile elenir.
 - Öğrenci ödevi gibi görünen dosyalar ("my solutions", "submitted by"…) atlanır.
 - Lisansı yeniden dağıtıma izin vermeyen PDF'ler incelemeden sonra diskten silinir. Yalnızca meta veri tutulur.

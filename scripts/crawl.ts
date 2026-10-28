@@ -224,7 +224,11 @@ async function inspectPdf(
     const head = pdfText(tmp, 1, 3);
     const tail = info.pages && info.pages > 3 ? pdfText(tmp, Math.max(4, info.pages - 1), info.pages) : '';
 
-    const lang = detectLanguage(head);
+    let lang = detectLanguage(head);
+    // Title pages and tables of contents carry little prose: read further into longer files.
+    if (lang.lang === 'unknown' && info.pages && info.pages > 3) {
+      lang = detectLanguage(`${head}\n${pdfText(tmp, 4, Math.min(info.pages, 10))}`);
+    }
     c.language = lang.lang;
     c.language_confidence = Number(lang.confidence.toFixed(2));
     if (lang.lang === 'unknown') return skip(lang.words < 60 ? 'no extractable text (scanned?)' : 'language not confidently English');
