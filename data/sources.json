@@ -1,1 +1,243 @@
-[]
+[
+  {
+    "university": "mit",
+    "seeds": [
+      "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/pages/lecture-notes-and-readings/",
+      "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/resources/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-112-functions-of-a-complex-variable-fall-2008/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/resources/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-217-graph-theory-and-additive-combinatorics-fall-2019/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/resources/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-600-probability-and-random-variables-fall-2019/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-655-mathematical-statistics-spring-2016/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-703-modern-algebra-spring-2013/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/resources/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-901-introduction-to-topology-fall-2004/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-905-algebraic-topology-i-fall-2016/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/pages/lecture-notes/"
+    ],
+    "scope": [
+      "https://ocw.mit.edu/courses/18-"
+    ],
+    "maxDepth": 1,
+    "maxPages": 700,
+    "maxPdfs": 300,
+    "notes": "MIT OpenCourseWare (CC BY-NC-SA 4.0). OCW links \"(PDF)\" to an HTML resource page that holds the file, hence maxDepth 1."
+  },
+  {
+    "university": "oxford",
+    "seeds": [
+      "https://www.maths.ox.ac.uk/members/students/undergraduate-courses/teaching-and-learning/part-c-students/before-you-arrive/omms",
+      "https://www.maths.ox.ac.uk/groups/topology/metric-geometry-and-geometric-analysis-graduate-summer-school/lecturers-notes",
+      "https://www.maths.ox.ac.uk/study-here/undergraduate-study/welcome-mathematical-institute/bridging-gap",
+      "https://people.maths.ox.ac.uk/hitchin/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "courses.maths.ox.ac.uk is a Moodle LMS and its robots.txt disallows /pluginfile.php/, where the course PDFs live, so it is not crawled."
+  },
+  {
+    "university": "cambridge",
+    "seeds": [
+      "https://davidtong.org/teaching/",
+      "https://www.damtp.cam.ac.uk/user/hsr1000/teaching.html",
+      "https://www.damtp.cam.ac.uk/user/sjc1/teaching/",
+      "https://www.dpmms.cam.ac.uk/~par31/notes/",
+      "https://www.damtp.cam.ac.uk/user/reh10/lectures/",
+      "https://www.dpmms.cam.ac.uk/study/IA/",
+      "https://www.dpmms.cam.ac.uk/study/IB/",
+      "https://www.dpmms.cam.ac.uk/study/II/",
+      "https://www.damtp.cam.ac.uk/user/examples/"
+    ],
+    "scope": [
+      "https://davidtong.org/teaching/",
+      "https://www.dpmms.cam.ac.uk/study/"
+    ],
+    "maxDepth": 2,
+    "maxPages": 250,
+    "maxPdfs": 350,
+    "notes": "davidtong.org is David Tong's (DAMTP) own site. damtp/user/examples holds the Tripos example sheets."
+  },
+  {
+    "university": "harvard",
+    "seeds": [
+      "https://people.math.harvard.edu/~knill/texts/index.html",
+      "https://people.math.harvard.edu/~knill/teach/index.html"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "www.math.harvard.edu answers 403 to the crawler."
+  },
+  {
+    "university": "princeton",
+    "seeds": [
+      "https://web.math.princeton.edu/~nelson/books.html",
+      "https://web.math.princeton.edu/~seri/courses/",
+      "https://web.math.princeton.edu/math_alive/notes.shtml",
+      "https://web.math.princeton.edu/~js129/teaching.html"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "maxPdfs": 200
+  },
+  {
+    "university": "stanford",
+    "seeds": [
+      "https://web.stanford.edu/class/math220a/lecturenotes.html",
+      "https://web.stanford.edu/class/math220b/lecturenotes.html"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "math.stanford.edu and virtualmath1.stanford.edu serve an incomplete TLS chain, so Node cannot fetch them (they show up as \"disallowed by robots.txt\")."
+  },
+  {
+    "university": "berkeley",
+    "seeds": [
+      "https://math.berkeley.edu/~evans/",
+      "https://math.berkeley.edu/~btw/teaching.html",
+      "https://math.berkeley.edu/~lott/teaching.html",
+      "https://math.berkeley.edu/~ogus/"
+    ],
+    "scope": [
+      "https://math.berkeley.edu/~ogus/"
+    ],
+    "maxDepth": 1,
+    "notes": "Some faculty pages (e.g. ~hutching, ~wodzicki) answer 403 to the crawler."
+  },
+  {
+    "university": "imperial",
+    "seeds": [
+      "https://www.ma.imperial.ac.uk/~mwl/ISE/",
+      "https://www.ma.imperial.ac.uk/~mwl/m2pm2/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "Several www.ma.imperial.ac.uk/~user pages answer 403 to the crawler."
+  },
+  {
+    "university": "nus",
+    "seeds": [],
+    "scope": [],
+    "notes": "www.math.nus.edu.sg is behind an Incapsula bot wall (JavaScript challenge), so it cannot be crawled. No public alternative found yet."
+  },
+  {
+    "university": "eth-zurich",
+    "seeds": [
+      "https://people.math.ethz.ch/~kowalski/lecture-notes.html",
+      "https://people.math.ethz.ch/~abandeira/teaching.html",
+      "https://people.math.ethz.ch/~halorenz/4students/zero.html",
+      "https://people.math.ethz.ch/~wilthoma/",
+      "https://people.math.ethz.ch/~pink/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "metaphor.ethz.ch (course pages) answers 403 to the crawler. Many D-MATH scripts are in German and are skipped by the language check."
+  },
+  {
+    "university": "sorbonne",
+    "seeds": [
+      "https://webusers.imj-prg.fr/~jan.nekovar/co/ln/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "Most Sorbonne course material is in French. webusers.imj-prg.fr answered 403 from the crawl container; retry from another network."
+  },
+  {
+    "university": "ntu",
+    "seeds": [
+      "https://personal.ntu.edu.sg/nprivault/indext.html"
+    ],
+    "scope": [],
+    "maxDepth": 0
+  },
+  {
+    "university": "tsinghua",
+    "seeds": [
+      "https://ymsc.tsinghua.edu.cn/en/info/1057/1650.htm"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "Yau Mathematical Sciences Center lecture series. Few English course notes are published on Tsinghua hosts."
+  },
+  {
+    "university": "ucla",
+    "seeds": [
+      "https://www.math.ucla.edu/~sharifi/",
+      "https://www.math.ucla.edu/~greene/BootCamp2008.html",
+      "https://www.math.ucla.edu/~greene/BootCamp2009.html",
+      "https://www.math.ucla.edu/~tao/resource/general/"
+    ],
+    "scope": [
+      "https://www.math.ucla.edu/~tao/resource/general/"
+    ],
+    "maxDepth": 2
+  },
+  {
+    "university": "peking",
+    "seeds": [
+      "https://faculty.bicmr.pku.edu.cn/~wenzw/optbook.html",
+      "https://faculty.bicmr.pku.edu.cn/~wenzw/opt-2026-fall.html",
+      "https://faculty.bicmr.pku.edu.cn/~wenzw/bigdata2026.html"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "www.math.pku.edu.cn was unreachable from the crawl container. BICMR is part of PKU; much of its material is in Chinese and is skipped by the language check."
+  },
+  {
+    "university": "toronto",
+    "seeds": [
+      "https://www.math.toronto.edu/mein/teaching/lectures.html",
+      "https://www.math.toronto.edu/courses/mat237y1/20199/"
+    ],
+    "scope": [],
+    "maxDepth": 0
+  },
+  {
+    "university": "epfl",
+    "seeds": [
+      "https://www.epfl.ch/labs/anchp/index-html/teaching/advancedna/",
+      "https://www.epfl.ch/labs/pde/fr/enseignement/equations-differentielles-ordinaires-2022-2/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "Most EPFL course material sits on moodle.epfl.ch (deny-listed)."
+  },
+  {
+    "university": "nyu",
+    "seeds": [
+      "https://math.nyu.edu/~varadhan/",
+      "https://math.nyu.edu/~goodman/teaching/"
+    ],
+    "scope": [
+      "https://math.nyu.edu/~varadhan/",
+      "https://math.nyu.edu/~goodman/teaching/"
+    ],
+    "maxDepth": 2
+  },
+  {
+    "university": "paris-saclay",
+    "seeds": [
+      "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/teaching.html",
+      "https://www.imo.universite-paris-saclay.fr/~patrick.massot/en/enseignement/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "Most material is in French and is skipped by the language check."
+  },
+  {
+    "university": "caltech",
+    "seeds": [
+      "https://www.its.caltech.edu/~dinakar/dr_notes.html",
+      "https://www.its.caltech.edu/~dinakar/ma002a-pr/1112notes.html",
+      "https://www.its.caltech.edu/~dinakar/"
+    ],
+    "scope": [],
+    "maxDepth": 0,
+    "notes": "www.math.caltech.edu (term course pages) was unreachable from the crawl container."
+  }
+]

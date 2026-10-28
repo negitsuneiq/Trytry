@@ -1,1 +1,3077 @@
-[]
+[
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math118/118_dynamicalsystems.pdf",
+    "id": "harvard-knill-dynamical-systems",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "lecture-notes",
+    "title": "Dynamical Systems",
+    "course_code": "MATH 118",
+    "course_title": "Dynamical Systems",
+    "level": "undergraduate",
+    "topics": [
+      "dynamical-systems"
+    ],
+    "priority": 10
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math1a2021/handouts/math1a_2021.pdf",
+    "id": "harvard-knill-introduction-to-calculus",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "book",
+    "title": "Introduction to Calculus",
+    "course_code": "MATH 1A",
+    "course_title": "Introduction to Calculus",
+    "level": "undergraduate",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 10
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/books/KnillProbability.pdf",
+    "id": "harvard-knill-probability-theory-and-stochastic-processes-with",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "book",
+    "title": "Probability Theory and Stochastic Processes with Applications",
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "topics": [
+      "probability"
+    ],
+    "priority": 10
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_basic_analysis.pdf",
+    "id": "mit-18-100a-basic-analysis-i-introduction-to-real-analysis",
+    "title": "Basic Analysis I: Introduction to Real Analysis",
+    "authors": [
+      "Jiří Lebl"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 10
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_lec_full2.pdf",
+    "id": "mit-18-100a-real-analysis-complete-lecture-notes",
+    "title": "Real Analysis: Complete Lecture Notes",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 10
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/8fb8d5c170f1613151aca71de21027bc_MIT18_102s21_full_lec.pdf",
+    "id": "mit-18-102-introduction-to-functional-analysis-complete-lecture-notes",
+    "title": "Introduction to Functional Analysis: Complete Lecture Notes",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 10
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-217-graph-theory-and-additive-combinatorics-fall-2019/212e032b28e58a46e62f5a32d295821e_MIT18_217F19_full_notes.pdf",
+    "id": "mit-18-217-graph-theory-and-additive-combinatorics-lecture-notes",
+    "title": "Graph Theory and Additive Combinatorics: Lecture Notes",
+    "authors": [
+      "Yufei Zhao"
+    ],
+    "course_code": "18.217",
+    "course_title": "Graph Theory and Additive Combinatorics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "number-theory"
+    ],
+    "year": 2019,
+    "priority": 10
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math21b2010/21b_text.pdf",
+    "id": "harvard-knill-linear-algebra-and-differential-equations",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "lecture-notes",
+    "title": "Linear Algebra and Differential Equations",
+    "course_code": "MATH 21B",
+    "course_title": "Linear Algebra and Differential Equations",
+    "level": "undergraduate",
+    "topics": [
+      "algebra",
+      "differential-equations"
+    ],
+    "year": 2010,
+    "priority": 20
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math19/math19b_2011.pdf",
+    "id": "harvard-knill-linear-algebra-probability-and-statistics-for",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "lecture-notes",
+    "title": "Linear Algebra, Probability and Statistics for the Life Sciences",
+    "course_code": "MATH 19B",
+    "course_title": "Linear Algebra, Probability and Statistics for the Life Sciences",
+    "level": "undergraduate",
+    "topics": [
+      "algebra",
+      "probability",
+      "statistics"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/summer2019/handouts/multivariable_knill_2019.pdf",
+    "id": "harvard-knill-multivariable-calculus",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "type": "lecture-notes",
+    "title": "Multivariable Calculus",
+    "course_code": "MATH S-21A",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "topics": [
+      "analysis",
+      "geometry"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/15e3e62a513bb3bdc5de09374f03517d_MIT18_152F11_lec_01.pdf",
+    "id": "mit-18-152-lecture-1",
+    "title": "Lecture 1",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/8547cf4208529f2a7f3ce6d881f1f3c2_MIT18_152F11_lec_02.pdf",
+    "id": "mit-18-152-lecture-2",
+    "title": "Lecture 2",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/72acb1d573d168e731bdaae43de5f568_MIT18_152F11_lec_03.pdf",
+    "id": "mit-18-152-lecture-3",
+    "title": "Lecture 3",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/da093b7265d1fc4fe9c6edf3e7825661_MIT18_152F11_lec_04.pdf",
+    "id": "mit-18-152-lecture-4",
+    "title": "Lecture 4",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/9acdeff6449529106ac254f7ada967da_MIT18_152F11_lec_05.pdf",
+    "id": "mit-18-152-lecture-5",
+    "title": "Lecture 5",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/4336b9d0607ac33f430908fdf4cb78ba_MIT18_152F11_lec_06.pdf",
+    "id": "mit-18-152-lecture-6",
+    "title": "Lecture 6",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/1b2023e54a5d0c4023418a27274787ef_MIT18_152F11_lec_07.pdf",
+    "id": "mit-18-152-lecture-7",
+    "title": "Lecture 7",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/b4b519bd697528af7e9c83d130bb945b_MIT18_152F11_lec_08.pdf",
+    "id": "mit-18-152-lecture-8",
+    "title": "Lecture 8",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/419f485442c5fb28d976ffa48ab91e3f_MIT18_152F11_lec_09.pdf",
+    "id": "mit-18-152-lecture-9",
+    "title": "Lecture 9",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/ccd4ae63858e855c18c96ce96a797b9b_MIT18_152F11_lec_10.pdf",
+    "id": "mit-18-152-lecture-10",
+    "title": "Lecture 10",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/94902f737763bc223403c06fb603a947_MIT18_152F11_lec_11.pdf",
+    "id": "mit-18-152-lecture-11",
+    "title": "Lecture 11",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/940561a138578640826f762b5a57bcad_MIT18_152F11_lec_12.pdf",
+    "id": "mit-18-152-lecture-12",
+    "title": "Lecture 12",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/99308a127797b9626b2d9216af24b52e_MIT18_152F11_lec_15.pdf",
+    "id": "mit-18-152-lecture-15",
+    "title": "Lecture 15",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/29c6f7ee914a1d804899781f9f604f49_MIT18_152F11_lec_24.pdf",
+    "id": "mit-18-152-lecture-24",
+    "title": "Lecture 24",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/ad3a71c522df2396b6248cf9b35aedea_MIT18_152F11_lec_13_14.pdf",
+    "id": "mit-18-152-lectures-13-14",
+    "title": "Lectures 13–14",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/a2a21bfac16172f75f1448eeb973660c_MIT18_152F11_lec_16_18.pdf",
+    "id": "mit-18-152-lectures-16-18",
+    "title": "Lectures 16–18",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/69f8388a46fa29298f82735ddad8c08c_MIT18_152F11_lec_19_20.pdf",
+    "id": "mit-18-152-lectures-19-20",
+    "title": "Lectures 19–20",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/7ccea8a23acf9ae7130456f5da63b2ba_MIT18_152F11_lec_21_23.pdf",
+    "id": "mit-18-152-lectures-21-23",
+    "title": "Lectures 21–23",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/e793116b0f70b437cca5e9cf75754cab_MIT18_175S14_Lecture1.pdf",
+    "id": "mit-18-175-lecture-1-slides",
+    "title": "Lecture 1 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/a6ba5c8f804fb87f3d76d4fd274367b2_MIT18_175S14_Lecture2.pdf",
+    "id": "mit-18-175-lecture-2-slides",
+    "title": "Lecture 2 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/827332a721e47b09cb0cbcfb4b60ecf6_MIT18_175S14_Lecture3.pdf",
+    "id": "mit-18-175-lecture-3-slides",
+    "title": "Lecture 3 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/0c6228b4a4638d5a34b149ec89bc7d19_MIT18_175S14_Lecture4.pdf",
+    "id": "mit-18-175-lecture-4-slides",
+    "title": "Lecture 4 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/1c016821763783c34c48816b1ac66969_MIT18_175S14_Lecture5.pdf",
+    "id": "mit-18-175-lecture-5-slides",
+    "title": "Lecture 5 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/c0f79358861a160a6e3c12ff85854a75_MIT18_175S14_Lecture6.pdf",
+    "id": "mit-18-175-lecture-6-slides",
+    "title": "Lecture 6 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/9cf3fd79fc78d5cd60076b2dc942e63e_MIT18_175S14_Lecture7.pdf",
+    "id": "mit-18-175-lecture-7-slides",
+    "title": "Lecture 7 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/887e96172e82a615dac16fb26702d88b_MIT18_175S14_Lecture8.pdf",
+    "id": "mit-18-175-lecture-8-slides",
+    "title": "Lecture 8 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/4e8a2305c745bd5a82a5f15cf8bcb8bb_MIT18_175S14_Lecture9.pdf",
+    "id": "mit-18-175-lecture-9-slides",
+    "title": "Lecture 9 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/3fed030f143799a396c58ad269a4b19b_MIT18_175S14_Lecture10.pdf",
+    "id": "mit-18-175-lecture-10-slides",
+    "title": "Lecture 10 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/754f10a33d3e883d60c5db6de4fa24fc_MIT18_175S14_Lecture11.pdf",
+    "id": "mit-18-175-lecture-11-slides",
+    "title": "Lecture 11 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/e39d4bd288a79ce2993620614f22d9c0_MIT18_175S14_Lecture12.pdf",
+    "id": "mit-18-175-lecture-12-slides",
+    "title": "Lecture 12 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/03d603b7bb9cfdf6dc418e211ddb286e_MIT18_175S14_Lecture13.pdf",
+    "id": "mit-18-175-lecture-13-slides",
+    "title": "Lecture 13 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/8226ea2ac0064172d742b396a16e6907_MIT18_175S14_Lecture14.pdf",
+    "id": "mit-18-175-lecture-14-slides",
+    "title": "Lecture 14 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/20b9ab92704112083d78d0af846ac13f_MIT18_175S14_Lecture15.pdf",
+    "id": "mit-18-175-lecture-15-slides",
+    "title": "Lecture 15 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/59f08b62c812d8f6414c51455aebfd96_MIT18_175S14_Lecture16.pdf",
+    "id": "mit-18-175-lecture-16-slides",
+    "title": "Lecture 16 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/6cb1418c6d27c4f4ecb5eadd8cb9b584_MIT18_175S14_Lecture17.pdf",
+    "id": "mit-18-175-lecture-17-slides",
+    "title": "Lecture 17 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/258024af849f6d76baf585164d1a2c60_MIT18_175S14_Lecture18.pdf",
+    "id": "mit-18-175-lecture-18-slides",
+    "title": "Lecture 18 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/89eca378bdb8db9af2b7e7f87f09e86e_MIT18_175S14_Lecture20.pdf",
+    "id": "mit-18-175-lecture-20-slides",
+    "title": "Lecture 20 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/2df8336d9f500626c2e278c10bd6c068_MIT18_175S14_Lecture23.pdf",
+    "id": "mit-18-175-lecture-23-slides",
+    "title": "Lecture 23 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/f33e55917467aa3cf5afa57ec32f4a6a_MIT18_175S14_Lecture25.pdf",
+    "id": "mit-18-175-lecture-25-slides",
+    "title": "Lecture 25 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/6dc0eeda7f7a0cbb95f9b7a16cd1f276_MIT18_175S14_Lecture26.pdf",
+    "id": "mit-18-175-lecture-26-slides",
+    "title": "Lecture 26 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/dfacf4022fb11721ad15290c948a1643_MIT18_175S14_Lecture27.pdf",
+    "id": "mit-18-175-lecture-27-slides",
+    "title": "Lecture 27 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/4432037cee29a8d296b09c24b05e6bcf_MIT18_175S14_Lecture28.pdf",
+    "id": "mit-18-175-lecture-28-slides",
+    "title": "Lecture 28 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/e5f4561a755f41590d1d064faaff90ca_MIT18_175S14_Lecture29.pdf",
+    "id": "mit-18-175-lecture-29-slides",
+    "title": "Lecture 29 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/6fb1c343f1ccc5006d522f63fde8c491_MIT18_175S14_Lecture30.pdf",
+    "id": "mit-18-175-lecture-30-slides",
+    "title": "Lecture 30 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/10958ec4974f4b29bb1b10709570c6b7_MIT18_175S14_Lecture31.pdf",
+    "id": "mit-18-175-lecture-31-slides",
+    "title": "Lecture 31 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/2529409ce3291e6ef145582b9dda64a2_MIT18_175S14_Lecture32.pdf",
+    "id": "mit-18-175-lecture-32-slides",
+    "title": "Lecture 32 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/dd8b9f606f73a4ea9125bdc1ab5ddbe1_MIT18_175S14_Lecture33.pdf",
+    "id": "mit-18-175-lecture-33-slides",
+    "title": "Lecture 33 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/17864f7e26fa5e32e155435765fc5fc9_MIT18_175S14_Lecture34.pdf",
+    "id": "mit-18-175-lecture-34-slides",
+    "title": "Lecture 34 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/e844bb746f2f32632bd41c7acb061f31_MIT18_175S14_Lecture35.pdf",
+    "id": "mit-18-175-lecture-35-slides",
+    "title": "Lecture 35 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/0e6a7d7cd6659827a2511d963f68e83e_MIT18_175S14_Lecture36.pdf",
+    "id": "mit-18-175-lecture-36-slides",
+    "title": "Lecture 36 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/b6b086d094dde57f12f8225a2dccec57_MIT18_175S14_Lecture37.pdf",
+    "id": "mit-18-175-lecture-37-slides",
+    "title": "Lecture 37 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/ca33cca11e96888ef565c288bb82c95e_MIT18_175S14_Lecture38.pdf",
+    "id": "mit-18-175-lecture-38-slides",
+    "title": "Lecture 38 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/3a977190aa9bfacd4eb6b5a52abd57de_MIT18_175S14_Lecture39.pdf",
+    "id": "mit-18-175-lecture-39-slides",
+    "title": "Lecture 39 (slides)",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/7db820f51ad2de2340639a7ea14b7795_MIT18_310F13_Ch12.pdf",
+    "id": "mit-18-310-analyzing-randomized-median-finding-and-quicksort",
+    "title": "Analyzing Randomized Median Finding and Quicksort",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/ebe195a69f1f7dbe71ff20bd90089355_MIT18_310F13_Ch13.pdf",
+    "id": "mit-18-310-batchers-algorithm",
+    "title": "Batcher's Algorithm",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/d43d47ff4e18566a7a64577fba543edc_MIT18_310F13_Ch4.pdf",
+    "id": "mit-18-310-chernoff-bounds-and-some-applications",
+    "title": "Chernoff bounds, and some applications",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/28ab492c0aecd8ff4b37d9fd1f460042_MIT18_310F13_Ch6.pdf",
+    "id": "mit-18-310-counting-coding-sampling",
+    "title": "Counting, Coding, Sampling",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/9e96bf48fb5d12f1300365d05e227be1_MIT18_310F13_Ch15.pdf",
+    "id": "mit-18-310-cryptography",
+    "title": "Cryptography",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/48dedaa5cc66d0afc8666f101975762a_MIT18_310F13_Ch16.pdf",
+    "id": "mit-18-310-factoring",
+    "title": "Factoring",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/b4a37cf6c0e515fb863e139c2a6a51ac_MIT18_310F13_Ch17.pdf",
+    "id": "mit-18-310-fast-fourier-transform",
+    "title": "Fast Fourier Transform",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/25c0eb2a94ecef291b061eebda640139_MIT18_310F13_Ch11.pdf",
+    "id": "mit-18-310-finding-the-median",
+    "title": "Finding the Median",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/1d3495b2adb2dc35cb8dd1933398a647_MIT18_310F13_Ch7.pdf",
+    "id": "mit-18-310-generating-functions",
+    "title": "Generating Functions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/4fb2bd51c26ba780d5376fe65e5d1fdb_MIT18_310F13_Ch10.pdf",
+    "id": "mit-18-310-how-to-sort",
+    "title": "How to sort?",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/be0cdadd9de56ff8d20d9a0c6d6d9206_MIT18_335JS19_lec9_reading.pdf",
+    "id": "mit-18-335j-gram-schmidt-orthogonalization",
+    "title": "Gram-Schmidt Orthogonalization",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/fc0209dbe68002972f36f172077fb976_MIT18_335JS19_lec15.pdf",
+    "id": "mit-18-335j-introducing-zeros-by-similarity-transformations",
+    "title": "Introducing Zeros by Similarity Transformations",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/0a734ecc94b60a26213488e68588bc8d_MIT18_335JS19_lec1.pdf",
+    "id": "mit-18-335j-lecture-1-square-roots-via-newtons-method",
+    "title": "Lecture 1: Square roots via Newton's method",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/2f313023ae3404bc217a81a31b227170_MIT18_335JS19_lec2.pdf",
+    "id": "mit-18-335j-lecture-2-floating-point-arithmetic-the-ieee",
+    "title": "Lecture 2: Floating-Point Arithmetic, the IEEE Standard",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/881299033165275f3b15ae8b172e6de8_MIT18_335JS19_lec2_supp.pdf",
+    "id": "mit-18-335j-lecture-2a-some-myths-about-floating-point",
+    "title": "Lecture 2a: Some myths about floating-point arithmetic",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/906cd44ea38d0bb54e13138efd67f3a1_MIT18_335JS19_lec3-1.pdf",
+    "id": "mit-18-335j-lecture-3a-notes-on-the-accuracy-of",
+    "title": "Lecture 3a: Notes on the accuracy of naive summation",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/ac7d12a336af115e9f4a57740021c8f0_MIT18_335JS19_lec3-2.pdf",
+    "id": "mit-18-335j-lecture-3b-backwards-stability-of-recursive-summation",
+    "title": "Lecture 3b: Backwards stability of recursive summation",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/bcea047068e46ab87f398bdd4209c7f5_MIT18_335JS19_lec4.pdf",
+    "id": "mit-18-335j-lecture-4-notes-on-the-equivalence-of",
+    "title": "Lecture 4: Notes on the equivalence of norms",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/469d460f74800c8a1135946a64dee01f_MIT18_335JS19_lec6.pdf",
+    "id": "mit-18-335j-lecture-6-modern-differential-equations-solver-software",
+    "title": "Lecture 6: Modern differential equations solver software",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/24dd28c58f71fa98f333597707ff8684_MIT18_335JS19_lec10.pdf",
+    "id": "mit-18-335j-lecture-10-householder-reflectors-and-givens-rotations",
+    "title": "Lecture 10: Householder Reflectors and Givens Rotations",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/90a515a9caf1cbbe706548d90e659d5a_MIT18_335JS19_lec11.pdf",
+    "id": "mit-18-335j-lecture-11-performance-experiments-with-matrix-multiplication",
+    "title": "Lecture 11: Performance Experiments with Matrix Multiplication",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/94f02a073e2e6c1527e24c71ba8741f4_MIT18_335JS19_lec12.pdf",
+    "id": "mit-18-335j-lecture-12-experiments-with-cache-oblivious-matrix",
+    "title": "Lecture 12: Experiments with Cache-Oblivious Matrix Multiplication",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/bcd746dca8cbf0d5a890f01a72d8ef64_MIT18_335JS19_lec24.pdf",
+    "id": "mit-18-335j-lecture-24-sparse-matrix-algorithms",
+    "title": "Lecture 24: Sparse Matrix Algorithms",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/b9aa5a3948b1d993b8e62cff9fd1bdf2_MIT18_335JS19_lec25.pdf",
+    "id": "mit-18-335j-lecture-25-a-brief-overview-of-optimization",
+    "title": "Lecture 25: A Brief Overview of Optimization Problems",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/35b30d8c4896f95264ee1b135fe031f2_MIT18_335JS19_lec26.pdf",
+    "id": "mit-18-335j-lecture-26-adjoint-methods",
+    "title": "Lecture 26: Adjoint Methods",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/c34c9784410f2cef610f73af72883427_MIT18_335JS19_lec27.pdf",
+    "id": "mit-18-335j-lecture-27-adjoint-methods-and-sensitivity-analysis",
+    "title": "Lecture 27: Adjoint methods and sensitivity analysis for recurrence relations",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/1b52b607c223977b35ba1d826e4d8df1_MIT18_335JS19_lec30.pdf",
+    "id": "mit-18-335j-lecture-30-quasi-newton-optimization",
+    "title": "Lecture 30: Quasi-Newton optimization",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/4fc9cea286982357dc8f1a64a1b035cf_MIT18_335JS19_lec33_1.pdf",
+    "id": "mit-18-335j-lecture-33a-numerical-integration-and-the-redemption",
+    "title": "Lecture 33a: Numerical integration and the redemption of the trapezoidal rule",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/173a70c0f9676f9166c0baa9c2099750_MIT18_335JS19_lec33_2.pdf",
+    "id": "mit-18-335j-lecture-33b-fourier-cosine-series-examples",
+    "title": "Lecture 33b: Fourier Cosine Series Examples",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/edf5b798bef2f1cfe687a6bfcd32a03a_MIT18_335JS19_lec38.pdf",
+    "id": "mit-18-335j-lecture-38-fast-fourier-transform-algorithms",
+    "title": "Lecture 38: Fast Fourier Transform Algorithms",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/f4e0fe09545fcf1a9fa8928385fcf412_MIT18_335JS19_lec39.pdf",
+    "id": "mit-18-335j-lecture-39-fast-fourier-transform-and-fast",
+    "title": "Lecture 39: Fast Fourier Transform and Fast Fourier Transform in the West",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/f1ce20d2c382d61127d8948b42dd0c86_MIT18_335JS19_lec16_reading.pdf",
+    "id": "mit-18-335j-the-qr-algorithm-i",
+    "title": "The QR Algorithm I",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/26ed98a9d8ea1b69ae3bd2817a0bb1c1_MIT18_335JS19_lec16_reading2.pdf",
+    "id": "mit-18-335j-the-qr-algorithm-ii",
+    "title": "The QR Algorithm II",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/fa98fed43acb3e2311f6d9328ca31d04_MIT18_335JS19_lec19.pdf",
+    "id": "mit-18-335j-why-restarting-arnoldilanczos-is-not-trivial",
+    "title": "Why restarting Arnoldi/Lanczos is not trivial",
+    "authors": [
+      "Steven G. Johnson"
+    ],
+    "course_code": "18.335J",
+    "course_title": "Introduction to Numerical Methods",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/8e48c8ba9df0597df419f53a7a79f720_MIT18_783S21_Slides1.pdf",
+    "id": "mit-18-783-lecture-1-introduction-to-elliptic-curves",
+    "title": "Lecture 1: Introduction to Elliptic Curves",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/597144daafd05ed68ba5145a505148cc_MIT18_783S21_notes2.pdf",
+    "id": "mit-18-783-lecture-2-the-group-law-weierstrass-and",
+    "title": "Lecture 2: The Group Law, Weierstrass, and Edwards Equations",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/b6d0aef71278ad8c1d8b5144c4138cb7_MIT18_783S21_notes3.pdf",
+    "id": "mit-18-783-lecture-3-finite-field-arithmetic",
+    "title": "Lecture 3: Finite Field Arithmetic",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/a594ab394477ba96f9e8559635265ef1_MIT18_783S21_notes4.pdf",
+    "id": "mit-18-783-lecture-4-isogenies",
+    "title": "Lecture 4: Isogenies",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/59e0623c0d3454b39d8e07b493a0e9b0_MIT18_783S21_Slides5.pdf",
+    "id": "mit-18-783-lecture-5-isogeny-kernels-and-division-polynomials",
+    "title": "Lecture 5: Isogeny Kernels and Division Polynomials",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/0299e2fef94d866b78e3c3fcd036fb40_MIT18_783S21_notes6.pdf",
+    "id": "mit-18-783-lecture-6-endomorphism-rings",
+    "title": "Lecture 6: Endomorphism Rings",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/ed00359455ff18f07559eb644092cf4b_MIT18_783S21_Slides7.pdf",
+    "id": "mit-18-783-lecture-7-hasses-theorem-and-point-counting",
+    "title": "Lecture 7: Hasse's Theorem and Point Counting",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/22cad7faceccb28bdf002e3902c9ed49_MIT18_783S21_notes8.pdf",
+    "id": "mit-18-783-lecture-8-schoofs-algorithm",
+    "title": "Lecture 8: Schoof's Algorithm",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/97019b835708dff9cb26f4dcd7d17ada_MIT18_783S21_notes9.pdf",
+    "id": "mit-18-783-lecture-9-generic-algorithms-for-the-discrete",
+    "title": "Lecture 9: Generic Algorithms for the Discrete Logarithm Problem",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/fe6fc6be9a878fb54550576a3bdf7477_MIT18_783S21_notes10.pdf",
+    "id": "mit-18-783-lecture-10-index-calculus-smooth-numbers-and",
+    "title": "Lecture 10: Index Calculus, Smooth Numbers, and Factoring Integers",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/c95a8f3337131b100debe6d7a2c04b6e_MIT18_783S21_notes11.pdf",
+    "id": "mit-18-783-lecture-11-elliptic-curve-primality-proving-ecpp",
+    "title": "Lecture 11: Elliptic Curve Primality Proving (ECPP)",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/cd412ca1ff8c91890c827575dfc83eb6_MIT18_783S21_notes12.pdf",
+    "id": "mit-18-783-lecture-12-endomorphism-algebras",
+    "title": "Lecture 12: Endomorphism Algebras",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/6b139f926bbbe94db322ea23300b0246_MIT18_783S21_notes13.pdf",
+    "id": "mit-18-783-lecture-13-ordinary-and-supersingular-curves",
+    "title": "Lecture 13: Ordinary and Supersingular Curves",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/e001dc9e9972a603d5237c7cf879ba0c_MIT18_783S21_notes14.pdf",
+    "id": "mit-18-783-lecture-14-elliptic-curves-over-c-part",
+    "title": "Lecture 14: Elliptic Curves over C (Part I)",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/f9bb81a5b496e093746a8dc51679f313_MIT18_783S21_notes15.pdf",
+    "id": "mit-18-783-lecture-15-elliptic-curves-over-c-part",
+    "title": "Lecture 15: Elliptic Curves over C (Part II)",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/43c2b2575e24502d609575648a8cb4a3_MIT18_783S21_notes16.pdf",
+    "id": "mit-18-783-lecture-16-complex-multiplication-cm",
+    "title": "Lecture 16: Complex Multiplication (CM)",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/5fcff4d009b75161913b27bce2d67458_MIT18_783S21_notes17.pdf",
+    "id": "mit-18-783-lecture-17-the-cm-torsor",
+    "title": "Lecture 17: The CM Torsor",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/da987354bbb5f0339640938771a07f58_MIT18_783S21_notes18.pdf",
+    "id": "mit-18-783-lecture-18-riemann-surfaces-and-modular-curves",
+    "title": "Lecture 18: Riemann Surfaces and Modular Curves",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/c1d042d0a4e2463beb0271b52e00dd53_MIT18_783S21_notes19.pdf",
+    "id": "mit-18-783-lecture-19-the-modular-equation",
+    "title": "Lecture 19: The Modular Equation",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/771db89d54782bdfab8ae93c2315931e_MIT18_783S21_notes20.pdf",
+    "id": "mit-18-783-lecture-20-the-hilbert-class-polynomial",
+    "title": "Lecture 20: The Hilbert Class Polynomial",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/0986055752ecf04dc7cfc16f30ade1c8_MIT18_783S21_notes21.pdf",
+    "id": "mit-18-783-lecture-21-ring-class-fields-and-the",
+    "title": "Lecture 21: Ring Class Fields and the CM Method",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/4aa4373e19e23a48077333b54f7c8a89_MIT18_783S21_notes22.pdf",
+    "id": "mit-18-783-lecture-22-isogeny-volcanoes",
+    "title": "Lecture 22: Isogeny Volcanoes",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/94cf817bccece2b52ba143a8164a3a7c_MIT18_783S21_notes23.pdf",
+    "id": "mit-18-783-lecture-23-the-weil-pairing",
+    "title": "Lecture 23: The Weil Pairing",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/17d693389d2ad0a5e0627da111a08428_MIT18_783S21_Slides24.pdf",
+    "id": "mit-18-783-lecture-24-modular-forms-and-l-functions",
+    "title": "Lecture 24: Modular Forms and L-Functions",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-783-elliptic-curves-spring-2021/89b2e890c00b9a5d7abb1a6f80c053e5_MIT18_783S21_notes25.pdf",
+    "id": "mit-18-783-lecture-25-fermats-last-theorem",
+    "title": "Lecture 25: Fermat's Last Theorem",
+    "authors": [
+      "Andrew V. Sutherland"
+    ],
+    "course_code": "18.783",
+    "course_title": "Elliptic Curves",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2021,
+    "priority": 20
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw1.pdf",
+    "id": "mit-18-100a-assignment-1",
+    "title": "Assignment 1",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw2.pdf",
+    "id": "mit-18-100a-assignment-2",
+    "title": "Assignment 2",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw3.pdf",
+    "id": "mit-18-100a-assignment-3",
+    "title": "Assignment 3",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw4.pdf",
+    "id": "mit-18-100a-assignment-4",
+    "title": "Assignment 4",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw5.pdf",
+    "id": "mit-18-100a-assignment-5",
+    "title": "Assignment 5",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw7.pdf",
+    "id": "mit-18-100a-assignment-7",
+    "title": "Assignment 7",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw8.pdf",
+    "id": "mit-18-100a-assignment-8",
+    "title": "Assignment 8",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw9.pdf",
+    "id": "mit-18-100a-assignment-9",
+    "title": "Assignment 9",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_hw_final.pdf",
+    "id": "mit-18-100a-final-assignment",
+    "title": "Final Assignment",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_rec_final.pdf",
+    "id": "mit-18-100a-final-exam-review",
+    "title": "Final Exam Review",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_midterm.pdf",
+    "id": "mit-18-100a-midterm-exam",
+    "title": "Midterm Exam",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_rec_mid.pdf",
+    "id": "mit-18-100a-midterm-exam-review",
+    "title": "Midterm Exam Review",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.100A",
+    "course_title": "Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/d867311d281de60eef71bd632aa7e3dc_MIT18_102s21_final.pdf",
+    "id": "mit-18-102-final-assignment",
+    "title": "Final Assignment",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/fd13f22eba77a389ec9741dde4b83b51_MIT18_102s21_hw1.pdf",
+    "id": "mit-18-102-homework-1",
+    "title": "Homework 1",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/559e30930c799e87f63e8f5ba3e6c142_MIT18_102s21_hw2.pdf",
+    "id": "mit-18-102-homework-2",
+    "title": "Homework 2",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/72a99c35e73f65626f200882645c4e31_MIT18_102s21_hw3.pdf",
+    "id": "mit-18-102-homework-3",
+    "title": "Homework 3",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/302c1b51d97f1dbfc58c1dc780c70010_MIT18_102s21_hw4.pdf",
+    "id": "mit-18-102-homework-4",
+    "title": "Homework 4",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/698963c1075df5d4dac505ced3078fa1_MIT18_102s21_hw5.pdf",
+    "id": "mit-18-102-homework-5",
+    "title": "Homework 5",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/c81c23cfc563fc8a38aa6281527822d5_MIT18_102s21_hw6.pdf",
+    "id": "mit-18-102-homework-6",
+    "title": "Homework 6",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/7948d3acefd999f58c2a029e956d25e0_MIT18_102s21_hw7.pdf",
+    "id": "mit-18-102-homework-7",
+    "title": "Homework 7",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/89278fd0e05842b342c81d1e93d0ee46_MIT18_102s21_hw8.pdf",
+    "id": "mit-18-102-homework-8",
+    "title": "Homework 8",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/0f6a93291053589047c1a3311d3fc05a_MIT18_102s21_hw9.pdf",
+    "id": "mit-18-102-homework-9",
+    "title": "Homework 9",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/097d9451a5d2ab483628a9f9d81550df_MIT18_102s21_hw10.pdf",
+    "id": "mit-18-102-homework-10",
+    "title": "Homework 10",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/7720fe590b773188648d100c22969cd0_MIT18_102s21_midterm.pdf",
+    "id": "mit-18-102-midterm-exam",
+    "title": "Midterm Exam",
+    "authors": [
+      "Casey Rodriguez"
+    ],
+    "course_code": "18.102",
+    "course_title": "Introduction to Functional Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "functional-analysis",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/a8327ee78dd327721dfc22490d79db90_MIT18_152F11_BonusProblem.pdf",
+    "id": "mit-18-152-bonus-problems",
+    "title": "Bonus Problems",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/92c849e8993edde3cf3006b0556e685a_MIT18_152F11_Final.pdf",
+    "id": "mit-18-152-final-exam",
+    "title": "Final Exam",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/8614c248faa32c34d8f84daa9e125fd9_MIT18_152F11_MidtermExam.pdf",
+    "id": "mit-18-152-midterm-exam",
+    "title": "Midterm Exam",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/5a1b6fdb91b923ae251216399ff94dd5_MIT18_152F11_MdtrmExm_Sol.pdf",
+    "id": "mit-18-152-midterm-exam-solutions",
+    "title": "Midterm Exam Solutions",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/1664612b60858bed4529eccd5e46aac6_MIT18_152F11_ProblemSet_1.pdf",
+    "id": "mit-18-152-problem-set-1",
+    "title": "Problem Set 1",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/20f6a8b0a59ddb94af75955164406611_MIT18_152F11_ProblemSet_2.pdf",
+    "id": "mit-18-152-problem-set-2",
+    "title": "Problem Set 2",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/f76665b5eaba8aea4a56b0cd8c5eab37_MIT18_152F11_ProblemSet_3.pdf",
+    "id": "mit-18-152-problem-set-3",
+    "title": "Problem Set 3",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/aa9f011d80b8c34b8ba740e0871ba666_MIT18_152F11_ProblemSet_4.pdf",
+    "id": "mit-18-152-problem-set-4",
+    "title": "Problem Set 4",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/e35d62a106c0b4224beb78782f1cacea_MIT18_152F11_ProblemSet_5.pdf",
+    "id": "mit-18-152-problem-set-5",
+    "title": "Problem Set 5",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/a5ff1db77d4fb6dd1eceffc89ca86c5e_MIT18_152F11_ProblemSet_6.pdf",
+    "id": "mit-18-152-problem-set-6",
+    "title": "Problem Set 6",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/bcf623d8d976cf99a7c3d104bc0504f7_MIT18_152F11_ProblemSet_7.pdf",
+    "id": "mit-18-152-problem-set-7",
+    "title": "Problem Set 7",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/a1e6a9c15c353777049902e641116425_MIT18_152F11_ProblemSet_10.pdf",
+    "id": "mit-18-152-problem-set-10",
+    "title": "Problem Set 10",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/d2545983da76828411b8a11723abeedc_MIT18_152F11_ProblemSet_11.pdf",
+    "id": "mit-18-152-problem-set-11",
+    "title": "Problem Set 11",
+    "authors": [
+      "Jared Speck"
+    ],
+    "course_code": "18.152",
+    "course_title": "Introduction to Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/e90e01d0e9fd4d0256c6090d1d98e428_MIT18_175S14_ProblemSet4.pdf",
+    "id": "mit-18-175-problem-set-4",
+    "title": "Problem Set 4",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/bcea47c042a80b9ebe333f6f391d50cc_MIT18_175S14_ProblemSet5.pdf",
+    "id": "mit-18-175-problem-set-5",
+    "title": "Problem Set 5",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/613251e5f4106cce74ffb84148317b0d_MIT18_175S14_ProblemSet8.pdf",
+    "id": "mit-18-175-problem-set-8",
+    "title": "Problem Set 8",
+    "authors": [
+      "Scott Sheffield"
+    ],
+    "course_code": "18.175",
+    "course_title": "Theory of Probability",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-217-graph-theory-and-additive-combinatorics-fall-2019/c5f584f540306d3cfa9eaa1d39546279_MIT18_217F19_pset.pdf",
+    "id": "mit-18-217-problem-sets",
+    "title": "Problem Sets",
+    "authors": [
+      "Yufei Zhao"
+    ],
+    "course_code": "18.217",
+    "course_title": "Graph Theory and Additive Combinatorics",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "number-theory"
+    ],
+    "year": 2019,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/abf00d007c2ed257001d191ed3c1f98d_MIT18_310F13_Homework1.pdf",
+    "id": "mit-18-310-homework-1",
+    "title": "Homework 1",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/a95b5470303f19c852aecdcf4d64f35a_MIT18_310F13_Homework1Sol.pdf",
+    "id": "mit-18-310-homework-1-solutions",
+    "title": "Homework 1 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/994dd0e3fb85d106f6d2a9e8c25e38cc_MIT18_310F13_Homework2.pdf",
+    "id": "mit-18-310-homework-2",
+    "title": "Homework 2",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/4543b59437e4d6cbbd81daf7cc7b6471_MIT18_310F13_Homework2Sol.pdf",
+    "id": "mit-18-310-homework-2-solutions",
+    "title": "Homework 2 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/050ae617c3342f30ae0b8770eb41ca87_MIT18_310F13_Homework3.pdf",
+    "id": "mit-18-310-homework-3",
+    "title": "Homework 3",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/1240eaccf33fcaee613260cdd6b55a3f_MIT18_310F13_Homework3Sol.pdf",
+    "id": "mit-18-310-homework-3-solutions",
+    "title": "Homework 3 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/610c8de2c520d41404064682471b9f5f_MIT18_310F13_Homework4.pdf",
+    "id": "mit-18-310-homework-4",
+    "title": "Homework 4",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/edcab1dd646e097ccd16afec627c2371_MIT18_310F13_Homework4Sol.pdf",
+    "id": "mit-18-310-homework-4-solutions",
+    "title": "Homework 4 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/7a28d5041d4e0f4c3594a0a3e1c4741e_MIT18_310F13_Homework5.pdf",
+    "id": "mit-18-310-homework-5",
+    "title": "Homework 5",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/6da0fa064666f99a9a3f94cf308e3647_MIT18_310F13_Homework7.pdf",
+    "id": "mit-18-310-homework-7",
+    "title": "Homework 7",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/1e6008401873966561887d1ca2772c4d_MIT18_310F13_Homework8.pdf",
+    "id": "mit-18-310-homework-8",
+    "title": "Homework 8",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/98c3f09682eb11ab288fd3e19a9eb790_MIT18_310F13_Homework8Sol.pdf",
+    "id": "mit-18-310-homework-8-solutions",
+    "title": "Homework 8 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/68fc431a36bcb559ecf4c2542f0a098e_MIT18_310F13_Homework9Sol.pdf",
+    "id": "mit-18-310-homework-9-solutions",
+    "title": "Homework 9 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/b9863df46de028a8d9578920205376fb_MIT18_310F13_Homework11.pdf",
+    "id": "mit-18-310-homework-11",
+    "title": "Homework 11",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/b384fa3a6b0db4b2e34d59bba9de7917_MIT18_310F13_Homework11Sol.pdf",
+    "id": "mit-18-310-homework-11-solutions",
+    "title": "Homework 11 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/f5d55b27153af018c981da7f7ac82717_MIT18_310F13_Homework12.pdf",
+    "id": "mit-18-310-homework-12",
+    "title": "Homework 12",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/18-310-principles-of-discrete-applied-mathematics-fall-2013/864d13f1289dc2a54177a33e8779fe79_MIT18_310F13_Homework12Sol.pdf",
+    "id": "mit-18-310-homework-12-solutions",
+    "title": "Homework 12 Solutions",
+    "authors": [],
+    "course_code": "18.310",
+    "course_title": "Principles of Discrete Applied Mathematics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics",
+      "information-computation"
+    ],
+    "year": 2013,
+    "priority": 30
+  }
+]

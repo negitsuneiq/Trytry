@@ -56,7 +56,7 @@ async function obtainFile(c: Candidate, dest: string): Promise<boolean> {
   // No local cache (e.g. a fresh clone): fetch again, politely, and require the same bytes.
   const r = await politeFetch(c.final_url);
   if (!r.ok || !r.res) return false;
-  const buf = await readCapped(r.res, MAX_HOSTED_FILE_BYTES);
+  const buf = await readCapped(r.res, MAX_HOSTED_FILE_BYTES).catch(() => null);
   if (!buf || sha(buf) !== c.sha256) return false;
   writeFileSync(dest, buf);
   return true;

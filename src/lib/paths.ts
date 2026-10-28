@@ -15,6 +15,10 @@ export function href(lang: Lang, path = ''): string {
 
 /** Same page in the other language. */
 export function swapLang(pathname: string, to: Lang): string {
-  const rest = pathname.slice(BASE.length).replace(/^\/(en|tr)(?=\/|$)/, '');
+  // The 404 page exists once, not per language: switch to that language's home.
+  const rest = pathname
+    .slice(BASE.length)
+    .replace(/^\/(en|tr)(?=\/|$)/, '')
+    .replace(/^\/404(?:\.html)?\/?$/, '');
   return `${BASE}/${to}${rest || '/'}`;
 }

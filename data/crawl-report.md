@@ -1,3 +1,195 @@
 # Crawl report
 
-The crawler has not run yet. This file is overwritten by `npm run crawl`.
+Run: 2026-10-28T12:23:13.921Z  
+User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
+Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
+
+Counts are crawl candidates. Only entries accepted in `data/curation.json` are published.
+
+| # | University | HTML pages | PDFs checked | Host-eligible | Link-only | Skipped |
+|---|---|---:|---:|---:|---:|---:|
+| 1 | Massachusetts Institute of Technology | 257 | 300 | 279 | 1 | 20 |
+| 2 | University of Oxford | 4 | 94 | 0 | 76 | 18 |
+| 3 | University of Cambridge | 19 | 350 | 0 | 341 | 9 |
+| 4 | Harvard University | 2 | 55 | 34 | 16 | 5 |
+| 5 | Princeton University | 4 | 200 | 0 | 90 | 110 |
+| 6 | Stanford University | 2 | 17 | 0 | 16 | 1 |
+| 7 | University of California, Berkeley | 18 | 120 | 0 | 105 | 15 |
+| 8 | Imperial College London | 2 | 34 | 0 | 22 | 12 |
+| 9 | National University of Singapore | 0 | 0 | 0 | 0 | 0 |
+| 10 | ETH Zurich | 5 | 51 | 0 | 39 | 12 |
+| 11 | Sorbonne Université | 0 | 0 | 0 | 0 | 0 |
+| 12 | Nanyang Technological University | 1 | 46 | 0 | 43 | 3 |
+| 13 | Tsinghua University | 1 | 5 | 0 | 0 | 5 |
+| 14 | University of California, Los Angeles | 11 | 120 | 0 | 15 | 105 |
+| 15 | Peking University | 3 | 106 | 0 | 49 | 57 |
+| 16 | University of Toronto | 2 | 15 | 0 | 15 | 0 |
+| 17 | EPFL – École polytechnique fédérale de Lausanne | 2 | 51 | 0 | 41 | 10 |
+| 18 | New York University | 21 | 120 | 0 | 111 | 9 |
+| 19 | Université Paris-Saclay | 2 | 25 | 0 | 0 | 25 |
+| 20 | California Institute of Technology | 3 | 104 | 0 | 58 | 46 |
+| | **Total** | | **1813** | **285** | **760** | **768** |
+
+## Skip and link-only reasons
+
+### Massachusetts Institute of Technology
+
+- not a PDF (bad magic bytes): 10
+- no extractable text (scanned?): 6
+- looks like student work: 2
+- file says it is excluded from the open licence: 1
+- licence: link only: 1
+- HTTP 404: 1
+- disallowed by robots.txt: 1
+- not visited — deny-listed host (learn.mit.edu): 3351
+
+### University of Oxford
+
+- licence: link only: 76
+- disallowed by robots.txt: 8
+- duplicate (SHA-256): 5
+- no extractable text (scanned?): 5
+- not visited — login/portal path: 3
+- not visited — deny-listed host (www.springer.com): 1
+- not visited — deny-listed host (www.ams.org): 1
+
+### University of Cambridge
+
+- licence: link only: 341
+- duplicate (SHA-256): 5
+- HTTP 404: 1
+- language not confidently English: 1
+- disallowed by robots.txt: 1
+- language: de: 1
+- not visited — deny-listed host (www.vle.cam.ac.uk): 5
+- not visited — login/portal path: 1
+
+### Harvard University
+
+- licence: link only: 11
+- over 50 MB: link only: 5
+- duplicate (SHA-256): 3
+- HTTP 403: 2
+- not visited — deny-listed host (www.ams.org): 2
+
+### Princeton University
+
+- licence: link only: 90
+- no extractable text (scanned?): 55
+- HTTP 404: 46
+- language not confidently English: 8
+- HTTP 403: 1
+- not visited — deny-listed host (moodle-app2.let.ethz.ch): 3
+- not visited — deny-listed host (link.springer.com): 3
+- not visited — deny-listed host (eu.wiley.com): 1
+- not visited — deny-listed host (www.cambridge.org): 1
+- not visited — deny-listed host (piazza.com): 1
+
+### Stanford University
+
+- licence: link only: 16
+- language not confidently English: 1
+
+### University of California, Berkeley
+
+- licence: link only: 105
+- no extractable text (scanned?): 10
+- encrypted PDF: 2
+- language: de: 1
+- disallowed by robots.txt: 1
+- language: fr: 1
+- not visited — login/portal path: 1
+
+### Imperial College London
+
+- licence: link only: 22
+- no extractable text (scanned?): 11
+- language not confidently English: 1
+
+### ETH Zurich
+
+- licence: link only: 39
+- language: de: 6
+- language: fr: 1
+- duplicate (SHA-256): 1
+- HTTP 404: 1
+- language not confidently English: 1
+- language: it: 1
+- no extractable text (scanned?): 1
+- not visited — deny-listed host (www.cambridge.org): 1
+- not visited — deny-listed host (bookstore.ams.org): 1
+- not visited — deny-listed host (www.sciencedirect.com): 1
+
+### Nanyang Technological University
+
+- licence: link only: 43
+- language: cjk: 1
+- looks like student work: 1
+- HTTP 404: 1
+- not visited — deny-listed host (drive.google.com): 26
+
+### Tsinghua University
+
+- no extractable text (scanned?): 5
+
+### University of California, Los Angeles
+
+- language not confidently English: 43
+- no extractable text (scanned?): 34
+- language: it: 19
+- licence: link only: 15
+- language: es: 5
+- looks like student work: 2
+- HTTP 404: 2
+
+### Peking University
+
+- licence: link only: 49
+- language: cjk: 48
+- language: es: 4
+- no extractable text (scanned?): 2
+- language not confidently English: 2
+- disallowed by robots.txt: 1
+- not visited — deny-listed host (www.springer.com): 3
+- not visited — deny-listed host (link.springer.com): 2
+- not visited — non-http scheme: 2
+
+### University of Toronto
+
+- licence: link only: 15
+- not visited — non-http scheme: 4
+
+### EPFL – École polytechnique fédérale de Lausanne
+
+- licence: link only: 41
+- language: fr: 4
+- language: es: 3
+- language not confidently English: 2
+- no extractable text (scanned?): 1
+- not visited — deny-listed host (moodle.epfl.ch): 2
+
+### New York University
+
+- licence: link only: 111
+- no extractable text (scanned?): 7
+- language not confidently English: 1
+- looks like student work: 1
+- not visited — deny-listed host (www3.interscience.wiley.com): 1
+
+### Université Paris-Saclay
+
+- language: fr: 24
+- HTTP 404: 1
+- not visited — deny-listed host (link.springer.com): 3
+- not visited — deny-listed host (www.springer.com): 3
+
+### California Institute of Technology
+
+- licence: link only: 58
+- HTTP 404: 37
+- language not confidently English: 4
+- no extractable text (scanned?): 2
+- language: es: 2
+- language: it: 1
+- not visited — deny-listed host (www.ams.org): 42
+

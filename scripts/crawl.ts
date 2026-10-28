@@ -3,6 +3,7 @@
 //   npm run crawl                      # every university in data/sources.json
 //   npm run crawl -- --only mit,oxford # a subset
 //   npm run crawl -- --max-pages 100   # cap HTML pages per university
+//   npm run crawl -- --max-pdfs 50     # cap PDFs checked per university
 //
 // Output:
 //   .cache/crawl/candidates.json   every PDF seen, with verdict and reasons
@@ -32,6 +33,7 @@ export interface Source {
   scope: string[];
   maxDepth?: number;
   maxPages?: number;
+  maxPdfs?: number;
   notes?: string;
 }
 
@@ -75,6 +77,9 @@ const { values: args } = parseArgs({
 
 const PDF_DOWNLOAD_LIMIT = 200 * 1024 * 1024;
 const HTML_LIMIT = 5 * 1024 * 1024;
+const HTML_NOT_PDF = 'not a PDF (HTML response)';
+// Apache directory-index sort links (?C=N;O=D) re-list the same directory.
+const DIR_SORT = /^\?C=[NMSD];O=[AD]$/;
 const SKIP_EXT = /\.(zip|gz|tgz|tar|ps|dvi|tex|bib|djvu|epub|mp4|mov|avi|mp3|wav|m4a|jpg|jpeg|png|gif|svg|webp|ppt|pptx|doc|docx|xls|xlsx|csv|ipynb|py|m|nb|sage|mw|exe|dmg|iso)$/i;
 
 const OUT_DIR = join(CACHE_DIR, 'crawl');
@@ -88,7 +93,7 @@ const universities = readJson<University[]>(join(DATA_DIR, 'universities.json'))
 const only = args.only?.split(',').map((s) => s.trim());
 const selected = sources.filter((s) => !only || only.includes(s.university));
 const maxPagesArg = args['max-pages'] ? Number(args['max-pages']) : undefined;
-const maxPdfs = args['max-pdfs'] ? Number(args['max-pdfs']) : 120;
+const maxPdfsArg = args['max-pdfs'] ? Number(args['max-pdfs']) : undefined;
 
 const seenSha = new Map<string, string>();
 
@@ -192,9 +197,10 @@ async function inspectPdf(
   }
   if (r.contentType.includes('text/html')) {
     await r.res?.body?.cancel();
-    return skip('not a PDF (HTML response)');
+    return skip(HTML_NOT_PDF);
   }
-  const buf = await readCapped(r.res!, PDF_DOWNLOAD_LIMIT);
+  const buf = await readCapped(r.res!, PDF_DOWNLOAD_LIMIT).catch(() => undefined);
+  if (buf === undefined) return skip('download failed or stalled');
   if (!buf) return skip('larger than 200 MB');
   if (!isPdf(buf)) return skip('not a PDF (bad magic bytes)');
 
@@ -218,7 +224,11 @@ async function inspectPdf(
     const head = pdfText(tmp, 1, 3);
     const tail = info.pages && info.pages > 3 ? pdfText(tmp, Math.max(4, info.pages - 1), info.pages) : '';
 
-    const lang = detectLanguage(head);
+    let lang = detectLanguage(head);
+    // Title pages and tables of contents carry little prose: read further into longer files.
+    if (lang.lang === 'unknown' && info.pages && info.pages > 3) {
+      lang = detectLanguage(`${head}\n${pdfText(tmp, 4, Math.min(info.pages, 10))}`);
+    }
     c.language = lang.lang;
     c.language_confidence = Number(lang.confidence.toFixed(2));
     if (lang.lang === 'unknown') return skip(lang.words < 60 ? 'no extractable text (scanned?)' : 'language not confidently English');
@@ -287,6 +297,7 @@ async function crawlUniversity(src: Source): Promise<{ candidates: Candidate[]; 
   const candidates: Candidate[] = [];
   const maxDepth = src.maxDepth ?? 2;
   const maxPages = maxPagesArg ?? src.maxPages ?? 150;
+  const maxPdfs = maxPdfsArg ?? src.maxPdfs ?? 120;
   const queue: { url: URL; depth: number }[] = src.seeds.map((s) => ({ url: new URL(s), depth: 0 }));
   const seenPages = new Set<string>();
   const seenPdfs = new Set<string>();
@@ -308,7 +319,7 @@ async function crawlUniversity(src: Source): Promise<{ candidates: Candidate[]; 
       await r.res?.body?.cancel();
       continue;
     }
-    const body = await readCapped(r.res!, HTML_LIMIT);
+    const body = await readCapped(r.res!, HTML_LIMIT).catch(() => null);
     if (!body) continue;
     const html = body.toString('utf8');
     stats.pages++;
@@ -334,11 +345,19 @@ async function crawlUniversity(src: Source): Promise<{ candidates: Candidate[]; 
         stats.pdfLinks++;
         stats.checked++;
         const c = await inspectPdf(href, { university: src.university, parent: r.finalUrl, anchor: text, pageTitle, pageLicense, pageRel });
+        // "(PDF)" in link text can lead to an HTML landing page (e.g. MIT OCW
+        // resource pages) that holds the real file link: walk it like a page.
+        if (c.reasons[0] === HTML_NOT_PDF) {
+          stats.pdfLinks--;
+          stats.checked--;
+          if (depth < maxDepth && inScope(href)) queue.push({ url: href, depth: depth + 1 });
+          continue;
+        }
         candidates.push(c);
         stats[c.verdict]++;
         for (const why of c.reasons) bump(stats.reasons, why.replace(/licence [\w-]+:/, 'licence:'));
         log(`${c.verdict.padEnd(4)} ${c.license.padEnd(16)} ${(c.title ?? c.url).slice(0, 70)}${c.reasons.length ? `  (${c.reasons.join('; ')})` : ''}`);
-      } else if (depth < maxDepth && inScope(href) && !SKIP_EXT.test(href.pathname)) {
+      } else if (depth < maxDepth && inScope(href) && !SKIP_EXT.test(href.pathname) && !DIR_SORT.test(href.search)) {
         queue.push({ url: href, depth: depth + 1 });
       }
     }
