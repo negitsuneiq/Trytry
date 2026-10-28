@@ -2,7 +2,7 @@
 
 Dünyanın en iyi 20 matematik bölümünün (QS World University Rankings by Subject: Mathematics) herkese açık, İngilizce öğretim materyallerini toplayan, **ticari olmayan** bir dijital kütüphane.
 
-- Astro (statik çıktı) + TypeScript, GitHub Pages'te yayınlanır.
+- Astro 7 (statik çıktı) + TypeScript, GitHub Pages'te yayınlanır.
 - Arama: MiniSearch (istemci tarafı). Filtreler URL'ye yazılır.
 - Animasyon: GSAP + ScrollTrigger + SplitText, Lenis. Hero: kütüphanesiz WebGL ile Lorenz çekeri.
 - Matematik: KaTeX (build sırasında render edilir).
@@ -10,7 +10,7 @@ Dünyanın en iyi 20 matematik bölümünün (QS World University Rankings by Su
 
 ## Hızlı başlangıç
 
-Gereksinimler: Node 22.12+ (`.nvmrc`), PDF önizlemeleri ve crawler için `poppler-utils` (`pdftoppm`, `pdftotext`, `pdfinfo`).
+Gereksinimler: Node 24 veya 22.23.4+ (`.nvmrc`), PDF önizlemeleri ve crawler için `poppler-utils` (`pdftoppm`, `pdftotext`, `pdfinfo`).
 
 ```bash
 npm ci
