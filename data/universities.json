@@ -96,42 +96,6 @@
     "ranking_year": 2026
   },
   {
-    "rank": 8,
-    "rank_label": "=8",
-    "slug": "nus",
-    "name": "National University of Singapore",
-    "country": "SG",
-    "department": "Department of Mathematics",
-    "department_url": "https://www.math.nus.edu.sg/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 10,
-    "rank_label": "10",
-    "slug": "eth-zurich",
-    "name": "ETH Zurich",
-    "country": "CH",
-    "department": "Department of Mathematics (D-MATH)",
-    "department_url": "https://math.ethz.ch/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 11,
-    "rank_label": "11",
-    "slug": "sorbonne",
-    "name": "Sorbonne Université",
-    "country": "FR",
-    "department": "UFR 929 de Mathématiques",
-    "department_url": "https://www.math.sorbonne-universite.fr/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
     "rank": 12,
     "rank_label": "=12",
     "slug": "ntu",
@@ -144,66 +108,6 @@
     "ranking_year": 2026
   },
   {
-    "rank": 12,
-    "rank_label": "=12",
-    "slug": "tsinghua",
-    "name": "Tsinghua University",
-    "country": "CN",
-    "department": "Department of Mathematical Sciences",
-    "department_url": "https://math.tsinghua.edu.cn/mathen/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 12,
-    "rank_label": "=12",
-    "slug": "ucla",
-    "name": "University of California, Los Angeles",
-    "country": "US",
-    "department": "Department of Mathematics",
-    "department_url": "https://ww3.math.ucla.edu/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 15,
-    "rank_label": "15",
-    "slug": "peking",
-    "name": "Peking University",
-    "country": "CN",
-    "department": "School of Mathematical Sciences",
-    "department_url": "https://www.math.pku.edu.cn/en/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 16,
-    "rank_label": "16",
-    "slug": "toronto",
-    "name": "University of Toronto",
-    "country": "CA",
-    "department": "Department of Mathematics",
-    "department_url": "https://www.mathematics.utoronto.ca/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 17,
-    "rank_label": "17",
-    "slug": "epfl",
-    "name": "EPFL – École polytechnique fédérale de Lausanne",
-    "country": "CH",
-    "department": "Institute of Mathematics",
-    "department_url": "https://www.epfl.ch/schools/sb/research/math/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
     "rank": 18,
     "rank_label": "18",
     "slug": "nyu",
@@ -211,18 +115,6 @@
     "country": "US",
     "department": "Department of Mathematics, Courant Institute",
     "department_url": "https://math.nyu.edu/",
-    "ranking_source": "QS World University Rankings by Subject: Mathematics",
-    "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
-    "ranking_year": 2026
-  },
-  {
-    "rank": 19,
-    "rank_label": "19",
-    "slug": "paris-saclay",
-    "name": "Université Paris-Saclay",
-    "country": "FR",
-    "department": "Institut de Mathématique d'Orsay",
-    "department_url": "https://www.imo.universite-paris-saclay.fr/en/",
     "ranking_source": "QS World University Rankings by Subject: Mathematics",
     "ranking_url": "https://www.topuniversities.com/university-subject-rankings/mathematics",
     "ranking_year": 2026

@@ -171,7 +171,7 @@ function definitionScene(home: HTMLElement): Off {
   };
 }
 
-// ── Lemma: twenty departments, sideways ─────────────────────────────────────
+// ── Lemma: the departments, sideways ────────────────────────────────────────
 function departments(home: HTMLElement): Off {
   const stage = $('[data-rail-stage]', home)!;
   const track = $('[data-track]', stage)!;

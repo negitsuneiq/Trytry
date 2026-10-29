@@ -1,6 +1,6 @@
 # Open Lemma
 
-Dünyanın en iyi 20 matematik bölümünün (QS World University Rankings by Subject: Mathematics) herkese açık, İngilizce öğretim materyallerini toplayan, **ticari olmayan** bir dijital kütüphane.
+QS World University Rankings by Subject: Mathematics sıralamasının ilk 20'sinden, İngilizce en çok açık öğretim materyali yayımlayan 10 üniversitenin matematik materyallerini toplayan, **ticari olmayan** bir dijital kütüphane.
 
 - Astro 7 (statik çıktı) + TypeScript, GitHub Pages'te yayınlanır.
 - Arama: MiniSearch (istemci tarafı). Filtreler URL'ye yazılır.
