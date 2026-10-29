@@ -7225,5 +7225,2120 @@
     ],
     "year": 2022,
     "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~seri/courses/theNotes.pdf",
+    "id": "princeton-partial-differential-equations-lecture-notes-2010",
+    "title": "Partial Differential Equations: Lecture Notes (2010)",
+    "authors": [
+      "Sergiu Klainerman"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "differential-equations",
+      "mathematical-physics"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW1v3.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-1",
+    "title": "Complex Analysis: Homework 1",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW1-Solns.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-1-solutions",
+    "title": "Complex Analysis: Homework 1 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW2v4.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-2",
+    "title": "Complex Analysis: Homework 2",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW2-SOLUTIONS.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-2-solutions",
+    "title": "Complex Analysis: Homework 2 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW3v2.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-3",
+    "title": "Complex Analysis: Homework 3",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW3-SOLUTIONS.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-3-solutions",
+    "title": "Complex Analysis: Homework 3 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW4v2.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-4",
+    "title": "Complex Analysis: Homework 4",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW4-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-4-solutions",
+    "title": "Complex Analysis: Homework 4 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/Practice-Midterm.pdf",
+    "id": "princeton-mat330-complex-analysis-practice-midterm",
+    "title": "Complex Analysis: Practice Midterm",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/Practice-Midterm-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-practice-midterm-solutions",
+    "title": "Complex Analysis: Practice Midterm Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/Midterm.pdf",
+    "id": "princeton-mat330-complex-analysis-midterm",
+    "title": "Complex Analysis: Midterm",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/Midterm-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-midterm-solutions",
+    "title": "Complex Analysis: Midterm Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW5v3.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-5",
+    "title": "Complex Analysis: Homework 5",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW5-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-5-solutions",
+    "title": "Complex Analysis: Homework 5 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW6v3.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-6",
+    "title": "Complex Analysis: Homework 6",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW6-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-6-solutions",
+    "title": "Complex Analysis: Homework 6 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW7v4.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-7",
+    "title": "Complex Analysis: Homework 7",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW7-solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-7-solutions",
+    "title": "Complex Analysis: Homework 7 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW8v3.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-8",
+    "title": "Complex Analysis: Homework 8",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW8-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-8-solutions",
+    "title": "Complex Analysis: Homework 8 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW9.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-9",
+    "title": "Complex Analysis: Homework 9",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW9-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-9-solutions",
+    "title": "Complex Analysis: Homework 9 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW10v2.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-10",
+    "title": "Complex Analysis: Homework 10",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/HW10-Solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-homework-10-solutions",
+    "title": "Complex Analysis: Homework 10 Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/practice_final_exam.pdf",
+    "id": "princeton-mat330-complex-analysis-practice-final-exam",
+    "title": "Complex Analysis: Practice Final Exam",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/final_exam.pdf",
+    "id": "princeton-mat330-complex-analysis-final-exam",
+    "title": "Complex Analysis: Final Exam",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2023/Final_final_exam_solutions.pdf",
+    "id": "princeton-mat330-complex-analysis-final-exam-solutions",
+    "title": "Complex Analysis: Final Exam Solutions",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW1.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-1-fall-2023",
+    "title": "Functional Analysis: Homework 1 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW1-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-1-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 1 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW2.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-2-fall-2023",
+    "title": "Functional Analysis: Homework 2 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW2-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-2-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 2 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW3.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-3-fall-2023",
+    "title": "Functional Analysis: Homework 3 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW3-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-3-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 3 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW4.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-4-fall-2023",
+    "title": "Functional Analysis: Homework 4 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW4-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-4-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 4 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW5.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-5-fall-2023",
+    "title": "Functional Analysis: Homework 5 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW5-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-5-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 5 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/Midterm.pdf",
+    "id": "princeton-mat520-functional-analysis-midterm-fall-2023",
+    "title": "Functional Analysis: Midterm (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW6.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-6-fall-2023",
+    "title": "Functional Analysis: Homework 6 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW6-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-6-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 6 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW7.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-7-fall-2023",
+    "title": "Functional Analysis: Homework 7 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW8.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-8-fall-2023",
+    "title": "Functional Analysis: Homework 8 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW9.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-9-fall-2023",
+    "title": "Functional Analysis: Homework 9 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW10.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-10-fall-2023",
+    "title": "Functional Analysis: Homework 10 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW10-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-10-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 10 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW11.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-11-fall-2023",
+    "title": "Functional Analysis: Homework 11 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW11-Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-11-solutions-fall-2023",
+    "title": "Functional Analysis: Homework 11 Solutions (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/HW12.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-12-fall-2023",
+    "title": "Functional Analysis: Homework 12 (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2023/Final.pdf",
+    "id": "princeton-mat520-functional-analysis-take-home-final-fall-2023",
+    "title": "Functional Analysis: Take-home Final (Fall 2023)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT595_spring_2024/MAT595_PHY508_Lecture_Notes.pdf",
+    "id": "princeton-mat595-topics-in-mathematical-physics-lecture-notes-spring-2024",
+    "title": "Topics in Mathematical Physics: Lecture Notes (Spring 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 595",
+    "course_title": "Topics in Mathematical Physics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT330_spring_2024/MAT330_Lecture_Notes.pdf",
+    "id": "princeton-mat330-complex-analysis-lecture-notes-2024",
+    "title": "Complex Analysis: Lecture Notes (2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 330",
+    "course_title": "Complex Analysis with Applications",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW1.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-1-fall-2024",
+    "title": "Functional Analysis: Homework 1 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW2.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-2-fall-2024",
+    "title": "Functional Analysis: Homework 2 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW3.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-3-fall-2024",
+    "title": "Functional Analysis: Homework 3 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW4.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-4-fall-2024",
+    "title": "Functional Analysis: Homework 4 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW5.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-5-fall-2024",
+    "title": "Functional Analysis: Homework 5 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW6.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-6-fall-2024",
+    "title": "Functional Analysis: Homework 6 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW7.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-7-fall-2024",
+    "title": "Functional Analysis: Homework 7 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW8.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-8-fall-2024",
+    "title": "Functional Analysis: Homework 8 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW9.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-9-fall-2024",
+    "title": "Functional Analysis: Homework 9 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/HW10.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-10-fall-2024",
+    "title": "Functional Analysis: Homework 10 (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/Midterm.pdf",
+    "id": "princeton-mat520-functional-analysis-midterm-fall-2024",
+    "title": "Functional Analysis: Midterm (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/Final.pdf",
+    "id": "princeton-mat520-functional-analysis-take-home-final-fall-2024",
+    "title": "Functional Analysis: Take-home Final (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2024/Final_Solution.pdf",
+    "id": "princeton-mat520-functional-analysis-final-solutions-fall-2024",
+    "title": "Functional Analysis: Final Solutions (Fall 2024)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/MAT425_Lecture_Notes.pdf",
+    "id": "princeton-mat425-measure-theory-lecture-notes-spring-2025",
+    "title": "Measure Theory: Lecture Notes (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW1.pdf",
+    "id": "princeton-mat425-measure-theory-homework-1-spring-2025",
+    "title": "Measure Theory: Homework 1 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW2.pdf",
+    "id": "princeton-mat425-measure-theory-homework-2-spring-2025",
+    "title": "Measure Theory: Homework 2 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW3.pdf",
+    "id": "princeton-mat425-measure-theory-homework-3-spring-2025",
+    "title": "Measure Theory: Homework 3 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW4.pdf",
+    "id": "princeton-mat425-measure-theory-homework-4-spring-2025",
+    "title": "Measure Theory: Homework 4 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW5.pdf",
+    "id": "princeton-mat425-measure-theory-homework-5-spring-2025",
+    "title": "Measure Theory: Homework 5 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/midterm_exam.pdf",
+    "id": "princeton-mat425-measure-theory-midterm-exam-spring-2025",
+    "title": "Measure Theory: Midterm Exam (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW6.pdf",
+    "id": "princeton-mat425-measure-theory-homework-6-spring-2025",
+    "title": "Measure Theory: Homework 6 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW6-Solutions.pdf",
+    "id": "princeton-mat425-measure-theory-homework-6-solutions-spring-2025",
+    "title": "Measure Theory: Homework 6 Solutions (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW7.pdf",
+    "id": "princeton-mat425-measure-theory-homework-7-spring-2025",
+    "title": "Measure Theory: Homework 7 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW8.pdf",
+    "id": "princeton-mat425-measure-theory-homework-8-spring-2025",
+    "title": "Measure Theory: Homework 8 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW9.pdf",
+    "id": "princeton-mat425-measure-theory-homework-9-spring-2025",
+    "title": "Measure Theory: Homework 9 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/HW10.pdf",
+    "id": "princeton-mat425-measure-theory-homework-10-spring-2025",
+    "title": "Measure Theory: Homework 10 (Spring 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 425",
+    "course_title": "Measure Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/MAT520_Lecture_Notes.pdf",
+    "id": "princeton-mat520-functional-analysis-lecture-notes-fall-2025",
+    "title": "Functional Analysis: Lecture Notes (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW1.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-1-fall-2025",
+    "title": "Functional Analysis: Homework 1 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW1_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-1-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 1 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW2.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-2-fall-2025",
+    "title": "Functional Analysis: Homework 2 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW2_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-2-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 2 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW3.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-3-fall-2025",
+    "title": "Functional Analysis: Homework 3 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW3_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-3-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 3 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW4.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-4-fall-2025",
+    "title": "Functional Analysis: Homework 4 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW4_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-4-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 4 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW5.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-5-fall-2025",
+    "title": "Functional Analysis: Homework 5 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW5_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-5-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 5 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW6.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-6-fall-2025",
+    "title": "Functional Analysis: Homework 6 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW6_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-6-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 6 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW7.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-7-fall-2025",
+    "title": "Functional Analysis: Homework 7 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW7_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-7-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 7 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW8.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-8-fall-2025",
+    "title": "Functional Analysis: Homework 8 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW8_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-8-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 8 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW9.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-9-fall-2025",
+    "title": "Functional Analysis: Homework 9 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW9_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-9-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 9 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW10.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-10-fall-2025",
+    "title": "Functional Analysis: Homework 10 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW10_Solutions.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-10-solutions-fall-2025",
+    "title": "Functional Analysis: Homework 10 Solutions (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/HW11.pdf",
+    "id": "princeton-mat520-functional-analysis-homework-11-fall-2025",
+    "title": "Functional Analysis: Homework 11 (Fall 2025)",
+    "authors": [
+      "Jacob Shapiro"
+    ],
+    "course_code": "MAT 520",
+    "course_title": "Functional Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "functional-analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISE1.PDF",
+    "id": "imperial-ise-1-problem-sheet-1",
+    "title": "ISE 1: Problem Sheet 1",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": null,
+    "course_title": "ISE 1 (First-Year Mathematics)",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISE4.PDF",
+    "id": "imperial-ise-1-problem-sheet-4",
+    "title": "ISE 1: Problem Sheet 4",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": null,
+    "course_title": "ISE 1 (First-Year Mathematics)",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISE%20Sheet%206.PDF",
+    "id": "imperial-ise-1-problem-sheet-6",
+    "title": "ISE 1: Problem Sheet 6",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": null,
+    "course_title": "ISE 1 (First-Year Mathematics)",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISE%20Sheet%207.PDF",
+    "id": "imperial-ise-1-problem-sheet-7",
+    "title": "ISE 1: Problem Sheet 7",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": null,
+    "course_title": "ISE 1 (First-Year Mathematics)",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISE%20Sheet%208.PDF",
+    "id": "imperial-ise-1-problem-sheet-8",
+    "title": "ISE 1: Problem Sheet 8",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": null,
+    "course_title": "ISE 1 (First-Year Mathematics)",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-19-test1.pdf",
+    "id": "imperial-m2pm2-algebra-ii-progress-test-1-2019",
+    "title": "Algebra II: Progress Test 1 (2019)",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-19-test2.pdf",
+    "id": "imperial-m2pm2-algebra-ii-progress-test-2-2019",
+    "title": "Algebra II: Progress Test 2 (2019)",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-19-test3.pdf",
+    "id": "imperial-m2pm2-algebra-ii-progress-test-3-2019",
+    "title": "Algebra II: Progress Test 3 (2019)",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-19-test4.pdf",
+    "id": "imperial-m2pm2-algebra-ii-progress-test-4-2019",
+    "title": "Algebra II: Progress Test 4 (2019)",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-project8.pdf",
+    "id": "imperial-m2pm2-algebra-ii-project-9",
+    "title": "Algebra II: Project 9",
+    "authors": [
+      "Martin Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "other",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/Mathematical_Methods2021.pdf",
+    "id": "imperial-mathematical-methods-lecture-notes-2021",
+    "title": "Mathematical Methods: Lecture Notes (2021)",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/answers3.pdf",
+    "id": "imperial-mathematical-methods-answers-to-problem-sheet-3-2019",
+    "title": "Mathematical Methods: Answers to Problem Sheet 3 (2019)",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/PHMethodsnotes2010.pdf",
+    "id": "imperial-mathematical-methods-lecture-notes-2010",
+    "title": "Mathematical Methods: Lecture Notes (2010)",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/tensors.pdf",
+    "id": "imperial-mathematical-methods-tensor-notes-2017",
+    "title": "Mathematical Methods: Tensor Notes (2017)",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "mathematical-physics"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/PHexam12.pdf",
+    "id": "imperial-mathematical-methods-exam-2012",
+    "title": "Mathematical Methods: Exam 2012",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "mathematical-physics"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/PHexam14.pdf",
+    "id": "imperial-mathematical-methods-exam-2014",
+    "title": "Mathematical Methods: Exam 2014",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "mathematical-physics"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/PHexam16.pdf",
+    "id": "imperial-mathematical-methods-exam-2016",
+    "title": "Mathematical Methods: Exam 2016",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "mathematical-physics"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~dturaev/PHexam18.pdf",
+    "id": "imperial-mathematical-methods-exam-2018",
+    "title": "Mathematical Methods: Exam 2018",
+    "authors": [
+      "Dmitry Turaev"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Methods",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "mathematical-physics"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/NOTES.PDF",
+    "id": "imperial-ise-2-course-notes",
+    "title": "ISE 2: Course Notes",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/ISE2005.pdf",
+    "id": "imperial-ise-2-exam-2005",
+    "title": "ISE 2: Exam 2005",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "year": 2005,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/ISE2006.pdf",
+    "id": "imperial-ise-2-exam-2006",
+    "title": "ISE 2: Exam 2006",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "year": 2006,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/ISE2006sol.pdf",
+    "id": "imperial-ise-2-solutions-2006",
+    "title": "ISE 2: Solutions 2006",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "year": 2006,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/ISE2007.pdf",
+    "id": "imperial-ise-2-exam-2007",
+    "title": "ISE 2: Exam 2007",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/ISE2007sol.pdf",
+    "id": "imperial-ise-2-solutions-2007",
+    "title": "ISE 2: Solutions 2007",
+    "authors": [
+      "Emma McCoy"
+    ],
+    "course_code": null,
+    "course_title": "ISE 2: Probability and Statistics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "year": 2007,
+    "priority": 60
   }
 ]

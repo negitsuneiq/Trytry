@@ -98,21 +98,21 @@
   {
     "university": "princeton",
     "seeds": [
-      "https://web.math.princeton.edu/~nelson/books.html",
-      "https://web.math.princeton.edu/~seri/courses/",
-      "https://web.math.princeton.edu/math_alive/notes.shtml",
-      "https://web.math.princeton.edu/~js129/teaching.html",
       "https://web.math.princeton.edu/~eprywes/S21Mat201/201notes.html",
       "https://web.math.princeton.edu/~eprywes/S22Mat215/",
       "https://web.math.princeton.edu/~eprywes/F21Mat320/",
       "https://web.math.princeton.edu/~eprywes/F22FRS/",
       "https://web.math.princeton.edu/~chang/215.html",
       "https://web.math.princeton.edu/~jonfick/2012SpMAT204/index.html",
-      "https://web.math.princeton.edu/~jmjohnso/teaching/202Bfall00/home.html"
+      "https://web.math.princeton.edu/~jmjohnso/teaching/202Bfall00/home.html",
+      "https://web.math.princeton.edu/~nelson/books.html",
+      "https://web.math.princeton.edu/~seri/courses/",
+      "https://web.math.princeton.edu/math_alive/notes.shtml",
+      "https://web.math.princeton.edu/~js129/teaching.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "maxPdfs": 320,
+    "maxPdfs": 450,
     "notes": "Princeton course pages (Prywes MAT 201 lecture notes, MAT 215, MAT 320, FRS; A. Chang MAT 215 homework; Fick MAT 204; Johnson MAT 202B old exams), each linking ~5-22 PDFs. Page links use www.math.princeton.edu, which 301-redirects to web.math.princeton.edu. Skipped: ~rvan/ home page (mixes lecture notes with research papers and talks), ~aionescu and ~aaa and ~ssaid (403), ~smorel and ~jkileel (moved away). web.math robots.txt only disallows /math_alive/ problem pages."
   },
   {
