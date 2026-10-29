@@ -17,7 +17,7 @@ const s = t(lang);
   {
     topics.map((tp, i) => (
       <li data-reveal style={`--d:${(i % 4) * 0.06}s`}>
-        <a href={href(lang, `topics/${tp.slug}`)} data-cursor={tp.msc.slice(0, 3).join(' ')}>
+        <a href={href(lang, `topics/${tp.slug}`)}>
           <svg viewBox={COVER_VIEWBOX} preserveAspectRatio="xMidYMid slice" aria-hidden="true" set:html={coverSvg(tp.slug, tp.motif)} />
           <span class="mono n">{String(i + 1).padStart(2, '0')}</span>
           <span class="name display">{tp[lang]}</span>

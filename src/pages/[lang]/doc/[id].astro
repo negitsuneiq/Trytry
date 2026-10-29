@@ -53,7 +53,7 @@ const rows: [string, string | null, string?][] = [
 
       <div class="top">
         <div class="cover-col" data-reveal>
-          <a href={primary} rel="noopener" data-cursor={doc.hosted ? 'PDF' : '↗'} target="_blank" tabindex="-1" aria-hidden="true">
+          <a href={primary} rel="noopener" target="_blank" tabindex="-1" aria-hidden="true">
             <Cover doc={doc} eager />
           </a>
         </div>
@@ -65,13 +65,13 @@ const rows: [string, string | null, string?][] = [
           {doc.description && <p class="desc muted" lang="en">{doc.description}</p>}
 
           <div class="actions">
-            <a class="btn btn-primary" href={primary} target="_blank" rel="noopener" data-magnetic="0.2">
+            <a class="btn btn-primary" href={primary} target="_blank" rel="noopener">
               {doc.hosted ? s.doc.openPdf : s.doc.openSource}
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
             {
               doc.hosted && (
-                <a class="btn" href={doc.source_url} target="_blank" rel="noopener" data-magnetic="0.2">
+                <a class="btn" href={doc.source_url} target="_blank" rel="noopener">
                   {s.doc.sourcePage}
                 </a>
               )
@@ -200,6 +200,35 @@ const rows: [string, string | null, string?][] = [
   }
   .cover-col {
     max-width: 420px;
+  }
+  /* The document as a small stack of sheets: the first page on top, two
+     more peeking out behind it. */
+  .cover-col > a {
+    position: relative;
+    display: block;
+    isolation: isolate;
+  }
+  .cover-col > a::before,
+  .cover-col > a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #fbf8f1;
+    box-shadow: var(--shadow-sheet);
+    transition: transform 0.7s var(--ease-out);
+  }
+  .cover-col > a::before {
+    transform: rotate(2.4deg) translate(8px, 4px);
+  }
+  .cover-col > a::after {
+    transform: rotate(-1.6deg) translate(-6px, 6px);
+  }
+  .cover-col > a:hover::before {
+    transform: rotate(5deg) translate(18px, 6px);
+  }
+  .cover-col > a:hover::after {
+    transform: rotate(-4deg) translate(-16px, 10px);
   }
   .title {
     font-size: clamp(2.6rem, 6.4vw, 6rem);

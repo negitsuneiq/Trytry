@@ -1,0 +1,282 @@
+---
+import { t, type Lang } from '../../i18n/strings';
+import { href } from '../../lib/paths';
+import { courseTopicFlow } from '../../lib/home';
+import { topicName, TOPIC_BY_SLUG } from '../../lib/topics';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+const flow = courseTopicFlow();
+
+// Geometry (SVG user units). Ribbons run from the course column to the topic column.
+const W = 1000;
+const TOP = 30;
+const X0 = 300; // course nodes end
+const X1 = 700; // topic nodes start
+const NODE = 8;
+const H = flow.height + TOP * 2;
+const y = (v: number) => (v + TOP).toFixed(1);
+const ribbon = (l: (typeof flow.links)[number]) => {
+  const m = (X0 + X1) / 2;
+  return `M${X0} ${y(l.sy0)}C${m} ${y(l.sy0)} ${m} ${y(l.ty0)} ${X1} ${y(l.ty0)}L${X1} ${y(l.ty1)}C${m} ${y(l.ty1)} ${m} ${y(l.sy1)} ${X0} ${y(l.sy1)}Z`;
+};
+const mid = (n: { y0: number; y1: number }) => (n.y0 + n.y1) / 2 + TOP;
+
+// Labels keep a minimum distance; a short leader joins a moved label to its node.
+function spread(ys: number[], gap: number, lo: number, hi: number) {
+  const out = [...ys];
+  for (let i = 0; i < out.length; i++) out[i] = Math.max(out[i], i ? out[i - 1] + gap : lo);
+  if (out.length && out[out.length - 1] > hi) {
+    out[out.length - 1] = hi;
+    for (let i = out.length - 2; i >= 0; i--) out[i] = Math.min(out[i], out[i + 1] - gap);
+  }
+  return out;
+}
+const srcY = spread(flow.sources.map(mid), 44, TOP + 6, TOP + flow.height - 16);
+const tgtY = spread(flow.targets.map(mid), 26, TOP + 4, TOP + flow.height - 4);
+const leader = (x0: number, y0: number, x1: number, y1: number) => (Math.abs(y1 - y0) > 3 ? `M${x0} ${y0.toFixed(1)}C${(x0 + x1) / 2} ${y0.toFixed(1)} ${(x0 + x1) / 2} ${y1.toFixed(1)} ${x1} ${y1.toFixed(1)}` : '');
+const courseHref = (key: string) => (key === 'other' ? href(lang, 'library') : `${href(lang, 'library')}?q=${encodeURIComponent(key.replace(/^author:/, ''))}`);
+const maxTopic = Math.max(...flow.targets.map((n) => n.value), 1);
+---
+
+<section class="scene flow-scene" data-scene="topics" data-label={s.home.margin.topics} aria-labelledby="flow-h">
+  <div class="flow-stage" data-flow-stage>
+    <div class="panel ink" data-flow-panel>
+      <div class="wrap inner">
+        <header class="head">
+          <h2 id="flow-h">
+            <span class="thm">{s.home.mapLabel} <b>3.</b></span>
+            <span class="display h-lg">{s.home.mapTitle}</span>
+          </h2>
+          <p class="lede">{s.home.mapLede}</p>
+        </header>
+
+        <figure class="chart">
+          <svg viewBox={`0 0 ${W} ${H}`} class="flow" data-flow role="img" aria-labelledby="flow-h">
+            <defs>
+              <clipPath id="flow-reveal">
+                <rect x="0" y="0" width={W} height={H} data-flow-clip />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#flow-reveal)">
+              {flow.links.map((l) => <path class="rib" d={ribbon(l)} data-s={l.source} data-t={l.target} />)}
+            </g>
+            {
+              flow.sources.map((n, i) => (
+                <a href={courseHref(n.key)} class="node src" data-node={n.key} data-side="s">
+                  <rect x={X0 - NODE} y={y(n.y0)} width={NODE} height={Math.max(2, n.y1 - n.y0).toFixed(1)} />
+                  <path class="lead" d={leader(X0 - NODE - 2, mid(n), X0 - NODE - 12, srcY[i])} />
+                  <text x={X0 - NODE - 16} y={(srcY[i] - 2).toFixed(1)} text-anchor="end">
+                    <tspan class="lab">{n.label}</tspan>
+                    {n.sub && (
+                      <tspan class="sub" x={X0 - NODE - 16} dy="1.3em" lang="en">
+                        {n.sub.length > 32 ? n.sub.slice(0, 31) + '…' : n.sub}
+                      </tspan>
+                    )}
+                  </text>
+                </a>
+              ))
+            }
+            {
+              flow.targets.map((n, i) => (
+                <a href={href(lang, `topics/${n.key}`)} class="node tgt" data-node={n.key} data-side="t">
+                  <rect x={X1} y={y(n.y0)} width={NODE} height={Math.max(2, n.y1 - n.y0).toFixed(1)} />
+                  <path class="lead" d={leader(X1 + NODE + 2, mid(n), X1 + NODE + 12, tgtY[i])} />
+                  <text x={X1 + NODE + 16} y={(tgtY[i] + 6).toFixed(1)}>
+                    <tspan class="lab">{topicName(n.key, lang)}</tspan>
+                    <tspan class="num" dx="10">{n.value}</tspan>
+                  </text>
+                </a>
+              ))
+            }
+          </svg>
+
+          <ul class="bars" aria-hidden="true">
+            {
+              flow.targets.map((n) => (
+                <li>
+                  <a href={href(lang, `topics/${n.key}`)}>
+                    <span class="bar-name">{topicName(n.key, lang)}</span>
+                    <span class="bar-n mono">{n.value}</span>
+                    <span class="bar" style={`--v:${(n.value / maxTopic).toFixed(3)}`} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+
+          {
+            flow.empty.length > 0 && (
+              <figcaption class="empty mono">
+                <span class="muted">{s.home.mapEmpty}:</span>{' '}
+                {flow.empty.map((tp, i) => (
+                  <>
+                    <a href={href(lang, `topics/${tp.slug}`)}>{TOPIC_BY_SLUG.get(tp.slug)![lang]}</a>
+                    {i < flow.empty.length - 1 && ' · '}
+                  </>
+                ))}
+              </figcaption>
+            )
+          }
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .flow-stage {
+    min-height: 100svh;
+    display: flex;
+    padding: var(--header-h) 0 0;
+  }
+  .panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-block: clamp(32px, 5vh, 64px);
+    will-change: clip-path;
+  }
+  .inner {
+    display: grid;
+    gap: clamp(24px, 4vh, 48px);
+  }
+  .head {
+    display: grid;
+    gap: 20px;
+  }
+  @media (min-width: 1000px) {
+    .head {
+      grid-template-columns: 7fr 5fr;
+      align-items: end;
+    }
+  }
+  .head h2 {
+    display: grid;
+    gap: 16px;
+    font-weight: 400;
+  }
+  .chart {
+    display: grid;
+    gap: 16px;
+  }
+  .flow {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 60svh;
+    margin-inline: auto;
+    overflow: visible;
+  }
+  .lead {
+    fill: none;
+    stroke: var(--fg-faint);
+    stroke-width: 1;
+  }
+  .rib {
+    fill: var(--fg);
+    fill-opacity: 0.16;
+    transition:
+      fill 0.35s,
+      fill-opacity 0.35s;
+  }
+  .node rect {
+    fill: var(--fg);
+    transition: fill 0.35s;
+  }
+  /* Whole labels are targets, not just the inked glyphs. */
+  .node rect,
+  .node text {
+    pointer-events: bounding-box;
+  }
+  .tgt rect {
+    fill: var(--accent);
+  }
+  .node text {
+    fill: var(--fg);
+    font-family: var(--font-display);
+    font-size: 21px;
+    transition: fill 0.35s;
+  }
+  .node .sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    fill: var(--fg-muted);
+  }
+  .node .num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    fill: var(--fg-muted);
+  }
+  .flow:global(.has-focus) .rib {
+    fill-opacity: 0.05;
+  }
+  .flow:global(.has-focus) .rib:global(.on) {
+    fill: var(--accent);
+    fill-opacity: 0.62;
+  }
+  .flow:global(.has-focus) .node:not(:global(.on)) text {
+    fill: var(--fg-faint);
+  }
+  .flow:global(.has-focus) .node:global(.on) .lab {
+    fill: var(--accent);
+  }
+  .node:focus-visible {
+    outline: none;
+  }
+  .node:focus-visible .lab {
+    text-decoration: underline;
+  }
+  .bars {
+    display: none;
+    list-style: none;
+    padding: 0;
+  }
+  .bars a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .bar-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+  .bar-n {
+    color: var(--fg-muted);
+    align-self: center;
+  }
+  .bar {
+    grid-column: 1 / -1;
+    height: 3px;
+    background: linear-gradient(var(--accent), var(--accent)) 0 0 / calc(var(--v) * 100%) 100% no-repeat, var(--line);
+  }
+  .empty {
+    color: var(--fg-muted);
+    line-height: 1.8;
+  }
+  .empty a {
+    color: var(--fg-faint);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+  }
+  .empty a:hover {
+    color: var(--fg);
+  }
+  /* Phones: the ribbons would be unreadable, so show the same totals as bars. */
+  @media (max-width: 759px) {
+    .flow {
+      display: none;
+    }
+    .bars {
+      display: block;
+    }
+  }
+</style>

@@ -4,7 +4,8 @@ Dünyanın en iyi 20 matematik bölümünün (QS World University Rankings by Su
 
 - Astro 7 (statik çıktı) + TypeScript, GitHub Pages'te yayınlanır.
 - Arama: MiniSearch (istemci tarafı). Filtreler URL'ye yazılır.
-- Animasyon: GSAP + ScrollTrigger + SplitText, Lenis. Hero: kütüphanesiz WebGL ile Lorenz çekeri.
+- Tasarım: kâğıt ve mürekkep, tek vurgu rengi olarak kırmızı kalem. Ana sayfa bir makale gibi ilerler (Başlık → Tanım → Lemma → İspat → Teorem → ∎); sahneler kaydırmayla sabitlenir ve sürülür (`src/scripts/home.ts`). Hareket azaltma tercihinde her şey statik ve eksiksiz görünür.
+- Animasyon: GSAP + ScrollTrigger + SplitText, Lenis. Ana sayfadaki sayfalar, akış diyagramı ve raf, `data/documents.json`'dan derleme sırasında üretilir (`src/lib/home.ts`).
 - Matematik: KaTeX (build sırasında render edilir).
 - Arayüz TR/EN; tüm metinler `src/i18n/strings.ts` içinde.
 
@@ -24,7 +25,7 @@ npm run preview
 | `npm run crawl` | `data/sources.json` içindeki kaynakları tarar, adayları `.cache/crawl/candidates.json`'a, raporu `data/crawl-report.md`'ye yazar |
 | `npm run curate` | `data/curation.json`'da onaylanan adaylardan `data/documents.json`'ı üretir, barındırılabilir PDF'leri `public/docs/` altına kopyalar |
 | `npm run verify-links` | Tüm kaynak linklerini kontrol eder, `link_status` ve `last_checked` alanlarını günceller |
-| `npm run thumbnails` | Barındırılan PDF'lerin ilk sayfasından `public/thumbs/<id>.webp` üretir |
+| `npm run thumbnails` | Barındırılan PDF'lerin ilk sayfasından `public/thumbs/<id>.webp` ve ana sayfa için küçük `public/thumbs/sm/<id>.webp` üretir |
 | `npm run validate` | Lisans politikası, dosya boyutu, SHA-256 ve şema kurallarını denetler; hata varsa build durur |
 | `npm run build` | Yukarıdaki doğrulama + önizleme + Astro build |
 

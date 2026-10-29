@@ -1,85 +1,108 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hero from '../../components/Hero.astro';
-import SectionHead from '../../components/SectionHead.astro';
-import TopicGrid from '../../components/TopicGrid.astro';
-import UniversityList from '../../components/UniversityList.astro';
-import DocCard from '../../components/DocCard.astro';
-import EmptyState from '../../components/EmptyState.astro';
+import TitleScene from '../../components/home/TitleScene.astro';
+import DefinitionScene from '../../components/home/DefinitionScene.astro';
+import DepartmentsRail from '../../components/home/DepartmentsRail.astro';
+import FlowScene from '../../components/home/FlowScene.astro';
+import ShelfScene from '../../components/home/ShelfScene.astro';
+import QedScene from '../../components/home/QedScene.astro';
 import { t, type Lang } from '../../i18n/strings';
-import { href } from '../../lib/paths';
 import { langPaths } from '../../lib/routes';
-import { TOPICS } from '../../lib/topics';
-import { universities, recentDocuments, docsForTopic } from '../../lib/data';
 
 export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
 const s = t(lang);
-
-// Featured: the eight topics with most documents (all topics tie at zero before the first crawl).
-const featured = [...TOPICS].sort((a, b) => docsForTopic(b.slug).length - docsForTopic(a.slug).length).slice(0, 8);
-const recent = recentDocuments.slice(0, 6);
 ---
 
 <Base lang={lang}>
-  <Hero lang={lang} />
+  <div class="home" data-home>
+    <TitleScene lang={lang} />
+    <DefinitionScene lang={lang} />
+    <DepartmentsRail lang={lang} />
+    <FlowScene lang={lang} />
+    <ShelfScene lang={lang} />
+    <QedScene lang={lang} />
 
-  <section class="section" aria-labelledby="topics-h">
-    <div class="wrap">
-      <SectionHead index="§ 01" title={s.home.topicsTitle} lede={s.home.topicsLede} id="topics-h">
-        <a class="btn btn-sm" href={href(lang, 'topics')} data-magnetic>{s.home.viewAll} <span class="arrow" aria-hidden="true">→</span></a>
-      </SectionHead>
-      <TopicGrid topics={featured} lang={lang} />
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="unis-h">
-    <div class="wrap">
-      <SectionHead index="§ 02" title={s.home.universitiesTitle} lede={s.home.universitiesLede} id="unis-h" />
-      {universities.length ? <UniversityList universities={universities} lang={lang} /> : <EmptyState lang={lang} />}
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="recent-h">
-    <div class="wrap">
-      <SectionHead index="§ 03" title={s.home.recentTitle} id="recent-h">
-        {
-          recent.length > 0 && (
-            <a class="btn btn-sm" href={href(lang, 'library')} data-magnetic>
-              {s.home.viewAll} <span class="arrow" aria-hidden="true">→</span>
-            </a>
-          )
-        }
-      </SectionHead>
-      {
-        recent.length ? (
-          <div class="cards">
-            {recent.map((d) => (
-              <div data-reveal>
-                <DocCard doc={d} lang={lang} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <EmptyState lang={lang} />
-        )
-      }
-    </div>
-  </section>
+    <aside class="margin" aria-hidden="true">
+      <span class="mono m-label" data-margin-label>§ 1 · {s.home.margin.title}</span>
+      <span class="m-rule"><span class="m-fill" data-margin-fill></span></span>
+      <span class="mono m-page" data-margin-page>1 / 6</span>
+    </aside>
+  </div>
 </Base>
 
+<script>
+  import { initHome } from '../../scripts/home';
+  let stop: (() => void) | null = null;
+  document.addEventListener('astro:page-load', () => {
+    stop?.();
+    stop = initHome();
+  });
+  document.addEventListener('astro:before-swap', () => {
+    stop?.();
+    stop = null;
+  });
+</script>
+
 <style>
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(28px, 4vw, 48px) clamp(14px, 2.4vw, 32px);
+  /* With motion, each pinned scene ends under the next one, which slides
+     over it like the next sheet of a manuscript. */
+  .home:global(.is-staged) :global(.def-scene),
+  .home:global(.is-staged) :global(.rail-scene) {
+    position: relative;
+    margin-top: -100svh;
+    background: var(--bg);
+    box-shadow: 0 -28px 50px -30px rgb(23 20 15 / 0.45);
   }
-  @media (min-width: 900px) {
-    .cards {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+  .home:global(.is-staged) :global(.def-scene) {
+    z-index: 2;
+  }
+  .home:global(.is-staged) :global(.rail-scene) {
+    z-index: 3;
+  }
+  .home > :global(.flow-scene),
+  .home > :global(.shelf-scene),
+  .home > :global(.qed-scene) {
+    position: relative;
+    z-index: 4;
+    background: var(--bg);
+  }
+
+  /* Running margin, like the running head of a printed paper. */
+  .margin {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    .margin {
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transform: translateY(-50%) rotate(180deg);
+      writing-mode: vertical-rl;
+      color: var(--fg-muted);
+      pointer-events: none;
+      transition: color 0.4s;
+    }
+    .margin[data-ink] {
+      color: #b2aa9a;
     }
   }
-  .cards > div {
-    display: flex;
+  .m-rule {
+    position: relative;
+    width: 1px;
+    height: 120px;
+    background: currentColor;
+    opacity: 0.4;
+  }
+  .m-fill {
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    transform-origin: 50% 100%;
+    transform: scaleY(var(--p, 0));
   }
 </style>
