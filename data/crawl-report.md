@@ -1,6 +1,6 @@
 # Crawl report
 
-Run: 2026-10-28T12:23:13.921Z  
+Run: 2026-10-29T01:21:57.604Z  
 User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
 Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
 
@@ -18,7 +18,7 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 8 | Imperial College London | 2 | 34 | 0 | 22 | 12 |
 | 9 | National University of Singapore | 0 | 0 | 0 | 0 | 0 |
 | 10 | ETH Zurich | 5 | 51 | 0 | 39 | 12 |
-| 11 | Sorbonne Université | 0 | 0 | 0 | 0 | 0 |
+| 11 | Sorbonne Université | 4 | 10 | 0 | 5 | 5 |
 | 12 | Nanyang Technological University | 1 | 46 | 0 | 43 | 3 |
 | 13 | Tsinghua University | 1 | 5 | 0 | 0 | 5 |
 | 14 | University of California, Los Angeles | 11 | 120 | 0 | 15 | 105 |
@@ -28,7 +28,7 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 18 | New York University | 21 | 120 | 0 | 111 | 9 |
 | 19 | Université Paris-Saclay | 2 | 25 | 0 | 0 | 25 |
 | 20 | California Institute of Technology | 3 | 104 | 0 | 58 | 46 |
-| | **Total** | | **1813** | **285** | **760** | **768** |
+| | **Total** | | **1823** | **285** | **763** | **775** |
 
 ## Skip and link-only reasons
 
@@ -119,6 +119,13 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 - not visited — deny-listed host (www.cambridge.org): 1
 - not visited — deny-listed host (bookstore.ams.org): 1
 - not visited — deny-listed host (www.sciencedirect.com): 1
+
+### Sorbonne Université
+
+- licence: link only: 5
+- language: fr: 3
+- HTTP 404: 2
+- not visited — deny-listed host (moodle-sciences-26.sorbonne-universite.fr): 2
 
 ### Nanyang Technological University
 
