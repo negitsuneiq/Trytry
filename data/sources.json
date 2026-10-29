@@ -67,11 +67,33 @@
     "university": "harvard",
     "seeds": [
       "https://people.math.harvard.edu/~knill/texts/index.html",
-      "https://people.math.harvard.edu/~knill/teach/index.html"
+      "https://people.math.harvard.edu/~knill/teach/index.html",
+      "https://people.math.harvard.edu/~ctm/courses.html",
+      "https://people.math.harvard.edu/~bullery/math101/",
+      "https://people.math.harvard.edu/~bullery/math122/",
+      "https://people.math.harvard.edu/~bullery/math131/",
+      "https://people.math.harvard.edu/~bullery/math137/",
+      "https://people.math.harvard.edu/~bullery/math221/",
+      "https://people.math.harvard.edu/~elkies/M55b.99/index.html",
+      "https://people.math.harvard.edu/~elkies/M55a.02/index.html",
+      "https://people.math.harvard.edu/~elkies/M55b.02/index.html",
+      "https://people.math.harvard.edu/~elkies/M55a.05/index.html",
+      "https://people.math.harvard.edu/~elkies/M55a.10/index.html",
+      "https://people.math.harvard.edu/~elkies/M55b.10/index.html",
+      "https://people.math.harvard.edu/~elkies/M55a.16/index.html",
+      "https://people.math.harvard.edu/~elkies/M55b.16/index.html",
+      "https://people.math.harvard.edu/~elkies/M55a.17/index.html",
+      "https://people.math.harvard.edu/~elkies/M55b.17/index.html",
+      "https://people.math.harvard.edu/~lurie/131.html"
     ],
-    "scope": [],
-    "maxDepth": 0,
-    "notes": "www.math.harvard.edu answers 403 to the crawler."
+    "scope": [
+      "https://people.math.harvard.edu/~ctm/home/text/class/harvard/",
+      "https://people.math.harvard.edu/~bullery/",
+      "https://people.math.harvard.edu/~elkies/"
+    ],
+    "maxDepth": 1,
+    "notes": "www.math.harvard.edu answers 403 to the crawler. Faculty course pages on people.math.harvard.edu: McMullen (courses.html indexes ~25 per-course pages, each with course.pdf notes; depth 1 follows them), Ullery (Math 101/122/131/137/221 notes and problem sets), Elkies (Math 55a/55b problem sets and notes, 8 course years), Lurie Math 131. Verified 200 HTML and PDFs reachable; robots.txt only disallows /run. Excluded: Auroux pages (403), student-written notes (Achenjang, Landesman). Roughly 400+ PDFs available, so maxPdfs raised to 200.",
+    "maxPdfs": 450
   },
   {
     "university": "princeton",
@@ -97,11 +119,20 @@
     "university": "stanford",
     "seeds": [
       "https://web.stanford.edu/class/math220a/lecturenotes.html",
-      "https://web.stanford.edu/class/math220b/lecturenotes.html"
+      "https://web.stanford.edu/class/math220b/lecturenotes.html",
+      "https://web.stanford.edu/class/stats310a/hw.html",
+      "https://web.stanford.edu/class/stats310a/handouts.html",
+      "https://web.stanford.edu/class/stats310a/pract.html",
+      "https://web.stanford.edu/class/math205a/205a-files.html",
+      "https://web.stanford.edu/~montanar/TEACHING/Math205A/hw.html",
+      "https://web.stanford.edu/~montanar/TEACHING/Stat310B/hw.html",
+      "https://web.stanford.edu/class/math51h/",
+      "https://web.stanford.edu/class/math52h/"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "math.stanford.edu and virtualmath1.stanford.edu serve an incomplete TLS chain, so Node cannot fetch them (they show up as \"disallowed by robots.txt\")."
+    "notes": "math.stanford.edu and virtualmath1.stanford.edu serve an incomplete TLS chain, so Node cannot fetch them (they show up as \"disallowed by robots.txt\"). Math 230A/Stat 310A (Montanari, Dembo lecture notes lnotes.pdf, homework, practice exams), Math 205A real analysis files and homework, Math 230B/Stat 310B homework solutions, Math 51H and 52H honors calculus handouts; all on web.stanford.edu, all verified 200 with 200 PDFs (about 90 PDFs total). math.stanford.edu not used (TLS). Many other web.stanford.edu/class/mathNNN pages (53h, 113, 120, 171, 220a) are 200 HTML but link no PDFs (Canvas).",
+    "maxPdfs": 150
   },
   {
     "university": "berkeley",
@@ -278,10 +309,12 @@
     "seeds": [
       "https://www.its.caltech.edu/~dinakar/dr_notes.html",
       "https://www.its.caltech.edu/~dinakar/ma002a-pr/1112notes.html",
-      "https://www.its.caltech.edu/~dinakar/"
+      "https://www.its.caltech.edu/~dinakar/",
+      "https://tropp.caltech.edu/courses.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "www.math.caltech.edu (term course pages) was unreachable from the crawl container."
+    "notes": "www.math.caltech.edu (term course pages) was unreachable from the crawl container. Joel Tropp (Computing and Mathematical Sciences, applied maths) course page with typed lecture notes PDFs (matrix concentration, randomized linear algebra, probability), about 15 course-note PDFs plus some slides; verified 200. www.math.caltech.edu only redirects to mathematics.caltech.edu and old ~YYYY-YY course pages there now return 404; Zuev's ACM pages link PDFs that return 404; Frank (LMU) and Bartlett (UCSB) Caltech-notes pages returned 502/404.",
+    "maxPdfs": 150
   }
 ]
