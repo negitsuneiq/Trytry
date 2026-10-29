@@ -121,9 +121,22 @@
   },
   {
     "university": "nus",
-    "seeds": [],
+    "seeds": [
+      "https://www.comp.nus.edu.sg/~fstephan/mathlogic.html",
+      "https://www.comp.nus.edu.sg/~fstephan/settheory.html",
+      "https://www.comp.nus.edu.sg/~fstephan/computability.html",
+      "https://www.comp.nus.edu.sg/~fstephan/recursiontheory.html",
+      "https://www.comp.nus.edu.sg/~fstephan/mathlogicset.html",
+      "https://blog.nus.edu.sg/matwyl/notes/",
+      "https://blog.nus.edu.sg/sprekeler/lecture-materials/",
+      "https://blog.nus.edu.sg/qianxiaoli/teaching/",
+      "https://blog.nus.edu.sg/matzdq/teaching/",
+      "https://blog.nus.edu.sg/matbwz/ma5232-modeling-and-numerical-simulations-2/"
+    ],
     "scope": [],
-    "notes": "www.math.nus.edu.sg is behind an Incapsula bot wall (JavaScript challenge), so it cannot be crawled. No public alternative found yet."
+    "notes": "www.math.nus.edu.sg is behind an Incapsula JS wall (not attempted). Seeds are NUS maths faculty pages on other NUS hosts: Frank Stephan's (Maths/CS joint) MA5219/MA3205/MA3219/MA6219 course pages on www.comp.nus.edu.sg (lecture-note books plus weekly homework PDFs), and blog.nus.edu.sg teaching pages of Wong Yan Loi, Timo Sprekeler, Qianxiao Li, De-Qi Zhang and Weizhu Bao. blog.nus.edu.sg PDF links 302-redirect to bpb-us-w2.wpmucdn.com (200 application/pdf) and its robots.txt sets Crawl-delay: 30.",
+    "maxDepth": 0,
+    "maxPdfs": 150
   },
   {
     "university": "eth-zurich",
@@ -222,12 +235,21 @@
   {
     "university": "paris-saclay",
     "seeds": [
-      "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/teaching.html",
-      "https://www.imo.universite-paris-saclay.fr/~patrick.massot/en/enseignement/"
+      "https://www.imo.universite-paris-saclay.fr/~frederic.paulin/notescours/liste_notescours.html",
+      "https://www.imo.universite-paris-saclay.fr/~nicolas.curien/enseignement.html",
+      "https://www.imo.universite-paris-saclay.fr/~anne.moreau/",
+      "https://www.imo.universite-paris-saclay.fr/~christophe.giraud/Orsay/MathIA2.html",
+      "https://www.imo.universite-paris-saclay.fr/~stephane.nonnenmacher/enseign/Enseignement.html",
+      "https://www.imo.universite-paris-saclay.fr/~david.harari/enseignement/"
     ],
-    "scope": [],
-    "maxDepth": 0,
-    "notes": "Most material is in French and is skipped by the language check."
+    "scope": [
+      "http://www.math.u-psud.fr/%7Eharari/enseignement/",
+      "http://www.math.u-psud.fr/~harari/enseignement/",
+      "https://www.imo.universite-paris-saclay.fr/~david.harari/enseignement/"
+    ],
+    "maxDepth": 1,
+    "notes": "IMO Orsay faculty pages with English M2 material: Paulin (English TD/DM sheets for M2 AAG ergodic theory, dynamics, groups and geometry; the main notes are in French), Curien (English probability lecture notes), Moreau (English M2 representation theory and Lie algebra notes and problems; her homepage also lists a few research PDFs), Giraud (M1 Mathematics for AI notes), Nonnenmacher (semiclassical analysis notes; the rest is French) and Harari's teaching index (depth 1 into per-course subpages, e.g. the English M2 Brauer group notes and exam). No robots.txt on the IMO host. Pansu, Thomine, Le Gall and Massot are French-only. Léautaud's site (leautaud.perso.math.cnrs.fr) was skipped because it is mostly research papers. No usable LMV or ENS Paris-Saclay pages were found.",
+    "maxPdfs": 150
   },
   {
     "university": "caltech",
