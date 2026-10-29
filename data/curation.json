@@ -5309,342 +5309,6 @@
     "priority": 60
   },
   {
-    "url": "https://math.berkeley.edu/~evans/math%20170%20notes.pdf",
-    "id": "berkeley-evans-math-170-mathematical-methods-for-optimization",
-    "title": "Mathematical Methods for Optimization (Math 170)",
-    "authors": [
-      "Lawrence C. Evans"
-    ],
-    "course_code": "MATH 170",
-    "course_title": "Mathematical Methods for Optimization",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "optimization"
-    ],
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~evans/math%20195%20notes.pdf",
-    "id": "berkeley-evans-math-195-mathematical-methods-for-optimization",
-    "title": "Mathematical Methods for Optimization (Math 195)",
-    "authors": [
-      "Lawrence C. Evans"
-    ],
-    "course_code": "MATH 195",
-    "course_title": "Mathematical Methods for Optimization",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "optimization"
-    ],
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~evans/control.course.pdf",
-    "id": "berkeley-an-introduction-to-mathematical-optimal-control-theory",
-    "title": "An Introduction to Mathematical Optimal Control Theory",
-    "authors": [
-      "Lawrence C. Evans"
-    ],
-    "course_code": null,
-    "course_title": null,
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "optimization",
-      "differential-equations"
-    ],
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~evans/entropy.and.PDE.pdf",
-    "id": "berkeley-entropy-and-partial-differential-equations",
-    "title": "Entropy and Partial Differential Equations",
-    "authors": [
-      "Lawrence C. Evans"
-    ],
-    "course_code": null,
-    "course_title": null,
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "differential-equations",
-      "analysis"
-    ],
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~btw/110-script.pdf",
-    "id": "berkeley-math-110-linear-algebra-lecture-notes",
-    "title": "Linear Algebra: Lecture Notes",
-    "authors": [],
-    "course_code": "MATH 110",
-    "course_title": "Linear Algebra",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/colimits.pdf",
-    "id": "berkeley-math-250b-colimits-and-localization",
-    "title": "Colimits and Localization",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/Lazard.pdf",
-    "id": "berkeley-math-250b-lazards-theorem",
-    "title": "Lazard’s Theorem",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/associated.pdf",
-    "id": "berkeley-math-250b-associated-primes",
-    "title": "Associated Primes",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/flatness.pdf",
-    "id": "berkeley-math-250b-flatness",
-    "title": "Flatness",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/dimension.pdf",
-    "id": "berkeley-math-250b-dimension-of-local-rings",
-    "title": "Dimension of Local Rings",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/regular.pdf",
-    "id": "berkeley-math-250b-regular-local-rings",
-    "title": "Regular Local Rings",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/depth.pdf",
-    "id": "berkeley-math-250b-depth-and-cohomology",
-    "title": "Depth and Cohomology",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/koszul.pdf",
-    "id": "berkeley-math-250b-koszul-complexes",
-    "title": "Koszul Complexes",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 250B",
-    "course_title": "Commutative Algebra",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2016,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/differentialsandsmoothness.pdf",
-    "id": "berkeley-math-256b-differentials-and-smoothness",
-    "title": "Differentials and Smoothness",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 256B",
-    "course_title": "Algebraic Geometry",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebraic-geometry"
-    ],
-    "year": 2017,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/vanishingcoh.pdf",
-    "id": "berkeley-math-256b-vanishing-of-cohomology",
-    "title": "Vanishing of Cohomology",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 256B",
-    "course_title": "Algebraic Geometry",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebraic-geometry"
-    ],
-    "year": 2017,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/basechange.pdf",
-    "id": "berkeley-math-256b-cohomology-and-base-change",
-    "title": "Cohomology and Base Change",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 256B",
-    "course_title": "Algebraic Geometry",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebraic-geometry"
-    ],
-    "year": 2017,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_254-07/KronWeb.pdf",
-    "id": "berkeley-math-254-the-kronecker-weber-theorem",
-    "title": "The Kronecker–Weber Theorem",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 254",
-    "course_title": "Number Theory",
-    "level": "graduate",
-    "type": "lecture-notes",
-    "topics": [
-      "number-theory"
-    ],
-    "year": 2007,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/trace.pdf",
-    "id": "berkeley-math-110-traces-of-operators-and-matrices",
-    "title": "Traces of Operators and Matrices",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 110",
-    "course_title": "Linear Algebra",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2007,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/determinants.pdf",
-    "id": "berkeley-math-110-determinants-of-operators-and-matrices",
-    "title": "Determinants of Operators and Matrices",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 110",
-    "course_title": "Linear Algebra",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2007,
-    "priority": 60
-  },
-  {
-    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/determinants2.pdf",
-    "id": "berkeley-math-110-determinants-of-operators-and-matrices-ii",
-    "title": "Determinants of Operators and Matrices II",
-    "authors": [
-      "Arthur Ogus"
-    ],
-    "course_code": "MATH 110",
-    "course_title": "Linear Algebra",
-    "level": "undergraduate",
-    "type": "lecture-notes",
-    "topics": [
-      "algebra"
-    ],
-    "year": 2007,
-    "priority": 60
-  },
-  {
     "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISENOTES.PDF",
     "id": "imperial-ise-i-brief-lecture-notes",
     "title": "ISE I: Brief Lecture Notes",
@@ -9339,6 +9003,3216 @@
       "statistics"
     ],
     "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/Mathematical%20Hygiene.pdf",
+    "id": "harvard-math-101-mathematical-hygiene",
+    "title": "Math 101: Mathematical Hygiene",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "logic"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS10.pdf",
+    "id": "harvard-math-101-problem-set-10",
+    "title": "Math 101: Problem Set 10",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS9.pdf",
+    "id": "harvard-math-101-problem-set-9",
+    "title": "Math 101: Problem Set 9",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS8.pdf",
+    "id": "harvard-math-101-problem-set-8",
+    "title": "Math 101: Problem Set 8",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS7.pdf",
+    "id": "harvard-math-101-problem-set-7",
+    "title": "Math 101: Problem Set 7",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS6.pdf",
+    "id": "harvard-math-101-problem-set-6",
+    "title": "Math 101: Problem Set 6",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS5.pdf",
+    "id": "harvard-math-101-problem-set-5",
+    "title": "Math 101: Problem Set 5",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS4.pdf",
+    "id": "harvard-math-101-problem-set-4",
+    "title": "Math 101: Problem Set 4",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS3.pdf",
+    "id": "harvard-math-101-problem-set-3",
+    "title": "Math 101: Problem Set 3",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS2.pdf",
+    "id": "harvard-math-101-problem-set-2",
+    "title": "Math 101: Problem Set 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/PS1.pdf",
+    "id": "harvard-math-101-problem-set-1",
+    "title": "Math 101: Problem Set 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/Exam1.pdf",
+    "id": "harvard-math-101-midterm-exam-1",
+    "title": "Math 101: Midterm Exam 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/Exam2.pdf",
+    "id": "harvard-math-101-midterm-exam-2",
+    "title": "Math 101: Midterm Exam 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math101/Exam3.pdf",
+    "id": "harvard-math-101-final-exam",
+    "title": "Math 101: Final Exam",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 101",
+    "course_title": "Sets, Groups, and Topology",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Midterm%20study%20guide.pdf",
+    "id": "harvard-math-122-midterm-study-guide",
+    "title": "Math 122: Midterm Study Guide",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "other",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS1.pdf",
+    "id": "harvard-math-122-problem-set-1",
+    "title": "Math 122: Problem Set 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS2.pdf",
+    "id": "harvard-math-122-problem-set-2",
+    "title": "Math 122: Problem Set 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS3.pdf",
+    "id": "harvard-math-122-problem-set-3",
+    "title": "Math 122: Problem Set 3",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS4.pdf",
+    "id": "harvard-math-122-problem-set-4",
+    "title": "Math 122: Problem Set 4",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS5.pdf",
+    "id": "harvard-math-122-problem-set-5",
+    "title": "Math 122: Problem Set 5",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS6.pdf",
+    "id": "harvard-math-122-problem-set-6",
+    "title": "Math 122: Problem Set 6",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS7.pdf",
+    "id": "harvard-math-122-problem-set-7",
+    "title": "Math 122: Problem Set 7",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS8.pdf",
+    "id": "harvard-math-122-problem-set-8",
+    "title": "Math 122: Problem Set 8",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS9.pdf",
+    "id": "harvard-math-122-problem-set-9",
+    "title": "Math 122: Problem Set 9",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS10.pdf",
+    "id": "harvard-math-122-problem-set-10",
+    "title": "Math 122: Problem Set 10",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/PS11.pdf",
+    "id": "harvard-math-122-problem-set-11-extra-credit",
+    "title": "Math 122: Problem Set 11 (Extra Credit)",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%201_%20Binary%20operations.pdf",
+    "id": "harvard-math-122-section-1-binary-operations",
+    "title": "Math 122: Section 1, Binary Operations",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%202_%20Groups.pdf",
+    "id": "harvard-math-122-section-2-groups",
+    "title": "Math 122: Section 2, Groups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%204_%20Symmetric%20groups.pdf",
+    "id": "harvard-math-122-section-4-symmetric-groups",
+    "title": "Math 122: Section 4, Symmetric Groups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%205_%20Group%20homomorphisms.pdf",
+    "id": "harvard-math-122-section-5-group-homomorphisms",
+    "title": "Math 122: Section 5, Group Homomorphisms",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%206_%20Group%20actions.pdf",
+    "id": "harvard-math-122-section-6-group-actions",
+    "title": "Math 122: Section 6, Group Actions",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%207_%20The%20subgroup%20criterion.pdf",
+    "id": "harvard-math-122-section-7-the-subgroup-criterion",
+    "title": "Math 122: Section 7, The Subgroup Criterion",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%208_%20Centralizers,%20normalizers,%20stabilizers.pdf",
+    "id": "harvard-math-122-section-8-centralizers-normalizers-stabilizers",
+    "title": "Math 122: Section 8, Centralizers, Normalizers, Stabilizers",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%209_%20Cyclic%20groups%20and%20cyclic%20subgroups.pdf",
+    "id": "harvard-math-122-section-9-cyclic-groups-and-cyclic-subgroups",
+    "title": "Math 122: Section 9, Cyclic Groups and Cyclic Subgroups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2010_%20Subgroups%20generated%20by%20subsets%20of%20a%20group.pdf",
+    "id": "harvard-math-122-section-10-subgroups-generated-by-subsets-of-a-group",
+    "title": "Math 122: Section 10, Subgroups Generated by Subsets of a Group",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2011_%20Quotient%20groups%20and%20normal%20subgroups.pdf",
+    "id": "harvard-math-122-section-11-quotient-groups-and-normal-subgroups",
+    "title": "Math 122: Section 11, Quotient Groups and Normal Subgroups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2012_%20Cosets%20and%20orders%20of%20subgroups.pdf",
+    "id": "harvard-math-122-section-12-cosets-and-orders-of-subgroups",
+    "title": "Math 122: Section 12, Cosets and Orders of Subgroups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2013_%20The%20isomorphism%20theorems.pdf",
+    "id": "harvard-math-122-section-13-the-isomorphism-theorems",
+    "title": "Math 122: Section 13, The Isomorphism Theorems",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2014_%20The%20alternating%20group.pdf",
+    "id": "harvard-math-122-section-14-the-alternating-group",
+    "title": "Math 122: Section 14, The Alternating Group",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2015_%20Group%20actions%20and%20permutation%20representations.pdf",
+    "id": "harvard-math-122-section-15-group-actions-and-permutation-representations",
+    "title": "Math 122: Section 15, Group Actions and Permutation Representations",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2016_%20Groups%20acting%20on%20themselves%20by%20left%20multiplication%20and%20Cayleys%20theorem.pdf",
+    "id": "harvard-math-122-section-16-groups-acting-on-themselves-by-left-multiplication-a",
+    "title": "Math 122: Section 16, Groups Acting on Themselves by Left Multiplication and Cayley's Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2017_%20Groups%20acting%20on%20themselves%20by%20conjugation%20and%20the%20class%20equation.pdf",
+    "id": "harvard-math-122-section-17-groups-acting-on-themselves-by-conjugation-and-the-c",
+    "title": "Math 122: Section 17, Groups Acting on Themselves by Conjugation and the Class Equation",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2018_%20Sylows%20Theorem.pdf",
+    "id": "harvard-math-122-section-18-sylow-s-theorem",
+    "title": "Math 122: Section 18, Sylow's Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2019_%20Rings.pdf",
+    "id": "harvard-math-122-section-19-rings",
+    "title": "Math 122: Section 19, Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2020_%20Polynomial%20rings.pdf",
+    "id": "harvard-math-122-section-20-polynomial-rings",
+    "title": "Math 122: Section 20, Polynomial Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2021_%20Ring%20homomorphisms%20and%20quotient%20rings.pdf",
+    "id": "harvard-math-122-section-21-ring-homomorphisms-and-quotient-rings",
+    "title": "Math 122: Section 21, Ring Homomorphisms and Quotient Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2022_%20Properties%20of%20ideals.pdf",
+    "id": "harvard-math-122-section-22-properties-of-ideals",
+    "title": "Math 122: Section 22, Properties of Ideals",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2023_%20Euclidean%20domains.pdf",
+    "id": "harvard-math-122-section-23-euclidean-domains",
+    "title": "Math 122: Section 23, Euclidean Domains",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2024_%20Principal%20ideal%20domains.pdf",
+    "id": "harvard-math-122-section-24-principal-ideal-domains",
+    "title": "Math 122: Section 24, Principal Ideal Domains",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2025_%20Unique%20factorization%20domains.pdf",
+    "id": "harvard-math-122-section-25-unique-factorization-domains",
+    "title": "Math 122: Section 25, Unique Factorization Domains",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2026_%20Polynomial%20rings%20revisited.pdf",
+    "id": "harvard-math-122-section-26-polynomial-rings-revisited",
+    "title": "Math 122: Section 26, Polynomial Rings Revisited",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2027_%20Fields%20of%20fractions%20and%20Gauss%20Lemma.pdf",
+    "id": "harvard-math-122-section-27-fields-of-fractions-and-gauss-lemma",
+    "title": "Math 122: Section 27, Fields of Fractions and Gauss' Lemma",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math122/Section%2028_%20Irreducibility%20criteria.pdf",
+    "id": "harvard-math-122-section-28-irreducibility-criteria",
+    "title": "Math 122: Section 28, Irreducibility Criteria",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 122",
+    "course_title": "Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS1.pdf",
+    "id": "harvard-math-131-problem-set-1",
+    "title": "Math 131: Problem Set 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS2.pdf",
+    "id": "harvard-math-131-problem-set-2",
+    "title": "Math 131: Problem Set 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS3.pdf",
+    "id": "harvard-math-131-problem-set-3",
+    "title": "Math 131: Problem Set 3",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS6.pdf",
+    "id": "harvard-math-131-problem-set-6",
+    "title": "Math 131: Problem Set 6",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS7.1.pdf",
+    "id": "harvard-math-131-problem-set-7-part-1",
+    "title": "Math 131: Problem Set 7, Part 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS8.pdf",
+    "id": "harvard-math-131-problem-set-8",
+    "title": "Math 131: Problem Set 8",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS9.pdf",
+    "id": "harvard-math-131-problem-set-9",
+    "title": "Math 131: Problem Set 9",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS10.pdf",
+    "id": "harvard-math-131-problem-set-10",
+    "title": "Math 131: Problem Set 10",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/PS11.pdf",
+    "id": "harvard-math-131-problem-set-11",
+    "title": "Math 131: Problem Set 11",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%204_%20Bases%20and%20lots%20of%20examples.pdf",
+    "id": "harvard-math-131-section-4-bases-and-lots-of-examples",
+    "title": "Math 131: Section 4, Bases and Lots of Examples",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%205_%20Continuity%20and%20homeomorphisms.pdf",
+    "id": "harvard-math-131-section-5-continuity-and-homeomorphisms",
+    "title": "Math 131: Section 5, Continuity and Homeomorphisms",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%206_%20Closed%20sets%20and%20limit%20points.pdf",
+    "id": "harvard-math-131-section-6-closed-sets-and-limit-points",
+    "title": "Math 131: Section 6, Closed Sets and Limit Points",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%207_%20Topologies%20on%20infinite%20products.pdf",
+    "id": "harvard-math-131-section-7-topologies-on-infinite-products",
+    "title": "Math 131: Section 7, Topologies on Infinite Products",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%208_%20Connected%20spaces.pdf",
+    "id": "harvard-math-131-section-8-connected-spaces",
+    "title": "Math 131: Section 8, Connected Spaces",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%209_%20Compact%20spaces.pdf",
+    "id": "harvard-math-131-section-9-compact-spaces",
+    "title": "Math 131: Section 9, Compact Spaces",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2010_%20Compactness%20in%20metric%20spaces.pdf",
+    "id": "harvard-math-131-section-10-compactness-in-metric-spaces",
+    "title": "Math 131: Section 10, Compactness in Metric Spaces",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2011_%20Compactifications%20and%20local%20compactness.pdf",
+    "id": "harvard-math-131-section-11-compactifications-and-local-compactness",
+    "title": "Math 131: Section 11, Compactifications and Local Compactness",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2012_%20Categories,%20groupoids,%20and%20functors.pdf",
+    "id": "harvard-math-131-section-12-categories-groupoids-and-functors",
+    "title": "Math 131: Section 12, Categories, Groupoids, and Functors",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2013_%20Paths.pdf",
+    "id": "harvard-math-131-section-13-paths",
+    "title": "Math 131: Section 13, Paths",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2014_%20The%20fundamental%20group.pdf",
+    "id": "harvard-math-131-section-14-the-fundamental-group",
+    "title": "Math 131: Section 14, The Fundamental Group",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2015_%20Covering%20spaces%20and%20path%20lifting.pdf",
+    "id": "harvard-math-131-section-15-covering-spaces-and-path-lifting",
+    "title": "Math 131: Section 15, Covering Spaces and Path Lifting",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2016_%20Quotients%20and%20gluing.pdf",
+    "id": "harvard-math-131-section-16-quotients-and-gluing",
+    "title": "Math 131: Section 16, Quotients and Gluing",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2017_%20Global%20topology%201%20-%20Fixed%20points%20and%20retractions.pdf",
+    "id": "harvard-math-131-section-17-global-topology-1-fixed-points-and-retractions",
+    "title": "Math 131: Section 17, Global Topology 1 - Fixed Points and Retractions",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2018_%20Global%20topology%202%20-%20Antipodes%20and%20Borsuk-Ulam.pdf",
+    "id": "harvard-math-131-section-18-global-topology-2-antipodes-and-borsuk-ulam",
+    "title": "Math 131: Section 18, Global Topology 2 - Antipodes and Borsuk-Ulam",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2019_%20Deformation%20retracts%20and%20homotopy%20equivalence.pdf",
+    "id": "harvard-math-131-section-19-deformation-retracts-and-homotopy-equivalence",
+    "title": "Math 131: Section 19, Deformation Retracts and Homotopy Equivalence",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2020_%20Introduction%20to%20van%20Kampen%20and%20more%20fundamental%20group%20calculations.pdf",
+    "id": "harvard-math-131-section-20-introduction-to-van-kampen-and-more-fundamental-grou",
+    "title": "Math 131: Section 20, Introduction to Van Kampen and More Fundamental Group Calculations",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2021_%20Equivalence%20of%20covering%20spaces.pdf",
+    "id": "harvard-math-131-section-21-equivalence-of-covering-spaces",
+    "title": "Math 131: Section 21, Equivalence of Covering Spaces",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2022_%20Crash%20course%20in%20free%20products%20of%20groups.pdf",
+    "id": "harvard-math-131-section-22-crash-course-in-free-products-of-groups",
+    "title": "Math 131: Section 22, Crash Course in Free Products of Groups",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Section%2023_%20The%20Seifert-van%20Kampen%20Theorem%20and%20more%20calculations.pdf",
+    "id": "harvard-math-131-section-23-the-seifert-van-kampen-theorem-and-more-calculations",
+    "title": "Math 131: Section 23, The Seifert-Van Kampen Theorem and More Calculations",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Midterm.pdf",
+    "id": "harvard-math-131-midterm-exam",
+    "title": "Math 131: Midterm Exam",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math131/Final.pdf",
+    "id": "harvard-math-131-final-exam",
+    "title": "Math 131: Final Exam",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 131",
+    "course_title": "Topology I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS1.pdf",
+    "id": "harvard-math-137-problem-set-1",
+    "title": "Math 137: Problem Set 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS2.pdf",
+    "id": "harvard-math-137-problem-set-2",
+    "title": "Math 137: Problem Set 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS3.pdf",
+    "id": "harvard-math-137-problem-set-3",
+    "title": "Math 137: Problem Set 3",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS4.pdf",
+    "id": "harvard-math-137-problem-set-4",
+    "title": "Math 137: Problem Set 4",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS5.pdf",
+    "id": "harvard-math-137-problem-set-5",
+    "title": "Math 137: Problem Set 5",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/PS6.pdf",
+    "id": "harvard-math-137-problem-set-6",
+    "title": "Math 137: Problem Set 6",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%201_%20What%20is%20algebraic%20geometry.pdf",
+    "id": "harvard-math-137-section-1-what-is-algebraic-geometry",
+    "title": "Math 137: Section 1, What Is Algebraic Geometry?",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%202_%20Algebraic%20sets.pdf",
+    "id": "harvard-math-137-section-2-algebraic-sets",
+    "title": "Math 137: Section 2, Algebraic Sets",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%203_%20The%20ideal%20of%20a%20subset%20of%20affine%20space.pdf",
+    "id": "harvard-math-137-section-3-the-ideal-of-a-subset-of-affine-space",
+    "title": "Math 137: Section 3, The Ideal of a Subset of Affine Space",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%204_%20Irreducibility%20and%20the%20Hilbert%20Basis%20Theorem.pdf",
+    "id": "harvard-math-137-section-4-irreducibility-and-the-hilbert-basis-theorem",
+    "title": "Math 137: Section 4, Irreducibility and the Hilbert Basis Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%205_%20Hilberts%20Nullstellensatz.pdf",
+    "id": "harvard-math-137-section-5-hilbert-s-nullstellensatz",
+    "title": "Math 137: Section 5, Hilbert's Nullstellensatz",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%206_%20Algebra%20detour.pdf",
+    "id": "harvard-math-137-section-6-algebra-detour",
+    "title": "Math 137: Section 6, Algebra Detour",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%207_%20Affine%20varieties%20and%20coordinate%20rings.pdf",
+    "id": "harvard-math-137-section-7-affine-varieties-and-coordinate-rings",
+    "title": "Math 137: Section 7, Affine Varieties and Coordinate Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%208_%20Regular%20maps.pdf",
+    "id": "harvard-math-137-section-8-regular-maps",
+    "title": "Math 137: Section 8, Regular Maps",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%209_%20Rational%20functions%20and%20local%20rings.pdf",
+    "id": "harvard-math-137-section-9-rational-functions-and-local-rings",
+    "title": "Math 137: Section 9, Rational Functions and Local Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2010_%20Affine%20plane%20curves.pdf",
+    "id": "harvard-math-137-section-10-affine-plane-curves",
+    "title": "Math 137: Section 10, Affine Plane Curves",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2011_%20Discrete%20valuation%20rings%20and%20multiplicities.pdf",
+    "id": "harvard-math-137-section-11-discrete-valuation-rings-and-multiplicities",
+    "title": "Math 137: Section 11, Discrete Valuation Rings and Multiplicities",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2012_%20Intersection%20numbers.pdf",
+    "id": "harvard-math-137-section-12-intersection-numbers",
+    "title": "Math 137: Section 12, Intersection Numbers",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2013_%20Projective%20space.pdf",
+    "id": "harvard-math-137-section-13-projective-space",
+    "title": "Math 137: Section 13, Projective Space",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2014_%20Projective%20algebraic%20sets.pdf",
+    "id": "harvard-math-137-section-14-projective-algebraic-sets",
+    "title": "Math 137: Section 14, Projective Algebraic Sets",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2015_%20Homogeneous%20coordinate%20rings%20and%20rational%20functions.pdf",
+    "id": "harvard-math-137-section-15-homogeneous-coordinate-rings-and-rational-functions",
+    "title": "Math 137: Section 15, Homogeneous Coordinate Rings and Rational Functions",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2016_%20Affine%20and%20projective%20varieties.pdf",
+    "id": "harvard-math-137-section-16-affine-and-projective-varieties",
+    "title": "Math 137: Section 16, Affine and Projective Varieties",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2017_%20Morphism%20of%20projective%20varieties.pdf",
+    "id": "harvard-math-137-section-17-morphism-of-projective-varieties",
+    "title": "Math 137: Section 17, Morphism of Projective Varieties",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2018_%20Projective%20plane%20curves.pdf",
+    "id": "harvard-math-137-section-18-projective-plane-curves",
+    "title": "Math 137: Section 18, Projective Plane Curves",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2019_%20Linear%20systems%20of%20curves.pdf",
+    "id": "harvard-math-137-section-19-linear-systems-of-curves",
+    "title": "Math 137: Section 19, Linear Systems of Curves",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2020_%20Bezouts%20Theorem.pdf",
+    "id": "harvard-math-137-section-20-bezout-s-theorem",
+    "title": "Math 137: Section 20, Bézout's Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2021_%20Abstract%20varieties.pdf",
+    "id": "harvard-math-137-section-21-abstract-varieties",
+    "title": "Math 137: Section 21, Abstract Varieties",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2022_%20Rational%20maps%20and%20dimension.pdf",
+    "id": "harvard-math-137-section-22-rational-maps-and-dimension",
+    "title": "Math 137: Section 22, Rational Maps and Dimension",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math137/Section%2024_%20Blowing%20up%20a%20point%20in%20the%20plane.pdf",
+    "id": "harvard-math-137-section-24-blowing-up-a-point-in-the-plane",
+    "title": "Math 137: Section 24, Blowing Up a Point in the Plane",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 137",
+    "course_title": "Algebraic Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS1.pdf",
+    "id": "harvard-math-221-problem-set-1",
+    "title": "Math 221: Problem Set 1",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS2.pdf",
+    "id": "harvard-math-221-problem-set-2",
+    "title": "Math 221: Problem Set 2",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS3.pdf",
+    "id": "harvard-math-221-problem-set-3",
+    "title": "Math 221: Problem Set 3",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS4.pdf",
+    "id": "harvard-math-221-problem-set-4",
+    "title": "Math 221: Problem Set 4",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS5.pdf",
+    "id": "harvard-math-221-problem-set-5",
+    "title": "Math 221: Problem Set 5",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/PS6.pdf",
+    "id": "harvard-math-221-problem-set-6",
+    "title": "Math 221: Problem Set 6",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%201_%20Introduction.pdf",
+    "id": "harvard-math-221-section-1-introduction",
+    "title": "Math 221: Section 1, Introduction",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%202_%20Noetherian%20rings%20and%20the%20Hilbert%20Basis%20Theorem.pdf",
+    "id": "harvard-math-221-section-2-noetherian-rings-and-the-hilbert-basis-theorem",
+    "title": "Math 221: Section 2, Noetherian Rings and the Hilbert Basis Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%203_%20Graded%20modules%20and%20Hilbert%20functions.pdf",
+    "id": "harvard-math-221-section-3-graded-modules-and-hilbert-functions",
+    "title": "Math 221: Section 3, Graded Modules and Hilbert Functions",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%204_%20Localization.pdf",
+    "id": "harvard-math-221-section-4-localization",
+    "title": "Math 221: Section 4, Localization",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%205_%20Hom%20and%20tensor.pdf",
+    "id": "harvard-math-221-section-5-hom-and-tensor",
+    "title": "Math 221: Section 5, Hom and Tensor",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%206_%20The%20spectrum%20of%20a%20ring.pdf",
+    "id": "harvard-math-221-section-6-the-spectrum-of-a-ring",
+    "title": "Math 221: Section 6, The Spectrum of a Ring",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%207_%20The%20length%20of%20a%20module.pdf",
+    "id": "harvard-math-221-section-7-the-length-of-a-module",
+    "title": "Math 221: Section 7, The Length of a Module",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%208_%20Associated%20primes.pdf",
+    "id": "harvard-math-221-section-8-associated-primes",
+    "title": "Math 221: Section 8, Associated Primes",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%209_%20Prime%20avoidance.pdf",
+    "id": "harvard-math-221-section-9-prime-avoidance",
+    "title": "Math 221: Section 9, Prime Avoidance",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2010_%20Primary%20decomposition.pdf",
+    "id": "harvard-math-221-section-10-primary-decomposition",
+    "title": "Math 221: Section 10, Primary Decomposition",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2011_%20Cayley-Hamilton,%20integrality,%20and%20Nakayamas%20lemma.pdf",
+    "id": "harvard-math-221-section-11-cayley-hamilton-integrality-and-nakayama-s-lemma",
+    "title": "Math 221: Section 11, Cayley-Hamilton, Integrality, and Nakayama's Lemma",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2012_%20Normal%20rings%20and%20normalization.pdf",
+    "id": "harvard-math-221-section-12-normal-rings-and-normalization",
+    "title": "Math 221: Section 12, Normal Rings and Normalization",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2013_%20Lying%20over%20and%20going%20up%20theorems.pdf",
+    "id": "harvard-math-221-section-13-lying-over-and-going-up-theorems",
+    "title": "Math 221: Section 13, Lying Over and Going Up Theorems",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2014_%20The%20Nullstellensatz%20and%20a%20little%20classical%20algebraic%20geometry.pdf",
+    "id": "harvard-math-221-section-14-the-nullstellensatz-and-a-little-classical-algebraic",
+    "title": "Math 221: Section 14, The Nullstellensatz and a Little Classical Algebraic Geometry",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2015_%20Filtrations%20and%20associated%20graded%20modules.pdf",
+    "id": "harvard-math-221-section-15-filtrations-and-associated-graded-modules",
+    "title": "Math 221: Section 15, Filtrations and Associated Graded Modules",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2016_%20The%20blowup%20algebra%20and%20the%20tangent%20cone.pdf",
+    "id": "harvard-math-221-section-16-the-blowup-algebra-and-the-tangent-cone",
+    "title": "Math 221: Section 16, The Blowup Algebra and the Tangent Cone",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2017_%20Artin-Rees%20and%20the%20Krull%20Intersection%20Theorem.pdf",
+    "id": "harvard-math-221-section-17-artin-rees-and-the-krull-intersection-theorem",
+    "title": "Math 221: Section 17, Artin-Rees and the Krull Intersection Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2018_%20Flat%20families%20and%20Tor.pdf",
+    "id": "harvard-math-221-section-18-flat-families-and-tor",
+    "title": "Math 221: Section 18, Flat Families and Tor",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2019_%20Completions%20of%20rings.pdf",
+    "id": "harvard-math-221-section-19-completions-of-rings",
+    "title": "Math 221: Section 19, Completions of Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2020_%20Hensels%20Lemma.pdf",
+    "id": "harvard-math-221-section-20-hensel-s-lemma",
+    "title": "Math 221: Section 20, Hensel's Lemma",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2021_%20Introduction%20to%20dimension.pdf",
+    "id": "harvard-math-221-section-21-introduction-to-dimension",
+    "title": "Math 221: Section 21, Introduction to Dimension",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2022_%20Krulls%20principal%20ideal%20theorem.pdf",
+    "id": "harvard-math-221-section-22-krull-s-principal-ideal-theorem",
+    "title": "Math 221: Section 22, Krull's Principal Ideal Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2023_%20Systems%20of%20parameters.pdf",
+    "id": "harvard-math-221-section-23-systems-of-parameters",
+    "title": "Math 221: Section 23, Systems of Parameters",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2024_%20Going%20down%20theorem.pdf",
+    "id": "harvard-math-221-section-24-going-down-theorem",
+    "title": "Math 221: Section 24, Going Down Theorem",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~bullery/math221/Section%2025_%20Regular%20local%20rings.pdf",
+    "id": "harvard-math-221-section-25-regular-local-rings",
+    "title": "Math 221: Section 25, Regular Local Rings",
+    "authors": [
+      "Brian Ullery"
+    ],
+    "course_code": "MATH 221",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "algebraic-geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~elkies/M55a.10/tensor.pdf",
+    "id": "harvard-math-55a-tensor-products",
+    "title": "Math 55a: Tensor Products",
+    "authors": [
+      "Noam Elkies"
+    ],
+    "course_code": "MATH 55A",
+    "course_title": "Honors Abstract Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~elkies/M55b.16/top3.pdf",
+    "id": "harvard-math-55b-metric-topology-iii",
+    "title": "Math 55b: Metric Topology III",
+    "authors": [
+      "Noam Elkies"
+    ],
+    "course_code": "MATH 55B",
+    "course_title": "Honors Advanced Calculus and Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~elkies/M55b.16/p5.pdf",
+    "id": "harvard-math-55b-homework-5-and-6",
+    "title": "Math 55b: Homework 5 and 6",
+    "authors": [
+      "Noam Elkies"
+    ],
+    "course_code": "MATH 55B",
+    "course_title": "Honors Real and Complex Analysis",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/intro.pdf",
+    "id": "stanford-math-220a-lecture-notes-introduction",
+    "title": "Math 220A: Lecture Notes, Introduction",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations I",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/intro.pdf",
+    "id": "stanford-math-220b-introduction-parabolic-elliptic",
+    "title": "Math 220B: Introduction to Parabolic and Elliptic Equations",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations II",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/potphys.pdf",
+    "id": "stanford-math-220b-single-double-layer-potentials",
+    "title": "Math 220B: Physical Interpretation of Single and Double Layer Potentials",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations II",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "mathematical-physics"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/minmax.pdf",
+    "id": "stanford-math-220b-rayleigh-ritz-minimax",
+    "title": "Math 220B: Comments on Rayleigh-Ritz Approximation and Minimax",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations II",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "functional-analysis",
+      "differential-equations"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/stats310a/lnotes.pdf",
+    "id": "stanford-math-230a-probability-theory",
+    "title": "Probability Theory: Lecture Notes",
+    "authors": [
+      "Amir Dembo"
+    ],
+    "course_code": "MATH 230A",
+    "course_title": "Theory of Probability I",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "probability"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math205a/diff-13.pdf",
+    "id": "stanford-math-205a-differentiability-theory",
+    "title": "Math 205A: Lecture Supplement on Differentiability Theory",
+    "authors": [],
+    "course_code": "MATH 205A",
+    "course_title": "Real Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math205a/radon-13.pdf",
+    "id": "stanford-math-205a-borel-regular-measures",
+    "title": "Math 205A: Borel Regular Measures",
+    "authors": [],
+    "course_code": "MATH 205A",
+    "course_title": "Real Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math205a/riesz-for-lp-13.pdf",
+    "id": "stanford-math-205a-riesz-representation-lp",
+    "title": "Math 205A: Riesz Representation Theorem for L^p",
+    "authors": [],
+    "course_code": "MATH 205A",
+    "course_title": "Real Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "functional-analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/~montanar/TEACHING/Math205A/HW/hw2-sol.pdf",
+    "id": "stanford-math-205a-homework-2-solutions",
+    "title": "Math 205A: Homework 2 Solutions",
+    "authors": [
+      "Andrea Montanari"
+    ],
+    "course_code": "MATH 205A",
+    "course_title": "Real Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/HW/hw1sol.pdf",
+    "id": "stanford-math-230b-homework-1-solutions",
+    "title": "Stat 310B / Math 230B: Homework 1 Solutions",
+    "authors": [
+      "Andrea Montanari"
+    ],
+    "course_code": "MATH 230B",
+    "course_title": "Theory of Probability II",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "probability"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/HW/hw3sol.pdf",
+    "id": "stanford-math-230b-homework-3-solutions",
+    "title": "Stat 310B / Math 230B: Homework 3 Solutions",
+    "authors": [
+      "Andrea Montanari"
+    ],
+    "course_code": "MATH 230B",
+    "course_title": "Theory of Probability II",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math51h/51h-topics.pdf",
+    "id": "stanford-math-51h-linear-algebra-summary",
+    "title": "Math 51H: Summary of Linear Algebra Material",
+    "authors": [
+      "Andras Vasy"
+    ],
+    "course_code": "MATH 51H",
+    "course_title": "Honors Linear Algebra and Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "other",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math52h/topics-09.pdf",
+    "id": "stanford-math-52h-course-material-summary-2009",
+    "title": "Math 52H: Summary of Course Material",
+    "authors": [],
+    "course_code": "MATH 52H",
+    "course_title": "Honors Integral Calculus of Several Variables",
+    "level": "undergraduate",
+    "type": "other",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2009,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec1.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-1",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 1",
+    "authors": [
+      "Dinakar Ramakrishnan",
+      "Robert D. Tanner"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec3a.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-3a",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 3a",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec5.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-5",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 5",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec7.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-7",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 7",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec9.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-9",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 9",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma12%20Notes/ma12NotesLec11.pdf",
+    "id": "caltech-ma-12-enzyme-kinetics-lecture-11",
+    "title": "Mathematics of Enzyme Kinetics: Lecture 11",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 12",
+    "course_title": "Mathematics of Enzyme Kinetics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro19-Matrix-Concentration-LN-corr.pdf",
+    "id": "caltech-matrix-concentration-computational-linear-algebra",
+    "title": "Matrix Concentration and Computational Linear Algebra",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "numerical-analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro24-Probability-Theory-LN.pdf",
+    "id": "caltech-cms-117-probability-computational-mathematics",
+    "title": "CMS 117: Probability Theory and Computational Mathematics",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": "CMS 117",
+    "course_title": "Probability Theory and Computational Mathematics",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "probability",
+      "information-computation"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro22-Matrix-Analysis-LN.pdf",
+    "id": "caltech-acm-204-matrix-analysis",
+    "title": "ACM 204: Matrix Analysis",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": "ACM 204",
+    "course_title": "Matrix Analysis",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "algebra",
+      "numerical-analysis"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro21-Probability-High-LN-corr.pdf",
+    "id": "caltech-acm-217-probability-high-dimensions",
+    "title": "ACM 217: Probability in High Dimensions",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": "ACM 217",
+    "course_title": "Probability in High Dimensions",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro20-Randomized-Algorithms-LN.pdf",
+    "id": "caltech-acm-204-randomized-algorithms-matrix-computations",
+    "title": "ACM 204: Randomized Algorithms for Matrix Computations",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": "ACM 204",
+    "course_title": "Randomized Algorithms for Matrix Computations",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://tropp.caltech.edu/notes/Tro18-Lectures-Convex-LN.pdf",
+    "id": "caltech-acm-204-lectures-convex-geometry",
+    "title": "ACM 204: Lectures on Convex Geometry",
+    "authors": [
+      "Joel A. Tropp"
+    ],
+    "course_code": "ACM 204",
+    "course_title": "Lectures on Convex Geometry",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "geometry",
+      "optimization"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/S22Mat215/practicemidterm.pdf",
+    "id": "princeton-mat215-practice-midterm-2022",
+    "title": "MAT 215: Practice Midterm",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/S22Mat215/finalsolutions.pdf",
+    "id": "princeton-mat215-final-solutions-2022",
+    "title": "MAT 215: Final Exam Solutions",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/F21Mat320/practice_midterm.pdf",
+    "id": "princeton-mat320-practice-midterm-2021",
+    "title": "MAT 320: Practice Midterm",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "MAT 320",
+    "course_title": "Introduction to Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/F21Mat320/practice_midterm_solutions.pdf",
+    "id": "princeton-mat320-practice-midterm-solutions-2021",
+    "title": "MAT 320: Practice Midterm Solutions",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "MAT 320",
+    "course_title": "Introduction to Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/F21Mat320/practice_final_solutions.pdf",
+    "id": "princeton-mat320-practice-final-solutions-2021",
+    "title": "MAT 320: Practice Final Solutions",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "MAT 320",
+    "course_title": "Introduction to Real Analysis",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.princeton.edu/~eprywes/F22FRS/psetSol.pdf",
+    "id": "princeton-frs157-mathematics-and-astronomy-problem-set-solutions",
+    "title": "Mathematics and Astronomy: Problem Set Solutions",
+    "authors": [
+      "Eden Prywes"
+    ],
+    "course_code": "FRS 157",
+    "course_title": "Mathematics and Astronomy",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw2.pdf",
+    "id": "princeton-mat215-chang-homework-2",
+    "title": "MAT 215: Homework 2",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw3.pdf",
+    "id": "princeton-mat215-chang-homework-3",
+    "title": "MAT 215: Homework 3",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw4.pdf",
+    "id": "princeton-mat215-chang-homework-4",
+    "title": "MAT 215: Homework 4",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw5.pdf",
+    "id": "princeton-mat215-chang-homework-5",
+    "title": "MAT 215: Homework 5",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw6.pdf",
+    "id": "princeton-mat215-chang-homework-6",
+    "title": "MAT 215: Homework 6",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw7.pdf",
+    "id": "princeton-mat215-chang-homework-7",
+    "title": "MAT 215: Homework 7",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/hw12.pdf",
+    "id": "princeton-mat215-chang-homework-12",
+    "title": "MAT 215: Homework 12",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.princeton.edu/~chang/HW3-9.pdf",
+    "id": "princeton-mat215-chang-homework-3-problem-9-solution",
+    "title": "MAT 215: Homework 3, Problem 9 Solution",
+    "authors": [
+      "Sun-Yung Alice Chang"
+    ],
+    "course_code": "MAT 215",
+    "course_title": "Single Variable Analysis with an Introduction to Proofs",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~jonfick/2012SpMAT204/Linear_ODEs.pdf",
+    "id": "princeton-mat204-applying-linear-algebra-to-odes",
+    "title": "MAT 204: Applying Linear Algebra to Solving ODEs",
+    "authors": [
+      "Jon Fickenscher"
+    ],
+    "course_code": "MAT 204",
+    "course_title": "Linear Algebra with Applications",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "differential-equations"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~jmjohnso/teaching/202Bfall00/midterm.pdf",
+    "id": "princeton-mat202b-midterm-exam",
+    "title": "MATH 202B: Midterm Exam",
+    "authors": [],
+    "course_code": "MAT 202",
+    "course_title": "Linear Algebra with Applications",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2000,
     "priority": 60
   }
 ]

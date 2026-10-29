@@ -57,7 +57,17 @@ function snippetAround(text: string, idx: number) {
   return text.slice(Math.max(0, idx - 80), idx + 160).replace(/\s+/g, ' ').trim();
 }
 
-export function detectLicense(text: string): LicenseFinding {
+/**
+ * Drops notes about the typesetting template ("composed using a template …
+ * licensed under CC BY-NC-SA 3.0"): that licence covers the LaTeX template,
+ * not the document.
+ */
+function withoutTemplateNotes(text: string): string {
+  return text.replace(/[^]{0,200}\btemplate\b[^]{0,250}/gi, (m) => (/licen[cs]|creative\s*commons/i.test(m) ? ' ' : m));
+}
+
+export function detectLicense(raw: string): LicenseFinding {
+  const text = withoutTemplateNotes(raw);
   const excluded = EXCLUSION.test(text);
   const url = text.match(CC_URL);
   if (url) {

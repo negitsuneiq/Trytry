@@ -135,20 +135,6 @@
     "maxPdfs": 150
   },
   {
-    "university": "berkeley",
-    "seeds": [
-      "https://math.berkeley.edu/~evans/",
-      "https://math.berkeley.edu/~btw/teaching.html",
-      "https://math.berkeley.edu/~lott/teaching.html",
-      "https://math.berkeley.edu/~ogus/"
-    ],
-    "scope": [
-      "https://math.berkeley.edu/~ogus/"
-    ],
-    "maxDepth": 1,
-    "notes": "Some faculty pages (e.g. ~hutching, ~wodzicki) answer 403 to the crawler."
-  },
-  {
     "university": "imperial",
     "seeds": [
       "https://www.ma.imperial.ac.uk/~mwl/ISE/",
