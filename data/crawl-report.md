@@ -1,6 +1,6 @@
 # Crawl report
 
-Run: 2026-10-29T01:21:57.604Z  
+Run: 2026-10-29T01:25:44.614Z  
 User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
 Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
 
@@ -16,19 +16,19 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 6 | Stanford University | 2 | 17 | 0 | 16 | 1 |
 | 7 | University of California, Berkeley | 18 | 120 | 0 | 105 | 15 |
 | 8 | Imperial College London | 2 | 34 | 0 | 22 | 12 |
-| 9 | National University of Singapore | 0 | 0 | 0 | 0 | 0 |
+| 9 | National University of Singapore | 10 | 71 | 0 | 71 | 0 |
 | 10 | ETH Zurich | 5 | 51 | 0 | 39 | 12 |
 | 11 | Sorbonne Université | 4 | 10 | 0 | 5 | 5 |
 | 12 | Nanyang Technological University | 1 | 46 | 0 | 43 | 3 |
 | 13 | Tsinghua University | 1 | 5 | 0 | 0 | 5 |
 | 14 | University of California, Los Angeles | 11 | 120 | 0 | 15 | 105 |
-| 15 | Peking University | 3 | 106 | 0 | 49 | 57 |
+| 15 | Peking University | 13 | 144 | 0 | 97 | 47 |
 | 16 | University of Toronto | 2 | 15 | 0 | 15 | 0 |
 | 17 | EPFL – École polytechnique fédérale de Lausanne | 2 | 51 | 0 | 41 | 10 |
 | 18 | New York University | 21 | 120 | 0 | 111 | 9 |
-| 19 | Université Paris-Saclay | 2 | 25 | 0 | 0 | 25 |
+| 19 | Université Paris-Saclay | 11 | 150 | 1 | 45 | 104 |
 | 20 | California Institute of Technology | 3 | 104 | 0 | 58 | 46 |
-| | **Total** | | **1823** | **285** | **763** | **775** |
+| | **Total** | | **2057** | **286** | **902** | **869** |
 
 ## Skip and link-only reasons
 
@@ -106,6 +106,12 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 - no extractable text (scanned?): 11
 - language not confidently English: 1
 
+### National University of Singapore
+
+- licence: link only: 71
+- not visited — deny-listed host (canvas.nus.edu.sg): 8
+- not visited — login/portal path: 7
+
 ### ETH Zurich
 
 - licence: link only: 39
@@ -151,15 +157,13 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Peking University
 
-- licence: link only: 49
-- language: cjk: 48
-- language: es: 4
-- no extractable text (scanned?): 2
-- language not confidently English: 2
+- licence: link only: 97
+- HTTP 404: 45
+- duplicate (SHA-256): 1
 - disallowed by robots.txt: 1
-- not visited — deny-listed host (www.springer.com): 3
-- not visited — deny-listed host (link.springer.com): 2
-- not visited — non-http scheme: 2
+- not visited — deny-listed host (link.springer.com): 4
+- not visited — deny-listed host (www.cambridge.org): 3
+- not visited — deny-listed host (www.sciencedirect.com): 1
 
 ### University of Toronto
 
@@ -185,10 +189,20 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Université Paris-Saclay
 
-- language: fr: 24
-- HTTP 404: 1
-- not visited — deny-listed host (link.springer.com): 3
-- not visited — deny-listed host (www.springer.com): 3
+- language: fr: 89
+- licence: link only: 45
+- HTTP 404: 10
+- language not confidently English: 2
+- no extractable text (scanned?): 1
+- language: es: 1
+- language: nl: 1
+- not visited — deny-listed host (link.springer.com): 6
+- not visited — deny-listed host (www.dropbox.com): 4
+- not visited — deny-listed host (www.sciencedirect.com): 4
+- not visited — deny-listed host (www.cambridge.org): 3
+- not visited — deny-listed host (londmathsoc.onlinelibrary.wiley.com): 2
+- not visited — deny-listed host (www.springer.com): 1
+- not visited — deny-listed host (academic.oup.com): 1
 
 ### California Institute of Technology
 
