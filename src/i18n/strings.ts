@@ -8,7 +8,7 @@ const en = {
   meta: {
     title: 'Open Lemma',
     description:
-      'A non-commercial library of open lecture notes, problem sets, exams and books from the world’s top 20 mathematics departments.',
+      'A non-commercial library of open lecture notes, problem sets, exams and books from ten of the world’s top universities in mathematics.',
   },
   a11y: {
     skip: 'Skip to content',
@@ -34,7 +34,7 @@ const en = {
     titleB: 'begins in',
     titleC: 'someone’s notes.',
     lede:
-      'Lecture notes, problem sets, exams and books that the world’s top twenty mathematics departments have made public, verified one file at a time.',
+      'Lecture notes, problem sets, exams and books that ten of the world’s top universities in mathematics have made public, verified one file at a time.',
     cta: 'Enter the library',
     ctaSecondary: 'How we choose',
     scroll: 'Scroll',
@@ -51,7 +51,7 @@ const en = {
     topicsTitle: 'Featured topics',
     topicsLede: 'Grouped by the top-level areas of the Mathematics Subject Classification (MSC2020).',
     universitiesTitle: 'University directory',
-    universitiesLede: 'The top twenty of the QS World University Rankings by Subject: Mathematics.',
+    universitiesLede: 'Ten universities from the top twenty of the QS World University Rankings by Subject: Mathematics.',
     recentTitle: 'Recently added',
     viewAll: 'View all',
     docsCount: (n: number) => (n === 1 ? '1 document' : `${n} documents`),
@@ -67,11 +67,11 @@ const en = {
       { t: 'exams', term: 'exam' },
       { t: ' and ' },
       { t: 'books', term: 'book' },
-      { t: ' that the world’s twenty best mathematics departments give away, each file checked one at a time before it reaches the shelves.' },
+      { t: ' that ten of the world’s best universities in mathematics give away, each file checked one at a time before it reaches the shelves.' },
     ],
     deptLabel: 'Lemma',
-    deptTitle: 'Twenty departments, in ranking order.',
-    deptLede: 'The top twenty of the QS World University Rankings by Subject: Mathematics. A filled numeral means documents are already on the shelves; an outlined one is still being read.',
+    deptTitle: 'Ten universities, in ranking order.',
+    deptLede: 'From the top twenty of the QS World University Rankings by Subject: Mathematics, the ten universities that publish the most open teaching material in English. Numbers are QS ranks.',
     deptPending: 'Being read',
     deptScroll: 'Keep scrolling: the line moves sideways.',
     mapLabel: 'Proof',
@@ -176,7 +176,7 @@ const en = {
   },
   universitiesPage: {
     title: 'Universities',
-    lede: 'The twenty departments covered by Open Lemma, in ranking order.',
+    lede: 'The ten universities covered by Open Lemma, in ranking order.',
   },
   topicsPage: {
     title: 'Topics',
@@ -204,6 +204,7 @@ const en = {
       },
     ],
     rankingNote: 'University selection',
+    rankingWhy: 'From the top twenty of this ranking, the ten universities that publish the most open English teaching material are included. The others were left out because little or none of their material is public, in English and reachable without a login.',
   },
   license: {
     title: 'Licence & Takedown',
@@ -245,7 +246,7 @@ const tr: Dict = {
   meta: {
     title: 'Open Lemma',
     description:
-      'Dünyanın en iyi 20 matematik bölümünden açık ders notları, problem setleri, sınavlar ve kitaplardan oluşan, ticari olmayan bir kütüphane.',
+      'Matematikte dünyanın en iyi on üniversitesinin açık ders notları, problem setleri, sınavları ve kitaplarından oluşan, ticari olmayan bir kütüphane.',
   },
   a11y: {
     skip: 'İçeriğe geç',
@@ -271,7 +272,7 @@ const tr: Dict = {
     titleB: 'birinin notlarında',
     titleC: 'başlar.',
     lede:
-      'Dünyanın en iyi yirmi matematik bölümünün herkese açtığı ders notları, problem setleri, sınavlar ve kitaplar. Her dosya tek tek doğrulandı.',
+      'Matematikte dünyanın en iyi on üniversitesinin herkese açtığı ders notları, problem setleri, sınavlar ve kitaplar. Her dosya tek tek doğrulandı.',
     cta: 'Kütüphaneye gir',
     ctaSecondary: 'Nasıl seçiyoruz',
     scroll: 'Kaydır',
@@ -288,7 +289,7 @@ const tr: Dict = {
     topicsTitle: 'Öne çıkan konular',
     topicsLede: 'Matematik Konu Sınıflandırması’nın (MSC2020) ana alanlarına göre gruplandı.',
     universitiesTitle: 'Üniversite dizini',
-    universitiesLede: 'QS World University Rankings by Subject: Mathematics sıralamasının ilk yirmisi.',
+    universitiesLede: 'QS World University Rankings by Subject: Mathematics sıralamasının ilk yirmisinden on üniversite.',
     recentTitle: 'Son eklenenler',
     viewAll: 'Tümünü gör',
     docsCount: (n: number) => `${n} belge`,
@@ -296,7 +297,7 @@ const tr: Dict = {
     margin: { title: 'Başlık', definition: 'Tanım', departments: 'Lemma', topics: 'İspat', shelf: 'Teorem', qed: 'Q.E.D.' },
     defLabel: 'Tanım',
     definition: [
-      { t: 'Open Lemma, dünyanın en iyi yirmi matematik bölümünün herkese açtığı ' },
+      { t: 'Open Lemma, matematikte dünyanın en iyi on üniversitesinin herkese açtığı ' },
       { t: 'ders notlarını', term: 'lecture-notes' },
       { t: ', ' },
       { t: 'problem setlerini', term: 'problem-set' },
@@ -307,8 +308,8 @@ const tr: Dict = {
       { t: ' bir araya getiren, ticari olmayan bir kütüphanedir. Her dosya rafa konmadan önce tek tek incelenir.' },
     ],
     deptLabel: 'Lemma',
-    deptTitle: 'Yirmi bölüm, sıralamaya göre.',
-    deptLede: 'QS World University Rankings by Subject: Mathematics sıralamasının ilk yirmisi. Dolu rakam, rafta belgesi olan bölümü gösterir; çerçeveli rakam, henüz incelenmekte olanı.',
+    deptTitle: 'On üniversite, sıralamaya göre.',
+    deptLede: 'QS World University Rankings by Subject: Mathematics sıralamasının ilk yirmisinden, İngilizce en çok açık ders materyali yayımlayan on üniversite. Rakamlar QS sırasıdır.',
     deptPending: 'İnceleniyor',
     deptScroll: 'Kaydırmaya devam edin: çizgi yana doğru ilerler.',
     mapLabel: 'İspat',
@@ -413,7 +414,7 @@ const tr: Dict = {
   },
   universitiesPage: {
     title: 'Üniversiteler',
-    lede: 'Open Lemma’nın kapsadığı yirmi bölüm, sıralamaya göre.',
+    lede: 'Open Lemma’nın kapsadığı on üniversite, sıralamaya göre.',
   },
   topicsPage: {
     title: 'Konular',
@@ -441,6 +442,7 @@ const tr: Dict = {
       },
     ],
     rankingNote: 'Üniversite seçimi',
+    rankingWhy: 'Bu sıralamanın ilk yirmisinden, İngilizce en çok açık ders materyali yayımlayan on üniversite alındı. Diğerleri, materyallerinin çok azı ya da hiçbiri herkese açık, İngilizce ve giriş gerektirmeden erişilebilir olmadığı için dışarıda kaldı.',
   },
   license: {
     title: 'Lisans ve Kaldırma Talebi',
