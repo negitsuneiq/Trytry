@@ -1,6 +1,6 @@
 # Crawl report
 
-Run: 2026-10-29T01:25:44.614Z  
+Run: 2026-10-29T01:30:11.974Z  
 User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
 Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
 
@@ -12,10 +12,10 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 2 | University of Oxford | 4 | 94 | 0 | 76 | 18 |
 | 3 | University of Cambridge | 19 | 350 | 0 | 341 | 9 |
 | 4 | Harvard University | 2 | 55 | 34 | 16 | 5 |
-| 5 | Princeton University | 4 | 200 | 0 | 90 | 110 |
+| 5 | Princeton University | 4 | 320 | 0 | 206 | 114 |
 | 6 | Stanford University | 2 | 17 | 0 | 16 | 1 |
 | 7 | University of California, Berkeley | 18 | 120 | 0 | 105 | 15 |
-| 8 | Imperial College London | 2 | 34 | 0 | 22 | 12 |
+| 8 | Imperial College London | 4 | 73 | 0 | 54 | 19 |
 | 9 | National University of Singapore | 10 | 71 | 0 | 71 | 0 |
 | 10 | ETH Zurich | 5 | 51 | 0 | 39 | 12 |
 | 11 | Sorbonne Université | 4 | 10 | 0 | 5 | 5 |
@@ -28,7 +28,7 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 18 | New York University | 21 | 120 | 0 | 111 | 9 |
 | 19 | Université Paris-Saclay | 11 | 150 | 1 | 45 | 104 |
 | 20 | California Institute of Technology | 3 | 104 | 0 | 58 | 46 |
-| | **Total** | | **2057** | **286** | **902** | **869** |
+| | **Total** | | **2216** | **286** | **1020** | **910** |
 
 ## Skip and link-only reasons
 
@@ -74,10 +74,10 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Princeton University
 
-- licence: link only: 90
-- no extractable text (scanned?): 55
+- licence: link only: 206
+- no extractable text (scanned?): 58
 - HTTP 404: 46
-- language not confidently English: 8
+- language not confidently English: 9
 - HTTP 403: 1
 - not visited — deny-listed host (moodle-app2.let.ethz.ch): 3
 - not visited — deny-listed host (link.springer.com): 3
@@ -102,9 +102,10 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Imperial College London
 
-- licence: link only: 22
-- no extractable text (scanned?): 11
-- language not confidently English: 1
+- licence: link only: 54
+- no extractable text (scanned?): 15
+- language not confidently English: 3
+- looks like student work: 1
 
 ### National University of Singapore
 
