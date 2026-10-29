@@ -217,11 +217,22 @@
   {
     "university": "tsinghua",
     "seeds": [
-      "https://ymsc.tsinghua.edu.cn/en/info/1057/1650.htm"
+      "https://binguimath.github.io/Courses/Courses.html",
+      "https://yhzhumath.github.io/",
+      "https://ymsc.tsinghua.edu.cn/info/1051/4774.htm",
+      "https://ymsc.tsinghua.edu.cn/en/info/1057/1650.htm",
+      "https://webspace.science.uu.nl/~looij101/lecture-notes.html"
     ],
-    "scope": [],
-    "maxDepth": 0,
-    "notes": "Yau Mathematical Sciences Center lecture series. Few English course notes are published on Tsinghua hosts."
+    "scope": [
+      "https://binguimath.github.io/",
+      "https://yhzhumath.github.io/",
+      "https://ymsc.tsinghua.edu.cn/",
+      "https://webspace.science.uu.nl/~looij101/",
+      "https://www.staff.science.uu.nl/~looij101/"
+    ],
+    "maxDepth": 1,
+    "notes": "YMSC faculty course pages: Bin Gui (Qiuzhen Lectures on Analysis, VOA course; Courses.html links per-course subpages, 2025 functional analysis page is Chinese-titled), Yihang Zhu (algebraic number theory I/II, p-adic geometry, Shimura varieties notes; homepage also links research PDFs), YMSC Combinatorics 2022 course notes (Jie Ma; page has Chinese UI, some lecture PDFs may be scanned/Chinese) and the YMSC Algebraic Geometry lecture series; Looijenga (YMSC professor, notes hosted at Utrecht; mix of Tsinghua and older Utrecht/Dutch notes). Most YMSC mini-course info pages (/en/info/1050, 1051, 1047) were sampled and have no PDFs; Zhifei Zhu's teaching page links only cloud.tsinghua.edu.cn shares (not crawlable); archive.ymsc.tsinghua.edu.cn (MathSciDoc) is a preprint archive, skipped. No hosts blocked; no robots.txt present on any host used.",
+    "maxPdfs": 150
   },
   {
     "university": "ucla",
