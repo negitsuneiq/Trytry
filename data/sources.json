@@ -196,11 +196,15 @@
   {
     "university": "sorbonne",
     "seeds": [
-      "https://webusers.imj-prg.fr/~jan.nekovar/co/ln/"
+      "https://perso.lpsm.paris/~castillo/npbayes/npbayes.html",
+      "https://perso.lpsm.paris/~msangnier/mlM2.html",
+      "https://perso.lpsm.paris/~msangnier/refresherM2.html",
+      "https://perso.lpsm.paris/~msangnier/csM2.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "Most Sorbonne course material is in French. webusers.imj-prg.fr answered 403 from the crawl container; retry from another network."
+    "notes": "LPSM faculty course pages (Sorbonne M2): I. Castillo's Bayesian nonparametrics page (English lecture notes notes.pdf, exercises; chaps12.pdf and an old exam are French) and M. Sangnier's M2 machine learning, ML refresher and convex optimization pages (English lecture notes). Blocked/unusable: webusers.imj-prg.fr root answers 200 but faculty pages (e.g. ~jan.nekovar/co/ln/) still return 403; ljll.fr robots.txt disallows all (User-agent *) and ljll.math.upmc.fr resets the connection; www.math.sorbonne-universite.fr and the www.lpsm.paris supports-de-cours wiki pages carry no PDFs (empty/administrative); most other LPSM course material is in French.",
+    "maxPdfs": 150
   },
   {
     "university": "ntu",
