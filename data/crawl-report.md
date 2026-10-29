@@ -1,6 +1,6 @@
 # Crawl report
 
-Run: 2026-10-29T01:30:11.974Z  
+Run: 2026-10-29T01:36:33.514Z  
 User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
 Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
 
@@ -11,9 +11,9 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 1 | Massachusetts Institute of Technology | 257 | 300 | 279 | 1 | 20 |
 | 2 | University of Oxford | 4 | 94 | 0 | 76 | 18 |
 | 3 | University of Cambridge | 19 | 350 | 0 | 341 | 9 |
-| 4 | Harvard University | 2 | 55 | 34 | 16 | 5 |
+| 4 | Harvard University | 18 | 450 | 34 | 310 | 106 |
 | 5 | Princeton University | 4 | 320 | 0 | 206 | 114 |
-| 6 | Stanford University | 2 | 17 | 0 | 16 | 1 |
+| 6 | Stanford University | 10 | 107 | 0 | 64 | 43 |
 | 7 | University of California, Berkeley | 18 | 120 | 0 | 105 | 15 |
 | 8 | Imperial College London | 4 | 73 | 0 | 54 | 19 |
 | 9 | National University of Singapore | 10 | 71 | 0 | 71 | 0 |
@@ -27,8 +27,8 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 | 17 | EPFL – École polytechnique fédérale de Lausanne | 2 | 51 | 0 | 41 | 10 |
 | 18 | New York University | 21 | 120 | 0 | 111 | 9 |
 | 19 | Université Paris-Saclay | 11 | 150 | 1 | 45 | 104 |
-| 20 | California Institute of Technology | 3 | 104 | 0 | 58 | 46 |
-| | **Total** | | **2216** | **286** | **1020** | **910** |
+| 20 | California Institute of Technology | 4 | 118 | 5 | 66 | 47 |
+| | **Total** | | **2715** | **291** | **1192** | **1232** |
 
 ## Skip and link-only reasons
 
@@ -66,11 +66,19 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Harvard University
 
-- licence: link only: 11
+- licence: link only: 305
+- no extractable text (scanned?): 33
+- disallowed by robots.txt: 19
+- language not confidently English: 17
+- HTTP 404: 16
+- duplicate (SHA-256): 14
 - over 50 MB: link only: 5
-- duplicate (SHA-256): 3
+- language: it: 4
 - HTTP 403: 2
+- download failed or stalled: 1
 - not visited — deny-listed host (www.ams.org): 2
+- not visited — deny-listed host (www.dropbox.com): 2
+- not visited — deny-listed host (canvas.harvard.edu): 1
 
 ### Princeton University
 
@@ -87,7 +95,8 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### Stanford University
 
-- licence: link only: 16
+- licence: link only: 64
+- HTTP 404: 42
 - language not confidently English: 1
 
 ### University of California, Berkeley
@@ -207,8 +216,8 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### California Institute of Technology
 
-- licence: link only: 58
-- HTTP 404: 37
+- licence: link only: 66
+- HTTP 404: 38
 - language not confidently English: 4
 - no extractable text (scanned?): 2
 - language: es: 2
