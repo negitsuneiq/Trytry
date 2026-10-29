@@ -79,11 +79,19 @@
       "https://web.math.princeton.edu/~nelson/books.html",
       "https://web.math.princeton.edu/~seri/courses/",
       "https://web.math.princeton.edu/math_alive/notes.shtml",
-      "https://web.math.princeton.edu/~js129/teaching.html"
+      "https://web.math.princeton.edu/~js129/teaching.html",
+      "https://web.math.princeton.edu/~eprywes/S21Mat201/201notes.html",
+      "https://web.math.princeton.edu/~eprywes/S22Mat215/",
+      "https://web.math.princeton.edu/~eprywes/F21Mat320/",
+      "https://web.math.princeton.edu/~eprywes/F22FRS/",
+      "https://web.math.princeton.edu/~chang/215.html",
+      "https://web.math.princeton.edu/~jonfick/2012SpMAT204/index.html",
+      "https://web.math.princeton.edu/~jmjohnso/teaching/202Bfall00/home.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "maxPdfs": 200
+    "maxPdfs": 320,
+    "notes": "Princeton course pages (Prywes MAT 201 lecture notes, MAT 215, MAT 320, FRS; A. Chang MAT 215 homework; Fick MAT 204; Johnson MAT 202B old exams), each linking ~5-22 PDFs. Page links use www.math.princeton.edu, which 301-redirects to web.math.princeton.edu. Skipped: ~rvan/ home page (mixes lecture notes with research papers and talks), ~aionescu and ~aaa and ~ssaid (403), ~smorel and ~jkileel (moved away). web.math robots.txt only disallows /math_alive/ problem pages."
   },
   {
     "university": "stanford",
@@ -113,11 +121,14 @@
     "university": "imperial",
     "seeds": [
       "https://www.ma.imperial.ac.uk/~mwl/ISE/",
-      "https://www.ma.imperial.ac.uk/~mwl/m2pm2/"
+      "https://www.ma.imperial.ac.uk/~mwl/m2pm2/",
+      "https://www.ma.imperial.ac.uk/~dturaev/phys.php",
+      "https://www.ma.imperial.ac.uk/~ejm/ISE.2.6/"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "Several www.ma.imperial.ac.uk/~user pages answer 403 to the crawler."
+    "notes": "Several www.ma.imperial.ac.uk/~user pages answer 403 to the crawler. D. Turaev's Mathematical Methods for Physics page (lecture notes, problem sheets with answers, past exams; ~40 PDFs) and E. McCoy's ISE 2 Probability and Statistics page (notes, past papers with solutions; ~9 PDFs). Blocked with 403: ~prodrigu (Rodriguez MATH50006 notes), ~abuchan, ~jmb, ~ahaydon, ~ebrowne, ~kcollins, ~kb514. www.ma.imperial.ac.uk/robots.txt returns 403, so robots could not be checked. Skipped github.io course sites (finite-element.github.io, comp-lin-alg.github.io) because they are org-hosted, not faculty-named.",
+    "maxPdfs": 120
   },
   {
     "university": "nus",
