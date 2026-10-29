@@ -3073,5 +3073,4557 @@
     ],
     "year": 2013,
     "priority": 30
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/B1.1%20Logic%20Lecture%20Notes.pdf",
+    "id": "oxford-b1-1-logic-lecture-notes",
+    "title": "B1.1 Logic: Lecture Notes",
+    "authors": [],
+    "course_code": "B1.1",
+    "course_title": "Logic",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "logic"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/toplectnotes17.pdf",
+    "id": "oxford-a5-part-a-topology-lecture-notes",
+    "title": "Part A Topology: Lecture Notes",
+    "authors": [],
+    "course_code": "A5",
+    "course_title": "Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/Lecture%20Notes%202017-2018.pdf",
+    "id": "oxford-b2-1-introduction-to-representation-theory-and-characters",
+    "title": "Introduction to Representation Theory and Characters",
+    "authors": [],
+    "course_code": "B2.1",
+    "course_title": "Introduction to Representation Theory",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/Lecture%20Notes%202017-2018_0.pdf",
+    "id": "oxford-b2-2-commutative-algebra-lecture-notes",
+    "title": "Commutative Algebra: Lecture Notes",
+    "authors": [
+      "Nikolay Nikolov"
+    ],
+    "course_code": "B2.2",
+    "course_title": "Commutative Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/lectures%20rings%20and%20modules.pdf",
+    "id": "oxford-a3-rings-and-modules-lecture-notes",
+    "title": "Rings and Modules: Lecture Notes",
+    "authors": [],
+    "course_code": "A3",
+    "course_title": "Rings and Modules",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/tg11o17%5B1%5D_0.pdf",
+    "id": "oxford-b3-5-topology-and-groups",
+    "title": "Topology and Groups",
+    "authors": [],
+    "course_code": "B3.5",
+    "course_title": "Topology and Groups",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology",
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/Groups%20and%20Group%20Actions%20Lecture%20Notes.pdf",
+    "id": "oxford-groups-and-group-actions-lecture-notes",
+    "title": "Groups and Group Actions: Lecture Notes",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Groups and Group Actions",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/B3.2%20Geometry%20of%20Surfaces.pdf",
+    "id": "oxford-b3-2-geometry-of-surfaces",
+    "title": "Geometry of Surfaces",
+    "authors": [],
+    "course_code": "B3.2",
+    "course_title": "Geometry of Surfaces",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/dm2122.pdf",
+    "id": "oxford-c3-3-differentiable-manifolds",
+    "title": "Differentiable Manifolds",
+    "authors": [],
+    "course_code": "C3.3",
+    "course_title": "Differentiable Manifolds",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/Preliminary%20Reading.pdf",
+    "id": "oxford-elliptic-curves-preliminary-reading",
+    "title": "Elliptic Curves: Preliminary Reading",
+    "authors": [
+      "E. V. Flynn"
+    ],
+    "course_code": null,
+    "course_title": "Elliptic Curves",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory",
+      "algebraic-geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/M2%20Analysis%20II.pdf",
+    "id": "oxford-m2-analysis-ii-continuity-and-differentiability",
+    "title": "Analysis II: Continuity and Differentiability",
+    "authors": [],
+    "course_code": "M2",
+    "course_title": "Analysis II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/Metric%20and%20Complex%20complete%20notes.pdf",
+    "id": "oxford-metric-spaces-and-complex-analysis",
+    "title": "Metric Spaces and Complex Analysis",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Metric Spaces and Complex Analysis",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/integration_1.pdf",
+    "id": "oxford-a4-integration",
+    "title": "Integration",
+    "authors": [],
+    "course_code": "A4",
+    "course_title": "Integration",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/B5pt3LectureNotes.pdf",
+    "id": "oxford-b5-3-viscous-flow-lecture-notes",
+    "title": "Viscous Flow: Lecture Notes",
+    "authors": [],
+    "course_code": "B5.3",
+    "course_title": "Viscous Flow",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/MathBioNotes2017.pdf",
+    "id": "oxford-further-mathematical-biology-lecture-notes",
+    "title": "Further Mathematical Biology: Lecture Notes",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Further Mathematical Biology",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/ASO_IT_lectures20.pdf",
+    "id": "oxford-integral-transforms",
+    "title": "Integral Transforms",
+    "authors": [
+      "Richard Earl"
+    ],
+    "course_code": null,
+    "course_title": "Integral Transforms",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/complex_2.pdf",
+    "id": "oxford-a2-complex-analysis",
+    "title": "Complex Analysis",
+    "authors": [],
+    "course_code": "A2",
+    "course_title": "Complex Analysis",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/b8.2-NewNotesAME.pdf",
+    "id": "oxford-b8-2-continuous-martingales-and-stochastic-calculus",
+    "title": "Continuous Martingales and Stochastic Calculus",
+    "authors": [],
+    "course_code": "B8.2",
+    "course_title": "Continuous Martingales and Stochastic Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/B8.5%20Graph%20Theory.pdf",
+    "id": "oxford-b8-5-graph-theory",
+    "title": "Graph Theory",
+    "authors": [],
+    "course_code": "B8.5",
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.maths.ox.ac.uk/system/files/attachments/notes.pdf",
+    "id": "oxford-bridging-course-in-mathematics",
+    "title": "Bridging Course in Mathematics",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Bridging the Gap",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Projective_geometry/Chapter_1_Projective_geometry.pdf",
+    "id": "oxford-projective-geometry-chapter-1-projective-geometry",
+    "title": "Projective Geometry, Chapter 1: Projective Geometry",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": null,
+    "course_title": "Projective Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Projective_geometry/Chapter_2_Quadrics.pdf",
+    "id": "oxford-projective-geometry-chapter-2-quadrics",
+    "title": "Projective Geometry, Chapter 2: Quadrics",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": null,
+    "course_title": "Projective Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Projective_geometry/Chapter_3_Exterior.pdf",
+    "id": "oxford-projective-geometry-chapter-3-exterior-algebra",
+    "title": "Projective Geometry, Chapter 3: Exterior Algebra",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": null,
+    "course_title": "Projective Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "algebra"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Projective_geometry/Chapter_4_The_Klein_programme.pdf",
+    "id": "oxford-projective-geometry-chapter-4-the-klein-programme",
+    "title": "Projective Geometry, Chapter 4: The Klein Programme",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": null,
+    "course_title": "Projective Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2003,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/geometry_of_surfaces2013.pdf",
+    "id": "oxford-b3a-geometry-of-surfaces",
+    "title": "Geometry of Surfaces",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": "B3a",
+    "course_title": "Geometry of Surfaces",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Differentiable_manifolds/manifolds2014.pdf",
+    "id": "oxford-c3-3b-differentiable-manifolds",
+    "title": "Differentiable Manifolds",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": "C3.3b",
+    "course_title": "Differentiable Manifolds",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Algebraic_curves/algebraiccurves2009.pdf",
+    "id": "oxford-b3b-algebraic-curves",
+    "title": "Algebraic Curves",
+    "authors": [
+      "Nigel Hitchin"
+    ],
+    "course_code": "B3b",
+    "course_title": "Algebraic Curves",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2009,
+    "priority": 60
+  },
+  {
+    "url": "http://www.damtp.cam.ac.uk/user/hsr1000/part3_gr_lectures.pdf",
+    "id": "cambridge-general-relativity",
+    "title": "General Relativity",
+    "authors": [
+      "Harvey Reall"
+    ],
+    "course_code": null,
+    "course_title": "Part III General Relativity",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "geometry"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "http://www.damtp.cam.ac.uk/user/hsr1000/black_holes_lectures_2024.pdf",
+    "id": "cambridge-black-holes",
+    "title": "Black Holes",
+    "authors": [
+      "Harvey Reall"
+    ],
+    "course_code": null,
+    "course_title": "Part III Black Holes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "geometry"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/sjc1/teaching/AandG/notes.pdf",
+    "id": "cambridge-ia-algebra-and-geometry",
+    "title": "Algebra and Geometry",
+    "authors": [
+      "Stephen J. Cowley"
+    ],
+    "course_code": "IA",
+    "course_title": "Algebra and Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "geometry"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/sjc1/teaching/VC_2000.pdf",
+    "id": "cambridge-ia-vector-calculus",
+    "title": "Vector Calculus",
+    "authors": [
+      "Stephen J. Cowley"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/sjc1/teaching/NSTIB/Michaelmas/notes.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-i",
+    "title": "Mathematical Methods I",
+    "authors": [
+      "Stephen J. Cowley"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.dpmms.cam.ac.uk/~par31/notes/extcomb.pdf",
+    "id": "cambridge-extremal-combinatorics",
+    "title": "Extremal Combinatorics",
+    "authors": [
+      "Imre Leader"
+    ],
+    "course_code": null,
+    "course_title": "Part III Extremal Combinatorics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.dpmms.cam.ac.uk/~par31/notes/tic.pdf",
+    "id": "cambridge-topics-in-combinatorics",
+    "title": "Topics in Combinatorics",
+    "authors": [
+      "W. T. Gowers"
+    ],
+    "course_code": null,
+    "course_title": "Part III Topics in Combinatorics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.dpmms.cam.ac.uk/~par31/notes/ramsey.pdf",
+    "id": "cambridge-ramsey-theory",
+    "title": "Ramsey Theory",
+    "authors": [
+      "Imre Leader"
+    ],
+    "course_code": null,
+    "course_title": "Part III Ramsey Theory",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter1.pdf",
+    "id": "cambridge-ia-dynamics-chapter-1-basic-concepts",
+    "title": "Dynamics, Chapter 1: Basic Concepts",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter2.pdf",
+    "id": "cambridge-ia-dynamics-chapter-2-dynamical-examples",
+    "title": "Dynamics, Chapter 2: Dynamical Examples",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter3.pdf",
+    "id": "cambridge-ia-dynamics-chapter-3-dimensional-analysis",
+    "title": "Dynamics, Chapter 3: Dimensional Analysis",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter4.pdf",
+    "id": "cambridge-ia-dynamics-chapter-4-energy-and-stability",
+    "title": "Dynamics, Chapter 4: Energy and Stability",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter5.pdf",
+    "id": "cambridge-ia-dynamics-chapter-5-impulses-and-collisions",
+    "title": "Dynamics, Chapter 5: Impulses and Collisions",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter6.pdf",
+    "id": "cambridge-ia-dynamics-chapter-6-central-forces",
+    "title": "Dynamics, Chapter 6: Central Forces",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter7.pdf",
+    "id": "cambridge-ia-dynamics-chapter-7-rotating-frames",
+    "title": "Dynamics, Chapter 7: Rotating Frames",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter8.pdf",
+    "id": "cambridge-ia-dynamics-chapter-8-orbits",
+    "title": "Dynamics, Chapter 8: Orbits",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter9.pdf",
+    "id": "cambridge-ia-dynamics-chapter-9-systems-of-particles",
+    "title": "Dynamics, Chapter 9: Systems of Particles",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter10.pdf",
+    "id": "cambridge-ia-dynamics-chapter-10-rigid-bodies",
+    "title": "Dynamics, Chapter 10: Rigid Bodies",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-chapter11.pdf",
+    "id": "cambridge-ia-dynamics-chapter-11-phase-plane-techniques",
+    "title": "Dynamics, Chapter 11: Phase-Plane Techniques",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-problems1.pdf",
+    "id": "cambridge-ia-dynamics-problem-sheet-1",
+    "title": "Dynamics: Problem Sheet 1",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-problems2.pdf",
+    "id": "cambridge-ia-dynamics-problem-sheet-2",
+    "title": "Dynamics: Problem Sheet 2",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-problems3.pdf",
+    "id": "cambridge-ia-dynamics-problem-sheet-3",
+    "title": "Dynamics: Problem Sheet 3",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/ia-dyn-problems4.pdf",
+    "id": "cambridge-ia-dynamics-problem-sheet-4",
+    "title": "Dynamics: Problem Sheet 4",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-chapter1.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-chapter-1-variational",
+    "title": "Mathematical Methods II, Chapter 1: Variational Methods",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-chapter2.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-chapter-2-poissons",
+    "title": "Mathematical Methods II, Chapter 2: Poisson’s Equation",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-chapter3.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-chapter-3-cartesian",
+    "title": "Mathematical Methods II, Chapter 3: Cartesian Tensors",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-chapter4.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-chapter-4-complex",
+    "title": "Mathematical Methods II, Chapter 4: Complex Analysis",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-chapter5.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-chapter-5-contour",
+    "title": "Mathematical Methods II, Chapter 5: Contour Integration and Transform Methods",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-problems1.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-1",
+    "title": "Mathematical Methods II: Problem Sheet 1",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-problems2.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-2",
+    "title": "Mathematical Methods II: Problem Sheet 2",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-problems3.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-3",
+    "title": "Mathematical Methods II: Problem Sheet 3",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-problems4.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-4",
+    "title": "Mathematical Methods II: Problem Sheet 4",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-solutions1.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-1-solutions",
+    "title": "Mathematical Methods II: Problem Sheet 1 Solutions",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-solutions2.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-2-solutions",
+    "title": "Mathematical Methods II: Problem Sheet 2 Solutions",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-solutions3.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-3-solutions",
+    "title": "Mathematical Methods II: Problem Sheet 3 Solutions",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/reh10/lectures/nst-mmii-solutions4.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-ii-problem-sheet-4-solutions",
+    "title": "Mathematical Methods II: Problem Sheet 4 Solutions",
+    "authors": [
+      "Robert E. Hunt"
+    ],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/A5a.pdf",
+    "id": "cambridge-ia-vector-calculus-example-sheet-1",
+    "title": "Vector Calculus: Example Sheet 1",
+    "authors": [],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/A5b.pdf",
+    "id": "cambridge-ia-vector-calculus-example-sheet-2",
+    "title": "Vector Calculus: Example Sheet 2",
+    "authors": [],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/A5c.pdf",
+    "id": "cambridge-ia-vector-calculus-example-sheet-3",
+    "title": "Vector Calculus: Example Sheet 3",
+    "authors": [],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/A5d.pdf",
+    "id": "cambridge-ia-vector-calculus-example-sheet-4",
+    "title": "Vector Calculus: Example Sheet 4",
+    "authors": [],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B7a.pdf",
+    "id": "cambridge-ib-complex-methods-example-sheet-1",
+    "title": "Complex Methods: Example Sheet 1",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B7b.pdf",
+    "id": "cambridge-ib-complex-methods-example-sheet-2",
+    "title": "Complex Methods: Example Sheet 2",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B7c.pdf",
+    "id": "cambridge-ib-complex-methods-example-sheet-3",
+    "title": "Complex Methods: Example Sheet 3",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B8La.pdf",
+    "id": "cambridge-ib-methods-part-1",
+    "title": "Methods, Part 1",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B8Lb.pdf",
+    "id": "cambridge-ib-methods-part-2",
+    "title": "Methods, Part 2",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B8Lc.pdf",
+    "id": "cambridge-ib-methods-part-3",
+    "title": "Methods, Part 3",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/B8Ld.pdf",
+    "id": "cambridge-ib-methods-part-4",
+    "title": "Methods, Part 4",
+    "authors": [],
+    "course_code": "IB",
+    "course_title": "Methods",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/C8a.pdf",
+    "id": "cambridge-ii-further-complex-methods-example-sheet-1",
+    "title": "Further Complex Methods: Example Sheet 1",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Further Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/C8b.pdf",
+    "id": "cambridge-ii-further-complex-methods-example-sheet-2",
+    "title": "Further Complex Methods: Example Sheet 2",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Further Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/C8c.pdf",
+    "id": "cambridge-ii-further-complex-methods-example-sheet-3",
+    "title": "Further Complex Methods: Example Sheet 3",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Further Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/C8d.pdf",
+    "id": "cambridge-ii-further-complex-methods-example-sheet-4",
+    "title": "Further Complex Methods: Example Sheet 4",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Further Complex Methods",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D15a.pdf",
+    "id": "cambridge-ii-partial-differential-equations-example-sheet-1",
+    "title": "Partial Differential Equations: Example Sheet 1",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D15b.pdf",
+    "id": "cambridge-ii-partial-differential-equations-example-sheet-2",
+    "title": "Partial Differential Equations: Example Sheet 2",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D15c.pdf",
+    "id": "cambridge-ii-partial-differential-equations-example-sheet-3",
+    "title": "Partial Differential Equations: Example Sheet 3",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D15d.pdf",
+    "id": "cambridge-ii-partial-differential-equations-example-sheet-4",
+    "title": "Partial Differential Equations: Example Sheet 4",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D15e.pdf",
+    "id": "cambridge-ii-partial-differential-equations-lecture-notes",
+    "title": "Partial Differential Equations: Lecture Notes",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Partial Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D17a.pdf",
+    "id": "cambridge-ii-integrable-systems-example-sheet-1",
+    "title": "Integrable Systems: Example Sheet 1",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Integrable Systems",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "dynamical-systems",
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D17b.pdf",
+    "id": "cambridge-ii-integrable-systems-example-sheet-2",
+    "title": "Integrable Systems: Example Sheet 2",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Integrable Systems",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "dynamical-systems",
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D17c.pdf",
+    "id": "cambridge-ii-integrable-systems-example-sheet-3",
+    "title": "Integrable Systems: Example Sheet 3",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Integrable Systems",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "dynamical-systems",
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D19a.pdf",
+    "id": "cambridge-ii-applications-of-quantum-mechanics-example-sheet-1",
+    "title": "Applications of Quantum Mechanics: Example Sheet 1",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Applications of Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D19b.pdf",
+    "id": "cambridge-ii-applications-of-quantum-mechanics-example-sheet-2",
+    "title": "Applications of Quantum Mechanics: Example Sheet 2",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Applications of Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D19c.pdf",
+    "id": "cambridge-ii-applications-of-quantum-mechanics-example-sheet-3",
+    "title": "Applications of Quantum Mechanics: Example Sheet 3",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Applications of Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D21Lb.pdf",
+    "id": "cambridge-ii-electrodynamics",
+    "title": "Electrodynamics",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Electrodynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D23Le.pdf",
+    "id": "cambridge-ii-fluid-dynamics-ii",
+    "title": "Fluid Dynamics II",
+    "authors": [
+      "John Hinch"
+    ],
+    "course_code": "II",
+    "course_title": "Fluid Dynamics II",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/D27L.pdf",
+    "id": "cambridge-ii-quantum-information-and-computation",
+    "title": "Quantum Information and Computation",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Quantum Information and Computation",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation",
+      "mathematical-physics"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/examples/N23L.pdf",
+    "id": "cambridge-nst-ib-mathematical-methods-iii",
+    "title": "Mathematical Methods III",
+    "authors": [],
+    "course_code": "NST IB",
+    "course_title": "Mathematical Methods III",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.damtp.cam.ac.uk/user/rrh1//notes/aqm_notes_180112.pdf",
+    "id": "cambridge-ii-applications-of-quantum-mechanics",
+    "title": "Applications of Quantum Mechanics",
+    "authors": [],
+    "course_code": "II",
+    "course_title": "Applications of Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/dynrel.pdf",
+    "id": "cambridge-ia-dynamics-and-relativity",
+    "title": "Dynamics and Relativity",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/htl1.pdf",
+    "id": "cambridge-ia-dynamics-and-relativity-example-sheet-1",
+    "title": "Dynamics and Relativity: Example Sheet 1",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/htl2.pdf",
+    "id": "cambridge-ia-dynamics-and-relativity-example-sheet-2",
+    "title": "Dynamics and Relativity: Example Sheet 2",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/htl3.pdf",
+    "id": "cambridge-ia-dynamics-and-relativity-example-sheet-3",
+    "title": "Dynamics and Relativity: Example Sheet 3",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/htl4.pdf",
+    "id": "cambridge-ia-dynamics-and-relativity-example-sheet-4",
+    "title": "Dynamics and Relativity: Example Sheet 4",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/dynamics-and-relativity/stephen.pdf",
+    "id": "cambridge-siklos-ia-dynamics-and-relativity",
+    "title": "Dynamics and Relativity (Siklos notes)",
+    "authors": [
+      "Stephen Siklos"
+    ],
+    "course_code": "IA",
+    "course_title": "Dynamics and Relativity",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/classical-dynamics/clas.pdf",
+    "id": "cambridge-ii-classical-dynamics",
+    "title": "Classical Dynamics",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Classical Dynamics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "dynamical-systems"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/classical-dynamics/mf1.pdf",
+    "id": "cambridge-ii-classical-dynamics-example-sheet-1",
+    "title": "Classical Dynamics: Example Sheet 1",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Classical Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/classical-dynamics/mf2.pdf",
+    "id": "cambridge-ii-classical-dynamics-example-sheet-2",
+    "title": "Classical Dynamics: Example Sheet 2",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Classical Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/classical-dynamics/mf3.pdf",
+    "id": "cambridge-ii-classical-dynamics-example-sheet-3",
+    "title": "Classical Dynamics: Example Sheet 3",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Classical Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/classical-dynamics/mf4.pdf",
+    "id": "cambridge-ii-classical-dynamics-example-sheet-4",
+    "title": "Classical Dynamics: Example Sheet 4",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Classical Dynamics",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/vector-calculus/vc1.pdf",
+    "id": "cambridge-ia-vector-calculus-chapter-1-curves",
+    "title": "Vector Calculus, Chapter 1: Curves",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/vector-calculus/vc2.pdf",
+    "id": "cambridge-ia-vector-calculus-chapter-2-surfaces-and-volumes",
+    "title": "Vector Calculus, Chapter 2: Surfaces (and Volumes)",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/vector-calculus/vc3.pdf",
+    "id": "cambridge-ia-vector-calculus-chapter-3-grad-div-and",
+    "title": "Vector Calculus, Chapter 3: Grad, Div and Curl",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/vector-calculus/vc4.pdf",
+    "id": "cambridge-ia-vector-calculus-chapter-4-the-integral-theorems",
+    "title": "Vector Calculus, Chapter 4: The Integral Theorems",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/vector-calculus/vc5.pdf",
+    "id": "cambridge-ia-vector-calculus-chapter-5-the-poisson-and",
+    "title": "Vector Calculus, Chapter 5: The Poisson and Laplace Equations",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IA",
+    "course_title": "Vector Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/electromagnetism/electro.pdf",
+    "id": "cambridge-ib-electromagnetism",
+    "title": "Electromagnetism",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Electromagnetism",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/electromagnetism/B10a.pdf",
+    "id": "cambridge-ib-electromagnetism-example-sheet-1",
+    "title": "Electromagnetism: Example Sheet 1",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Electromagnetism",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/electromagnetism/B10b.pdf",
+    "id": "cambridge-ib-electromagnetism-example-sheet-2",
+    "title": "Electromagnetism: Example Sheet 2",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Electromagnetism",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/electromagnetism/B10c.pdf",
+    "id": "cambridge-ib-electromagnetism-example-sheet-3",
+    "title": "Electromagnetism: Example Sheet 3",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Electromagnetism",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/quantum-mechanics/qm1.pdf",
+    "id": "cambridge-ib-quantum-mechanics-chapter-1-introduction",
+    "title": "Quantum Mechanics, Chapter 1: Introduction",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/quantum-mechanics/qm2.pdf",
+    "id": "cambridge-ib-quantum-mechanics-chapter-2-a-quantum-particle",
+    "title": "Quantum Mechanics, Chapter 2: A Quantum Particle in One Dimension",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/quantum-mechanics/qm3.pdf",
+    "id": "cambridge-ib-quantum-mechanics-chapter-3-the-formalism-of",
+    "title": "Quantum Mechanics, Chapter 3: The Formalism of Quantum Mechanics",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/quantum-mechanics/qm4.pdf",
+    "id": "cambridge-ib-quantum-mechanics-chapter-4-a-quantum-particle",
+    "title": "Quantum Mechanics, Chapter 4: A Quantum Particle in Three Dimensions",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "IB",
+    "course_title": "Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/topics-in-quantum-mechanics/topicsinqm.pdf",
+    "id": "cambridge-ii-topics-in-quantum-mechanics",
+    "title": "Topics in Quantum Mechanics",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "II",
+    "course_title": "Applications of Quantum Mechanics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/quantum-hall-effect/qhe.pdf",
+    "id": "cambridge-the-quantum-hall-effect",
+    "title": "The Quantum Hall Effect",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": null,
+    "course_title": "The Quantum Hall Effect",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://davidtong.org/pdfs/teaching/kinetic-theory/kinetic.pdf",
+    "id": "cambridge-part-iii-kinetic-theory",
+    "title": "Kinetic Theory",
+    "authors": [
+      "David Tong"
+    ],
+    "course_code": "Part III",
+    "course_title": "Kinetic Theory",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~nelson/books/bmotion.pdf",
+    "id": "princeton-dynamical-theories-of-brownian-motion",
+    "title": "Dynamical Theories of Brownian Motion",
+    "authors": [
+      "Edward Nelson"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~nelson/books/1.pdf",
+    "id": "princeton-internal-set-theory-chapter-1",
+    "title": "Internal Set Theory (Chapter 1)",
+    "authors": [
+      "Edward Nelson"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "logic"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~seri/courses/Analysis2008.pdf",
+    "id": "princeton-lecture-notes-in-analysis",
+    "title": "Lecture Notes in Analysis",
+    "authors": [
+      "Sergiu Klainerman"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/~seri/courses/GR2009.pdf",
+    "id": "princeton-lecture-notes-in-general-relativity",
+    "title": "Lecture Notes in General Relativity",
+    "authors": [
+      "Sergiu Klainerman"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "mathematical-physics",
+      "differential-equations"
+    ],
+    "year": 2009,
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/1/Notes1.pdf",
+    "id": "princeton-mat-199-math-alive-cryptography-part-1",
+    "title": "Math Alive: Cryptography, Part 1",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/1/Notes2.pdf",
+    "id": "princeton-mat-199-math-alive-cryptography-part-2",
+    "title": "Math Alive: Cryptography, Part 2",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/2/Notes1.pdf",
+    "id": "princeton-mat-199-math-alive-error-correction-and-compression-part-1",
+    "title": "Math Alive: Error Correction and Compression, Part 1",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/2/Notes2.pdf",
+    "id": "princeton-mat-199-math-alive-error-correction-and-compression-part-2",
+    "title": "Math Alive: Error Correction and Compression, Part 2",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/5/Notes1.pdf",
+    "id": "princeton-mat-199-math-alive-graph-theory-part-1",
+    "title": "Math Alive: Graph Theory, Part 1",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.math.princeton.edu/math_alive/5/Notes2.pdf",
+    "id": "princeton-mat-199-math-alive-graph-theory-part-2",
+    "title": "Math Alive: Graph Theory, Part 2",
+    "authors": [],
+    "course_code": "MAT 199",
+    "course_title": "Math Alive",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/firstorder.pdf",
+    "id": "stanford-math-220a-first-order-equations-method-of-characteristics",
+    "title": "First-Order Equations: Method of Characteristics",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/conservation.pdf",
+    "id": "stanford-math-220a-conservation-laws",
+    "title": "Conservation Laws",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/secondorder.pdf",
+    "id": "stanford-math-220a-classification-of-second-order-equations",
+    "title": "Classification of Second-Order Equations",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/waveequation1.pdf",
+    "id": "stanford-math-220a-the-wave-equation-in-r",
+    "title": "The Wave Equation in R",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/waveequation2.pdf",
+    "id": "stanford-math-220a-the-wave-equation-on-an-interval",
+    "title": "The Wave Equation on an Interval",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/waveequation3.pdf",
+    "id": "stanford-math-220a-the-wave-equation-in-higher-dimensions",
+    "title": "The Wave Equation in Higher Dimensions",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220a/handouts/systems.pdf",
+    "id": "stanford-math-220a-systems-of-equations",
+    "title": "Systems of Equations",
+    "authors": [],
+    "course_code": "MATH 220A",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/heateqn.pdf",
+    "id": "stanford-math-220b-the-heat-equation",
+    "title": "The Heat Equation",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/laplace.pdf",
+    "id": "stanford-math-220b-laplaces-equation",
+    "title": "Laplace’s Equation",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/potential.pdf",
+    "id": "stanford-math-220b-potential-theory",
+    "title": "Potential Theory",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/eigenvalues.pdf",
+    "id": "stanford-math-220b-eigenvalues-of-the-laplacian",
+    "title": "Eigenvalues of the Laplacian",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://web.stanford.edu/class/math220b/handouts/calcvar.pdf",
+    "id": "stanford-math-220b-calculus-of-variations",
+    "title": "Calculus of Variations",
+    "authors": [],
+    "course_code": "MATH 220B",
+    "course_title": "Partial Differential Equations of Applied Mathematics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~evans/math%20170%20notes.pdf",
+    "id": "berkeley-evans-math-170-mathematical-methods-for-optimization",
+    "title": "Mathematical Methods for Optimization (Math 170)",
+    "authors": [
+      "Lawrence C. Evans"
+    ],
+    "course_code": "MATH 170",
+    "course_title": "Mathematical Methods for Optimization",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "optimization"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~evans/math%20195%20notes.pdf",
+    "id": "berkeley-evans-math-195-mathematical-methods-for-optimization",
+    "title": "Mathematical Methods for Optimization (Math 195)",
+    "authors": [
+      "Lawrence C. Evans"
+    ],
+    "course_code": "MATH 195",
+    "course_title": "Mathematical Methods for Optimization",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "optimization"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~evans/control.course.pdf",
+    "id": "berkeley-an-introduction-to-mathematical-optimal-control-theory",
+    "title": "An Introduction to Mathematical Optimal Control Theory",
+    "authors": [
+      "Lawrence C. Evans"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "optimization",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~evans/entropy.and.PDE.pdf",
+    "id": "berkeley-entropy-and-partial-differential-equations",
+    "title": "Entropy and Partial Differential Equations",
+    "authors": [
+      "Lawrence C. Evans"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~btw/110-script.pdf",
+    "id": "berkeley-math-110-linear-algebra-lecture-notes",
+    "title": "Linear Algebra: Lecture Notes",
+    "authors": [],
+    "course_code": "MATH 110",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/colimits.pdf",
+    "id": "berkeley-math-250b-colimits-and-localization",
+    "title": "Colimits and Localization",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/Lazard.pdf",
+    "id": "berkeley-math-250b-lazards-theorem",
+    "title": "Lazard’s Theorem",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/associated.pdf",
+    "id": "berkeley-math-250b-associated-primes",
+    "title": "Associated Primes",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/flatness.pdf",
+    "id": "berkeley-math-250b-flatness",
+    "title": "Flatness",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/dimension.pdf",
+    "id": "berkeley-math-250b-dimension-of-local-rings",
+    "title": "Dimension of Local Rings",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/regular.pdf",
+    "id": "berkeley-math-250b-regular-local-rings",
+    "title": "Regular Local Rings",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/depth.pdf",
+    "id": "berkeley-math-250b-depth-and-cohomology",
+    "title": "Depth and Cohomology",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_250B-2016/Notes/koszul.pdf",
+    "id": "berkeley-math-250b-koszul-complexes",
+    "title": "Koszul Complexes",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 250B",
+    "course_title": "Commutative Algebra",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/differentialsandsmoothness.pdf",
+    "id": "berkeley-math-256b-differentials-and-smoothness",
+    "title": "Differentials and Smoothness",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 256B",
+    "course_title": "Algebraic Geometry",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/vanishingcoh.pdf",
+    "id": "berkeley-math-256b-vanishing-of-cohomology",
+    "title": "Vanishing of Cohomology",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 256B",
+    "course_title": "Algebraic Geometry",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_256B-2017/Notes/basechange.pdf",
+    "id": "berkeley-math-256b-cohomology-and-base-change",
+    "title": "Cohomology and Base Change",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 256B",
+    "course_title": "Algebraic Geometry",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebraic-geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_254-07/KronWeb.pdf",
+    "id": "berkeley-math-254-the-kronecker-weber-theorem",
+    "title": "The Kronecker–Weber Theorem",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 254",
+    "course_title": "Number Theory",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory"
+    ],
+    "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/trace.pdf",
+    "id": "berkeley-math-110-traces-of-operators-and-matrices",
+    "title": "Traces of Operators and Matrices",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 110",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/determinants.pdf",
+    "id": "berkeley-math-110-determinants-of-operators-and-matrices",
+    "title": "Determinants of Operators and Matrices",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 110",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://math.berkeley.edu/~ogus/Math_110--008/Supplements/determinants2.pdf",
+    "id": "berkeley-math-110-determinants-of-operators-and-matrices-ii",
+    "title": "Determinants of Operators and Matrices II",
+    "authors": [
+      "Arthur Ogus"
+    ],
+    "course_code": "MATH 110",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2007,
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/ISE/ISENOTES.PDF",
+    "id": "imperial-ise-i-brief-lecture-notes",
+    "title": "ISE I: Brief Lecture Notes",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "ISE I",
+    "course_title": "Mathematics for Information Systems Engineering",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh1.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-1",
+    "title": "Algebra II: Problem Sheet 1",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh2.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-2",
+    "title": "Algebra II: Problem Sheet 2",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh3.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-3",
+    "title": "Algebra II: Problem Sheet 3",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh4.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-4",
+    "title": "Algebra II: Problem Sheet 4",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh5.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-5",
+    "title": "Algebra II: Problem Sheet 5",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh6.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-6",
+    "title": "Algebra II: Problem Sheet 6",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-17-sh7.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-7",
+    "title": "Algebra II: Problem Sheet 7",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-19-sh8.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-8",
+    "title": "Algebra II: Problem Sheet 8",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.ma.imperial.ac.uk/~mwl/m2pm2/m2pm2-18-sh9.pdf",
+    "id": "imperial-m2pm2-algebra-ii-problem-sheet-9",
+    "title": "Algebra II: Problem Sheet 9",
+    "authors": [
+      "Martin W. Liebeck"
+    ],
+    "course_code": "M2PM2",
+    "course_title": "Algebra II",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.ethz.ch/~kowalski/representation-theory.pdf",
+    "id": "eth-zurich-representation-theory",
+    "title": "Representation Theory",
+    "authors": [
+      "Emmanuel Kowalski"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.ethz.ch/~kowalski/measure-integral.pdf",
+    "id": "eth-zurich-measure-and-integral",
+    "title": "Measure and Integral",
+    "authors": [
+      "Emmanuel Kowalski"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.ethz.ch/~kowalski/spectral-theory.pdf",
+    "id": "eth-zurich-spectral-theory-in-hilbert-spaces",
+    "title": "Spectral Theory in Hilbert Spaces",
+    "authors": [
+      "Emmanuel Kowalski"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "functional-analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~abandeira//LA23_notes_part_II.pdf",
+    "id": "eth-zurich-401-0131-00l-linear-algebra-part-ii",
+    "title": "Linear Algebra, Part II",
+    "authors": [
+      "Afonso S. Bandeira"
+    ],
+    "course_code": "401-0131-00L",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~abandeira//Math_of_ML_Lecture_Notes2021.pdf",
+    "id": "eth-zurich-401-2684-00l-mathematics-of-machine-learning",
+    "title": "Mathematics of Machine Learning",
+    "authors": [
+      "Afonso S. Bandeira",
+      "Nikita Zhivotovskiy"
+    ],
+    "course_code": "401-2684-00L",
+    "course_title": "Mathematics of Machine Learning",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics",
+      "information-computation"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MH3512/markov_chains.pdf",
+    "id": "ntu-mh3512-notes-on-markov-chains",
+    "title": "Notes on Markov Chains",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MH3512",
+    "course_title": "Stochastic Processes",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MAS728/stochastic_modeling.pdf",
+    "id": "ntu-mas728-discrete-stochastic-processes",
+    "title": "Discrete Stochastic Processes",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MAS728",
+    "course_title": null,
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MH8331/financial_risk_analytics.pdf",
+    "id": "ntu-mh8331-notes-on-financial-risk-and-analytics",
+    "title": "Notes on Financial Risk and Analytics",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MH8331",
+    "course_title": "Financial Risk and Analytics",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/assets-portfolios-arbitrage.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-1-assets",
+    "title": "Introduction to Stochastic Finance, Chapter 1: Assets, Portfolios and Arbitrage",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/discrete-time-model.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-2-discrete",
+    "title": "Introduction to Stochastic Finance, Chapter 2: Discrete-Time Market Model",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/pricing-hedging-discrete-time.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-3-pricing",
+    "title": "Introduction to Stochastic Finance, Chapter 3: Pricing and Hedging in Discrete Time",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/brownian-motion-stochastic-calculus.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-4-brownian",
+    "title": "Introduction to Stochastic Finance, Chapter 4: Brownian Motion and Stochastic Calculus",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/continuous-time-model.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-5-continuous",
+    "title": "Introduction to Stochastic Finance, Chapter 5: Continuous-Time Market Model",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/martingale-pricing-hedging.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-7-martingale",
+    "title": "Introduction to Stochastic Finance, Chapter 7: Martingale Approach to Pricing and Hedging",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/stochastic-volatility.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-8-stochastic",
+    "title": "Introduction to Stochastic Finance, Chapter 8: Stochastic Volatility",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/volatility-estimation.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-9-volatility",
+    "title": "Introduction to Stochastic Finance, Chapter 9: Volatility Estimation",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/maximum-brownian-motion.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-10-maximum",
+    "title": "Introduction to Stochastic Finance, Chapter 10: Maximum of Brownian motion",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/barrier-options.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-11-barrier",
+    "title": "Introduction to Stochastic Finance, Chapter 11: Barrier Options",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/lookback-options.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-12-lookback",
+    "title": "Introduction to Stochastic Finance, Chapter 12: Lookback Options",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/asian-options.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-13-asian",
+    "title": "Introduction to Stochastic Finance, Chapter 13: Asian Options",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/optimal-stopping-theorem.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-14-optimal",
+    "title": "Introduction to Stochastic Finance, Chapter 14: Optimal Stopping Theorem",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/american-options.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-15-american",
+    "title": "Introduction to Stochastic Finance, Chapter 15: American Options",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/change-of-numeraire-forward-measures.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-16-change",
+    "title": "Introduction to Stochastic Finance, Chapter 16: Change of Numéraire and Forward Measures",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/short-rates-bond-pricing.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-17-short",
+    "title": "Introduction to Stochastic Finance, Chapter 17: Short Rates and Bond Pricing",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/forward_rates.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-18-forward",
+    "title": "Introduction to Stochastic Finance, Chapter 18: Forward Rates",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/pricing-interest-rate-derivatives.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-19-pricing",
+    "title": "Introduction to Stochastic Finance, Chapter 19: Pricing of Interest Rate Derivatives",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/stochastic-calculus-jump-processes.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-20-stochastic",
+    "title": "Introduction to Stochastic Finance, Chapter 20: Stochastic Calculus for Jump Processes",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/pricing-hedging-jump-models.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-21-pricing",
+    "title": "Introduction to Stochastic Finance, Chapter 21: Pricing and Hedging in Jump Models",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://personal.ntu.edu.sg/nprivault/MA5182/numerical-methods-finance.pdf",
+    "id": "ntu-ma5182-introduction-to-stochastic-finance-chapter-22-basic",
+    "title": "Introduction to Stochastic Finance, Chapter 22: Basic Numerical Methods",
+    "authors": [
+      "Nicolas Privault"
+    ],
+    "course_code": "MA5182",
+    "course_title": "Introduction to Stochastic Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~sharifi/notes/algebra.pdf",
+    "id": "ucla-abstract-algebra",
+    "title": "Abstract Algebra",
+    "authors": [
+      "Romyar Sharifi"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "algebra"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~sharifi/notes/algnum.pdf",
+    "id": "ucla-algebraic-number-theory",
+    "title": "Algebraic Number Theory",
+    "authors": [
+      "Romyar Sharifi"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~sharifi/notes/iwasawa.pdf",
+    "id": "ucla-iwasawa-theory",
+    "title": "Iwasawa Theory",
+    "authors": [
+      "Romyar Sharifi"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/week1.pdf",
+    "id": "ucla-math-115a-linear-algebra-week-1",
+    "title": "Linear Algebra: Week 1",
+    "authors": [
+      "Terence Tao"
+    ],
+    "course_code": "MATH 115A",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/week4.pdf",
+    "id": "ucla-math-115a-linear-algebra-week-4",
+    "title": "Linear Algebra: Week 4",
+    "authors": [
+      "Terence Tao"
+    ],
+    "course_code": "MATH 115A",
+    "course_title": "Linear Algebra",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~tao/resource/general/121.1.00s/compact.pdf",
+    "id": "ucla-math-121-compactness-class-notes",
+    "title": "Compactness: Class Notes",
+    "authors": [
+      "Terence Tao"
+    ],
+    "course_code": "MATH 121",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology",
+      "analysis"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.ucla.edu/~tao/resource/general/121.1.00s/product.pdf",
+    "id": "ucla-math-121-product-spaces-class-notes",
+    "title": "Product Spaces: Class Notes",
+    "authors": [
+      "Terence Tao"
+    ],
+    "course_code": "MATH 121",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.toronto.edu/mein/teaching/MAT1341_LieGroupoids/Groupoids.pdf",
+    "id": "toronto-mat1341-lie-groupoids-and-lie-algebroids",
+    "title": "Lie Groupoids and Lie Algebroids",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": "MAT1341",
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.toronto.edu/mein/teaching/MAT1341_PoissonGeometry/Poisson8.pdf",
+    "id": "toronto-mat1341-introduction-to-poisson-geometry",
+    "title": "Introduction to Poisson Geometry",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": "MAT1341",
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/mein/teaching/LectureNotes/symplectic.pdf",
+    "id": "toronto-symplectic-geometry",
+    "title": "Symplectic Geometry",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/mein/teaching/LectureNotes/Man.pdf",
+    "id": "toronto-differentiable-manifolds",
+    "title": "Differentiable Manifolds",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/mein/teaching/LectureNotes/rieall.pdf",
+    "id": "toronto-riemannian-geometry",
+    "title": "Riemannian Geometry",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/mein/teaching/LectureNotes/action.pdf",
+    "id": "toronto-group-actions-on-manifolds",
+    "title": "Group Actions on Manifolds",
+    "authors": [
+      "Eckhard Meinrenken"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/AdvancedNA2015.pdf",
+    "id": "epfl-advanced-numerical-analysis-lecture-notes",
+    "title": "Advanced Numerical Analysis: Lecture Notes",
+    "authors": [
+      "Daniel Kressner"
+    ],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "differential-equations",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/exam.pdf",
+    "id": "epfl-advanced-numerical-analysis-exam",
+    "title": "Advanced Numerical Analysis: Exam",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/pde/wp-content/uploads/2022/09/ODE10Lecture1.pdf",
+    "id": "epfl-ordinary-differential-equations-lecture-1-introduction",
+    "title": "Ordinary Differential Equations, Lecture 1: Introduction",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Ordinary Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/pde/wp-content/uploads/2022/10/ODE10Lecture2.pdf",
+    "id": "epfl-ordinary-differential-equations-lecture-2-preparations-for-the",
+    "title": "Ordinary Differential Equations, Lecture 2: Preparations for the Picard and Peano Theorems",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Ordinary Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/pde/wp-content/uploads/2022/10/ODE10Lecture3.pdf",
+    "id": "epfl-ordinary-differential-equations-lecture-3-the-peano-existence",
+    "title": "Ordinary Differential Equations, Lecture 3: The Peano Existence Theorem",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Ordinary Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/pde/wp-content/uploads/2022/10/GradientSystems.pdf",
+    "id": "epfl-ordinary-differential-equations-global-dynamics-of-gradient-systems",
+    "title": "Ordinary Differential Equations, Global Dynamics of Gradient Systems",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Ordinary Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations",
+      "dynamical-systems"
+    ],
+    "year": 2010,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.intr.pdf",
+    "id": "nyu-probability-theory-introduction",
+    "title": "Probability Theory: Introduction",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch1.pdf",
+    "id": "nyu-probability-theory-chapter-1-measure-theory",
+    "title": "Probability Theory, Chapter 1: Measure Theory",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch2.pdf",
+    "id": "nyu-probability-theory-chapter-2-weak-convergence",
+    "title": "Probability Theory, Chapter 2: Weak Convergence",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch3.pdf",
+    "id": "nyu-probability-theory-chapter-3-independent-sums",
+    "title": "Probability Theory, Chapter 3: Independent Sums",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch4.pdf",
+    "id": "nyu-probability-theory-chapter-4-dependent-random-variables",
+    "title": "Probability Theory, Chapter 4: Dependent Random Variables",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch5.pdf",
+    "id": "nyu-probability-theory-chapter-5-martingales",
+    "title": "Probability Theory, Chapter 5: Martingales",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch6.pdf",
+    "id": "nyu-probability-theory-chapter-6-stationary-stochastic-processes",
+    "title": "Probability Theory, Chapter 6: Stationary Stochastic Processes",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/PROB.ch7.pdf",
+    "id": "nyu-probability-theory-chapter-7-dynamic-programming-and-filtering",
+    "title": "Probability Theory, Chapter 7: Dynamic Programming and Filtering",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/course/finals.pdf",
+    "id": "nyu-probability-limit-theorems-final-examination",
+    "title": "Probability: Limit Theorems, Final Examination",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Probability: Limit Theorems",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "probability"
+    ],
+    "year": 2002,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture1.pdf",
+    "id": "nyu-harmonic-analysis-lecture-1",
+    "title": "Harmonic Analysis, Lecture 1",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture2.pdf",
+    "id": "nyu-harmonic-analysis-lecture-2-singular-integrals",
+    "title": "Harmonic Analysis, Lecture 2: Singular Integrals",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture3.pdf",
+    "id": "nyu-harmonic-analysis-lecture-3-multidimensional-versions",
+    "title": "Harmonic Analysis, Lecture 3: Multidimensional Versions",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture4.pdf",
+    "id": "nyu-harmonic-analysis-lecture-4",
+    "title": "Harmonic Analysis, Lecture 4",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture5.pdf",
+    "id": "nyu-harmonic-analysis-lecture-5-hardy-spaces",
+    "title": "Harmonic Analysis, Lecture 5: Hardy Spaces",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture6.pdf",
+    "id": "nyu-harmonic-analysis-lecture-6-bmo",
+    "title": "Harmonic Analysis, Lecture 6: BMO",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture7.pdf",
+    "id": "nyu-harmonic-analysis-lecture-7-elliptic-pdes",
+    "title": "Harmonic Analysis, Lecture 7: Elliptic PDEs",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture8.pdf",
+    "id": "nyu-harmonic-analysis-lecture-8-banach-algebras-wieners-theorem",
+    "title": "Harmonic Analysis, Lecture 8: Banach Algebras, Wiener’s Theorem",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture9.pdf",
+    "id": "nyu-harmonic-analysis-lecture-9-compact-groups-and-haar",
+    "title": "Harmonic Analysis, Lecture 9: Compact Groups and Haar Measure",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/lecture10.pdf",
+    "id": "nyu-harmonic-analysis-lecture-10",
+    "title": "Harmonic Analysis, Lecture 10",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/harmonic/problems.pdf",
+    "id": "nyu-harmonic-analysis-problems",
+    "title": "Harmonic Analysis: Problems",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Harmonic2019/chapter%201.pdf",
+    "id": "nyu-harmonic-analysis-2019-chapter-1",
+    "title": "Harmonic Analysis (2019), Chapter 1",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Harmonic2019/chapter%202.pdf",
+    "id": "nyu-harmonic-analysis-2019-chapter-2",
+    "title": "Harmonic Analysis (2019), Chapter 2",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Harmonic2019/chapter%205.pdf",
+    "id": "nyu-harmonic-analysis-2019-chapter-5",
+    "title": "Harmonic Analysis (2019), Chapter 5",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Harmonic Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Spring2012/Chapters1-2.pdf",
+    "id": "nyu-large-deviations-chapters-1-2",
+    "title": "Large Deviations, Chapters 1–2",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Large Deviations",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Spring2012/Chapter3.pdf",
+    "id": "nyu-large-deviations-chapter-3-large-time",
+    "title": "Large Deviations, Chapter 3: Large Time",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Large Deviations",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Spring2012/Chapter4.pdf",
+    "id": "nyu-large-deviations-chapter-4",
+    "title": "Large Deviations, Chapter 4",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Large Deviations",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/Spring2012/Chapter6.pdf",
+    "id": "nyu-large-deviations-chapter-6",
+    "title": "Large Deviations, Chapter 6",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Large Deviations",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/processes/chap1.pdf",
+    "id": "nyu-stochastic-processes-chapter-1",
+    "title": "Stochastic Processes, Chapter 1",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Stochastic Processes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/processes/sect5.pdf",
+    "id": "nyu-stochastic-processes-diffusions-as-stochastic-integrals",
+    "title": "Stochastic Processes, Diffusions as Stochastic Integrals",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Stochastic Processes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/processes/chapter4.pdf",
+    "id": "nyu-stochastic-processes-chapter-4-stochastic-differential-equations",
+    "title": "Stochastic Processes, Chapter 4: Stochastic Differential Equations",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Stochastic Processes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/processes/chapter5.pdf",
+    "id": "nyu-stochastic-processes-random-time-change-and-uniqueness-in",
+    "title": "Stochastic Processes, Random Time Change and Uniqueness in One Dimension",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Stochastic Processes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/processes/section6.pdf",
+    "id": "nyu-stochastic-processes-brownian-motion-on-the-half-line",
+    "title": "Stochastic Processes, Brownian Motion on the Half-Line",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Stochastic Processes",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "differential-equations"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/notes.pdf",
+    "id": "nyu-statistics-parametric-models",
+    "title": "Statistics, Parametric Models",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/5.pdf",
+    "id": "nyu-statistics-testing-of-hypotheses",
+    "title": "Statistics, Testing of Hypotheses",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/6.pdf",
+    "id": "nyu-statistics-paired-t-test",
+    "title": "Statistics, Paired t-Test",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/7.pdf",
+    "id": "nyu-statistics-analysis-of-variance",
+    "title": "Statistics, Analysis of Variance",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/8.pdf",
+    "id": "nyu-statistics-nonparametric-methods",
+    "title": "Statistics, Nonparametric Methods",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://math.nyu.edu/~varadhan/statistics/9.pdf",
+    "id": "nyu-statistics-two-stage-procedures",
+    "title": "Statistics, Two-Stage Procedures",
+    "authors": [
+      "S. R. S. Varadhan"
+    ],
+    "course_code": null,
+    "course_title": "Statistics",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "statistics"
+    ],
+    "year": 2000,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/Calculus-DR.pdf",
+    "id": "caltech-the-mathematical-method-via-calculus",
+    "title": "The Mathematical Method via Calculus",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/NumberTheory.pdf",
+    "id": "caltech-introduction-to-number-theory",
+    "title": "Introduction to Number Theory",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "number-theory"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.1.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-1-vector-calculus",
+    "title": "Analytical Notes, Chapter 1: Vector Calculus",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.2.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-2-differentiation-in",
+    "title": "Analytical Notes, Chapter 2: Differentiation in Higher Dimensions",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.4.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-4-multiple-integrals",
+    "title": "Analytical Notes, Chapter 4: Multiple Integrals",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.6.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-6-greens-theorem",
+    "title": "Analytical Notes, Chapter 6: Green’s Theorem in the Plane",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.7.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-7-div-grad",
+    "title": "Analytical Notes, Chapter 7: Div, Grad and Curl",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/08-Ma1cAnalytical-Notes-chap.8.pdf",
+    "id": "caltech-ma-1c-analytical-notes-chapter-8-change-of",
+    "title": "Analytical Notes, Chapter 8: Change of Variables, Parametrizations, Surface Integrals",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 1c",
+    "course_title": "Calculus of One and Several Variables",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/complexNumbers,%20functions,%20factoring.pdf",
+    "id": "caltech-ma-2a-differential-equations-complex-numbers-the-exponential",
+    "title": "Differential Equations, Complex Numbers, the Exponential, Factoring",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/11Ma2aPracLectures1-5%282%29.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-1-5",
+    "title": "Differential Equations, Lectures 1–5",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/11Ma2aPracLectures%206-9-i.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-6-9",
+    "title": "Differential Equations, Lectures 6–9",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures%2010-12.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-10-12-linear",
+    "title": "Differential Equations, Lectures 10–12: Linear Systems of First-Order ODEs",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures%2013-15.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-13-15-fundamental",
+    "title": "Differential Equations, Lectures 13–15: Fundamental Matrices",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures%2016-18.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-16-18",
+    "title": "Differential Equations, Lectures 16–18",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures19-21.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-19-21-linear",
+    "title": "Differential Equations, Lectures 19–21: Linear ODEs of Higher Order",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures22-23.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-22-23-power",
+    "title": "Differential Equations, Lectures 22–23: Power Series Solutions",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLecture24.pdf",
+    "id": "caltech-ma-2a-differential-equations-lecture-24",
+    "title": "Differential Equations, Lecture 24",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://www.its.caltech.edu/~dinakar/ma002a-pr/Ma2aPracLectures25-26.pdf",
+    "id": "caltech-ma-2a-differential-equations-lectures-25-26-the",
+    "title": "Differential Equations, Lectures 25–26: The Laplace Transform",
+    "authors": [
+      "Dinakar Ramakrishnan"
+    ],
+    "course_code": "Ma 2a",
+    "course_title": "Differential Equations",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "differential-equations"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math22a2018/handouts/22a_2018_latest.pdf",
+    "id": "harvard-math-22a-linear-algebra-and-vector-calculus-i",
+    "title": "Linear Algebra and Vector Calculus I",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH 22A",
+    "course_title": "Vector Calculus and Linear Algebra I",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "algebra",
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math22b2022/handouts/22b_2022.pdf",
+    "id": "harvard-math-22b-linear-algebra-and-vector-calculus-ii",
+    "title": "Linear Algebra and Vector Calculus II",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH 22B",
+    "course_title": "Vector Calculus and Linear Algebra II",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "algebra",
+      "analysis"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math154/handouts/154.pdf",
+    "id": "harvard-math-154-probability-theory",
+    "title": "Probability Theory",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH 154",
+    "course_title": "Probability Theory",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math136/handouts/differential-geometry-2024.pdf",
+    "id": "harvard-math-136-differential-geometry",
+    "title": "Differential Geometry",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH 136",
+    "course_title": "Differential Geometry",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "geometry"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/math21a2019/21a_2019.pdf",
+    "id": "harvard-math-21a-multivariable-calculus",
+    "title": "Multivariable Calculus",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH 21A",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "geometry"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.harvard.edu/~knill/teaching/mathe320_2022/handouts/math320_2022.pdf",
+    "id": "harvard-math-e-320-teaching-mathematics-with-a-historical",
+    "title": "Teaching Mathematics with a Historical Perspective",
+    "authors": [
+      "Oliver Knill"
+    ],
+    "course_code": "MATH E-320",
+    "course_title": "Teaching Mathematics with a Historical Perspective",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2022,
+    "priority": 60
   }
 ]

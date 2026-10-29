@@ -478,6 +478,13 @@ a.chip:hover {
   padding-bottom: 0.08em;
   margin-bottom: -0.08em;
 }
+/* Mask and line both clip at the line box; tight display leading would cut
+   the dots off Turkish capitals (Ü, İ), so give them room above. */
+.split-line,
+.split-line-mask {
+  padding-top: 0.2em;
+  margin-top: -0.2em;
+}
 .split-line > span {
   display: inline-block;
   will-change: transform;
