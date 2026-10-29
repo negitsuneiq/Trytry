@@ -416,18 +416,33 @@ function report(results: Map<string, { stats: UniStats }>, all: Candidate[]): st
   return lines.join('\n');
 }
 
-const results = new Map<string, { stats: UniStats }>();
+const fresh = new Map<string, UniStats>();
 const all: Candidate[] = [];
 // Universities run concurrently; requests to any single host stay serialised and spaced.
 const runs = await Promise.all(selected.map(async (s) => [s.university, await crawlUniversity(s)] as const));
 for (const [slug, { candidates, stats }] of runs) {
-  results.set(slug, { stats });
+  fresh.set(slug, stats);
   all.push(...candidates);
 }
 dedupeByTitle(all);
 
+// A partial run (--only) replaces only its own universities; everyone else's
+// candidates and report rows carry over from the previous runs.
+const isSelected = (slug: string) => selected.some((s) => s.university === slug);
 const candPath = join(OUT_DIR, 'candidates.json');
-const previous = existsSync(candPath) ? readJson<Candidate[]>(candPath).filter((c) => !selected.some((s) => s.university === c.university)) : [];
+const previous = existsSync(candPath) ? readJson<Candidate[]>(candPath).filter((c) => !isSelected(c.university)) : [];
 writeJson(candPath, [...previous, ...all]);
-writeFileSync(join(DATA_DIR, 'crawl-report.md'), report(results, all) + '\n');
+
+type StoredStats = Omit<UniStats, 'reasons' | 'blocked'> & { reasons: [string, number][]; blocked: [string, number][] };
+const statsPath = join(OUT_DIR, 'stats.json');
+const stored: Record<string, StoredStats> = existsSync(statsPath) ? readJson(statsPath) : {};
+for (const [slug, s] of fresh) stored[slug] = { ...s, reasons: [...s.reasons], blocked: [...s.blocked] };
+writeJson(statsPath, stored);
+
+const results = new Map<string, { stats: UniStats }>();
+for (const u of universities) {
+  const s = stored[u.slug];
+  if (s) results.set(u.slug, { stats: { ...s, reasons: new Map(s.reasons), blocked: new Map(s.blocked) } });
+}
+writeFileSync(join(DATA_DIR, 'crawl-report.md'), report(results, [...previous, ...all]) + '\n');
 console.log(`\ncandidates → ${candPath}\nreport     → data/crawl-report.md`);
