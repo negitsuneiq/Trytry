@@ -204,13 +204,24 @@
   {
     "university": "peking",
     "seeds": [
-      "https://faculty.bicmr.pku.edu.cn/~wenzw/optbook.html",
-      "https://faculty.bicmr.pku.edu.cn/~wenzw/opt-2026-fall.html",
-      "https://faculty.bicmr.pku.edu.cn/~wenzw/bigdata2026.html"
+      "http://bicmr.pku.edu.cn/~guochuanthiang/AnalysisOne.html",
+      "http://bicmr.pku.edu.cn/~guochuanthiang/QT26.html",
+      "http://bicmr.pku.edu.cn/~guochuanthiang/IC25.html",
+      "http://bicmr.pku.edu.cn/~guochuanthiang/QT25.html",
+      "http://bicmr.pku.edu.cn/~guochuanthiang/MP24.html",
+      "http://bicmr.pku.edu.cn/~guochuanthiang/DT23.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/ggt/index.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/ggt/2025.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/ggt/2026.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/ggt/2023.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/geom/index.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/geom2/index.html",
+      "https://faculty.bicmr.pku.edu.cn/~wyang/132382/index.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "www.math.pku.edu.cn was unreachable from the crawl container. BICMR is part of PKU; much of its material is in Chinese and is skipped by the language check."
+    "notes": "Guo Chuan Thiang (BICMR) English course pages (Analysis I, quantum theory, infinity categories, math physics, differential topology) with weekly lecture notes, exercises and assignments (~15-20 PDFs each); Wenyuan Yang (BICMR) geometric group theory, hyperbolic manifolds/geometry and surfaces pages with his own English notes and exercise sheets (some pages also link third-party PDFs such as Miller, Bass-Serre, Warwick, Brown, so crawler should filter by host). www.math.pku.edu.cn/en/ resets the connection and www.math.pku.edu.cn fails TLS from this container, though math.pku.edu.cn (no www) works; Yuan Yao's math.pku.edu.cn/teachers/yaoy pages were rejected (mostly third-party readings, many dead links), Tian Zhiyu's pages (Chinese exams, third-party Zinger notes) and Huang Dezheng / Wen Zaiwen pages (Chinese) were also skipped. Yiwen Ding's homepage (bicmr.pku.edu.cn/~dingyiwen/) has English nt1.pdf and nt2.pdf number theory notes but is mixed with research papers, so not seeded.",
+    "maxPdfs": 200
   },
   {
     "university": "toronto",
