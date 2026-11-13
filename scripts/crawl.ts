@@ -5,30 +5,36 @@
 //   npm run crawl -- --max-pages 100   # cap HTML pages per university
 //
 // Output:
-//   .cache/crawl/candidates.json   every PDF seen, with verdict and reasons
+//   .cache/crawl/candidates.json   every PDF seen, with verdict and reasons (atomic write at the end)
+//   .cache/crawl/candidates.jsonl  the same, appended one line at a time while crawling (survives a crash)
 //   .cache/crawl/files/<sha>.pdf   cached copies of redistributable PDFs only
 //   data/crawl-report.md           per-university counts and skip reasons
 //
 // Candidates are not published automatically. A person reviews them and lists
 // the accepted ones in data/curation.json; `npm run curate` builds documents.json.
+//
+// Licence policy: a PDF is "host" only when a grant is found in its own text,
+// or on the course page that links it (same origin, same directory, and the
+// PDF carries no copyright notice of its own). Anything doubtful is "link".
 
 import { createHash } from 'node:crypto';
-import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
+import { appendFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { isRedistributable, MAX_HOSTED_FILE_BYTES, type License, type University } from '../src/lib/schema.ts';
-import { politeFetch, readCapped, isDenied, USER_AGENT } from './lib/http.ts';
+import { politeFetch, readBody, isDenied, limiter, USER_AGENT } from './lib/http.ts';
 import { pdfInfo, pdfText, isPdf } from './lib/pdf.ts';
 import { detectLanguage } from './lib/lang.ts';
-import { detectLicense, mainText, relLicense } from './lib/license.ts';
-import { guessCourseCode, guessLevel, guessTopics, guessType, looksLikeStudentWork, titleSimilarity } from './lib/classify.ts';
+import { analysePage, detectLicense, findRestriction, hasCopyrightNotice, type LicenseFinding } from './lib/license.ts';
+import { guessCourseCode, guessLevel, guessTopics, guessType, isTitleDuplicate, looksLikeStudentWork } from './lib/classify.ts';
+import { inScope, normaliseScope, pageCovers, sharesScopeDomain } from './lib/scope.ts';
 import { CACHE_DIR, DATA_DIR, readJson, writeJson, today } from './lib/io.ts';
 
 export interface Source {
   university: string;
-  /** Public pages to start from: course listings, course pages, faculty "teaching" pages. */
+  /** Public pages to start from: course listings, course pages, faculty "teaching" pages. Must be inside `scope`. */
   seeds: string[];
-  /** URL prefixes the crawler may walk through. PDFs may live anywhere not deny-listed. */
+  /** URL prefixes the crawler may walk through (matched on a URL boundary). PDFs may live on any host sharing a scope entry's registrable domain. */
   scope: string[];
   maxDepth?: number;
   maxPages?: number;
@@ -76,12 +82,20 @@ const { values: args } = parseArgs({
 const PDF_DOWNLOAD_LIMIT = 200 * 1024 * 1024;
 const HTML_LIMIT = 5 * 1024 * 1024;
 const SKIP_EXT = /\.(zip|gz|tgz|tar|ps|dvi|tex|bib|djvu|epub|mp4|mov|avi|mp3|wav|m4a|jpg|jpeg|png|gif|svg|webp|ppt|pptx|doc|docx|xls|xlsx|csv|ipynb|py|m|nb|sage|mw|exe|dmg|iso)$/i;
+/** Query parameters that open endless variants of one page (calendars, sorting, printing …). */
+const TRAP_PARAM = /^(sort|order|orderby|dir|date|day|month|year|view|cal|calendar|ical|format|print|lang|replytocom|filter|search|q|s)$/i;
+const OCW_TERMS = /ocw\.mit\.edu\/terms(?![\w-])/i;
 
 const OUT_DIR = join(CACHE_DIR, 'crawl');
 const FILES_DIR = join(OUT_DIR, 'files');
 const TMP_DIR = join(OUT_DIR, 'tmp');
+const JSONL = join(OUT_DIR, 'candidates.jsonl');
+const candPath = join(OUT_DIR, 'candidates.json');
 mkdirSync(FILES_DIR, { recursive: true });
+// Temporary inspection copies of PDFs we may not host: never leave any behind, not even after a crash.
+rmSync(TMP_DIR, { recursive: true, force: true });
 mkdirSync(TMP_DIR, { recursive: true });
+writeFileSync(JSONL, '');
 
 const sources = readJson<Source[]>(join(DATA_DIR, 'sources.json'));
 const universities = readJson<University[]>(join(DATA_DIR, 'universities.json'));
@@ -90,10 +104,15 @@ const selected = sources.filter((s) => !only || only.includes(s.university));
 const maxPagesArg = args['max-pages'] ? Number(args['max-pages']) : undefined;
 const maxPdfs = args['max-pdfs'] ? Number(args['max-pdfs']) : 120;
 
-const seenSha = new Map<string, string>();
+// Read the earlier results now, so a corrupt file fails the run before hours of crawling, not after.
+const previous: Candidate[] = existsSync(candPath) ? readJson<Candidate[]>(candPath).filter((c) => !selected.some((s) => s.university === c.university)) : [];
+
+/** Big downloads are held in memory; keep only a few at a time. */
+const downloadSlot = limiter(3);
 
 interface UniStats {
   pages: number;
+  fetches: number;
   pdfLinks: number;
   checked: number;
   host: number;
@@ -130,6 +149,16 @@ function looksLikePdf(u: URL, text: string) {
   return /\.pdf$/i.test(u.pathname) || /\[?\bpdf\b\]?/i.test(text) || /\/download\b|\/pdf\//i.test(u.pathname);
 }
 
+/** HTML pages with trap-like query strings are not followed. */
+function isTrapUrl(u: URL) {
+  let n = 0;
+  for (const k of u.searchParams.keys()) {
+    n++;
+    if (TRAP_PARAM.test(k)) return true;
+  }
+  return n > 2;
+}
+
 function bump(m: Map<string, number>, k: string) {
   m.set(k, (m.get(k) ?? 0) + 1);
 }
@@ -143,14 +172,25 @@ function pickTitle(info: ReturnType<typeof pdfInfo>, firstPage: string, anchor: 
     .map((l) => l.replace(/\s{2,}/g, ' ').trim())
     .filter((l) => l.length > 3 && l.length < 120 && /\p{L}{3}/u.test(l) && !/^(page|\d+$)/i.test(l));
   if (lines[0]) return lines.slice(0, lines[1] && lines[0].length < 30 ? 2 : 1).join(' — ');
-  return anchor || decodeURIComponent(url.split('/').pop() ?? url).replace(/\.pdf$/i, '');
+  if (anchor) return anchor;
+  const last = url.split('/').pop() ?? url;
+  try {
+    return decodeURIComponent(last).replace(/\.pdf$/i, '');
+  } catch {
+    return last.replace(/\.pdf$/i, '');
+  }
 }
 
-async function inspectPdf(
-  url: URL,
-  ctx: { university: string; parent: string; anchor: string; pageTitle: string; pageLicense: ReturnType<typeof detectLicense>; pageRel: string | null },
-): Promise<Candidate> {
-  const c: Candidate = {
+interface PageContext {
+  university: string;
+  parent: string;
+  anchor: string;
+  pageTitle: string;
+  pageLicense: LicenseFinding;
+}
+
+function newCandidate(url: URL, ctx: PageContext): Candidate {
+  return {
     url: url.href,
     final_url: url.href,
     university: ctx.university,
@@ -177,6 +217,9 @@ async function inspectPdf(
     cached: null,
     checked_at: today(),
   };
+}
+
+async function inspectPdf(url: URL, ctx: PageContext, c: Candidate): Promise<Candidate> {
   const skip = (why: string) => {
     c.verdict = 'skip';
     c.reasons.push(why);
@@ -187,25 +230,23 @@ async function inspectPdf(
   c.final_url = r.finalUrl;
   if (r.blocked) return skip(r.blocked);
   if (r.status !== 200) {
-    await r.res?.body?.cancel();
+    await r.res?.body?.cancel().catch(() => {});
     return skip(`HTTP ${r.status}`);
   }
-  if (r.contentType.includes('text/html')) {
-    await r.res?.body?.cancel();
-    return skip('not a PDF (HTML response)');
+  // Only plausible PDF content types are downloaded (a /download link may be a zip or a video).
+  if (!/^(application\/(pdf|x-pdf|octet-stream)|binary\/octet-stream|)(;|$)/.test(r.contentType.trim())) {
+    await r.res?.body?.cancel().catch(() => {});
+    return skip(`not a PDF (content-type ${r.contentType || 'none'})`);
   }
-  const buf = await readCapped(r.res!, PDF_DOWNLOAD_LIMIT);
-  if (!buf) return skip('larger than 200 MB');
+  const body = await downloadSlot(() => readBody(r.res!, { limit: PDF_DOWNLOAD_LIMIT, headCheck: isPdf }));
+  if (body.reason === 'too-large') return skip('larger than 200 MB');
+  if (body.reason === 'rejected') return skip('not a PDF (bad magic bytes)');
+  if (!body.buf) return skip(`download failed (${body.reason}${body.error ? `: ${body.error}` : ''})`);
+  const buf = body.buf;
   if (!isPdf(buf)) return skip('not a PDF (bad magic bytes)');
 
   c.bytes = buf.length;
   c.sha256 = createHash('sha256').update(buf).digest('hex');
-  const dup = seenSha.get(c.sha256);
-  if (dup) {
-    c.duplicate_of = dup;
-    return skip('duplicate (SHA-256)');
-  }
-  seenSha.set(c.sha256, url.href);
 
   // Downloaded only to inspect; deleted below unless it may be hosted.
   const tmp = join(TMP_DIR, `${c.sha256}.pdf`);
@@ -221,7 +262,8 @@ async function inspectPdf(
     const lang = detectLanguage(head);
     c.language = lang.lang;
     c.language_confidence = Number(lang.confidence.toFixed(2));
-    if (lang.lang === 'unknown') return skip(lang.words < 60 ? 'no extractable text (scanned?)' : 'language not confidently English');
+    if (lang.tooShort) return skip(`too short to verify language (${lang.words} words in the first pages; scanned PDF without text?)`);
+    if (lang.lang === 'unknown') return skip('language not confidently English');
     if (lang.lang !== 'en') return skip(`language: ${lang.lang}`);
 
     const context = `${ctx.anchor} ${ctx.pageTitle} ${head.slice(0, 1500)}`;
@@ -236,43 +278,61 @@ async function inspectPdf(
       topics: guessTopics(`${ctx.pageTitle} ${ctx.anchor} ${c.title} ${head.slice(0, 3000)}`),
     };
 
-    // Licence: the file itself first, then the course page that links it.
+    // ---- Licence: the file itself first, then (narrowly) the course page that links it.
     const fileText = `${head}\n${tail}`;
     const fileLic = detectLicense(fileText);
-    if (/ocw\.mit\.edu\/terms/i.test(fileText) && fileLic.license === 'unknown') {
-      // OCW files point to the OCW terms (CC BY-NC-SA 4.0) on every page footer.
-      c.license = 'CC-BY-NC-SA-4.0';
-      c.license_scope = 'file';
-      c.license_evidence = 'https://ocw.mit.edu/pages/privacy-and-terms-of-use/';
-      c.license_snippet = 'File footer references https://ocw.mit.edu/terms';
-    } else if (fileLic.license !== 'unknown') {
+    const pageUrl = new URL(ctx.parent);
+    const finalUrl = new URL(r.finalUrl);
+    const pageApplies = pageCovers(pageUrl, url) && pageCovers(pageUrl, finalUrl);
+    const isOcw = finalUrl.hostname === 'ocw.mit.edu';
+    const fileSpoke = fileLic.license !== 'unknown' || fileLic.conflict || fileLic.ambiguous;
+    const veto: string[] = [];
+
+    if (fileLic.license !== 'unknown') {
       c.license = fileLic.license;
       c.license_scope = 'file';
       c.license_evidence = r.finalUrl;
       c.license_snippet = fileLic.snippet;
-    } else if (ctx.pageLicense.license !== 'unknown') {
-      c.license = ctx.pageLicense.license;
-      c.license_scope = 'page';
-      c.license_evidence = ctx.parent;
-      c.license_snippet = ctx.pageLicense.snippet;
-    } else if (ctx.pageRel) {
-      const rel = detectLicense(ctx.pageRel);
-      if (rel.license !== 'unknown') {
-        c.license = rel.license;
+    } else if (fileSpoke) {
+      c.reasons.push('licence mentioned in the file without a clear grant (or mentions disagree)');
+    } else if (isOcw && OCW_TERMS.test(fileText)) {
+      // OCW files point to the OCW terms (CC BY-NC-SA 4.0). Only for files really served by ocw.mit.edu.
+      c.license = 'CC-BY-NC-SA-4.0';
+      c.license_scope = 'file';
+      c.license_evidence = 'https://ocw.mit.edu/pages/privacy-and-terms-of-use/';
+      c.license_snippet = 'File footer references https://ocw.mit.edu/terms';
+    } else if (pageApplies && ctx.pageLicense.license !== 'unknown' && !ctx.pageLicense.conflict) {
+      if (hasCopyrightNotice(fileText)) c.reasons.push('course page licence not inherited: the PDF carries its own copyright notice without a grant');
+      else {
+        c.license = ctx.pageLicense.license;
         c.license_scope = 'page';
         c.license_evidence = ctx.parent;
-        c.license_snippet = `rel="license" → ${ctx.pageRel}`;
+        c.license_snippet = ctx.pageLicense.snippet;
       }
     }
-    if (fileLic.excluded) c.reasons.push('file says it is excluded from the open licence');
+    if (fileLic.excluded) veto.push('file says it is excluded from the open licence');
+    if (pageApplies && ctx.pageLicense.excluded) veto.push('course page says some content is excluded from the open licence');
+    if (pageApplies && ctx.pageLicense.restricted && c.license_scope === 'file') veto.push('course page carries a restriction notice that disagrees with the file');
 
-    const hostable = isRedistributable(c.license) && !fileLic.excluded;
+    // ---- Full-text scan before anything is hosted: a restriction or third-party credit anywhere in the PDF means "link".
+    if (isRedistributable(c.license) && !veto.length) {
+      const full = pdfText(tmp, 1, info.pages ?? 100000);
+      if (!full.trim()) veto.push('could not read the full text to check for exclusions');
+      else {
+        const hit = findRestriction(full);
+        if (hit) veto.push(`restriction or third-party notice in the full text: ${hit.snippet.slice(0, 100)}`);
+      }
+    }
+    for (const v of veto) c.reasons.push(v);
+
+    const hostable = isRedistributable(c.license) && !veto.length;
     if (hostable && buf.length <= MAX_HOSTED_FILE_BYTES) {
       c.verdict = 'host';
       c.cached = join(FILES_DIR, `${c.sha256}.pdf`);
       writeFileSync(c.cached, buf);
     } else {
       c.verdict = 'link';
+      if (veto.length) c.license = c.license === 'all-rights-reserved' ? c.license : 'unknown';
       if (hostable) c.reasons.push('over 50 MB: link only');
       else c.reasons.push(`licence ${c.license}: link only`);
     }
@@ -282,69 +342,128 @@ async function inspectPdf(
   }
 }
 
-async function crawlUniversity(src: Source): Promise<{ candidates: Candidate[]; stats: UniStats }> {
-  const stats: UniStats = { pages: 0, pdfLinks: 0, checked: 0, host: 0, link: 0, skip: 0, reasons: new Map(), blocked: new Map() };
-  const candidates: Candidate[] = [];
+const allCandidates: Candidate[] = [];
+
+function record(c: Candidate) {
+  allCandidates.push(c);
+  appendFileSync(JSONL, JSON.stringify(c) + '\n');
+}
+
+async function crawlUniversity(src: Source): Promise<UniStats> {
+  const stats: UniStats = { pages: 0, fetches: 0, pdfLinks: 0, checked: 0, host: 0, link: 0, skip: 0, reasons: new Map(), blocked: new Map() };
   const maxDepth = src.maxDepth ?? 2;
   const maxPages = maxPagesArg ?? src.maxPages ?? 150;
-  const queue: { url: URL; depth: number }[] = src.seeds.map((s) => ({ url: new URL(s), depth: 0 }));
+  const maxFetches = maxPages * 3; // every HTML request counts, successful or not
+  const scope = normaliseScope(src.scope);
+  const queue: { url: URL; depth: number }[] = [];
+  for (const s of src.seeds) {
+    const u = new URL(s);
+    if (inScope(u, scope)) queue.push({ url: u, depth: 0 });
+    else bump(stats.blocked, 'seed outside scope');
+  }
   const seenPages = new Set<string>();
   const seenPdfs = new Set<string>();
-  const inScope = (u: URL) => src.scope.some((p) => u.href.startsWith(p));
   const log = (m: string) => console.log(`[${src.university}] ${m}`);
 
-  while (queue.length && stats.pages < maxPages && stats.checked < maxPdfs) {
+  while (queue.length && stats.pages < maxPages && stats.fetches < maxFetches && stats.checked < maxPdfs) {
     const { url, depth } = queue.shift()!;
     const key = normalise(url);
     if (seenPages.has(key)) continue;
     seenPages.add(key);
 
-    const r = await politeFetch(url.href);
-    if (r.blocked) {
-      bump(stats.blocked, r.blocked);
-      continue;
-    }
-    if (r.status !== 200 || !r.contentType.includes('html')) {
-      await r.res?.body?.cancel();
-      continue;
-    }
-    const body = await readCapped(r.res!, HTML_LIMIT);
-    if (!body) continue;
-    const html = body.toString('utf8');
-    stats.pages++;
-    // A password field means a login form: leave immediately.
-    if (/<input[^>]+type=["']?password/i.test(html)) {
-      bump(stats.blocked, 'login form on page');
-      continue;
-    }
-    const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/\s+/g, ' ').trim() ?? '';
-    const pageLicense = detectLicense(mainText(html));
-    const pageRel = relLicense(html);
-
-    for (const { href, text } of extractLinks(html, r.finalUrl)) {
-      const denied = isDenied(href);
-      if (denied) {
-        bump(stats.blocked, denied);
+    try {
+      stats.fetches++;
+      const r = await politeFetch(url.href);
+      if (r.blocked) {
+        bump(stats.blocked, r.blocked);
         continue;
       }
-      if (looksLikePdf(href, text)) {
-        const k = normalise(href);
-        if (seenPdfs.has(k) || stats.checked >= maxPdfs) continue;
-        seenPdfs.add(k);
-        stats.pdfLinks++;
-        stats.checked++;
-        const c = await inspectPdf(href, { university: src.university, parent: r.finalUrl, anchor: text, pageTitle, pageLicense, pageRel });
-        candidates.push(c);
-        stats[c.verdict]++;
-        for (const why of c.reasons) bump(stats.reasons, why.replace(/licence [\w-]+:/, 'licence:'));
-        log(`${c.verdict.padEnd(4)} ${c.license.padEnd(16)} ${(c.title ?? c.url).slice(0, 70)}${c.reasons.length ? `  (${c.reasons.join('; ')})` : ''}`);
-      } else if (depth < maxDepth && inScope(href) && !SKIP_EXT.test(href.pathname)) {
-        queue.push({ url: href, depth: depth + 1 });
+      if (r.status !== 200 || !r.contentType.includes('html')) {
+        await r.res?.body?.cancel().catch(() => {});
+        continue;
       }
+      const final = new URL(r.finalUrl);
+      if (!inScope(final, scope)) {
+        await r.res?.body?.cancel().catch(() => {});
+        bump(stats.blocked, 'redirected outside scope');
+        continue;
+      }
+      const body = await readBody(r.res!, { limit: HTML_LIMIT });
+      if (!body.buf) {
+        bump(stats.blocked, `page not read (${body.reason})`);
+        continue;
+      }
+      const html = body.buf.toString('utf8');
+      stats.pages++;
+      // A password field means a login form: leave immediately.
+      if (/<input[^>]+type\s*=\s*["']?password/i.test(html)) {
+        bump(stats.blocked, 'login form on page');
+        continue;
+      }
+      const pageTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/\s+/g, ' ').trim() ?? '';
+      const pageLicense = analysePage(html);
+
+      for (const { href, text } of extractLinks(html, r.finalUrl)) {
+        const denied = isDenied(href);
+        if (denied) {
+          bump(stats.blocked, denied);
+          continue;
+        }
+        if (looksLikePdf(href, text)) {
+          if (!inScope(href, scope) && !sharesScopeDomain(href, scope)) {
+            bump(stats.blocked, 'PDF link outside the university domain');
+            continue;
+          }
+          const k = normalise(href);
+          if (seenPdfs.has(k) || stats.checked >= maxPdfs) continue;
+          seenPdfs.add(k);
+          stats.pdfLinks++;
+          stats.checked++;
+          const ctx: PageContext = { university: src.university, parent: r.finalUrl, anchor: text, pageTitle, pageLicense };
+          const c = newCandidate(href, ctx);
+          try {
+            await inspectPdf(href, ctx, c);
+          } catch (e) {
+            c.verdict = 'skip';
+            if (c.cached) c.cached = null;
+            c.reasons.push(`error while inspecting: ${(e as Error).message}`);
+          }
+          record(c);
+          stats[c.verdict]++;
+          for (const why of c.reasons) bump(stats.reasons, why.replace(/licence [\w.-]+:/, 'licence:'));
+          log(`${c.verdict.padEnd(4)} ${c.license.padEnd(16)} ${(c.title ?? c.url).slice(0, 70)}${c.reasons.length ? `  (${c.reasons.join('; ')})` : ''}`);
+        } else if (depth < maxDepth && inScope(href, scope) && !SKIP_EXT.test(href.pathname) && !isTrapUrl(href)) {
+          queue.push({ url: href, depth: depth + 1 });
+        }
+      }
+    } catch (e) {
+      bump(stats.blocked, `page error: ${(e as Error).message}`);
     }
   }
-  log(`done: ${stats.pages} pages, ${stats.checked} PDFs → host ${stats.host}, link ${stats.link}, skip ${stats.skip}`);
-  return { candidates, stats };
+  log(`done: ${stats.pages} pages (${stats.fetches} requests), ${stats.checked} PDFs → host ${stats.host}, link ${stats.link}, skip ${stats.skip}`);
+  return stats;
+}
+
+/** Identical bytes: keep one record (host beats link, then crawl order); the others become skips. */
+function dedupeBySha(all: Candidate[]) {
+  const winner = new Map<string, Candidate>();
+  const rank = (c: Candidate) => (c.verdict === 'host' ? 2 : 1);
+  for (const c of all) {
+    if (c.verdict === 'skip' || !c.sha256) continue;
+    const w = winner.get(c.sha256);
+    if (!w) {
+      winner.set(c.sha256, c);
+      continue;
+    }
+    const [win, lose] = rank(c) > rank(w) ? [c, w] : [w, c];
+    winner.set(c.sha256, win);
+    lose.verdict = 'skip';
+    lose.duplicate_of = win.url;
+    lose.reasons.push('duplicate (SHA-256)');
+    // Same bytes share one cache file: only remove it when the winner does not use it.
+    if (lose.cached && lose.cached !== win.cached) rmSync(lose.cached, { force: true });
+    lose.cached = null;
+  }
 }
 
 function dedupeByTitle(all: Candidate[]) {
@@ -355,25 +474,24 @@ function dedupeByTitle(all: Candidate[]) {
       const a = kept[i];
       const b = kept[j];
       if (a.verdict === 'skip' || b.verdict === 'skip' || a.university !== b.university) continue;
-      if ((a.course_code ?? '') !== (b.course_code ?? '')) continue;
-      if (titleSimilarity(a.title!, b.title!) < 0.85) continue;
+      if (!isTitleDuplicate({ title: a.title!, course_code: a.course_code }, { title: b.title!, course_code: b.course_code })) continue;
       const [win, lose] = rank(a) >= rank(b) ? [a, b] : [b, a];
       lose.verdict = 'skip';
       lose.duplicate_of = win.url;
       lose.reasons.push('duplicate (title similarity)');
-      if (lose.cached) rmSync(lose.cached, { force: true });
+      if (lose.cached && lose.cached !== win.cached) rmSync(lose.cached, { force: true });
       lose.cached = null;
     }
 }
 
-function report(results: Map<string, { stats: UniStats }>, all: Candidate[]): string {
+function report(results: Map<string, UniStats>, all: Candidate[]): string {
   const name = (slug: string) => universities.find((u) => u.slug === slug)?.name ?? slug;
   const lines = [
     '# Crawl report',
     '',
     `Run: ${new Date().toISOString()}  `,
     `User-Agent: \`${USER_AGENT}\`  `,
-    'Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.',
+    'Policy: robots.txt obeyed; ≥ 2 s between requests per domain; no LMS/SSO/login pages; PDFs only; English only.',
     '',
     'Counts are crawl candidates. Only entries accepted in `data/curation.json` are published.',
     '',
@@ -381,13 +499,15 @@ function report(results: Map<string, { stats: UniStats }>, all: Candidate[]): st
     '|---|---|---:|---:|---:|---:|---:|',
   ];
   let i = 1;
-  for (const [slug, { stats }] of results) {
-    lines.push(`| ${i++} | ${name(slug)} | ${stats.pages} | ${stats.checked} | ${stats.host} | ${stats.link} | ${stats.skip} |`);
+  for (const [slug, stats] of results) {
+    const mine = all.filter((c) => c.university === slug);
+    const n = (v: Verdict) => mine.filter((c) => c.verdict === v).length;
+    lines.push(`| ${i++} | ${name(slug)} | ${stats.pages} | ${stats.checked} | ${n('host')} | ${n('link')} | ${n('skip')} |`);
   }
   const tot = (k: Verdict) => all.filter((c) => c.verdict === k).length;
   lines.push(`| | **Total** | | **${all.length}** | **${tot('host')}** | **${tot('link')}** | **${tot('skip')}** |`, '');
   lines.push('## Skip and link-only reasons', '');
-  for (const [slug, { stats }] of results) {
+  for (const [slug, stats] of results) {
     if (!stats.reasons.size && !stats.blocked.size) continue;
     lines.push(`### ${name(slug)}`, '');
     for (const [why, n] of [...stats.reasons].sort((a, b) => b[1] - a[1])) lines.push(`- ${why}: ${n}`);
@@ -397,18 +517,36 @@ function report(results: Map<string, { stats: UniStats }>, all: Candidate[]): st
   return lines.join('\n');
 }
 
-const results = new Map<string, { stats: UniStats }>();
-const all: Candidate[] = [];
-// Universities run concurrently; requests to any single host stay serialised and spaced.
-const runs = await Promise.all(selected.map(async (s) => [s.university, await crawlUniversity(s)] as const));
-for (const [slug, { candidates, stats }] of runs) {
-  results.set(slug, { stats });
-  all.push(...candidates);
-}
-dedupeByTitle(all);
+const results = new Map<string, UniStats>();
+let finalised = false;
 
-const candPath = join(OUT_DIR, 'candidates.json');
-const previous = existsSync(candPath) ? readJson<Candidate[]>(candPath).filter((c) => !selected.some((s) => s.university === c.university)) : [];
-writeJson(candPath, [...previous, ...all]);
-writeFileSync(join(DATA_DIR, 'crawl-report.md'), report(results, all) + '\n');
-console.log(`\ncandidates → ${candPath}\nreport     → data/crawl-report.md`);
+function finalise(note?: string) {
+  if (finalised) return;
+  finalised = true;
+  dedupeBySha(allCandidates);
+  dedupeByTitle(allCandidates);
+  writeJson(candPath, [...previous, ...allCandidates]);
+  writeFileSync(join(DATA_DIR, 'crawl-report.md'), report(results, allCandidates) + (note ? `\n> ${note}\n` : '\n'));
+  // Inspection copies must not outlive the run.
+  rmSync(TMP_DIR, { recursive: true, force: true });
+  console.log(`\ncandidates → ${candPath}\nreport     → data/crawl-report.md${note ? `\n${note}` : ''}`);
+}
+
+for (const sig of ['SIGINT', 'SIGTERM'] as const)
+  process.on(sig, () => {
+    finalise(`Run interrupted by ${sig}: partial results.`);
+    process.exit(130);
+  });
+
+// Universities run concurrently; requests to any single domain stay serialised and spaced.
+const settled = await Promise.allSettled(selected.map(async (s) => [s.university, await crawlUniversity(s)] as const));
+let failures = 0;
+settled.forEach((r, i) => {
+  if (r.status === 'fulfilled') results.set(r.value[0], r.value[1]);
+  else {
+    failures++;
+    console.error(`[${selected[i].university}] crawl failed: ${r.reason}`);
+    results.set(selected[i].university, { pages: 0, fetches: 0, pdfLinks: 0, checked: 0, host: 0, link: 0, skip: 0, reasons: new Map([[`crawl aborted: ${r.reason}`, 1]]), blocked: new Map() });
+  }
+});
+finalise(failures ? `${failures} universit${failures === 1 ? 'y' : 'ies'} failed; partial results kept.` : undefined);

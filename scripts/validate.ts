@@ -1,9 +1,9 @@
 // Fails the build if the catalogue breaks the licence policy or Pages limits.
 // Run: npm run validate
 
-import { existsSync, statSync, readFileSync } from 'node:fs';
+import { existsSync, statSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { join } from 'node:path';
+import { join, relative, sep } from 'node:path';
 import {
   DOC_TYPES,
   LEVELS,
@@ -32,6 +32,7 @@ for (const u of unis) {
 const ids = new Set<string>();
 const hashes = new Map<string, string>();
 let hostedTotal = 0;
+const referenced = new Set<string>();
 
 for (const d of docs) {
   if (!/^[a-z0-9-]+$/.test(d.id)) err(d.id, 'id must be kebab-case');
@@ -53,8 +54,10 @@ for (const d of docs) {
   }
 
   if (d.hosted) {
+    if (!/^https?:\/\/\S+$/.test(d.license_evidence ?? '')) err(d.id, 'hosted without a license_evidence URL (file- or course-level page)');
     if (!isRedistributable(d.license)) err(d.id, `hosted but licence ${d.license} does not permit redistribution`);
-    if (!d.license_evidence) err(d.id, 'hosted without license_evidence (file- or course-level page)');
+    if (d.file_path && d.file_path !== `docs/${d.university}/${d.id}.pdf`) err(d.id, `file_path must be docs/${d.university}/${d.id}.pdf`);
+    referenced.add(d.file_path ?? '');
     if (!d.file_path) {
       err(d.id, 'hosted without file_path');
       continue;
@@ -76,6 +79,25 @@ for (const d of docs) {
     err(d.id, 'external document must not have file_path');
   }
 }
+
+// Everything under public/docs is deployed: files without a record have no licence check at all.
+const docsDir = join(PUBLIC_DIR, 'docs');
+let orphanBytes = 0;
+function walk(dir: string) {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) walk(p);
+    else if (!e.name.startsWith('.')) {
+      const rel = relative(PUBLIC_DIR, p).split(sep).join('/');
+      if (!referenced.has(rel)) {
+        errors.push(`${rel}: file in public/docs is not referenced by any hosted document (no licence record)`);
+        orphanBytes += statSync(p).size;
+      }
+    }
+  }
+}
+if (existsSync(docsDir)) walk(docsDir);
+hostedTotal += orphanBytes;
 
 if (hostedTotal > MAX_HOSTED_TOTAL_BYTES) errors.push(`hosted total ${(hostedTotal / 2 ** 20).toFixed(0)} MB exceeds 700 MB`);
 

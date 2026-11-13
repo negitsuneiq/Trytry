@@ -73,9 +73,13 @@ export function guessTopics(s: string): string[] {
   return [...new Set(hits)].slice(0, 3);
 }
 
-/** Signals that a PDF is a student's own work rather than official material. */
+/**
+ * Signals that a PDF is a student's own work rather than official material.
+ * Deliberately narrow: official scribe notes, exam cover sheets ("Student ID: ____") and
+ * "solutions by the teaching assistants" must pass. The human curation step is the real filter.
+ */
 export function looksLikeStudentWork(s: string): boolean {
-  return /\b(my solutions?|solutions? by (?!the instructor)|submitted by|student (?:name|id)|homework submission|scribe(?:d)? by|scribe notes)\b/i.test(s);
+  return /\b(?:my (?:own )?(?:solutions?|homework|answers)|homework submission|submitted by:?\s*student\b|(?:solutions?|answers?) (?:written )?by (?:a |the |one of the )?students?\b|student(?:'s)? (?:solutions?|submission))\b/i.test(s);
 }
 
 export function normaliseTitle(s: string): string {
@@ -94,4 +98,25 @@ export function titleSimilarity(a: string, b: string): number {
   let inter = 0;
   for (const x of A) if (B.has(x)) inter++;
   return inter / (A.size + B.size - inter);
+}
+
+const DIFFERENTIATING = new Set(['solution', 'solutions', 'sheet', 'sheets', 'set', 'sets', 'midterm', 'midterms', 'final', 'finals', 'exam', 'exams', 'quiz', 'homework', 'hw', 'exercise', 'exercises', 'answers', 'answer', 'key', 'part', 'lecture', 'week', 'chapter']);
+const GENERIC_TITLE = /^(?:untitled|problem sets?|problems|homework|notes|lecture notes|lectures?|exam|exams|final|midterm|solutions?|exercises?|syllabus|handout|assignment|worksheet|quiz|test|document|main|slides?)$/;
+
+/**
+ * May two crawl candidates be treated as the same document because their titles are alike?
+ * Never when either course code is missing or they differ, when a title is generic or very short,
+ * or when the titles differ in a numeric token or in solution/sheet/set/midterm/final words.
+ */
+export function isTitleDuplicate(a: { title: string; course_code: string | null }, b: { title: string; course_code: string | null }): boolean {
+  if (!a.course_code || !b.course_code || a.course_code !== b.course_code) return false;
+  const ta = normaliseTitle(a.title).split(' ').filter(Boolean);
+  const tb = normaliseTitle(b.title).split(' ').filter(Boolean);
+  if (ta.length < 3 || tb.length < 3) return false;
+  if (GENERIC_TITLE.test(ta.join(' ')) || GENERIC_TITLE.test(tb.join(' '))) return false;
+  const A = new Set(ta);
+  const B = new Set(tb);
+  for (const t of A) if (!B.has(t) && (/\d/.test(t) || DIFFERENTIATING.has(t))) return false;
+  for (const t of B) if (!A.has(t) && (/\d/.test(t) || DIFFERENTIATING.has(t))) return false;
+  return titleSimilarity(a.title, b.title) >= 0.85;
 }

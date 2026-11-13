@@ -26,6 +26,7 @@ npm run preview
 | `npm run verify-links` | Tüm kaynak linklerini kontrol eder, `link_status` ve `last_checked` alanlarını günceller |
 | `npm run thumbnails` | Barındırılan PDF'lerin ilk sayfasından `public/thumbs/<id>.webp` üretir |
 | `npm run validate` | Lisans politikası, dosya boyutu, SHA-256 ve şema kurallarını denetler; hata varsa build durur |
+| `npm run test:pipeline` | Crawler/lisans/robots/engelleme listesi için regresyon testleri (yalnızca yerel sunucular kullanır, gerçek siteye istek atmaz) |
 | `npm run build` | Yukarıdaki doğrulama + önizleme + Astro build |
 
 Bir proxy arkasındaysanız Node'un `fetch`'i proxy'yi ancak şu şekilde kullanır: `NODE_USE_ENV_PROXY=1 npm run crawl`.
@@ -49,20 +50,29 @@ Crawler hiçbir şeyi kendiliğinden yayımlamaz. Konu, seviye ve tür tahminler
 
 ### Crawler kuralları (kodda zorunlu)
 
-- `robots.txt`'ye uyar (Crawl-delay dahil). Alan adı başına en fazla **1 istek / 2 sn** (`scripts/lib/http.ts`).
+- `robots.txt`'ye uyar (Crawl-delay dahil). `robots.txt` yönlendirmeleri izlenir. 401/403/429, 5xx, zaman aşımı ve çözülemeyen yönlendirme "her şey yasak" sayılır (3 deneme; başarısızlık 10 dk sonra yeniden denenir). Yalnızca 404/410 ve diğer düz 4xx "robots.txt yok" demektir. Crawl-delay 60 sn'den büyükse site taranmaz.
+- Alan adı başına en fazla **1 istek / 2 sn** (`scripts/lib/http.ts`). Sınır **kayıtlı alan adına** göredir (`ox.ac.uk`, `unimelb.edu.au` gibi iki parçalı son ekler dahil); şema, port ve alt alan adı ayrı kova açmaz.
 - User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; …)`.
-- Canvas, Moodle, Blackboard, Piazza, Gradescope, SSO/login yolları ve yayınevi paywall alanları kara listededir. Yönlendirmelerin her adımı ayrıca kontrol edilir. Şifre alanı içeren sayfalar terk edilir.
-- Sadece PDF: HTTP 200 + `%PDF-` imzası. Dil, ilk 3 sayfadan çıkarılan metinle doğrulanır.
-- Tekrarlar SHA-256 ve aynı ders içinde başlık benzerliği (Jaccard ≥ 0.85) ile elenir.
-- Öğrenci ödevi gibi görünen dosyalar ("my solutions", "submitted by"…) atlanır.
-- Lisansı yeniden dağıtıma izin vermeyen PDF'ler incelemeden sonra diskten silinir. Yalnızca meta veri tutulur.
+- Canvas, Moodle, Blackboard, D2L/Brightspace, Sakai, Piazza, Gradescope, SSO/login yolları (`/login`, `/sign_in`, `/adfs`, `/cosign`, `/pluginfile.php`, `/webapps/` …), SharePoint ve yayınevi paywall alanları kara listededir. Yönlendirmelerin her adımı ayrıca kontrol edilir. Şifre alanı içeren sayfalar terk edilir. `cas.` ile başlayan alan adları bilerek engellenir (yanlış pozitif kabul edilir).
+- Kapsam (`scope`) URL sınırında eşleşir; tohum sayfalar ve yönlendirme sonrası HTML sayfaları kapsam içinde olmalıdır. PDF'ler kapsam dışında yalnızca kapsam girdilerinden birinin kayıtlı alan adını paylaşan sunuculardan alınır. Takvim/sıralama gibi sorgu parametreleri ve 2'den fazla parametreli HTML URL'leri izlenmez; her HTTP isteği (başarısız olanlar dahil) sayfa bütçesine sayılır.
+- Sadece PDF: içerik türü PDF/octet-stream, HTTP 200 + `%PDF-` imzası (ilk KiB'ta kontrol edilir, değilse indirme kesilir). Dil, ilk 3 sayfadan çıkarılan metinle doğrulanır; tek harfli değişkenler sayılmaz. Metni çok kısa belgeler ("too short to verify language") atlanır; gerekirse küratörlük ile eklenir.
+- Tekrarlar SHA-256 (tarama sonunda; `host`, `link`'e tercih edilir) ve aynı ders kodu içinde başlık benzerliği (Jaccard ≥ 0.85) ile elenir. Başlıklar bir sayısal belirteçte ya da solution/sheet/set/midterm/final gibi sözcüklerde farklıysa, başlık genelse veya iki ders kodu da boşsa başlıktan tekilleştirme yapılmaz.
+- Öğrenci ödevi gibi görünen dosyalar ("my solutions", "submitted by: Student …") atlanır. Sezgisel bilinçli olarak dardır: resmî ders notu "scribed by", sınav kapağındaki "Student ID" geçer; asıl süzgeç insan küratörlüğüdür.
+- Lisansı yeniden dağıtıma izin vermeyen PDF'ler incelemeden sonra diskten silinir. Yalnızca meta veri tutulur. `.cache/crawl/tmp` her çalıştırmada başta boşaltılır.
+- Dayanıklılık: her URL ayrı try/catch içindedir, gövde okuma zaman aşımı vardır, her aday `candidates.jsonl`'a anında eklenir, `candidates.json` atomik yazılır, Ctrl-C'de kısmi sonuç kaydedilir; büyük indirmeler en fazla 3 eşzamanlıdır.
 
 ### Lisans politikası
 
-- Lisans **dosya** düzeyinde (PDF metni) veya **ders** düzeyinde (dersin sayfasının ana içeriği ya da `rel="license"`) aranır. `<footer>`, `<nav>` ve `<header>` içerikleri taramadan çıkarılır, çünkü site geneli bir not yeterli değildir.
-- Yalnızca CC0/kamu malı, CC BY, BY-SA, BY-NC, BY-NC-SA, BY-ND, BY-NC-ND ve GFDL **barındırılır**. Diğer her şey link olarak eklenir.
-- MIT OCW: dosyanın kendisi `ocw.mit.edu/terms`'e atıf yapıyorsa CC BY-NC-SA 4.0 kabul edilir. "excluded from our Creative Commons license" ifadesini taşıyan üçüncü taraf içerik asla barındırılmaz.
-- `npm run validate` şunları doğrular: barındırılan her dosya izinli bir lisansa ve `license_evidence` alanına sahip, ≤ 50 MB, toplam ≤ 700 MB ve SHA-256'sı kayıtla aynı (dosya değiştirilmemiş).
+Şüphede karar her zaman **link**'tir, asla **host** değildir.
+
+- Önce kısıtlama ifadeleri her şeyi veto eder ("all rights reserved", "not licensed under", "may not be reproduced", "used with permission", "courtesy of", "except figures" …). Sonra bir CC / kamu malı adı ya da creativecommons.org lisans URL'si ancak yakınında bir **izin ifadesi** varsa ("licensed under", "released under", "available under" …) sayılır. Kaynakça ("References" başlığından sonrası, `[12]` atıfları), izin ifadesiz çıplak CC URL'si ve birbiriyle çelişen ya da sürümü olmayan/desteklenmeyen lisans (ör. CC BY 2.0, sürümsüz "CC BY") **unknown** olur. `ACC0` gibi sözcük içi eşleşmeler sayılmaz. Tire ve boşluk çeşitleri (– ‑ NBSP) normalleştirilir.
+- Lisans **dosya** düzeyinde (PDF metni) veya **ders** düzeyinde (dersin sayfasının ana içeriği ya da ana içerikteki `rel="license"` bağlantısı) aranır. `<footer>`, `<nav>`, `<header>`, `<aside>`, `role=contentinfo/navigation/banner/complementary` ve footer benzeri class/id alt ağaçları (iç içe etiketler dahil) taramadan çıkarılır, çünkü site geneli bir not yeterli değildir; kapanmamış bir footer öğesi belgenin geri kalanını da atar (güvenli yön).
+- Ders sayfası lisansı yalnızca **aynı origin'de ve sayfanın kendi dizini altındaki** PDF'lere geçer (site kökündeki sayfa hiçbir şeyi kapsamaz) ve PDF'in kendi metninde izin içermeyen bir telif notu (©, "Copyright") ya da lisans anması varsa geçmez. Sayfadaki "excluded / used with permission" ifadesi barındırmayı veto eder.
+- Yalnızca CC0/kamu malı, CC BY (3.0/4.0), BY-SA, BY-NC, BY-NC-SA, BY-ND (3.0/4.0), BY-NC-ND ve GFDL 1.3 **barındırılır**. Diğer her şey link olarak eklenir. Barındırmadan önce PDF'in **tam metni** kısıtlama/üçüncü taraf ifadeleri için taranır; metin okunamıyorsa link kalır.
+- MIT OCW: kısayol yalnızca son URL'nin sunucusu `ocw.mit.edu` ise ve dosyanın kendisi `ocw.mit.edu/terms`'e atıf yapıyorsa CC BY-NC-SA 4.0 kabul eder. "excluded from our Creative Commons license", "courtesy of", "used with permission" gibi üçüncü taraf ifadeleri (PDF'in tamamında ve sayfada aranır) dosyayı asla barındırılamaz yapar.
+- `npm run validate` şunları doğrular: barındırılan her dosya izinli bir lisansa ve URL biçiminde `license_evidence` alanına sahip, `docs/<üniversite>/<id>.pdf` yolunda, ≤ 50 MB, toplam ≤ 700 MB ve SHA-256'sı kayıtla aynı (dosya değiştirilmemiş). `public/docs` altında hiçbir kayda bağlı olmayan dosya da hatadır (build durur).
+- `npm run curate`: `.cache/crawl/candidates.json` yoksa (temiz klon, CI) mevcut barındırılan dosyalar SHA-256 eşleşiyorsa olduğu gibi korunur ve hiçbir dosya silinmez.
+- `npm run verify-links`: "broken" yalnızca 404/410 veya PDF olmayan 200 yanıtında yazılır. robots.txt engeli, zaman aşımı, ağ hatası, 403, 429, 5xx belirsiz sayılır: önceki durum ve `last_checked` korunur (bir kez yeniden denenir). Aylık workflow yalnızca `last_checked` dışında bir değişiklik varsa commit atar.
 - Site ticari değildir: reklam, ücretli üyelik ve izleme yoktur.
 
 ## Yeni üniversite eklemek

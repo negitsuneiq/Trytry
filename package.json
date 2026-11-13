@@ -15,6 +15,7 @@
     "verify-links": "tsx scripts/verify-links.ts",
     "thumbnails": "tsx scripts/thumbnails.ts",
     "validate": "tsx scripts/validate.ts",
+    "test:pipeline": "tsx scripts/test-pipeline.ts",
     "build": "npm run validate && npm run thumbnails && astro build",
     "preview": "astro preview",
     "check": "astro check && tsc --noEmit -p scripts/tsconfig.json"
