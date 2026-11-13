@@ -12,7 +12,7 @@ const s = t(lang);
 const contactHref = SITE.contactEmail
   ? `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(s.license.contactSubject)}`
   : `${SITE.repo}/issues/new?title=${encodeURIComponent(s.license.contactSubject)}`;
-const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)} · GitHub Issues`;
+const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)} · ${s.license.issues}`;
 ---
 
 <Base lang={lang} title={s.license.title} description={s.license.lede}>
@@ -37,7 +37,7 @@ const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)
             {
               REDISTRIBUTABLE.map((l) => (
                 <li>
-                  <a class="chip" href={LICENSE_INFO[l].url ?? '#'} rel="noopener" target="_blank">
+                  <a class="chip" lang="en" href={LICENSE_INFO[l].url ?? '#'} rel="noopener" target="_blank">
                     {LICENSE_INFO[l].label}
                   </a>
                 </li>
@@ -95,9 +95,14 @@ const contactText = SITE.contactEmail || `${new URL(SITE.repo).pathname.slice(1)
     gap: 6px;
     margin-top: 28px;
   }
-  .lics .chip:hover {
-    color: var(--fg);
-    border-color: var(--accent);
+  @media (hover: hover) {
+    .lics .chip:hover {
+      color: var(--fg);
+      border-color: var(--accent);
+    }
+  }
+  .lics {
+    gap: 8px 6px;
   }
   .take {
     display: grid;

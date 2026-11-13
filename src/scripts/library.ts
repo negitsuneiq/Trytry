@@ -2,19 +2,26 @@
 // shows and reorders them, and mirrors every control into the URL.
 
 import MiniSearch from 'minisearch';
+import { lockScroll, trapFocus, unlockScroll } from './overlay';
 
 type Rec = { id: string; title: string; authors: string; course: string; topics: string; university: string };
 
 const FACETS = ['u', 't', 'l', 'ty', 'li'] as const;
 const ATTR: Record<(typeof FACETS)[number], string> = { u: 'university', t: 'topics', l: 'level', ty: 'type', li: 'license' };
 
+let dispose: (() => void) | null = null;
+
+/** Sets up the library page. Safe to call more than once per page. */
 export function initLibrary() {
   const root = document.querySelector<HTMLElement>('[data-library]');
-  if (!root) return;
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = '1';
   const records = JSON.parse(document.getElementById('lib-index')!.textContent!) as Rec[];
   const ms = new MiniSearch<Rec>({
     fields: ['title', 'authors', 'course', 'topics', 'university'],
     storeFields: [],
+    // Fold case and diacritics so "istatistik" finds "İstatistik" and "olasilik" finds "Olasılık".
+    processTerm: (term) => fold(term),
     searchOptions: { boost: { title: 3, course: 2, authors: 2 }, prefix: true, fuzzy: 0.2, combineWith: 'AND' },
   });
   ms.addAll(records);
@@ -30,11 +37,13 @@ export function initLibrary() {
   const toggle = root.querySelector<HTMLButtonElement>('[data-filters-toggle]')!;
   const panel = root.querySelector<HTMLElement>('#lib-filters')!;
   const activeCount = root.querySelector<HTMLElement>('[data-active-count]')!;
+  const header = document.querySelector<HTMLElement>('.site-header');
 
   // URL → controls
   const params = new URLSearchParams(location.search);
   q.value = params.get('q') ?? '';
-  sort.value = params.get('s') ?? 'relevance';
+  const wantedSort = params.get('s') ?? 'relevance';
+  sort.value = [...sort.options].some((o) => o.value === wantedSort) ? wantedSort : 'relevance';
   hosted.checked = params.get('h') === '1';
   for (const key of FACETS) {
     const vals = new Set((params.get(key) ?? '').split(',').filter(Boolean));
@@ -89,39 +98,79 @@ export function initLibrary() {
     if (by !== 'relevance') out.set('s', by);
     const qs = out.toString();
     history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
+
+    // The language switch keeps the current view.
+    document.querySelectorAll<HTMLAnchorElement>('[data-lang-link]').forEach((a) => (a.search = qs));
   };
 
   let timer = 0;
-  q.addEventListener('input', () => {
+  const onInput = () => {
     clearTimeout(timer);
     timer = window.setTimeout(apply, 120);
-  });
+  };
+  q.addEventListener('input', onInput);
   sort.addEventListener('change', apply);
   hosted.addEventListener('change', apply);
   boxes.forEach((b) => b.addEventListener('change', apply));
 
-  const setOpen = (open: boolean) => {
+  // Filter sheet (below 1100px). Modal: scroll lock, focus trap, inert page.
+  const wide = matchMedia('(min-width: 1100px)');
+  let release: (() => void) | null = null;
+  const setOpen = (open: boolean, restoreFocus = false) => {
+    if (open === (toggle.getAttribute('aria-expanded') === 'true')) return;
     toggle.setAttribute('aria-expanded', String(open));
     panel.dataset.open = String(open);
-    document.documentElement.classList.toggle('menu-open', open);
+    if (open) {
+      lockScroll('filters');
+      panel.setAttribute('role', 'dialog');
+      panel.setAttribute('aria-modal', 'true');
+      panel.removeAttribute('inert');
+      release = trapFocus(panel, { keep: header ? [header] : [], onEscape: () => setOpen(false, true) });
+    } else {
+      release?.();
+      release = null;
+      panel.removeAttribute('role');
+      panel.removeAttribute('aria-modal');
+      unlockScroll('filters');
+      if (restoreFocus) toggle.focus();
+    }
   };
-  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-  root.querySelector('[data-apply]')!.addEventListener('click', () => {
-    setOpen(false);
-    toggle.focus();
-  });
-  root.querySelector('[data-clear]')!.addEventListener('click', () => {
+  const onToggle = () => setOpen(toggle.getAttribute('aria-expanded') !== 'true', true);
+  const onApply = () => setOpen(false, true);
+  const onClear = () => {
     boxes.forEach((b) => (b.checked = false));
     hosted.checked = false;
     q.value = '';
     apply();
-  });
-  panel.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && panel.dataset.open === 'true') {
-      setOpen(false);
-      toggle.focus();
-    }
-  });
+  };
+  const onWide = (e: MediaQueryListEvent) => e.matches && setOpen(false);
+  toggle.addEventListener('click', onToggle);
+  root.querySelector('[data-apply]')!.addEventListener('click', onApply);
+  root.querySelector('[data-clear]')!.addEventListener('click', onClear);
+  wide.addEventListener('change', onWide);
 
   apply();
+
+  dispose = () => {
+    clearTimeout(timer);
+    wide.removeEventListener('change', onWide);
+    setOpen(false);
+    dispose = null;
+  };
+}
+
+/** Releases locks held by the current page. Call before the page is swapped out. */
+export function disposeLibrary() {
+  dispose?.();
+}
+
+/** Lower-case and strip diacritics, with Turkish dotted/dotless i handled. */
+function fold(s: string): string {
+  return s
+    .replace(/İ/g, 'i')
+    .replace(/ı/g, 'i')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}+/gu, '')
+    .replace(/ß/g, 'ss');
 }

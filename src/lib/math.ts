@@ -18,5 +18,10 @@ export function inlineTex(s: string): string {
 
 /** Strip $…$ delimiters for plain-text contexts such as <title>. */
 export function plainTex(s: string): string {
-  return s.replace(/\$([^$]+)\$/g, '$1');
+  return s.replace(/\$([^$]+)\$/g, (_, m: string) =>
+    m
+      .replace(/\\(?:mathbb|mathcal|mathfrak|mathrm|mathbf|mathit|text|operatorname)\s*\{([^}]*)\}/g, '$1')
+      .replace(/\\([a-zA-Z]+)\s*/g, '$1')
+      .replace(/[{}]/g, ''),
+  );
 }

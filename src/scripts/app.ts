@@ -3,17 +3,21 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
 import Lenis from 'lenis';
+import { isLocked, lockScroll, onLockChange, trapFocus, unlockScroll } from './overlay';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const fine = matchMedia('(hover: hover) and (pointer: fine)');
 const coarse = matchMedia('(pointer: coarse)');
 
 let lenis: Lenis | null = null;
+let cursorBound = false;
 let cleanups: (() => void)[] = [];
+
+// Lenis follows the shared scroll lock (mobile menu, filter sheet).
+onLockChange((locked) => (locked ? lenis?.stop() : lenis?.start()));
 
 function initLenis() {
   if (lenis || reduced.matches) return;
@@ -22,12 +26,14 @@ function initLenis() {
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis?.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
+  if (isLocked()) lenis.stop();
 }
 
 function initCursor() {
   const el = document.querySelector<HTMLElement>('.cursor');
   if (!el || !fine.matches || el.dataset.bound) return;
   el.dataset.bound = '1';
+  cursorBound = true;
   document.documentElement.classList.add('has-cursor');
   const dot = el.querySelector<HTMLElement>('.cursor-dot')!;
   const ring = el.querySelector<HTMLElement>('.cursor-ring')!;
@@ -78,25 +84,6 @@ function initReveals() {
   );
   items.forEach((i) => io.observe(i));
   cleanups.push(() => io.disconnect());
-}
-
-function initSplits() {
-  if (reduced.matches) return;
-  document.querySelectorAll<HTMLElement>('[data-split]').forEach((el) => {
-    const split = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'split-line' });
-    const tween = gsap.from(split.lines, {
-      yPercent: 110,
-      duration: 1.25,
-      ease: 'expo.out',
-      stagger: 0.09,
-      scrollTrigger: { trigger: el, start: 'top 88%' },
-    });
-    cleanups.push(() => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-      split.revert();
-    });
-  });
 }
 
 function initCounters() {
@@ -179,26 +166,45 @@ function initLangMemory() {
 function initMenu() {
   const btn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const panel = document.getElementById('site-menu');
-  if (!btn || !panel) return;
-  const set = (open: boolean) => {
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (!btn || !panel || !header) return;
+  const wide = matchMedia('(min-width: 1024px)');
+  let release: (() => void) | null = null;
+
+  const set = (open: boolean, restoreFocus = false) => {
+    if (open === (btn.getAttribute('aria-expanded') === 'true')) return;
     btn.setAttribute('aria-expanded', String(open));
     panel.dataset.open = String(open);
-    document.documentElement.classList.toggle('menu-open', open);
-    open ? lenis?.stop() : lenis?.start();
+    if (open) {
+      lockScroll('menu');
+      release = trapFocus(header, {
+        initial: panel.querySelector<HTMLElement>('a'),
+        onEscape: () => set(false, true),
+      });
+    } else {
+      release?.();
+      release = null;
+      unlockScroll('menu');
+      if (restoreFocus) btn.focus();
+    }
   };
-  const toggle = () => set(btn.getAttribute('aria-expanded') !== 'true');
-  const esc = (e: KeyboardEvent) => e.key === 'Escape' && set(false);
+  const toggle = () => set(btn.getAttribute('aria-expanded') !== 'true', true);
+  // The menu only exists below 1024px: crossing the breakpoint must unlock the page.
+  const onWide = (e: MediaQueryListEvent) => e.matches && set(false);
   btn.addEventListener('click', toggle);
-  document.addEventListener('keydown', esc);
+  wide.addEventListener('change', onWide);
   cleanups.push(() => {
     set(false);
     btn.removeEventListener('click', toggle);
-    document.removeEventListener('keydown', esc);
+    wide.removeEventListener('change', onWide);
   });
 }
 
 function initCopy() {
-  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) =>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => {
+    const label = b.querySelector<HTMLElement>('[data-copy-label]');
+    const original = label?.textContent ?? '';
+    let timer = 0;
     b.addEventListener('click', async () => {
       const src = document.getElementById(b.dataset.copy!);
       if (!src) return;
@@ -211,14 +217,13 @@ function initCopy() {
         getSelection()?.addRange(range);
         document.execCommand('copy');
       }
-      const label = b.querySelector('[data-copy-label]');
       if (label) {
-        const prev = label.textContent;
+        clearTimeout(timer);
         label.textContent = b.dataset.copied ?? '✓';
-        setTimeout(() => (label.textContent = prev), 1600);
+        timer = window.setTimeout(() => (label.textContent = original), 1600);
       }
-    }),
-  );
+    });
+  });
 }
 
 function initTabs() {
@@ -236,10 +241,11 @@ function initTabs() {
       t.addEventListener('click', () => select(t));
       t.addEventListener('keydown', (e) => {
         const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!d) return;
-        const next = tabs[(i + d + tabs.length) % tabs.length];
-        next.focus();
-        select(next);
+        const to = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : d ? (i + d + tabs.length) % tabs.length : -1;
+        if (to < 0) return;
+        e.preventDefault();
+        tabs[to].focus();
+        select(tabs[to]);
       });
     });
   });
@@ -258,7 +264,7 @@ document.addEventListener('astro:page-load', () => {
   initCounters();
   // Heavier set-up runs as separate idle tasks so no single task blocks input.
   const gen = ++generation;
-  const tasks = [initLenis, initCursor, initSplits, initMagnetic, initHero, () => ScrollTrigger.refresh()];
+  const tasks = [initLenis, initCursor, initMagnetic, initHero, () => ScrollTrigger.refresh()];
   const next = () => {
     if (gen !== generation) return; // navigated away meanwhile
     tasks.shift()?.();
@@ -274,5 +280,12 @@ document.addEventListener('astro:before-swap', () => {
 });
 
 document.addEventListener('astro:after-swap', () => {
+  // ClientRouter replaces every attribute on <html>, so classes that scripts
+  // added (the `js` flag, the custom-cursor flag) must be put back.
+  const root = document.documentElement;
+  root.classList.add('js');
+  if (cursorBound) root.classList.add('has-cursor');
+  if (isLocked()) root.classList.add('menu-open');
+  (lenis as unknown as { updateClassName?: () => void } | null)?.updateClassName?.();
   lenis?.scrollTo(0, { immediate: true });
 });

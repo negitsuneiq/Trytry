@@ -40,19 +40,15 @@ const recent = recentDocuments.slice(0, 6);
     </div>
   </section>
 
-  <section class="section" aria-labelledby="recent-h">
-    <div class="wrap">
-      <SectionHead index="§ 03" title={s.home.recentTitle} id="recent-h">
-        {
-          recent.length > 0 && (
+  {
+    recent.length > 0 && (
+      <section class="section" aria-labelledby="recent-h">
+        <div class="wrap">
+          <SectionHead index="§ 03" title={s.home.recentTitle} id="recent-h">
             <a class="btn btn-sm" href={href(lang, 'library')} data-magnetic>
               {s.home.viewAll} <span class="arrow" aria-hidden="true">→</span>
             </a>
-          )
-        }
-      </SectionHead>
-      {
-        recent.length ? (
+          </SectionHead>
           <div class="cards">
             {recent.map((d) => (
               <div data-reveal>
@@ -60,12 +56,10 @@ const recent = recentDocuments.slice(0, 6);
               </div>
             ))}
           </div>
-        ) : (
-          <EmptyState lang={lang} />
-        )
-      }
-    </div>
-  </section>
+        </div>
+      </section>
+    )
+  }
 </Base>
 
 <style>

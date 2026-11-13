@@ -4,8 +4,10 @@ import { href, swapLang } from '../lib/paths';
 
 interface Props {
   lang: Lang;
+  /** Pages with no counterpart in the other language (the 404) link the switch to each language home. */
+  langHome?: boolean;
 }
-const { lang } = Astro.props;
+const { lang, langHome = false } = Astro.props;
 const s = t(lang);
 const path = Astro.url.pathname;
 const links = [
@@ -43,12 +45,12 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
         {
           (['tr', 'en'] as const).map((l) => (
             <a
-              href={swapLang(path, l)}
+              href={langHome ? href(l) : swapLang(path, l)}
               hreflang={l}
               lang={l}
               data-lang-link={l}
               aria-current={l === lang ? 'true' : undefined}
-              class:list={{ on: l === lang }}
+              class:list={['hit-slop', { on: l === lang }]}
             >
               {l.toUpperCase()}
             </a>
@@ -62,7 +64,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     </div>
   </div>
 
-  <div id="site-menu" class="menu" data-open="false">
+  <div id="site-menu" class="menu" data-open="false" data-lenis-prevent>
     <nav class="wrap" aria-label={s.a11y.navMobile}>
       <ol>
         {
@@ -99,7 +101,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     position: absolute;
     inset: 0 calc(50% - 50vw);
     z-index: -1;
-    background: rgb(10 10 11 / 0.72);
+    background: rgb(7 9 14 / 0.72);
     backdrop-filter: blur(14px) saturate(1.2);
     -webkit-backdrop-filter: blur(14px) saturate(1.2);
     border-bottom: 1px solid var(--line);
@@ -127,7 +129,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
   }
   .nav a {
     position: relative;
-    padding: 10px 0;
+    padding: 12px 0;
     color: var(--fg-muted);
     transition: color 0.3s;
   }
@@ -136,7 +138,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 4px;
+    bottom: 6px;
     height: 1px;
     background: var(--accent);
     transform: scaleX(0);
@@ -181,8 +183,10 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     background: var(--fg);
     color: var(--bg);
   }
-  .lang a:not(.on):hover {
-    color: var(--fg);
+  @media (hover: hover) {
+    .lang a:not(.on):hover {
+      color: var(--fg);
+    }
   }
   .menu-btn {
     width: 44px;

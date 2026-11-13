@@ -13,7 +13,7 @@ const H = level;
 <div class="sec-head">
   <div>
     <p class="sec-index mono"><span>{index}</span></p>
-    <H class:list={['display', level === 'h1' ? 'h-xl' : 'h-lg']} id={id} data-split>{title}</H>
+    <H class:list={['display', level === 'h1' ? 'h-xl' : 'h-lg']} id={id} data-rise={level === 'h1' ? '' : undefined} data-reveal={level === 'h1' ? undefined : ''}>{title}</H>
   </div>
   <div class="side">
     {lede && <p class="lede" data-reveal>{lede}</p>}

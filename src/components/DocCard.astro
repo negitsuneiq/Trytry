@@ -2,12 +2,12 @@
 import type { DocumentRecord } from '../lib/schema';
 import { t, type Lang } from '../i18n/strings';
 import { href } from '../lib/paths';
-import { inlineTex } from '../lib/math';
+import { inlineTex, plainTex } from '../lib/math';
 import { topicName } from '../lib/topics';
 import { universityBySlug } from '../lib/data';
 import { authorsLine } from '../lib/format';
 import Cover from './Cover.astro';
-import LicenseBadge from './LicenseBadge.astro';
+import { licenseLabel } from '../lib/schema';
 
 interface Props {
   doc: DocumentRecord;
@@ -21,6 +21,8 @@ const { doc, lang, filterable = false, heading = 'h3' } = Astro.props;
 const H = heading;
 const s = t(lang);
 const uni = universityBySlug.get(doc.university);
+// Licence labels are English proper names; the two non-licence states are translated.
+const licLang = doc.license === 'unknown' || doc.license === 'all-rights-reserved' ? lang : 'en';
 const data = filterable
   ? {
       'data-id': doc.id,
@@ -33,7 +35,7 @@ const data = filterable
       'data-year': String(doc.year ?? 0),
       'data-accessed': doc.accessed_at,
       'data-rank': String(uni?.rank ?? 99),
-      'data-title': doc.title.toLowerCase(),
+      'data-title': plainTex(doc.title).toLowerCase(),
     }
   : {};
 ---
@@ -47,13 +49,25 @@ const data = filterable
         <span aria-hidden="true">·</span>
         <span>{s.types[doc.type]}</span>
       </p>
-      <H class="title" set:html={inlineTex(doc.title)} />
-      {doc.authors.length > 0 && <p class="authors">{authorsLine(doc.authors)}</p>}
+      <H class="title" lang="en" set:html={inlineTex(doc.title)} />
+      {doc.authors.length > 0 && <p class="authors">{authorsLine(doc.authors, s.doc.and)}</p>}
       <p class="topics mono">{doc.topics.map((tp) => topicName(tp, lang)).join(' / ')}</p>
     </div>
   </a>
   <div class="foot">
-    <LicenseBadge doc={doc} lang={lang} />
+    {
+      doc.hosted ? (
+        <span class="chip chip-accent">
+          <span class="dot" aria-hidden="true" />
+          <span lang={licLang}>{licenseLabel(doc.license, s.licenseStatus)}</span>
+        </span>
+      ) : (
+        <span class="chip">
+          <span aria-hidden="true">↗</span>
+          {s.doc.external}
+        </span>
+      )
+    }
     <span class="mono lvl">{s.levels[doc.level]}{doc.year ? ` · ${doc.year}` : ''}</span>
   </div>
 </article>
@@ -73,16 +87,23 @@ const data = filterable
   .hit :global(.cover) {
     transition: border-color 0.5s;
   }
-  .hit:hover :global(.cover),
   .hit:focus-visible :global(.cover) {
     border-color: rgb(var(--accent-rgb) / 0.6);
   }
-  .hit:hover :global(.cover img),
-  .hit:hover :global(.cover svg) {
-    transform: scale(1.045);
-  }
-  .hit:hover :global(.cover img) {
-    filter: none;
+  @media (hover: hover) {
+    .hit:hover :global(.cover) {
+      border-color: rgb(var(--accent-rgb) / 0.6);
+    }
+    .hit:hover :global(.cover img),
+    .hit:hover :global(.cover svg) {
+      transform: scale(1.045);
+    }
+    .hit:hover :global(.cover img) {
+      filter: none;
+    }
+    .hit:hover .title {
+      color: var(--accent);
+    }
   }
   .meta {
     display: flex;
@@ -100,16 +121,12 @@ const data = filterable
     text-wrap: pretty;
     transition: color 0.3s;
   }
-  .hit:hover .title {
-    color: var(--accent);
-  }
   .authors {
     font-size: 0.92rem;
     color: var(--fg-muted);
     margin-top: 6px;
   }
   .topics {
-    color: var(--fg-faint);
     margin-top: 10px;
     font-size: 0.6875rem;
     color: var(--fg-muted);
@@ -127,5 +144,7 @@ const data = filterable
   .lvl {
     font-size: 0.6875rem;
     color: var(--fg-muted);
+    white-space: nowrap;
+    margin-left: auto;
   }
 </style>

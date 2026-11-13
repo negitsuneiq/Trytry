@@ -13,6 +13,6 @@ export default defineConfig({
   trailingSlash: 'ignore',
   // Inline CSS: one fewer render-blocking request on first paint (mobile FCP).
   build: { format: 'directory', inlineStylesheets: 'always' },
-  prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
+  prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
   devToolbar: { enabled: false },
 });

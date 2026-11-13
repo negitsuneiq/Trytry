@@ -8,6 +8,7 @@ import { TOPICS, type Topic } from '../../../lib/topics';
 import { docsForTopic } from '../../../lib/data';
 import { coverSvg, COVER_VIEWBOX } from '../../../lib/cover';
 import { href } from '../../../lib/paths';
+import { topicDescription } from '../../../lib/meta';
 
 export function getStaticPaths() {
   return langCross(TOPICS.map((topic) => ({ params: { slug: topic.slug }, props: { topic } })));
@@ -20,12 +21,12 @@ const docs = docsForTopic(topic.slug).sort((a, b) => a.title.localeCompare(b.tit
 const other = lang === 'tr' ? 'en' : 'tr';
 ---
 
-<Base lang={lang} title={topic[lang]} description={`${topic[lang]} — ${s.home.docsCount(docs.length)}.`}>
+<Base lang={lang} title={topic[lang]} description={topicDescription(topic, lang, docs.length)}>
   <section class="page-top">
     <div class="wrap">
       <div class="head">
         <div>
-          <p class="mono muted"><a href={href(lang, 'topics')}>{s.nav.topics}</a> / MSC {topic.msc.map((m) => `${m}-XX`).join(', ')}</p>
+          <p class="mono muted"><a class="hit-slop" href={href(lang, 'topics')}>{s.nav.topics}</a> / MSC {topic.msc.map((m) => `${m}-XX`).join(', ')}</p>
           <h1 class="display h-xl name" data-rise>{topic[lang]}</h1>
           <p class="lede"><span lang={other}>{topic[other]}</span> · {s.home.docsCount(docs.length)}</p>
         </div>

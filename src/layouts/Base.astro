@@ -13,9 +13,11 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
+  /** Page that must not be indexed and has no counterpart in the other language (the 404). */
+  standalone?: boolean;
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, standalone = false } = Astro.props;
 const s = t(lang);
 const fullTitle = title ? `${title} — ${s.meta.title}` : `${s.meta.title} — ${s.hero.eyebrow}`;
 const desc = description ?? s.meta.description;
@@ -33,18 +35,19 @@ const preloadFonts = lang === 'tr' ? [serifLatin, serifLatinExt] : [serifLatin];
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
-    <link rel="canonical" href={canonical.href} />
-    <link rel="alternate" hreflang="en" href={alt('en')} />
-    <link rel="alternate" hreflang="tr" href={alt('tr')} />
-    <link rel="alternate" hreflang="x-default" href={new URL(asset(''), Astro.site).href} />
-    <meta name="theme-color" content="#0a0a0b" />
+    {standalone && <meta name="robots" content="noindex" />}
+    {!standalone && <link rel="canonical" href={canonical.href} />}
+    {!standalone && <link rel="alternate" hreflang="en" href={alt('en')} />}
+    {!standalone && <link rel="alternate" hreflang="tr" href={alt('tr')} />}
+    {!standalone && <link rel="alternate" hreflang="x-default" href={new URL(asset(''), Astro.site).href} />}
+    <meta name="theme-color" content="#07090e" />
     <meta name="color-scheme" content="dark" />
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
     {preloadFonts.map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={desc} />
-    <meta property="og:url" content={canonical.href} />
+    {!standalone && <meta property="og:url" content={canonical.href} />}
     <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_GB'} />
     <script is:inline>
       document.documentElement.classList.add('js');
@@ -54,7 +57,7 @@ const preloadFonts = lang === 'tr' ? [serifLatin, serifLatinExt] : [serifLatin];
   </head>
   <body>
     <a class="skip" href="#main">{s.a11y.skip}</a>
-    <Header lang={lang} />
+    <Header lang={lang} langHome={standalone} />
     <main id="main" tabindex="-1">
       <slot />
     </main>

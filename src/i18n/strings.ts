@@ -134,6 +134,10 @@ const en = {
       'This document has no licence that permits redistribution, so it is not stored here. The link opens the author’s original copy.',
     hostedNote: 'An unmodified copy is stored here under the licence above. All rights not granted by that licence remain with the author.',
     unknown: '—',
+    and: '&',
+    unknownAuthor: 'Unknown author',
+    availableAt: 'Available at',
+    accessedOn: 'accessed',
   },
   university: {
     rank: 'QS rank',
@@ -145,6 +149,10 @@ const en = {
   topic: {
     msc: 'MSC2020 classes',
     documents: 'Documents',
+    // Meta description: 60-155 characters. `full` is tried first, then `short`.
+    metaFull: (name: string, count: string, msc: string) =>
+      `${name}: ${count} of open lecture notes, problem sets and books from top mathematics departments. MSC2020 classes ${msc}.`,
+    metaShort: (name: string, count: string, msc: string) => `${name}: ${count}. Open mathematics, MSC2020 classes ${msc}.`,
   },
   universitiesPage: {
     title: 'Universities',
@@ -193,6 +201,7 @@ const en = {
     takedown:
       'If you are an author or rights-holder and want a file removed or a record corrected, write to the address below with the document URL. Hosted files are taken down promptly, before any discussion.',
     contact: 'Contact',
+    issues: 'GitHub Issues',
     contactSubject: 'Open Lemma takedown request',
     siteLicenseTitle: 'This website',
     siteLicense:
@@ -254,7 +263,7 @@ const tr: Dict = {
     documents: 'Belge',
     universities: 'Üniversite',
     topics: 'Konu',
-    hosted: 'Burada barındırılan',
+    hosted: 'Barındırılan',
   },
   home: {
     topicsTitle: 'Öne çıkan konular',
@@ -280,7 +289,7 @@ const tr: Dict = {
     topic: 'Konu',
     level: 'Seviye',
     type: 'Tür',
-    license: 'Lisans',
+    license: 'Lisans türü',
     hostedOnly: 'Sadece burada barındırılanlar',
     sort: 'Sırala',
     sortRelevance: 'İlgi düzeyi',
@@ -295,7 +304,7 @@ const tr: Dict = {
     applyFilters: 'Sonuçları göster',
   },
   levels: { undergraduate: 'Lisans düzeyi', graduate: 'Lisansüstü' },
-  licenseStatus: { unknown: 'Lisans belirtilmemiş', 'all-rights-reserved': 'Tüm hakları saklıdır' },
+  licenseStatus: { unknown: 'Lisans beyanı yok', 'all-rights-reserved': 'Tüm hakları saklıdır' },
   types: {
     'lecture-notes': 'Ders notu',
     'problem-set': 'Problem seti',
@@ -341,8 +350,12 @@ const tr: Dict = {
     similar: 'Benzer belgeler',
     externalNote:
       'Bu belgenin yeniden dağıtıma izin veren bir lisansı yok, bu yüzden burada saklanmıyor. Bağlantı, yazarın orijinal kopyasını açar.',
-    hostedNote: 'Yukarıdaki lisans kapsamında değiştirilmemiş bir kopya burada saklanıyor. Lisansın tanımadığı tüm haklar yazara aittir.',
+    hostedNote: 'Yukarıdaki lisans kapsamında değiştirilmemiş bir kopya burada saklanıyor. Lisansın vermediği tüm haklar yazara aittir.',
     unknown: '—',
+    and: 've',
+    unknownAuthor: 'Yazar bilinmiyor',
+    availableAt: 'Erişim adresi',
+    accessedOn: 'erişim tarihi',
   },
   university: {
     rank: 'QS sırası',
@@ -354,6 +367,9 @@ const tr: Dict = {
   topic: {
     msc: 'MSC2020 sınıfları',
     documents: 'Belgeler',
+    metaFull: (name: string, count: string, msc: string) =>
+      `${name}: ${count}. En iyi matematik bölümlerinden açık ders notları, problem setleri ve kitaplar. MSC2020 sınıfları ${msc}.`,
+    metaShort: (name: string, count: string, msc: string) => `${name}: ${count}. Açık matematik, MSC2020 sınıfları ${msc}.`,
   },
   universitiesPage: {
     title: 'Üniversiteler',
@@ -373,7 +389,7 @@ const tr: Dict = {
       },
       {
         h: 'Nasıl toplandı',
-        p: 'Nazik bir tarayıcı yalnızca herkese açık sayfaları ziyaret etti, robots.txt’ye uydu, aynı sunucuya yapılan istekler arasında en az iki saniye bekledi ve açıklayıcı bir kullanıcı aracısıyla kendini tanıttı. Canvas, Moodle veya Blackboard gibi öğrenme yönetim sistemlerine hiç girmedi; hiçbir giriş ekranını veya ödeme duvarını aşmaya çalışmadı. Tekrarlar SHA-256 özeti ve başlık benzerliğiyle ayıklandı.',
+        p: 'Nazik bir tarama botu yalnızca herkese açık sayfaları ziyaret etti, robots.txt’ye uydu, aynı sunucuya yapılan istekler arasında en az iki saniye bekledi ve açıklayıcı bir kullanıcı aracısıyla kendini tanıttı. Canvas, Moodle veya Blackboard gibi öğrenme yönetim sistemlerine hiç girmedi; hiçbir giriş ekranını veya ödeme duvarını aşmaya çalışmadı. Tekrarlar SHA-256 özeti ve başlık benzerliğiyle ayıklandı.',
       },
       {
         h: 'Barındırılan ya da bağlantı verilen',
@@ -402,6 +418,7 @@ const tr: Dict = {
     takedown:
       'Yazar ya da hak sahibiyseniz ve bir dosyanın kaldırılmasını veya bir kaydın düzeltilmesini istiyorsanız, belge adresiyle birlikte aşağıdaki adrese yazın. Barındırılan dosyalar herhangi bir tartışmadan önce derhal kaldırılır.',
     contact: 'İletişim',
+    issues: 'GitHub Issues',
     contactSubject: 'Open Lemma kaldırma talebi',
     siteLicenseTitle: 'Bu web sitesi',
     siteLicense:

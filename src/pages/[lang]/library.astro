@@ -29,6 +29,12 @@ const index = documents.map((d) => ({
   university: universityBySlug.get(d.university)?.name ?? d.university,
 }));
 
+// JSON inside <script>: "<" must never appear raw, or a title could close the tag.
+const safeJson = (v: unknown) =>
+  JSON.stringify(v)
+    .replace(/</g, '\\u003c')
+    .replace(/[\u2028\u2029]/g, (c) => (c === '\u2028' ? '\\u2028' : '\\u2029'));
+
 const groups = [
   { key: 'u', label: s.library.university, options: uniOptions.map((u) => ({ value: u.slug, label: u.name, en: true })) },
   { key: 't', label: s.library.topic, options: topicOptions.map((tp) => ({ value: tp.slug, label: tp[lang] })) },
@@ -72,7 +78,7 @@ const groups = [
             </div>
 
             <div class="layout">
-              <aside id="lib-filters" class="filters" aria-label={s.library.filters} data-open="false">
+              <aside id="lib-filters" class="filters" aria-label={s.library.filters} data-open="false" data-lenis-prevent>
                 <div class="filters-inner">
                   <label class="switch">
                     <input type="checkbox" data-hosted />
@@ -121,7 +127,7 @@ const groups = [
                 </p>
               </div>
             </div>
-            <script type="application/json" id="lib-index" set:html={JSON.stringify(index)} />
+            <script type="application/json" id="lib-index" set:html={safeJson(index)} />
           </div>
         )
       }
@@ -130,8 +136,19 @@ const groups = [
 </Base>
 
 <script>
-  import { initLibrary } from '../../scripts/library';
+  import { initLibrary, disposeLibrary } from '../../scripts/library';
   document.addEventListener('astro:page-load', initLibrary);
+  document.addEventListener('astro:before-swap', (e) => {
+    disposeLibrary();
+    // On back/forward the filtered view is rebuilt as part of the swap, so the
+    // router restores scroll against the final layout.
+    const ev = e as Event & { swap: () => void };
+    const swap = ev.swap;
+    ev.swap = () => {
+      swap();
+      initLibrary();
+    };
+  });
 </script>
 
 <style>
@@ -162,6 +179,7 @@ const groups = [
   }
   .search:focus-within {
     border-color: var(--accent);
+    box-shadow: 0 1px 0 var(--accent);
   }
   .search svg {
     width: 22px;
@@ -189,7 +207,7 @@ const groups = [
   }
   select {
     appearance: none;
-    background: var(--bg-raised) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%23a8a49b'/%3E%3C/svg%3E") no-repeat right 14px center;
+    background: var(--bg-raised) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%23a6a8ad'/%3E%3C/svg%3E") no-repeat right 14px center;
     border: 1px solid var(--line-strong);
     border-radius: 999px;
     padding: 0 36px 0 16px;
@@ -236,7 +254,7 @@ const groups = [
       inset: var(--header-h) 0 0;
       z-index: 80;
       background: var(--bg);
-      padding: 24px var(--gutter) 40px;
+      padding: 24px var(--gutter) 0;
       overflow-y: auto;
       overscroll-behavior: contain;
       transform: translateY(100%);
@@ -252,9 +270,10 @@ const groups = [
     }
     .filter-actions {
       position: sticky;
-      bottom: -40px;
-      padding: 16px 0 24px;
+      bottom: 0;
+      padding: 16px 0 calc(24px + env(safe-area-inset-bottom));
       background: var(--bg);
+      border-top: 1px solid var(--line);
     }
   }
   .group {
@@ -270,15 +289,19 @@ const groups = [
   .opts {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px 6px;
   }
   .opt {
     position: relative;
   }
+  /* The invisible checkbox is the hit area: 44px tall around a 36px chip. */
   .opt input {
     position: absolute;
     opacity: 0;
-    inset: 0;
+    inset: -4px 0;
+    width: 100%;
+    height: calc(100% + 8px);
+    margin: 0;
   }
   .opt span {
     display: inline-flex;
@@ -294,9 +317,11 @@ const groups = [
       color 0.25s,
       border-color 0.25s;
   }
-  .opt:hover span {
-    color: var(--fg);
-    border-color: var(--fg-muted);
+  @media (hover: hover) {
+    .opt:hover span {
+      color: var(--fg);
+      border-color: var(--fg-muted);
+    }
   }
   .opt input:checked + span {
     background: var(--accent);

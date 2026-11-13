@@ -1,5 +1,6 @@
 import type { DocumentRecord, University } from './schema';
 import { LICENSE_INFO } from './schema';
+import { plainTex } from './math';
 
 const BIB_TYPE: Record<DocumentRecord['type'], string> = {
   'lecture-notes': 'misc',
@@ -9,8 +10,17 @@ const BIB_TYPE: Record<DocumentRecord['type'], string> = {
   other: 'misc',
 };
 
-function bibEscape(s: string): string {
+/** Escape LaTeX specials in plain text. */
+function esc(s: string): string {
   return s.replace(/([&%#_])/g, '\\$1');
+}
+
+/** Like esc, but leaves $…$ math spans untouched (an escaped "_" would break a subscript). */
+function bibEscape(s: string): string {
+  return s
+    .split(/(\$[^$]+\$)/g)
+    .map((part, i) => (i % 2 === 1 ? part : esc(part)))
+    .join('');
 }
 
 function lastName(a: string): string {
@@ -21,11 +31,11 @@ function lastName(a: string): string {
 export function bibtex(d: DocumentRecord, u: University | undefined): string {
   const key = `${lastName(d.authors[0] ?? 'anon')}${d.year ?? ''}${d.id.split('-').slice(-1)[0]}`;
   const fields: [string, string | null][] = [
-    ['author', d.authors.length ? d.authors.join(' and ') : null],
+    ['author', d.authors.length ? esc(d.authors.join(' and ')) : null],
     ['title', `{${bibEscape(d.title)}}`],
-    [d.type === 'book' ? 'publisher' : 'institution', u ? `${u.name}, ${d.department}` : d.department],
+    [d.type === 'book' ? 'publisher' : 'institution', esc(u ? `${u.name}, ${d.department}` : d.department)],
     ['year', d.year ? String(d.year) : null],
-    ['note', [d.course_code, d.course_title].filter(Boolean).join(': ') || null],
+    ['note', esc([d.course_code, d.course_title].filter(Boolean).join(': ')) || null],
     ['howpublished', d.type === 'book' ? null : `\\url{${d.source_url}}`],
     ['url', d.source_url],
     ['urldate', d.accessed_at.slice(0, 10)],
@@ -38,15 +48,21 @@ export function bibtex(d: DocumentRecord, u: University | undefined): string {
   return `@${BIB_TYPE[d.type]}{${key},\n${body}\n}`;
 }
 
-export function plainCitation(d: DocumentRecord, u: University | undefined): string {
-  const who = d.authors.length ? d.authors.join(', ') : 'Unknown author';
+export interface CiteLabels {
+  unknownAuthor: string;
+  availableAt: string;
+  accessedOn: string;
+}
+
+export function plainCitation(d: DocumentRecord, u: University | undefined, labels: CiteLabels): string {
+  const who = d.authors.length ? d.authors.join(', ') : labels.unknownAuthor;
   const course = [d.course_code, d.course_title].filter(Boolean).join(' ');
   const parts = [
     `${who}${d.year ? ` (${d.year})` : ''}.`,
-    `${d.title}.`,
+    `${plainTex(d.title)}.`,
     course ? `${course},` : '',
     u ? `${u.name}.` : `${d.department}.`,
-    `Available at ${d.source_url} (accessed ${d.accessed_at.slice(0, 10)}).`,
+    `${labels.availableAt} ${d.source_url} (${labels.accessedOn} ${d.accessed_at.slice(0, 10)}).`,
   ];
   return parts.filter(Boolean).join(' ');
 }

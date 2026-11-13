@@ -8,13 +8,15 @@ interface Props {
 }
 const { doc, lang } = Astro.props;
 const s = t(lang);
+// Licence names are English; only the two non-licence states are translated.
+const licLang = doc.license === 'unknown' || doc.license === 'all-rights-reserved' ? lang : 'en';
 ---
 
 <span class="badges">
   <span class:list={['chip', { 'chip-accent': doc.hosted }]}>
     <span class="dot" aria-hidden="true"></span>{doc.hosted ? s.doc.hosted : s.doc.external}
   </span>
-  <span class="chip">{licenseLabel(doc.license, s.licenseStatus)}</span>
+  <span class="chip" lang={licLang}>{licenseLabel(doc.license, s.licenseStatus)}</span>
 </span>
 
 <style>

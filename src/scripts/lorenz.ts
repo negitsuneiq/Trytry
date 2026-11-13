@@ -2,8 +2,10 @@
 // which matters on the tablets this site is mostly used on.
 //
 // The whole trajectory is drawn faintly; a bright "comet" travels along it.
-// Pointer position tilts the camera a little. With reduced motion the scene
-// renders one still frame.
+// The two lobes are coloured by a ramp from the cream foreground (x < 0) to
+// the accent (x > 0), blended a little with depth. Pointer position tilts the
+// camera. The first frame is still; rotation starts shortly after the window
+// load event (or on the first user interaction) and never under reduced motion.
 
 interface Options {
   reducedMotion: boolean;
@@ -19,12 +21,15 @@ uniform float uN;
 uniform float uTrail;
 varying float vGlow;
 varying float vDepth;
+varying float vWing;
 void main() {
   vec4 p = uMVP * vec4(aPos, 1.0);
   gl_Position = p;
   float d = mod(uHead - aIdx + uN, uN);
   vGlow = d < uTrail ? pow(1.0 - d / uTrail, 2.2) : 0.0;
   vDepth = clamp(1.25 - p.z / 4.5, 0.25, 1.0);
+  // Which lobe (sign of x), softened near the saddle, plus a little depth.
+  vWing = clamp(smoothstep(-0.2, 0.2, aPos.x) * 0.86 + (1.0 - vDepth) * 0.14, 0.0, 1.0);
 }`;
 
 const FS = `
@@ -34,8 +39,12 @@ uniform vec3 uAccent;
 uniform float uBase;
 varying float vGlow;
 varying float vDepth;
+varying float vWing;
 void main() {
-  vec3 c = mix(uFg, uAccent, min(1.0, vGlow * 1.6));
+  vec3 base = mix(uFg, uAccent, vWing);
+  // The comet is the opposite colour of the lobe it travels on, so it always reads.
+  vec3 hot = mix(uAccent, uFg, vWing);
+  vec3 c = mix(base, hot, min(1.0, vGlow * 1.6));
   float a = (uBase + vGlow * 0.95) * vDepth;
   gl_FragColor = vec4(c * a, a);
 }`;
@@ -121,7 +130,9 @@ export function mountLorenz(canvas: HTMLCanvasElement, opts: Options): () => voi
   if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return () => {};
   gl.useProgram(prog);
 
-  const N = opts.coarse ? 7000 : 16000;
+  // Device tier by viewport, not by pointer type: phones stay light.
+  const phone = window.innerWidth < 700;
+  const N = phone ? 7000 : 16000;
   const data = lorenz(N);
   const buf = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buf);
@@ -138,8 +149,8 @@ export function mountLorenz(canvas: HTMLCanvasElement, opts: Options): () => voi
   const uHead = u('uHead');
   gl.uniform1f(u('uN'), N);
   gl.uniform1f(u('uTrail'), N * 0.07);
-  // Fewer points on touch devices, so each line is drawn a little brighter.
-  gl.uniform1f(u('uBase'), opts.coarse ? 0.2 : 0.12);
+  // Touch screens are viewed in brighter, less contrasty conditions: draw a touch stronger.
+  gl.uniform1f(u('uBase'), opts.coarse ? 0.3 : 0.26);
   gl.uniform3fv(u('uFg'), rgb('--fg', canvas));
   gl.uniform3fv(u('uAccent'), rgb('--accent', canvas));
 
@@ -147,7 +158,7 @@ export function mountLorenz(canvas: HTMLCanvasElement, opts: Options): () => voi
   gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
   gl.clearColor(0, 0, 0, 0);
 
-  const dprCap = opts.coarse ? 1.25 : 1.75;
+  const dprCap = phone ? 1.25 : 2;
   let w = 0;
   let h = 0;
   const resize = () => {
@@ -183,12 +194,17 @@ export function mountLorenz(canvas: HTMLCanvasElement, opts: Options): () => voi
     px += (tx - px) * 0.04;
     py += (ty - py) * 0.04;
     const aspect = w / h;
-    // Narrow screens: pull the camera back so both wings fit.
-    const dist = aspect < 0.8 ? 4.8 : aspect < 1.2 ? 4.0 : 3.7;
+    // The canvas is its own stage (CSS positions it), so the attractor is
+    // centred and the camera backs off until both lobes fit with margin in
+    // whichever dimension is tighter (the model is about 2.3 units across).
+    const fov = 0.75;
+    const half = Math.tan(fov / 2);
+    const need = 1.45; // radius of the rotating model plus margin
+    const dist = Math.max(need / half, need / (half * aspect));
     const yaw = t * 0.00006 + px * 0.35;
     const pitch = 0.18 + py * 0.18;
-    const view = mul(translate(aspect > 1.2 ? 0.95 : 0, aspect < 1.2 ? -0.1 : 0.05, -dist), mul(rotX(pitch), rotY(yaw)));
-    gl.uniformMatrix4fv(uMVP, false, new Float32Array(mul(perspective(0.75, aspect, 0.1, 20), view)));
+    const view = mul(translate(0, 0, -dist), mul(rotX(pitch), rotY(yaw)));
+    gl.uniformMatrix4fv(uMVP, false, new Float32Array(mul(perspective(fov, aspect, 0.1, 20), view)));
     gl.uniform1f(uHead, opts.reducedMotion ? N * 0.6 : (t * 0.9) % N);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.LINE_STRIP, 0, N);
@@ -221,20 +237,30 @@ export function mountLorenz(canvas: HTMLCanvasElement, opts: Options): () => voi
   document.addEventListener('visibilitychange', onVis);
 
   // Draw one still frame now; start moving on the first sign of a person
-  // (pointer, touch, wheel, key). Saves battery and keeps page load quiet.
+  // (pointer, touch, wheel, key)...
   let armed = false;
+  let autoTimer = 0;
+  let dead = false;
   const wake = () => {
-    if (armed) return;
+    if (armed || dead) return;
     armed = true;
+    clearTimeout(autoTimer);
     for (const ev of WAKE_EVENTS) window.removeEventListener(ev, wake);
     start();
   };
   const WAKE_EVENTS = ['pointermove', 'pointerdown', 'wheel', 'touchstart', 'keydown', 'scroll'] as const;
   for (const ev of WAKE_EVENTS) window.addEventListener(ev, wake, { passive: true });
+  // ...or about 1.5 s after the window load event, whichever comes first.
+  if (!opts.reducedMotion) {
+    if (document.readyState === 'complete') autoTimer = window.setTimeout(wake, 1500);
+    else window.addEventListener('load', () => (autoTimer = window.setTimeout(wake, 1500)), { once: true });
+  }
   draw(last);
   canvas.classList.add('is-ready');
 
   return () => {
+    dead = true;
+    clearTimeout(autoTimer);
     stop();
     for (const ev of WAKE_EVENTS) window.removeEventListener(ev, wake);
     io.disconnect();

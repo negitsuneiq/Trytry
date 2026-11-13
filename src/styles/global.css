@@ -22,19 +22,22 @@
 :root {
   color-scheme: dark;
 
-  --bg: #0a0a0b;
-  --bg-raised: #111113;
-  --bg-sunken: #070708;
-  --fg: #ede9e0;
-  --fg-muted: #a8a49b; /* 7.9:1 on --bg */
-  --fg-faint: #75726b; /* 4.1:1 on --bg, large/decorative text only */
-  --line: rgb(237 233 224 / 0.1);
-  --line-strong: rgb(237 233 224 / 0.22);
+  /* "Midnight ink". Contrast on --bg / --bg-raised: fg 16.3 / 15.5,
+     muted 8.4 / 8.0, faint 5.2 / 4.9, accent 6.5 / 6.2. */
+  --bg: #07090e;
+  --bg-raised: #0d1018;
+  --bg-sunken: #04060a;
+  --fg: #ece8de;
+  --fg-muted: #a6a8ad;
+  --fg-faint: #7f828a; /* passes 4.5:1 on --bg and --bg-raised */
+  --line: rgb(206 216 255 / 0.1);
+  --line-strong: rgb(206 216 255 / 0.22);
 
-  --accent: #4d7cff; /* electric blue, 5.3:1 on --bg */
-  --accent-soft: rgb(77 124 255 / 0.14);
-  --accent-ink: #0a0a0b; /* text on accent fills */
-  --accent-rgb: 77 124 255;
+  --accent: #6b8dff; /* the only accent colour */
+  --accent-soft: rgb(107 141 255 / 0.14);
+  --accent-ink: #07090e; /* text on accent fills */
+  --accent-rgb: 107 141 255;
+  --fg-rgb: 236 232 222;
 
   --ok: #6fd3a1;
   --warn: #f2c96b;
@@ -67,6 +70,9 @@ html {
 }
 html.menu-open {
   overflow: hidden;
+}
+[inert] {
+  pointer-events: none;
 }
 html.lenis,
 html.lenis body {
@@ -164,6 +170,7 @@ body::after {
 }
 .mono {
   font-family: var(--font-mono);
+  font-weight: 400;
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -190,11 +197,6 @@ body::after {
   padding-block: clamp(72px, 12vw, 160px);
   border-top: 1px solid var(--line);
   position: relative;
-}
-/* Below-the-fold sections skip rendering until they approach the viewport. */
-.section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1400px;
 }
 .page-top {
   padding-top: calc(var(--header-h) + clamp(48px, 8vw, 112px));
@@ -327,14 +329,25 @@ body::after {
   border-radius: inherit;
   transition: transform 0.5s var(--ease-out);
 }
-.btn:hover::before,
 .btn:focus-visible::before {
   transform: none;
 }
-.btn:hover,
 .btn:focus-visible {
   color: var(--accent-ink);
   border-color: var(--accent);
+}
+/* Hover fills only where hover is real: a tap must not leave a filled button. */
+@media (hover: hover) {
+  .btn:hover::before {
+    transform: none;
+  }
+  .btn:hover {
+    color: var(--accent-ink);
+    border-color: var(--accent);
+  }
+  .btn:hover .arrow {
+    transform: translateX(4px);
+  }
 }
 .btn-primary {
   background: var(--fg);
@@ -344,11 +357,8 @@ body::after {
 .btn .arrow {
   transition: transform 0.5s var(--ease-out);
 }
-.btn:hover .arrow {
-  transform: translateX(4px);
-}
 .btn-sm {
-  --h: 40px;
+  --h: 44px;
   padding: 0 18px;
   font-size: 0.85rem;
 }
@@ -373,6 +383,24 @@ body::after {
   border-color: rgb(var(--accent-rgb) / 0.5);
   color: var(--fg);
   background: var(--accent-soft);
+}
+/* Compact chips and small links keep their look but get a 44px hit area. */
+a.chip,
+a.link-u,
+a.u,
+.hit-slop {
+  position: relative;
+}
+a.chip::after,
+a.link-u::after,
+a.u::after,
+.hit-slop::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 22px);
+  bottom: calc(50% - 22px);
+  left: min(0px, calc(50% - 22px));
+  right: min(0px, calc(50% - 22px));
 }
 .chip .dot {
   width: 6px;
@@ -404,16 +432,6 @@ body::after {
     opacity: 0.01;
     transform: translateY(0.25em);
   }
-}
-.split-line {
-  display: block;
-  overflow: hidden;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
-}
-.split-line > span {
-  display: inline-block;
-  will-change: transform;
 }
 
 /* ── Custom cursor (fine pointers only) ─────────────────────────────────── */
@@ -458,7 +476,7 @@ body::after {
     width: 36px;
     height: 36px;
     margin: -18px 0 0 -18px;
-    border: 1px solid rgb(237 233 224 / 0.4);
+    border: 1px solid rgb(var(--fg-rgb) / 0.4);
     transition:
       width 0.35s var(--ease-out),
       height 0.35s var(--ease-out),
@@ -566,7 +584,14 @@ body::after {
   stroke-width: 3.4;
 }
 
-/* KaTeX inherits colour; keep it from overflowing narrow screens. */
+/* KaTeX inherits colour; inside display type it must not out-size the serif. */
+.display .katex,
+h1 .katex,
+h2 .katex,
+h3 .katex {
+  font-size: 1em;
+}
+/* Keep display equations from overflowing narrow screens. */
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;

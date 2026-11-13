@@ -28,7 +28,7 @@ const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected
 const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
 
 const rows: [string, string | null, string?][] = [
-  [s.doc.authors, doc.authors.length ? authorsLine(doc.authors) : null],
+  [s.doc.authors, doc.authors.length ? authorsLine(doc.authors, s.doc.and) : null],
   [s.doc.university, uni?.name ?? doc.university, href(lang, `universities/${doc.university}`)],
   [s.doc.department, doc.department],
   [s.doc.course, [doc.course_code, doc.course_title].filter(Boolean).join(' — ') || null],
@@ -47,8 +47,8 @@ const rows: [string, string | null, string?][] = [
   <article class="doc">
     <div class="wrap">
       <nav class="crumbs mono" aria-label={s.a11y.breadcrumb}>
-        <a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
-        <a href={href(lang, `universities/${doc.university}`)} lang="en">{uni?.name ?? doc.university}</a>
+        <a class="hit-slop" href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
+        <a class="hit-slop" href={href(lang, `universities/${doc.university}`)} lang="en">{uni?.name ?? doc.university}</a>
       </nav>
 
       <div class="top">
@@ -60,8 +60,8 @@ const rows: [string, string | null, string?][] = [
 
         <div class="main-col">
           <LicenseBadge doc={doc} lang={lang} />
-          <h1 class="display title" data-rise set:html={inlineTex(doc.title)} />
-          {doc.authors.length > 0 && <p class="by">{authorsLine(doc.authors)}</p>}
+          <h1 class="display title" lang="en" data-rise set:html={inlineTex(doc.title)} />
+          {doc.authors.length > 0 && <p class="by">{authorsLine(doc.authors, s.doc.and)}</p>}
           {doc.description && <p class="desc muted" lang="en">{doc.description}</p>}
 
           <div class="actions">
@@ -99,10 +99,10 @@ const rows: [string, string | null, string?][] = [
           <h2 id="meta-h" class="mono sec-index">{s.doc.metadata}</h2>
           <dl class="meta">
             {
-              rows.map(([k, v, link]) => (
+              rows.map(([k, v, link], i) => (
                 <div>
                   <dt class="mono muted">{k}</dt>
-                  <dd>{v == null ? s.doc.unknown : link ? <a class="u" href={link}>{v}</a> : v}</dd>
+                  <dd lang={i >= 1 && i <= 3 ? 'en' : undefined}>{v == null ? s.doc.unknown : link ? <a class="u" href={link}>{v}</a> : v}</dd>
                 </div>
               ))
             }
@@ -139,11 +139,11 @@ const rows: [string, string | null, string?][] = [
             <button role="tab" id="tab-plain" aria-controls="panel-plain" aria-selected="false" tabindex="-1" class="mono">{s.doc.plain}</button>
           </div>
           <div id="panel-bib" role="tabpanel" aria-labelledby="tab-bib" class="panel">
-            <pre id="cite-bib" class="mono-plain">{bibtex(doc, uni)}</pre>
+            <pre id="cite-bib" class="mono-plain" lang="en">{bibtex(doc, uni)}</pre>
             <button class="btn btn-sm copy" type="button" data-copy="cite-bib" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
           </div>
           <div id="panel-plain" role="tabpanel" aria-labelledby="tab-plain" class="panel" hidden>
-            <p id="cite-plain" class="plain">{plainCitation(doc, uni)}</p>
+            <p id="cite-plain" class="plain" lang={lang === 'tr' ? 'tr' : 'en'}>{plainCitation(doc, uni, s.doc)}</p>
             <button class="btn btn-sm copy" type="button" data-copy="cite-plain" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
           </div>
         </section>
@@ -152,7 +152,7 @@ const rows: [string, string | null, string?][] = [
       {
         similar.length > 0 && (
           <section class="similar" aria-labelledby="sim-h">
-            <h2 id="sim-h" class="display h-lg" data-split>
+            <h2 id="sim-h" class="display h-lg" data-reveal>
               {s.doc.similar}
             </h2>
             <div class="grid">
@@ -181,8 +181,10 @@ const rows: [string, string | null, string?][] = [
     color: var(--fg-muted);
     margin-bottom: clamp(28px, 4vw, 48px);
   }
-  .crumbs a:hover {
-    color: var(--fg);
+  @media (hover: hover) {
+    .crumbs a:hover {
+      color: var(--fg);
+    }
   }
   .top {
     display: grid;
@@ -230,15 +232,17 @@ const rows: [string, string | null, string?][] = [
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 10px 6px;
     margin-top: 28px;
   }
   .topics .chip {
     height: 32px;
   }
-  .topics .chip:hover {
-    color: var(--fg);
-    border-color: var(--accent);
+  @media (hover: hover) {
+    .topics .chip:hover {
+      color: var(--fg);
+      border-color: var(--accent);
+    }
   }
   .details {
     display: grid;

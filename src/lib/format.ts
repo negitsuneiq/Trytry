@@ -28,7 +28,8 @@ export function pad(n: number, w = 2): string {
   return String(n).padStart(w, '0');
 }
 
-export function authorsLine(a: string[]): string {
-  if (a.length <= 2) return a.join(' & ');
-  return `${a.slice(0, -1).join(', ')} & ${a.at(-1)}`;
+/** "A & B" / "A, B & C"; `and` comes from the dictionary ("&" or "ve"). */
+export function authorsLine(a: string[], and = '&'): string {
+  if (a.length <= 2) return a.join(` ${and} `);
+  return `${a.slice(0, -1).join(', ')} ${and} ${a.at(-1)}`;
 }
