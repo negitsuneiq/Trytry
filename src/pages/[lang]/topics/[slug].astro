@@ -26,7 +26,7 @@ const other = lang === 'tr' ? 'en' : 'tr';
     <div class="wrap">
       <div class="head">
         <div>
-          <p class="mono muted"><a href={href(lang, 'topics')}>{s.nav.topics}</a> / MSC {topic.msc.map((m) => `${m}-XX`).join(', ')}</p>
+          <p class="mono muted"><a href={href(lang, 'topics')}>{s.nav.topics}</a></p>
           <h1 class="display h-xl name" data-rise>{topic[lang]}</h1>
           <p class="lede"><span lang={other}>{topic[other]}</span> · {s.home.docsCount(docs.length)}</p>
         </div>

@@ -128,54 +128,6 @@ function initMenu() {
   });
 }
 
-function initCopy() {
-  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) =>
-    b.addEventListener('click', async () => {
-      const src = document.getElementById(b.dataset.copy!);
-      if (!src) return;
-      try {
-        await navigator.clipboard.writeText(src.textContent ?? '');
-      } catch {
-        const range = document.createRange();
-        range.selectNodeContents(src);
-        getSelection()?.removeAllRanges();
-        getSelection()?.addRange(range);
-        document.execCommand('copy');
-      }
-      const label = b.querySelector('[data-copy-label]');
-      if (label) {
-        const prev = label.textContent;
-        label.textContent = b.dataset.copied ?? '✓';
-        setTimeout(() => (label.textContent = prev), 1600);
-      }
-    }),
-  );
-}
-
-function initTabs() {
-  document.querySelectorAll<HTMLElement>('[role="tablist"]').forEach((list) => {
-    const tabs = [...list.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
-    const select = (tab: HTMLButtonElement) => {
-      for (const t of tabs) {
-        const on = t === tab;
-        t.setAttribute('aria-selected', String(on));
-        t.tabIndex = on ? 0 : -1;
-        document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
-      }
-    };
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => select(t));
-      t.addEventListener('keydown', (e) => {
-        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!d) return;
-        const next = tabs[(i + d + tabs.length) % tabs.length];
-        next.focus();
-        select(next);
-      });
-    });
-  });
-}
-
 const idle = (fn: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 600 }) : setTimeout(fn, 1));
 let generation = 0;
 
@@ -183,8 +135,6 @@ document.addEventListener('astro:page-load', () => {
   // Cheap, needed at once.
   initLangMemory();
   initMenu();
-  initCopy();
-  initTabs();
   initReveals();
   initCounters();
   // Heavier set-up runs as separate idle tasks so no single task blocks input.

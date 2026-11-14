@@ -10,7 +10,6 @@ import { LICENSE_INFO, licenseLabel, type DocumentRecord } from '../../../lib/sc
 import { href, asset } from '../../../lib/paths';
 import { inlineTex, plainTex } from '../../../lib/math';
 import { topicName } from '../../../lib/topics';
-import { bibtex, plainCitation } from '../../../lib/cite';
 import { bytes, date, authorsLine } from '../../../lib/format';
 
 export function getStaticPaths() {
@@ -28,18 +27,13 @@ const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected
 const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
 
 const rows: [string, string | null, string?][] = [
-  [s.doc.authors, doc.authors.length ? authorsLine(doc.authors) : null],
   [s.doc.university, uni?.name ?? doc.university, href(lang, `universities/${doc.university}`)],
-  [s.doc.department, doc.department],
   [s.doc.course, [doc.course_code, doc.course_title].filter(Boolean).join(' — ') || null],
   [s.doc.level, s.levels[doc.level]],
   [s.doc.type, s.types[doc.type]],
   [s.doc.year, doc.year ? String(doc.year) : null],
   [s.doc.pages, doc.pages ? String(doc.pages) : null],
-  [s.doc.language, s.doc.english],
-  [s.doc.fileSize, doc.file_size ? bytes(doc.file_size) : null],
-  [s.doc.accessed, date(doc.accessed_at, lang)],
-  [s.doc.checked, `${date(doc.last_checked, lang)} · ${statusLabel}`],
+  [s.doc.fileSize, doc.hosted && doc.file_size ? bytes(doc.file_size) : null],
 ];
 ---
 
@@ -91,12 +85,7 @@ const rows: [string, string | null, string?][] = [
               ))
             }
           </ul>
-        </div>
-      </div>
 
-      <div class="details">
-        <section aria-labelledby="meta-h">
-          <h2 id="meta-h" class="mono sec-index">{s.doc.metadata}</h2>
           <dl class="meta">
             {
               rows.filter(([, v]) => v != null).map(([k, v, link]) => (
@@ -106,7 +95,7 @@ const rows: [string, string | null, string?][] = [
                 </div>
               ))
             }
-            <div>
+            <div class="wide">
               <dt class="mono muted">{s.doc.license}</dt>
               <dd>
                 {licUrl ? <a class="u" href={licUrl} rel="license noopener" target="_blank">{lic.label}</a> : licenseLabel(doc.license, s.licenseStatus)}
@@ -117,36 +106,16 @@ const rows: [string, string | null, string?][] = [
                 )}
               </dd>
             </div>
-            <div>
+            <div class="wide">
               <dt class="mono muted">{s.doc.sourcePage}</dt>
               <dd class="break"><a class="u" href={doc.source_url} rel="noopener" target="_blank">{doc.source_url}</a></dd>
             </div>
-            {
-              doc.sha256 && (
-                <div>
-                  <dt class="mono muted">{s.doc.sha256}</dt>
-                  <dd class="mono-plain break">{doc.sha256}</dd>
-                </div>
-              )
-            }
+            <div class="wide">
+              <dt class="mono muted">{s.doc.checked}</dt>
+              <dd>{date(doc.last_checked, lang)} · {statusLabel}</dd>
+            </div>
           </dl>
-        </section>
-
-        <section aria-labelledby="cite-h" class="cite">
-          <h2 id="cite-h" class="mono sec-index">{s.doc.cite}</h2>
-          <div role="tablist" aria-label={s.doc.cite} class="tabs">
-            <button role="tab" id="tab-bib" aria-controls="panel-bib" aria-selected="true" tabindex="0" class="mono">{s.doc.bibtex}</button>
-            <button role="tab" id="tab-plain" aria-controls="panel-plain" aria-selected="false" tabindex="-1" class="mono">{s.doc.plain}</button>
-          </div>
-          <div id="panel-bib" role="tabpanel" aria-labelledby="tab-bib" class="panel">
-            <pre id="cite-bib" class="mono-plain">{bibtex(doc, uni)}</pre>
-            <button class="btn btn-sm copy" type="button" data-copy="cite-bib" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
-          </div>
-          <div id="panel-plain" role="tabpanel" aria-labelledby="tab-plain" class="panel" hidden>
-            <p id="cite-plain" class="plain">{plainCitation(doc, uni)}</p>
-            <button class="btn btn-sm copy" type="button" data-copy="cite-plain" data-copied={s.doc.copied}><span data-copy-label>{s.doc.copy}</span></button>
-          </div>
-        </section>
+        </div>
       </div>
 
       {
@@ -269,25 +238,30 @@ const rows: [string, string | null, string?][] = [
     color: var(--fg);
     border-color: var(--accent);
   }
-  .details {
+  .meta {
     display: grid;
-    gap: 56px;
-    margin-top: clamp(56px, 8vw, 112px);
-    padding-top: 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(20px, 3vw, 48px);
+    margin-top: clamp(36px, 5vw, 56px);
     border-top: 1px solid var(--line);
-  }
-  @media (min-width: 1000px) {
-    .details {
-      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-      gap: 64px;
-    }
+    max-width: 760px;
   }
   .meta > div {
     display: grid;
-    grid-template-columns: minmax(110px, 2fr) 5fr;
-    gap: 16px;
+    gap: 6px;
     padding: 14px 0;
     border-bottom: 1px solid var(--line);
+  }
+  .meta > .wide {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(110px, 2fr) 5fr;
+    gap: 16px;
+  }
+  @media (max-width: 519px) {
+    .meta > .wide {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
   }
   .meta dd {
     min-width: 0;
@@ -306,43 +280,6 @@ const rows: [string, string | null, string?][] = [
   }
   .u:hover {
     text-decoration-color: var(--accent);
-  }
-  .tabs {
-    display: flex;
-    gap: 4px;
-    border-bottom: 1px solid var(--line);
-  }
-  .tabs button {
-    padding: 12px 14px;
-    min-height: 44px;
-    color: var(--fg-muted);
-    border-bottom: 1px solid transparent;
-    margin-bottom: -1px;
-  }
-  .tabs button[aria-selected='true'] {
-    color: var(--fg);
-    border-color: var(--accent);
-  }
-  .panel {
-    position: relative;
-    background: var(--bg-sunken);
-    border: 1px solid var(--line);
-    border-top: 0;
-    padding: 20px 20px 72px;
-  }
-  .panel pre {
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    line-height: 1.6;
-    color: var(--fg-muted);
-  }
-  .plain {
-    color: var(--fg-muted);
-  }
-  .copy {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
   }
   .similar {
     margin-top: clamp(80px, 12vw, 160px);
