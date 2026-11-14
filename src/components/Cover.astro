@@ -31,16 +31,16 @@ const topic = TOPIC_BY_SLUG.get(doc.topics[0] ?? '') ?? TOPIC_BY_SLUG.get('analy
   .cover {
     position: relative;
     aspect-ratio: 3 / 4;
-    /* Drawn covers are sheets too, a shade off the white of a scanned first page,
+    /* Drawn covers are sheets too, a shade warmer than a scanned first page,
        so a mixed grid reads as one stack of paper. */
     background: var(--bg-raised);
     border: 1px solid var(--line);
-    box-shadow: 0 1px 1px rgb(var(--shade-rgb) / 0.2), 0 10px 18px -12px rgb(var(--shade-rgb) / 0.5);
+    box-shadow: 0 1px 1px rgb(23 20 15 / 0.05), 0 10px 18px -12px rgb(23 20 15 / 0.22);
     overflow: hidden;
   }
   /* A real first page reads as a loose sheet on the desk. */
   .cover[data-kind='thumb'] {
-    background: var(--sheet);
+    background: #fffdf8;
     border-color: transparent;
     box-shadow: var(--shadow-sheet);
   }

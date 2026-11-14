@@ -221,7 +221,7 @@ function departments(home: HTMLElement): Off {
   };
 }
 
-// ── Proof: the ink panel opens and the ribbons draw ────────────────────────
+// ── Proof: the panel opens and the ribbons draw ────────────────────────
 function flow(home: HTMLElement, wide: boolean): Off {
   const stage = $('[data-flow-stage]', home)!;
   const panel = $('[data-flow-panel]', stage)!;
@@ -332,7 +332,6 @@ function margin(home: HTMLElement): Off {
         if (!self.isActive) return;
         label.textContent = `§ ${i + 1} · ${sc.dataset.label}`;
         page.textContent = `${i + 1} / ${scenes.length}`;
-        aside.toggleAttribute('data-ink', sc.dataset.scene === 'topics');
       },
     }),
   );
@@ -342,5 +341,5 @@ function margin(home: HTMLElement): Off {
     end: 'bottom bottom',
     onUpdate: (self) => fill.style.setProperty('--p', self.progress.toFixed(3)),
   });
-  return () => aside.removeAttribute('data-ink');
+  return () => {};
 }

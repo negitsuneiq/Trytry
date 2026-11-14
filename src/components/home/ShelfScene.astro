@@ -149,8 +149,8 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', thumb(id)))
     color: var(--t);
     border-radius: 3px 3px 0 0;
     box-shadow:
-      inset 3px 0 0 rgb(238 240 228 / 0.1),
-      inset -4px 0 0 rgb(5 18 15 / 0.18);
+      inset 3px 0 0 rgb(255 255 255 / 0.08),
+      inset -4px 0 0 rgb(0 0 0 / 0.12);
     transition: transform 0.55s var(--ease-out);
     will-change: transform;
   }
@@ -159,29 +159,29 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', thumb(id)))
   .spine:global(.is-pulled) {
     transform: translateY(-26px) rotate(-1.5deg);
   }
-  .c-chalk {
-    --c: #eef0e4;
-    --t: #17332d;
+  .c-ink {
+    --c: #17140f;
+    --t: #efe9dc;
   }
-  .c-gold {
-    --c: #f1cf5b;
-    --t: #17332d;
+  .c-red {
+    --c: #a82c18;
+    --t: #f8f5ee;
   }
-  .c-sage {
-    --c: #8fb59f;
-    --t: #0f2621;
+  .c-ochre {
+    --c: #b88a2c;
+    --t: #17140f;
   }
-  .c-deep {
-    --c: #0f2621;
-    --t: #eef0e4;
+  .c-slate {
+    --c: #2d3c5c;
+    --t: #efe9dc;
   }
-  .c-teal {
-    --c: #2f6a5d;
-    --t: #f6f8ef;
+  .c-moss {
+    --c: #3a5240;
+    --t: #efe9dc;
   }
-  .c-mist {
-    --c: #cfdacb;
-    --t: #17332d;
+  .c-paper {
+    --c: #e3dccb;
+    --t: #17140f;
   }
   .band {
     width: 100%;
@@ -212,7 +212,7 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', thumb(id)))
     height: 14px;
     background: var(--fg);
     border-radius: 0 0 2px 2px;
-    box-shadow: 0 18px 30px -18px rgb(5 18 15 / 0.7);
+    box-shadow: 0 18px 30px -18px rgb(23 20 15 / 0.6);
   }
   .preview {
     min-height: 0;
