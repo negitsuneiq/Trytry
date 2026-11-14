@@ -11,8 +11,8 @@ export default defineConfig({
   base,
   output: 'static',
   trailingSlash: 'ignore',
-  // Inline CSS: one fewer render-blocking request on first paint (mobile FCP).
-  build: { format: 'directory', inlineStylesheets: 'always' },
+  // 'auto': small sheets inline, the rest are external hashed files, so thousands of pages do not each carry the full CSS.
+  build: { format: 'directory', inlineStylesheets: 'auto' },
   prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
   devToolbar: { enabled: false },
 });

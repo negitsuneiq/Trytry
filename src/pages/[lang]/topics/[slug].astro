@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import DocCard from '../../../components/DocCard.astro';
+import CardConfig from '../../../components/CardConfig.astro';
 import LoadMore from '../../../components/LoadMore.astro';
 import EmptyState from '../../../components/EmptyState.astro';
 import { t, type Lang } from '../../../i18n/strings';
@@ -14,6 +15,8 @@ export function getStaticPaths() {
   return langCross(TOPICS.map((topic) => ({ params: { slug: topic.slug }, props: { topic } })));
 }
 
+/** Cards rendered into the page; the rest come from /docs-index.json on demand. */
+const FIRST = 24;
 const lang = Astro.params.lang as Lang;
 const { topic } = Astro.props as { topic: Topic };
 const s = t(lang);
@@ -36,14 +39,14 @@ const other = lang === 'tr' ? 'en' : 'tr';
       <div class="docs">
         {
           docs.length ? (
-            <div class="card-grid" data-paged>
-              {docs.map((d) => (
+            <div class="card-grid" data-paged="topic" data-slug={topic.slug} data-total={docs.length}>
+              {docs.slice(0, FIRST).map((d) => (
                 <div data-reveal>
                   <DocCard doc={d} lang={lang} heading="h2" />
                 </div>
               ))}
             </div>
-            <LoadMore lang={lang} />
+            <LoadMore lang={lang} shown={FIRST} total={docs.length} fallbackHref={`${href(lang, 'library')}?t=${topic.slug}`} />
           ) : (
             <EmptyState lang={lang} />
           )
@@ -51,6 +54,7 @@ const other = lang === 'tr' ? 'en' : 'tr';
       </div>
     </div>
   </section>
+  <CardConfig lang={lang} />
 </Base>
 
 <script>

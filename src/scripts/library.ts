@@ -1,18 +1,52 @@
-// Library search and filtering. Cards are server-rendered; this only hides,
-// shows and reorders them (in batches, see pager.ts), and mirrors every control into the URL.
+// Library search and filtering over the shared /docs-index.json. Filtering,
+// sorting and search run on the full set; only the cards of the current page
+// of results are created (in batches, see pager.ts). Every control is mirrored into the URL.
 
 import MiniSearch from 'minisearch';
-import { createPager } from './pager';
+import { appendCards, loadIndex, readCfg } from './cards';
+import { BATCH, createPager } from './pager';
+import type { CardRec } from '../lib/cardRec';
 
 type Rec = { id: string; title: string; authors: string; course: string; topics: string; university: string };
 
 const FACETS = ['u', 't', 'l', 'ty', 'li'] as const;
-const ATTR: Record<(typeof FACETS)[number], string> = { u: 'university', t: 'topics', l: 'level', ty: 'type', li: 'license' };
+const HAVE: Record<(typeof FACETS)[number], (r: CardRec) => string[]> = {
+  u: (r) => [r.u],
+  t: (r) => r.p,
+  l: (r) => [r.l],
+  ty: (r) => [r.ty],
+  li: (r) => [r.li],
+};
 
 export function initLibrary() {
   const root = document.querySelector<HTMLElement>('[data-library]');
   if (!root) return;
-  const records = JSON.parse(document.getElementById('lib-index')!.textContent!) as Rec[];
+  const cfg = readCfg();
+  const grid = root.querySelector<HTMLElement>('[data-grid]')!;
+  loadIndex(cfg).then(
+    (recs) => setup(root, grid, cfg, recs),
+    () => {
+      grid.setAttribute('aria-busy', 'false');
+      grid.innerHTML = '';
+      const p = root.querySelector<HTMLElement>('[data-none]')!;
+      p.textContent = cfg.ui.error;
+      p.setAttribute('role', 'alert');
+      p.hidden = false;
+    },
+  );
+}
+
+function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof readCfg>, recs: CardRec[]) {
+  const rank = (r: CardRec) => cfg.unis[r.u]?.[1] ?? 99;
+  const topicNames = (r: CardRec) => r.p.map((tp) => `${cfg.topics[tp]?.[0] ?? tp} ${cfg.topics[tp]?.[1] ?? tp}`).join(' ');
+  const records: Rec[] = recs.map((r) => ({
+    id: r.i,
+    title: r.t.replace(/\$([^$]+)\$/g, '$1'),
+    authors: (r.a ?? []).join(' '),
+    course: r.c ?? '',
+    topics: topicNames(r),
+    university: cfg.unis[r.u]?.[0] ?? r.u,
+  }));
   const ms = new MiniSearch<Rec>({
     fields: ['title', 'authors', 'course', 'topics', 'university'],
     storeFields: [],
@@ -24,10 +58,14 @@ export function initLibrary() {
   const sorts = [...root.querySelectorAll<HTMLInputElement>('[data-sort]')];
   const hosted = root.querySelector<HTMLInputElement>('[data-hosted]')!;
   const boxes = [...root.querySelectorAll<HTMLInputElement>('[data-facet]')];
-  const grid = root.querySelector<HTMLElement>('[data-grid]')!;
-  const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
   const countLabel = root.querySelector<HTMLElement>('[data-count-label]')!;
-  const pager = createPager(root.querySelector<HTMLElement>('[data-more]')!);
+  const pager = createPager(root.querySelector<HTMLElement>('[data-more]')!, {
+    size: BATCH,
+    mount: (items, from, to) => {
+      if (from === 0) grid.replaceChildren();
+      return appendCards(grid, items.slice(from, to), cfg, 'h2');
+    },
+  });
   const none = root.querySelector<HTMLElement>('[data-none]')!;
   const toggle = root.querySelector<HTMLButtonElement>('[data-fs-toggle]')!;
   const panel = root.querySelector<HTMLElement>('[data-panel]')!;
@@ -55,31 +93,28 @@ export function initLibrary() {
     if (query) for (const r of ms.search(query)) scores.set(r.id as string, r.score);
 
     const active = Object.fromEntries(FACETS.map((k) => [k, selected(k)]));
-    const visible: HTMLElement[] = [];
-    for (const c of cards) {
-      let ok = !query || scores.has(c.dataset.id!);
-      if (ok && hosted.checked) ok = c.dataset.hosted === 'true';
+    const visible: CardRec[] = [];
+    for (const r of recs) {
+      let ok = !query || scores.has(r.i);
+      if (ok && hosted.checked) ok = r.h === 1;
       for (const k of FACETS) {
         if (!ok || !active[k].length) continue;
-        const have = c.dataset[ATTR[k]]!.split(' ');
+        const have = HAVE[k](r);
         ok = active[k].some((v) => have.includes(v));
       }
-      c.hidden = !ok;
-      if (ok) visible.push(c);
+      if (ok) visible.push(r);
     }
 
     const by = sortValue();
-    const cmp: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
-      relevance: (a, b) => (scores.get(b.dataset.id!) ?? 0) - (scores.get(a.dataset.id!) ?? 0) || +a.dataset.rank! - +b.dataset.rank!,
-      newest: (a, b) => +b.dataset.year! - +a.dataset.year! || b.dataset.accessed!.localeCompare(a.dataset.accessed!),
-      title: (a, b) => a.dataset.title!.localeCompare(b.dataset.title!),
-      rank: (a, b) => +a.dataset.rank! - +b.dataset.rank! || a.dataset.title!.localeCompare(b.dataset.title!),
+    const cmp: Record<string, (a: CardRec, b: CardRec) => number> = {
+      relevance: (a, b) => (scores.get(b.i) ?? 0) - (scores.get(a.i) ?? 0) || rank(a) - rank(b),
+      newest: (a, b) => (b.y ?? 0) - (a.y ?? 0) || (a.d < b.d ? 1 : a.d > b.d ? -1 : 0),
+      title: (a, b) => a.n - b.n,
+      rank: (a, b) => rank(a) - rank(b) || a.n - b.n,
     };
     visible.sort(cmp[by] ?? cmp.relevance);
-    const frag = document.createDocumentFragment();
-    [...visible, ...cards.filter((c) => c.hidden)].forEach((c) => frag.appendChild(c));
-    grid.appendChild(frag);
     pager.set(visible);
+    grid.setAttribute('aria-busy', 'false');
 
     const n = visible.length;
     countLabel.textContent = (n === 1 ? countLabel.dataset.templateOne! : countLabel.dataset.template!).replace(/\d+/, String(n));
