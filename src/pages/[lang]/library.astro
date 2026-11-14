@@ -58,70 +58,97 @@ const groups = [
                 </svg>
                 <input type="search" name="q" placeholder={s.library.searchPlaceholder} autocomplete="off" enterkeyhint="search" data-q />
               </label>
-              <label class="sort">
-                <span class="mono muted">{s.library.sort}</span>
-                <select data-sort>
-                  <option value="relevance">{s.library.sortRelevance}</option>
-                  <option value="newest">{s.library.sortNewest}</option>
-                  <option value="title">{s.library.sortTitle}</option>
-                  <option value="rank">{s.library.sortRank}</option>
-                </select>
-              </label>
-              <button class="btn btn-sm filters-toggle" type="button" aria-expanded="false" aria-controls="lib-filters" data-filters-toggle>
-                {s.library.showFilters} <span class="mono" data-active-count />
-              </button>
-            </div>
+              <div class="fs" data-fs>
+                <button class="btn btn-sm fs-toggle" type="button" aria-expanded="false" aria-controls="lib-panel" data-fs-toggle>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7h10M18 7h2M4 17h2M10 17h10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <circle cx="8" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                  <span>{s.library.filterSort}</span>
+                  <span class="badge mono" data-active-count hidden />
+                </button>
 
-            <div class="layout">
-              <aside id="lib-filters" class="filters" aria-label={s.library.filters} data-open="false">
-                <div class="filters-inner">
-                  <label class="switch">
-                    <input type="checkbox" data-hosted />
-                    <span class="track" aria-hidden="true">
-                      <span class="thumb" />
-                    </span>
-                    <span>{s.library.hostedOnly}</span>
-                  </label>
+                <div id="lib-panel" class="panel" role="dialog" aria-label={s.library.filterSort} tabindex="-1" hidden data-panel>
+                  <div class="panel-head">
+                    <h2 class="mono">{s.library.filterSort}</h2>
+                    <button class="close" type="button" aria-label={s.a11y.close} data-fs-close>
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" />
+                      </svg>
+                    </button>
+                  </div>
 
-                  {groups.map((g) => (
+                  <div class="panel-body">
                     <fieldset class="group">
-                      <legend class="mono">{g.label}</legend>
+                      <legend class="mono">{s.library.sort}</legend>
                       <div class="opts">
-                        {g.options.map((o) => (
+                        {[
+                          ['relevance', s.library.sortRelevance],
+                          ['newest', s.library.sortNewest],
+                          ['title', s.library.sortTitle],
+                          ['rank', s.library.sortRank],
+                        ].map(([value, label], i) => (
                           <label class="opt">
-                            <input type="checkbox" name={g.key} value={o.value} data-facet={g.key} />
-                            <span lang={'en' in o ? 'en' : undefined}>{o.label}</span>
+                            <input type="radio" name="s" value={value} checked={i === 0} data-sort />
+                            <span>{label}</span>
                           </label>
                         ))}
                       </div>
                     </fieldset>
-                  ))}
 
-                  <div class="filter-actions">
+                    <label class="switch">
+                      <input type="checkbox" data-hosted />
+                      <span class="track" aria-hidden="true">
+                        <span class="thumb" />
+                      </span>
+                      <span>{s.library.hostedOnly}</span>
+                    </label>
+
+                    {groups.map((g) => (
+                      <fieldset class="group">
+                        <legend class="mono">{g.label}</legend>
+                        <div class="opts">
+                          {g.options.map((o) => (
+                            <label class="opt">
+                              <input type="checkbox" name={g.key} value={o.value} data-facet={g.key} />
+                              <span lang={'en' in o ? 'en' : undefined}>{o.label}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </fieldset>
+                    ))}
+                  </div>
+
+                  <div class="panel-foot">
                     <button class="btn btn-sm" type="button" data-clear>
                       {s.library.clear}
                     </button>
-                    <button class="btn btn-sm btn-primary apply" type="button" data-apply>
-                      {s.library.applyFilters}
+                    <button class="btn btn-sm btn-primary" type="button" data-fs-close data-show-results data-template-one={s.library.showResults(1)} data-template={s.library.showResults(2)}>
+                      {s.library.showResults(documents.length)}
                     </button>
                   </div>
                 </div>
-              </aside>
-
-              <div class="results">
-                <p class="mono muted count" aria-live="polite" data-count-label data-template-one={s.library.results(1)} data-template={s.library.results(2)}>
-                  {s.library.results(documents.length)}
-                </p>
-                <div class="grid" data-grid>
-                  {documents.map((d) => (
-                    <DocCard doc={d} lang={lang} heading="h2" filterable />
-                  ))}
-                </div>
-                <LoadMore lang={lang} />
-                <p class="none" hidden data-none>
-                  {s.library.noResults}
-                </p>
               </div>
+            </div>
+
+            <div class="status">
+              <p class="mono muted count" aria-live="polite" data-count-label data-template-one={s.library.results(1)} data-template={s.library.results(2)}>
+                {s.library.results(documents.length)}
+              </p>
+              <ul class="active" data-active data-remove={s.library.removeFilter} />
+            </div>
+
+            <div class="results">
+              <div class="grid" data-grid>
+                {documents.map((d) => (
+                  <DocCard doc={d} lang={lang} heading="h2" filterable />
+                ))}
+              </div>
+              <LoadMore lang={lang} />
+              <p class="none" hidden data-none>
+                {s.library.noResults}
+              </p>
             </div>
             <script type="application/json" id="lib-index" set:html={JSON.stringify(index)} />
           </div>
@@ -147,18 +174,18 @@ const groups = [
     top: var(--header-h);
     z-index: 5;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: 12px 20px;
+    gap: 12px clamp(14px, 2vw, 28px);
     padding: 14px 0;
     background: var(--bg);
     border-bottom: 1px solid var(--line);
   }
   .search {
-    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     gap: 12px;
+    min-width: 0;
     border-bottom: 1px solid var(--line-strong);
     transition: border-color 0.3s;
   }
@@ -178,87 +205,108 @@ const groups = [
     border: 0;
     outline: 0;
     font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
     padding: 8px 0;
   }
   .search input::placeholder {
     color: var(--fg-faint);
   }
-  .sort {
+
+  /* Filter & sort: one control, one panel. Needs JS, so it is hidden without it. */
+  html:not(.js) .fs {
+    display: none;
+  }
+  .fs-toggle {
+    white-space: nowrap;
+    gap: 10px;
+    --h: 44px;
+  }
+  .fs-toggle svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+  .badge {
+    display: inline-grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 0.6875rem;
+  }
+  .badge[hidden] {
+    display: none;
+  }
+  .fs-toggle:hover .badge,
+  .fs-toggle:focus-visible .badge {
+    background: var(--accent-ink);
+    color: var(--accent);
+  }
+  .fs-toggle[aria-expanded='true'] {
+    border-color: var(--fg);
+  }
+  .panel {
+    position: absolute;
+    top: calc(100% - 2px);
+    right: 0;
+    z-index: 80;
+    width: min(720px, 100%);
+    max-height: calc(100vh - var(--header-h) - 120px);
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    box-shadow: var(--shadow-sheet);
+  }
+  .panel[hidden] {
+    display: none;
+  }
+  .panel:focus {
+    outline: 0;
+  }
+  .panel-head {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    padding: 6px 8px 6px 24px;
+    border-bottom: 1px solid var(--line);
   }
-  select {
-    appearance: none;
-    background: var(--bg-raised) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%235c564c'/%3E%3C/svg%3E") no-repeat right 14px center;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 0 36px 0 16px;
+  .panel-head h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .close {
+    display: grid;
+    place-items: center;
+    width: 44px;
     height: 44px;
-    font-size: 0.9rem;
+    color: var(--fg-muted);
   }
-  .layout {
+  .close:hover {
+    color: var(--accent);
+  }
+  .close svg {
+    width: 20px;
+    height: 20px;
+  }
+  .panel-body {
     display: grid;
-    gap: 32px;
-    margin-top: 32px;
+    gap: 26px;
+    padding: 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
-  .filters-toggle {
-    justify-self: end;
-    white-space: nowrap;
-  }
-  @media (min-width: 1100px) {
-    .searchbar {
-      grid-template-columns: 1fr auto;
-    }
-    .search {
-      grid-column: auto;
-    }
-    .layout {
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 48px;
-    }
-    .filters-toggle,
-    .apply {
-      display: none !important;
-    }
-  }
-  .filters-inner {
-    display: grid;
-    gap: 28px;
-  }
-  @media (min-width: 1100px) {
-    .filters-inner {
-      position: sticky;
-      top: calc(var(--header-h) + 100px);
-    }
-  }
-  @media (max-width: 1099px) {
-    .filters {
-      position: fixed;
-      inset: var(--header-h) 0 0;
-      z-index: 80;
-      background: var(--bg);
-      padding: 24px var(--gutter) 40px;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      transform: translateY(100%);
-      visibility: hidden;
-      transition:
-        transform 0.6s var(--ease-out),
-        visibility 0s 0.6s;
-    }
-    .filters[data-open='true'] {
-      transform: none;
-      visibility: visible;
-      transition: transform 0.6s var(--ease-out);
-    }
-    .filter-actions {
-      position: sticky;
-      bottom: -40px;
-      padding: 16px 0 24px;
-      background: var(--bg);
-    }
+  .panel-foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 24px;
+    border-top: 1px solid var(--line);
   }
   .group {
     border: 0;
@@ -359,13 +407,70 @@ const groups = [
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
-  .filter-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  /* On phones the panel is a full-width sheet under the header. */
+  @media (max-width: 719px) {
+    .panel {
+      position: fixed;
+      inset: var(--header-h) 0 0;
+      width: auto;
+      max-height: none;
+      border-width: 1px 0 0;
+      box-shadow: none;
+    }
+    .panel-head {
+      padding-left: var(--gutter);
+    }
+    .panel-body {
+      padding: 20px var(--gutter);
+    }
+    .panel-foot {
+      padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+    }
+    .panel-foot .btn {
+      flex: 1;
+      justify-content: center;
+    }
   }
-  .count {
-    margin-bottom: 24px;
+
+  /* Count and removable chips share one row; min-height keeps it from jumping. */
+  .status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    min-height: 34px;
+    margin: 20px 0 28px;
+  }
+  .active {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .active :global(button) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 10px 0 14px;
+    border: 1px solid var(--fg);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    transition:
+      background-color 0.25s,
+      color 0.25s,
+      border-color 0.25s;
+  }
+  .active :global(button:hover),
+  .active :global(button:focus-visible) {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+  .active :global(svg) {
+    width: 10px;
+    height: 10px;
   }
   .grid {
     display: grid;
@@ -375,6 +480,16 @@ const groups = [
   @media (min-width: 720px) {
     .grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1500px) {
+    .grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
   .grid > :global([hidden]) {

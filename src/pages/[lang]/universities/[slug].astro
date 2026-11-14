@@ -47,12 +47,6 @@ const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp
             <a class="link-u" href={u.department_url} rel="noopener" target="_blank">{new URL(u.department_url).host}</a>
           </dd>
         </div>
-        <div>
-          <dt class="mono muted">{s.university.source}</dt>
-          <dd>
-            <a class="link-u" href={u.ranking_url} rel="noopener" target="_blank">{u.ranking_source} {u.ranking_year}</a>
-          </dd>
-        </div>
       </dl>
 
       {
