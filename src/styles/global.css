@@ -34,7 +34,7 @@
   --bg-sunken: var(--paper-sunken);
   --fg: var(--ink);
   --fg-muted: #5c564c; /* 6.6:1 on paper */
-  --fg-faint: #8f887b; /* 3.2:1, large or decorative text only */
+  --fg-faint: #787165; /* 4.3:1: small labels stay readable */
   --line: rgb(23 20 15 / 0.12);
   --line-strong: rgb(23 20 15 / 0.28);
 
@@ -65,7 +65,7 @@
   --bg-sunken: #0f0d0a;
   --fg: #efe9dc;
   --fg-muted: #b2aa9a; /* 8.1:1 on ink */
-  --fg-faint: #7a7365;
+  --fg-faint: #8f8878; /* 5.3:1 on ink */
   --line: rgb(239 233 220 / 0.12);
   --line-strong: rgb(239 233 220 / 0.26);
   --accent: #ff6e52; /* 6.4:1 on ink */
@@ -437,9 +437,13 @@ a.chip:hover {
   border-color: var(--accent);
 }
 .chip-accent {
-  border-color: rgb(var(--accent-rgb) / 0.45);
-  color: var(--accent);
-  background: var(--accent-soft);
+  /* "Hosted here" is good news, so it is set in ink; red stays the pencil. */
+  border-color: var(--fg);
+  color: var(--bg);
+  background: var(--fg);
+}
+.chip.chip-accent .dot {
+  background: var(--accent);
 }
 .chip .dot {
   width: 6px;
