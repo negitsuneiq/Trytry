@@ -30,12 +30,14 @@ const src = universities[0];
             <li data-reveal>
               <span class="mono accent">{String(s.about.sections.length + 1).padStart(2, '0')}</span>
               <h2 class="display h-md">{s.about.rankingNote}</h2>
-              <p class="muted">
-                <a class="link-u" href={src.ranking_url} rel="noopener">
-                  {src.ranking_source} {src.ranking_year}
-                </a>
-              </p>
-              <p class="muted">{s.about.rankingWhy}</p>
+              <div class="rank">
+                <p class="muted">
+                  <a class="link-u" href={src.ranking_url} rel="noopener">
+                    {src.ranking_source} {src.ranking_year}
+                  </a>
+                </p>
+                <p class="muted">{s.about.rankingWhy}</p>
+              </div>
             </li>
           )
         }
@@ -64,5 +66,9 @@ const src = universities[0];
   }
   .points p {
     max-width: 62ch;
+  }
+  .rank {
+    display: grid;
+    gap: 12px;
   }
 </style>
