@@ -304,5 +304,15 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
     .plate {
       width: 78vw;
     }
+    /* On a tall narrow screen the numeral, name and count read as one
+       composed block instead of three items strung across the plate. */
+    .plate-link {
+      grid-template-rows: auto;
+      align-content: center;
+      gap: 22px;
+    }
+    .rank {
+      font-size: 11rem;
+    }
   }
 </style>
