@@ -12,7 +12,7 @@ const s = t(lang);
 const ranking = universities[0];
 ---
 
-<footer class="site-footer ink">
+<footer class="site-footer">
   <div class="wrap">
     <div class="rule-ticks" aria-hidden="true"></div>
     <div class="cols">
@@ -68,6 +68,7 @@ const ranking = universities[0];
     font-size: clamp(1.8rem, 3.4vw, 2.8rem);
     line-height: 1.05;
     max-width: 16ch;
+    letter-spacing: -0.035em;
     margin-bottom: 18px;
   }
   ul {
@@ -99,9 +100,10 @@ const ranking = universities[0];
     color: var(--fg);
   }
   .wordmark {
-    font-size: clamp(4rem, 19vw, 19rem);
-    line-height: 0.8;
-    letter-spacing: -0.04em;
+    font-size: clamp(3rem, 15vw, 16rem);
+    font-weight: 300;
+    line-height: 0.82;
+    letter-spacing: -0.06em;
     margin-top: clamp(48px, 8vw, 96px);
     margin-bottom: -0.12em;
     white-space: nowrap;

@@ -1,57 +1,57 @@
-@import '@fontsource/instrument-serif/400.css';
-@import '@fontsource/instrument-serif/400-italic.css';
-/* Static 400 weights only: the variable files cost ~2.5× more, mostly in the
-   latin-ext subset every Turkish page needs (ı, ş, ğ). */
-@import '@fontsource/inter-tight/400.css';
-@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
-/* Metric-matched fallbacks (widths measured against the web fonts), so text
-   keeps its line breaks when the real font swaps in: no layout shift. */
+/* Fallbacks sized to the web fonts' widths, so text keeps its line breaks
+   when the real font swaps in: no layout shift. */
 @font-face {
-  font-family: 'Inter Tight Fallback';
+  font-family: 'Plex Sans Fallback';
   src: local('Arial'), local('Liberation Sans'), local('Helvetica');
-  size-adjust: 95.7%;
+  size-adjust: 100%;
 }
 @font-face {
-  font-family: 'Instrument Serif Fallback';
-  src: local('Times New Roman'), local('Liberation Serif'), local('Times');
-  size-adjust: 83.7%;
+  font-family: 'Bricolage Fallback';
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica');
+  size-adjust: 96%;
 }
 
 /* ── Tokens ─────────────────────────────────────────────────────────────────
-   Paper and ink, with one red pencil for corrections. Sections marked .ink
-   swap the same tokens, so every component works on either ground. */
+   "Karatahta": chalk on a blackboard. Every surface is a green, never a grey
+   or a brown. Sections marked .paper swap the same tokens for pale paper
+   with dark green type, so every component works on either ground.
+   Contrast (WCAG): fg 11.8, muted 7.8, faint 5.8, accent 8.9 on --bg. */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --paper: #f2eee5;
-  --paper-raised: #f8f5ee;
-  --paper-sunken: #e8e2d5;
-  --ink: #17140f;
+  --board: #17332d;
+  --chalk: #eef0e4;
+  --yellow: #f1cf5b;
+  --on-paper-muted: #36504a; /* for fixed chrome that floats over a .paper section */
 
-  --bg: var(--paper);
-  --bg-raised: var(--paper-raised);
-  --bg-sunken: var(--paper-sunken);
-  --fg: var(--ink);
-  --fg-muted: #5c564c; /* 6.6:1 on paper */
-  --fg-faint: #787165; /* 4.3:1: small labels stay readable */
-  --line: rgb(23 20 15 / 0.12);
-  --line-strong: rgb(23 20 15 / 0.28);
+  --bg: var(--board);
+  --bg-raised: #1e3f38;
+  --bg-sunken: #112822;
+  --fg: var(--chalk);
+  --fg-muted: #b7c8bc; /* 7.8:1 on bg */
+  --fg-faint: #98aea1; /* 5.8:1 on bg, 4.9:1 on raised */
+  --line: rgb(238 240 228 / 0.14);
+  --line-strong: rgb(238 240 228 / 0.3);
 
-  --accent: #bf321b; /* red pencil, 4.9:1 on paper */
-  --accent-soft: rgb(191 50 27 / 0.1);
-  --accent-ink: #f8f5ee; /* text on accent fills */
-  --accent-rgb: 191 50 27;
+  --accent: #f1cf5b; /* chalk yellow, 8.9:1 on bg */
+  --accent-soft: rgb(241 207 91 / 0.14);
+  --accent-ink: #17332d; /* text on accent fills */
+  --accent-rgb: 241 207 91;
+  --shade-rgb: 5 18 15; /* shadows: the board's own darkness */
 
-  --ok: #2f7a4f;
-  --warn: #9a6b00;
-  --bad: #b3261e;
 
-  --shadow-sheet: 0 1px 1px rgb(23 20 15 / 0.06), 0 6px 14px -6px rgb(23 20 15 / 0.22), 0 24px 40px -24px rgb(23 20 15 / 0.3);
+  --shadow-sheet: 0 0 0 1px rgb(238 240 228 / 0.28), 0 6px 14px -6px rgb(var(--shade-rgb) / 0.6), 0 24px 40px -24px rgb(var(--shade-rgb) / 0.75);
+  --sheet: #fbfdf8; /* a real printed page */
 
-  --font-display: 'Instrument Serif', 'Instrument Serif Fallback', serif;
-  --font-body: 'Inter Tight', 'Inter Tight Fallback', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Fallback', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', 'Plex Sans Fallback', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --gutter: clamp(16px, 4vw, 48px);
   --maxw: 1440px;
@@ -59,20 +59,22 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --header-h: 64px;
 }
-.ink {
-  --bg: #15130f;
-  --bg-raised: #1d1a15;
-  --bg-sunken: #0f0d0a;
-  --fg: #efe9dc;
-  --fg-muted: #b2aa9a; /* 8.1:1 on ink */
-  --fg-faint: #8f8878; /* 5.3:1 on ink */
-  --line: rgb(239 233 220 / 0.12);
-  --line-strong: rgb(239 233 220 / 0.26);
-  --accent: #ff6e52; /* 6.4:1 on ink */
-  --accent-soft: rgb(255 110 82 / 0.14);
-  --accent-ink: #15130f;
-  --accent-rgb: 255 110 82;
-  color-scheme: dark;
+.paper {
+  --bg: #e3e9df;
+  --bg-raised: #edf1e9;
+  --bg-sunken: #d9e1d5;
+  --fg: #17332d;
+  --fg-muted: #36504a; /* 7.1:1 on paper */
+  --fg-faint: #4a6057; /* 5.5:1 on paper */
+  --line: rgb(23 51 45 / 0.14);
+  --line-strong: rgb(23 51 45 / 0.3);
+  --accent: #7a5c00; /* dark gold, 5.1:1 on paper */
+  --accent-soft: rgb(122 92 0 / 0.12);
+  --accent-ink: #f6f8ef;
+  --accent-rgb: 122 92 0;
+  --shade-rgb: 23 51 45;
+  --shadow-sheet: 0 0 0 1px rgb(23 51 45 / 0.16), 0 6px 14px -6px rgb(23 51 45 / 0.22), 0 24px 40px -24px rgb(23 51 45 / 0.3);
+  color-scheme: light;
   background: var(--bg);
   color: var(--fg);
 }
@@ -87,6 +89,9 @@
   margin: 0;
 }
 html {
+  overflow-x: clip; /* rotated sheets and wide wordmarks must not widen the phone viewport */
+  scrollbar-color: var(--line-strong) transparent;
+  accent-color: var(--accent);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background: var(--bg);
@@ -111,7 +116,7 @@ body {
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
-  font-feature-settings: 'ss01', 'cv11';
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -147,41 +152,55 @@ button {
   border-radius: var(--radius);
 }
 
-/* Paper tooth: a tiny inline SVG noise, fixed so it never repaints on scroll. */
+/* Chalk dust: a faint fixed grain over the board, kept off the paper. */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.07;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .28 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .94 0 0 0 0 .89 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ── Typography ─────────────────────────────────────────────────────────── */
+/* Bricolage Grotesque has no italic, so emphasis is weight contrast (a light
+   line with one heavy word) and the accent colour, never a slanted face. */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-synthesis: none;
+  font-variation-settings: 'opsz' 48;
 }
-.display em,
-.italic {
-  font-style: italic;
+.display em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--accent);
 }
 .h-mega {
-  font-size: clamp(3.2rem, min(10vw, 15vh), 11.5rem);
+  font-size: clamp(2.9rem, min(10vw, 15vh), 10.5rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 .h-xl {
-  font-size: clamp(2.8rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 .h-lg {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(2.1rem, 5vw, 4.25rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 .h-md {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
-  line-height: 1.05;
+  line-height: 1.08;
 }
 .lede {
   font-size: clamp(1.1rem, 1.6vw, 1.3rem);
@@ -206,19 +225,19 @@ body::after {
   color: var(--accent);
 }
 
-/* Theorem-style labels: "Lemma 2." with the number in red pencil. */
+/* Theorem-style labels: "Lemma 2." with the number in chalk yellow. */
 .thm {
   display: inline-flex;
   align-items: baseline;
   gap: 0.35em;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 .thm b {
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 800;
   color: var(--accent);
 }
 .thm::after {
@@ -292,9 +311,9 @@ body::after {
   background-size: 32px 32px;
   background-position: -1px -1px;
 }
-/* A loose sheet of paper. */
+/* A loose sheet of white paper, edged in chalk so it holds on the board. */
 .sheet {
-  background: #fffdf8;
+  background: var(--sheet);
   box-shadow: var(--shadow-sheet);
 }
 .sr-only {
@@ -367,6 +386,7 @@ body::after {
   padding: 0 24px;
   border-radius: 999px;
   border: 1px solid var(--fg);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   overflow: hidden;
@@ -437,13 +457,14 @@ a.chip:hover {
   border-color: var(--accent);
 }
 .chip-accent {
-  /* "Hosted here" is good news, so it is set in ink; red stays the pencil. */
-  border-color: var(--fg);
-  color: var(--bg);
-  background: var(--fg);
+  /* "Hosted here" is good news: a chalk fill with dark type and a yellow dot. */
+  border-color: var(--chalk);
+  color: var(--board);
+  background: var(--chalk);
 }
 .chip.chip-accent .dot {
-  background: var(--accent);
+  background: var(--yellow);
+  box-shadow: 0 0 0 1.5px var(--board);
 }
 .chip .dot {
   width: 6px;
@@ -494,7 +515,7 @@ a.chip:hover {
   will-change: transform;
 }
 
-/* Reading progress: a red pencil line under the header. */
+/* Reading progress: a chalk line under the header. */
 .progress {
   position: fixed;
   inset: var(--header-h) 0 auto;

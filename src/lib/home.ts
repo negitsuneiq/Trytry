@@ -165,5 +165,5 @@ export const shelfBooks = documents
   .filter((d) => d.hosted && (d.type === 'book' || (d.pages ?? 0) >= 80))
   .sort((a, b) => (b.pages ?? 0) - (a.pages ?? 0));
 
-const SPINES = ['ink', 'red', 'ochre', 'slate', 'moss', 'paper'] as const;
+const SPINES = ['chalk', 'gold', 'sage', 'deep', 'teal', 'mist'] as const;
 export const spineColour = (id: string) => SPINES[hash(id) % SPINES.length];
