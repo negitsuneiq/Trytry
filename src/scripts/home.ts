@@ -108,8 +108,10 @@ function titleScene(home: HTMLElement): Off {
     },
   });
   tl.to(state, { p: 1, ease: 'power1.in', duration: 1 }, 0)
-    .to(titlepage, { opacity: 0, y: -90, scale: 0.94, ease: 'power2.in', duration: 0.32 }, 0)
-    .to(fades, { opacity: 0, duration: 0.12 }, 0);
+    // The definition slides over the last ~60% of this pin. The title only
+    // dims (never to nothing) so no empty band shows above the sheet's edge.
+    .to(titlepage, { opacity: 0.22, y: () => -innerHeight * 0.16, scale: 0.96, ease: 'power2.in', duration: 0.5 }, 0.3)
+    .to(fades, { opacity: 0.22, duration: 0.2 }, 0.3);
   run(true);
 
   // The desk leans a little toward the pointer.

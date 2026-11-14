@@ -1,0 +1,28 @@
+---
+import { t, type Lang } from '../i18n/strings';
+
+interface Props {
+  lang: Lang;
+}
+const s = t(Astro.props.lang);
+---
+
+<!-- Revealed by scripts/pager.ts; without JS every card is already visible. -->
+<div class="more" data-more hidden>
+  <p class="mono muted" aria-live="polite" data-more-count data-template={s.pager.count}></p>
+  <button class="btn" type="button" data-more-btn>{s.pager.showMore}</button>
+</div>
+
+<style is:global>
+  .more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: clamp(36px, 5vw, 64px);
+  }
+  .more[hidden],
+  .card-grid > [hidden] {
+    display: none;
+  }
+</style>

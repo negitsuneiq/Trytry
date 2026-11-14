@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import DocCard from '../../../components/DocCard.astro';
+import LoadMore from '../../../components/LoadMore.astro';
 import EmptyState from '../../../components/EmptyState.astro';
 import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
@@ -35,13 +36,14 @@ const other = lang === 'tr' ? 'en' : 'tr';
       <div class="docs">
         {
           docs.length ? (
-            <div class="card-grid">
+            <div class="card-grid" data-paged>
               {docs.map((d) => (
                 <div data-reveal>
                   <DocCard doc={d} lang={lang} heading="h2" />
                 </div>
               ))}
             </div>
+            <LoadMore lang={lang} />
           ) : (
             <EmptyState lang={lang} />
           )
@@ -50,6 +52,11 @@ const other = lang === 'tr' ? 'en' : 'tr';
     </div>
   </section>
 </Base>
+
+<script>
+  import { initPagers } from '../../../scripts/pager';
+  document.addEventListener('astro:page-load', initPagers);
+</script>
 
 <style>
   .head {

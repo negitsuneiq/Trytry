@@ -89,6 +89,7 @@ const en = {
     body:
       'No document has passed verification yet. Every entry must be opened, checked for language and licence, and confirmed reachable before it appears here.',
   },
+  pager: { showMore: 'Show more', count: '{shown} / {total}' },
   library: {
     title: 'Library',
     lede: 'Search titles, authors, courses and topics. Filters are kept in the address bar, so any view can be shared.',
@@ -327,6 +328,7 @@ const tr: Dict = {
     body:
       'Henüz doğrulamadan geçen bir belge yok. Her kayıt burada görünmeden önce açılmalı, dili ve lisansı kontrol edilmeli ve erişilebilir olduğu teyit edilmeli.',
   },
+  pager: { showMore: 'Daha fazla göster', count: '{shown} / {total}' },
   library: {
     title: 'Kütüphane',
     lede: 'Başlık, yazar, ders ve konuya göre arayın. Filtreler adres çubuğunda saklanır, her görünüm paylaşılabilir.',

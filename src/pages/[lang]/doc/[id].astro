@@ -99,10 +99,10 @@ const rows: [string, string | null, string?][] = [
           <h2 id="meta-h" class="mono sec-index">{s.doc.metadata}</h2>
           <dl class="meta">
             {
-              rows.map(([k, v, link]) => (
+              rows.filter(([, v]) => v != null).map(([k, v, link]) => (
                 <div>
                   <dt class="mono muted">{k}</dt>
-                  <dd>{v == null ? s.doc.unknown : link ? <a class="u" href={link}>{v}</a> : v}</dd>
+                  <dd>{link ? <a class="u" href={link}>{v}</a> : v}</dd>
                 </div>
               ))
             }

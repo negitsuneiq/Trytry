@@ -1,7 +1,8 @@
 // Library search and filtering. Cards are server-rendered; this only hides,
-// shows and reorders them, and mirrors every control into the URL.
+// shows and reorders them (in batches, see pager.ts), and mirrors every control into the URL.
 
 import MiniSearch from 'minisearch';
+import { createPager } from './pager';
 
 type Rec = { id: string; title: string; authors: string; course: string; topics: string; university: string };
 
@@ -26,6 +27,7 @@ export function initLibrary() {
   const grid = root.querySelector<HTMLElement>('[data-grid]')!;
   const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
   const countLabel = root.querySelector<HTMLElement>('[data-count-label]')!;
+  const pager = createPager(root.querySelector<HTMLElement>('[data-more]')!);
   const none = root.querySelector<HTMLElement>('[data-none]')!;
   const toggle = root.querySelector<HTMLButtonElement>('[data-filters-toggle]')!;
   const panel = root.querySelector<HTMLElement>('#lib-filters')!;
@@ -73,6 +75,7 @@ export function initLibrary() {
     const frag = document.createDocumentFragment();
     [...visible, ...cards.filter((c) => c.hidden)].forEach((c) => frag.appendChild(c));
     grid.appendChild(frag);
+    pager.set(visible);
 
     const n = visible.length;
     countLabel.textContent = (n === 1 ? countLabel.dataset.templateOne! : countLabel.dataset.template!).replace(/\d+/, String(n));

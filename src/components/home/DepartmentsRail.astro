@@ -97,6 +97,8 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
     padding-top: var(--header-h);
     border-block: 1px solid var(--line);
     background-color: var(--bg);
+    /* The driven track runs past the viewport; it must never widen the page. */
+    overflow-x: clip;
   }
   /* Without scripts (or with reduced motion) the rail is a native
      horizontal scroller; with motion it is pinned and driven by the page. */
@@ -301,6 +303,16 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
     }
     .plate {
       width: 78vw;
+    }
+    /* On a tall narrow screen the numeral, name and count read as one
+       composed block instead of three items strung across the plate. */
+    .plate-link {
+      grid-template-rows: auto;
+      align-content: center;
+      gap: 22px;
+    }
+    .rank {
+      font-size: 11rem;
     }
   }
 </style>
