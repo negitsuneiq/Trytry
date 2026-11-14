@@ -1,4 +1,5 @@
 ---
+import '../styles/card.css';
 import { licenseLabel, type DocumentRecord } from '../lib/schema';
 import { t, type Lang } from '../i18n/strings';
 
@@ -16,11 +17,3 @@ const s = t(lang);
   </span>
   <span class="chip">{licenseLabel(doc.license, s.licenseStatus)}</span>
 </span>
-
-<style>
-  .badges {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-</style>

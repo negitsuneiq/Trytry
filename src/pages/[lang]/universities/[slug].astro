@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import DocCard from '../../../components/DocCard.astro';
+import CardConfig from '../../../components/CardConfig.astro';
 import LoadMore from '../../../components/LoadMore.astro';
 import EmptyState from '../../../components/EmptyState.astro';
 import { t, type Lang } from '../../../i18n/strings';
@@ -15,6 +16,8 @@ export function getStaticPaths() {
   return langCross(universities.map((u) => ({ params: { slug: u.slug }, props: { u } })));
 }
 
+/** Cards rendered into the page; the rest come from /docs-index.json on demand. */
+const FIRST = 24;
 const lang = Astro.params.lang as Lang;
 const { u } = Astro.props as { u: University };
 const s = t(lang);
@@ -66,14 +69,14 @@ const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp
       <div class="docs">
         {
           docs.length ? (
-            <div class="card-grid" data-paged>
-              {docs.map((d) => (
+            <div class="card-grid" data-paged="university" data-slug={u.slug} data-total={docs.length}>
+              {docs.slice(0, FIRST).map((d) => (
                 <div data-reveal>
                   <DocCard doc={d} lang={lang} heading="h2" />
                 </div>
               ))}
             </div>
-            <LoadMore lang={lang} />
+            <LoadMore lang={lang} shown={FIRST} total={docs.length} fallbackHref={`${href(lang, 'library')}?u=${u.slug}`} />
           ) : (
             <EmptyState lang={lang} />
           )
@@ -81,6 +84,7 @@ const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp
       </div>
     </div>
   </section>
+  <CardConfig lang={lang} />
 </Base>
 
 <script>

@@ -3,14 +3,32 @@ import { t, type Lang } from '../i18n/strings';
 
 interface Props {
   lang: Lang;
+  /** Server-rendered state for lists whose first batch is already in the page. */
+  shown?: number;
+  total?: number;
+  /** Where to browse the rest without JavaScript. */
+  fallbackHref?: string;
 }
-const s = t(Astro.props.lang);
+const { lang, shown, total, fallbackHref } = Astro.props;
+const s = t(lang);
+const preset = shown !== undefined && total !== undefined && total > shown;
 ---
 
-<!-- Revealed by scripts/pager.ts; without JS every card is already visible. -->
-<div class="more" data-more hidden>
-  <p class="mono muted" aria-live="polite" data-more-count data-template={s.pager.count}></p>
+<!-- Driven by scripts/pager.ts. Without JS the button is hidden and a notice stays. -->
+<div class="more" data-more hidden={!preset}>
+  <p class="mono muted" aria-live="polite" data-more-count data-template={s.pager.count}>
+    {preset ? s.pager.count.replace('{shown}', String(shown)).replace('{total}', String(total)) : ''}
+  </p>
   <button class="btn" type="button" data-more-btn>{s.pager.showMore}</button>
+  {
+    preset && (
+      <noscript>
+        <p class="muted">
+          {s.pager.noscriptMore} {fallbackHref && <a class="link-u" href={fallbackHref}>{s.nav.library}</a>}
+        </p>
+      </noscript>
+    )
+  }
 </div>
 
 <style is:global>
@@ -20,6 +38,9 @@ const s = t(Astro.props.lang);
     align-items: center;
     gap: 14px;
     margin-top: clamp(36px, 5vw, 64px);
+  }
+  html:not(.js) .more [data-more-btn] {
+    display: none;
   }
   .more[hidden],
   .card-grid > [hidden] {

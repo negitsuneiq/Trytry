@@ -89,7 +89,14 @@ const en = {
     body:
       'No document has passed verification yet. Every entry must be opened, checked for language and licence, and confirmed reachable before it appears here.',
   },
-  pager: { showMore: 'Show more', count: '{shown} / {total}' },
+  pager: {
+    showMore: 'Show more',
+    count: '{shown} / {total}',
+    loading: 'Loading…',
+    error: 'The document list could not be loaded. Please reload the page.',
+    noscript: 'The document list needs JavaScript.',
+    noscriptMore: 'The rest of this list needs JavaScript. Browse it in the library:',
+  },
   library: {
     title: 'Library',
     lede: 'Search titles, authors, courses and topics. Filters are kept in the address bar, so any view can be shared.',
@@ -313,7 +320,14 @@ const tr: Dict = {
     body:
       'Henüz doğrulamadan geçen bir belge yok. Her kayıt burada görünmeden önce açılmalı, dili ve lisansı kontrol edilmeli ve erişilebilir olduğu teyit edilmeli.',
   },
-  pager: { showMore: 'Daha fazla göster', count: '{shown} / {total}' },
+  pager: {
+    showMore: 'Daha fazla göster',
+    count: '{shown} / {total}',
+    loading: 'Yükleniyor…',
+    error: 'Belge listesi yüklenemedi. Lütfen sayfayı yenileyin.',
+    noscript: 'Belge listesi için JavaScript gerekir.',
+    noscriptMore: 'Listenin geri kalanı için JavaScript gerekir. Kütüphanede göz atın:',
+  },
   library: {
     title: 'Kütüphane',
     lede: 'Başlık, yazar, ders ve konuya göre arayın. Filtreler adres çubuğunda saklanır, her görünüm paylaşılabilir.',
