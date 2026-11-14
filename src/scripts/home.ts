@@ -153,7 +153,9 @@ function definitionScene(home: HTMLElement): Off {
     scrollTrigger: { trigger: stage, start: 'top top', end: '+=150%', pin: true, scrub: 0.5 },
   });
   tl.to(words, { opacity: 1, ease: 'none', duration: 1, stagger: 1 });
-  tl.to({}, { duration: words.length * 0.18 }); // hold the finished sentence
+  // Hold the finished sentence: the next sheet starts sliding over the
+  // paragraph about 60% into this pin, so the ink must be done before that.
+  tl.to({}, { duration: words.length * 1.4 });
 
   const total = tl.duration();
   const at = terms.map((term) => (words.findIndex((w) => term.contains(w)) + 1) / total);
