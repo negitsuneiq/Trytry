@@ -88,7 +88,8 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
   .term {
     position: relative;
     white-space: nowrap;
-    font-style: italic;
+    font-weight: 800;
+    color: var(--accent);
   }
   .pencil {
     position: absolute;
@@ -172,6 +173,10 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
   }
   /* Phones: the sentence and the four counts must fit one pinned screen. */
   @media (max-width: 640px) {
+    .def-stage {
+      align-items: flex-start;
+      padding-block: calc(var(--header-h) + 12px) 32px;
+    }
     .def {
       font-size: clamp(1.45rem, 6.6vw, 2rem);
     }

@@ -153,7 +153,9 @@ function definitionScene(home: HTMLElement): Off {
     scrollTrigger: { trigger: stage, start: 'top top', end: '+=150%', pin: true, scrub: 0.5 },
   });
   tl.to(words, { opacity: 1, ease: 'none', duration: 1, stagger: 1 });
-  tl.to({}, { duration: words.length * 0.18 }); // hold the finished sentence
+  // Hold the finished sentence: the next sheet starts sliding over the
+  // paragraph about 60% into this pin, so the ink must be done before that.
+  tl.to({}, { duration: words.length * 1.4 });
 
   const total = tl.duration();
   const at = terms.map((term) => (words.findIndex((w) => term.contains(w)) + 1) / total);
@@ -219,7 +221,7 @@ function departments(home: HTMLElement): Off {
   };
 }
 
-// ── Proof: the ink panel opens and the ribbons draw ────────────────────────
+// ── Proof: the panel opens and the ribbons draw ────────────────────────
 function flow(home: HTMLElement, wide: boolean): Off {
   const stage = $('[data-flow-stage]', home)!;
   const panel = $('[data-flow-panel]', stage)!;
@@ -330,7 +332,6 @@ function margin(home: HTMLElement): Off {
         if (!self.isActive) return;
         label.textContent = `§ ${i + 1} · ${sc.dataset.label}`;
         page.textContent = `${i + 1} / ${scenes.length}`;
-        aside.toggleAttribute('data-ink', sc.dataset.scene === 'topics');
       },
     }),
   );
@@ -340,5 +341,5 @@ function margin(home: HTMLElement): Off {
     end: 'bottom bottom',
     onUpdate: (self) => fill.style.setProperty('--p', self.progress.toFixed(3)),
   });
-  return () => aside.removeAttribute('data-ink');
+  return () => {};
 }

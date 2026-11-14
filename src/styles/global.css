@@ -1,21 +1,20 @@
-@import '@fontsource/instrument-serif/400.css';
-@import '@fontsource/instrument-serif/400-italic.css';
-/* Static 400 weights only: the variable files cost ~2.5× more, mostly in the
-   latin-ext subset every Turkish page needs (ı, ş, ğ). */
-@import '@fontsource/inter-tight/400.css';
-@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
-/* Metric-matched fallbacks (widths measured against the web fonts), so text
-   keeps its line breaks when the real font swaps in: no layout shift. */
+/* Fallbacks sized to the web fonts' widths, so text keeps its line breaks
+   when the real font swaps in: no layout shift. */
 @font-face {
-  font-family: 'Inter Tight Fallback';
+  font-family: 'Plex Sans Fallback';
   src: local('Arial'), local('Liberation Sans'), local('Helvetica');
-  size-adjust: 95.7%;
+  size-adjust: 100%;
 }
 @font-face {
-  font-family: 'Instrument Serif Fallback';
-  src: local('Times New Roman'), local('Liberation Serif'), local('Times');
-  size-adjust: 83.7%;
+  font-family: 'Bricolage Fallback';
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica');
+  size-adjust: 96%;
 }
 
 /* ── Tokens ─────────────────────────────────────────────────────────────────
@@ -34,7 +33,7 @@
   --bg-sunken: var(--paper-sunken);
   --fg: var(--ink);
   --fg-muted: #5c564c; /* 6.6:1 on paper */
-  --fg-faint: #787165; /* 4.3:1: small labels stay readable */
+  --fg-faint: #655f54; /* 5.5:1 on paper, 4.9:1 on sunken */
   --line: rgb(23 20 15 / 0.12);
   --line-strong: rgb(23 20 15 / 0.28);
 
@@ -43,15 +42,11 @@
   --accent-ink: #f8f5ee; /* text on accent fills */
   --accent-rgb: 191 50 27;
 
-  --ok: #2f7a4f;
-  --warn: #9a6b00;
-  --bad: #b3261e;
-
   --shadow-sheet: 0 1px 1px rgb(23 20 15 / 0.06), 0 6px 14px -6px rgb(23 20 15 / 0.22), 0 24px 40px -24px rgb(23 20 15 / 0.3);
 
-  --font-display: 'Instrument Serif', 'Instrument Serif Fallback', serif;
-  --font-body: 'Inter Tight', 'Inter Tight Fallback', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Fallback', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', 'Plex Sans Fallback', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --gutter: clamp(16px, 4vw, 48px);
   --maxw: 1440px;
@@ -87,6 +82,9 @@
   margin: 0;
 }
 html {
+  overflow-x: clip; /* rotated sheets and wide wordmarks must not widen the phone viewport */
+  scrollbar-color: var(--line-strong) transparent;
+  accent-color: var(--accent);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background: var(--bg);
@@ -111,7 +109,7 @@ body {
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
-  font-feature-settings: 'ss01', 'cv11';
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -160,28 +158,42 @@ body::after {
 }
 
 /* ── Typography ─────────────────────────────────────────────────────────── */
+/* Bricolage Grotesque has no italic, so emphasis is weight contrast (a light
+   line with one heavy word) and the accent colour, never a slanted face. */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-synthesis: none;
+  font-variation-settings: 'opsz' 48;
 }
-.display em,
-.italic {
-  font-style: italic;
+.display em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--accent);
 }
 .h-mega {
-  font-size: clamp(3.2rem, min(10vw, 15vh), 11.5rem);
+  font-size: clamp(2.9rem, min(10vw, 15vh), 10.5rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 .h-xl {
-  font-size: clamp(2.8rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 .h-lg {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(2.1rem, 5vw, 4.25rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 .h-md {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
-  line-height: 1.05;
+  line-height: 1.08;
 }
 .lede {
   font-size: clamp(1.1rem, 1.6vw, 1.3rem);
@@ -212,13 +224,13 @@ body::after {
   align-items: baseline;
   gap: 0.35em;
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 .thm b {
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 800;
   color: var(--accent);
 }
 .thm::after {

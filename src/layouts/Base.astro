@@ -6,8 +6,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { t, type Lang } from '../i18n/strings';
 import { swapLang, asset } from '../lib/paths';
-import serifLatin from '@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url';
-import serifLatinExt from '@fontsource/instrument-serif/files/instrument-serif-latin-ext-400-normal.woff2?url';
+import displayLatin from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
+import displayLatinExt from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-ext-wght-normal.woff2?url';
+import bodyLatin from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url';
 
 interface Props {
   lang: Lang;
@@ -23,7 +24,7 @@ const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site);
 const alt = (l: Lang) => new URL(swapLang(path, l), Astro.site).href;
 // The display face draws the LCP headline; Turkish text also needs latin-ext.
-const preloadFonts = lang === 'tr' ? [serifLatin, serifLatinExt] : [serifLatin];
+const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] : [displayLatin, bodyLatin];
 ---
 
 <!doctype html>
