@@ -155,7 +155,8 @@ export const BOOK_LISTS = ['aim', 'otl'] as const;
 
 /** "CC-BY-SA-4.0" → "CC BY-SA 4.0"; anything else is shown as written. */
 export function bookLicenseLabel(license: string): string {
-  const m = /^CC-(BY(?:-[A-Z]{2})*)-(\d\.\d)$/.exec(license);
-  if (m) return `CC ${m[1]} ${m[2]}`;
+  const m = /^CC-(BY(?:-[A-Z]{2})*)(?:-(\d\.\d))?$/.exec(license);
+  if (m) return m[2] ? `CC ${m[1]} ${m[2]}` : `CC ${m[1]}`;
+  if (license === 'CC0-1.0') return 'CC0 1.0';
   return license === 'public-domain' ? 'Public domain' : license;
 }

@@ -1,177 +1,2032 @@
 [
-  {
-    "id": "book-abstract-algebra-theory-and-applications",
-    "title": "Abstract Algebra: Theory and Applications",
-    "authors": [
-      "Thomas W. Judson"
-    ],
-    "year": 2022,
-    "level": "undergraduate",
-    "topics": [
-      "algebra"
-    ],
-    "license": "GFDL",
-    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
-    "home_url": "http://abstract.ups.edu/",
-    "pdf_url": "http://abstract.ups.edu/download/aata-20220913.pdf",
-    "listed_by": [
-      "aim",
-      "otl"
-    ],
-    "description_en": "An introduction to groups, rings and fields with applications to coding theory and cryptography, with exercises and Sage material.",
-    "description_tr": "Gruplar, halkalar ve cisimlere giriş; kodlama kuramı ve kriptografi uygulamaları, alıştırmalar ve Sage materyali içerir."
-  },
-  {
-    "id": "book-a-first-course-in-linear-algebra",
-    "title": "A First Course in Linear Algebra",
-    "authors": [
-      "Robert A. Beezer"
-    ],
-    "year": 2021,
-    "level": "undergraduate",
-    "topics": [
-      "algebra"
-    ],
-    "license": "GFDL",
-    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
-    "home_url": "http://linear.ups.edu/",
-    "pdf_url": "http://linear.ups.edu/download/fcla-3.50-print.pdf",
-    "listed_by": [
-      "aim",
-      "otl"
-    ],
-    "description_en": "A theorem-based first course in linear algebra, from systems of equations to eigenvalues and canonical forms.",
-    "description_tr": "Doğrusal denklem sistemlerinden özdeğerlere ve kanonik biçimlere uzanan, teorem temelli bir ilk doğrusal cebir kitabı."
-  },
-  {
-    "id": "book-linear-algebra-hefferon",
-    "title": "Linear Algebra",
-    "authors": [
-      "Jim Hefferon"
-    ],
-    "year": 2020,
-    "level": "undergraduate",
-    "topics": [
-      "algebra"
-    ],
-    "license": "CC-BY-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "home_url": "https://hefferon.net/linearalgebra/",
-    "pdf_url": "https://hefferon.net/linearalgebra/book.pdf",
-    "listed_by": [
-      "aim"
-    ],
-    "description_en": "A proof-oriented text that treats vector spaces and linear maps with many worked examples and solutions to exercises.",
-    "description_tr": "Vektör uzaylarını ve doğrusal dönüşümleri çok sayıda çözümlü örnekle ele alan, ispat odaklı bir ders kitabı."
-  },
-  {
-    "id": "book-basic-analysis-introduction-to-real-analysis",
-    "title": "Basic Analysis: Introduction to Real Analysis",
-    "authors": [
-      "Jiří Lebl"
-    ],
-    "year": 2022,
-    "level": "undergraduate",
-    "topics": [
-      "analysis"
-    ],
-    "license": "CC-BY-NC-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-    "home_url": "https://www.jirka.org/ra/",
-    "pdf_url": "https://www.jirka.org/ra/realanal.pdf",
-    "listed_by": [
-      "aim",
-      "otl"
-    ],
-    "description_en": "A rigorous one-year course in real analysis covering sequences, continuity, differentiation, integration and metric spaces.",
-    "description_tr": "Diziler, süreklilik, türev, integral ve metrik uzayları kapsayan, bir yıllık titiz bir gerçel analiz dersi."
-  },
-  {
-    "id": "book-notes-on-diffy-qs",
-    "title": "Notes on Diffy Qs: Differential Equations for Engineers",
-    "authors": [
-      "Jiří Lebl"
-    ],
-    "year": 2022,
-    "level": "undergraduate",
-    "topics": [
-      "differential-equations"
-    ],
-    "license": "CC-BY-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "home_url": "https://www.jirka.org/diffyqs/",
-    "pdf_url": "https://www.jirka.org/diffyqs/diffyqs.pdf",
-    "listed_by": [
-      "aim",
-      "otl"
-    ],
-    "description_en": "Ordinary and partial differential equations, Fourier series and Laplace transforms for a first course.",
-    "description_tr": "Bir ilk ders için adi ve kısmi diferansiyel denklemler, Fourier serileri ve Laplace dönüşümleri."
-  },
-  {
-    "id": "book-introduction-to-probability-grinstead-snell",
-    "title": "Introduction to Probability",
-    "authors": [
-      "Charles M. Grinstead",
-      "J. Laurie Snell"
-    ],
-    "year": 1997,
-    "level": "undergraduate",
-    "topics": [
-      "probability",
-      "statistics"
-    ],
-    "license": "GFDL",
-    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
-    "home_url": "https://math.dartmouth.edu/~prob/prob/prob.pdf",
-    "pdf_url": "https://math.dartmouth.edu/~prob/prob/prob.pdf",
-    "listed_by": [
-      "aim"
-    ],
-    "description_en": "A classic text on discrete and continuous probability, with simulations, Markov chains and many exercises.",
-    "description_tr": "Kesikli ve sürekli olasılığı benzetimler, Markov zincirleri ve çok sayıda alıştırmayla işleyen klasik bir kitap."
-  },
-  {
-    "id": "book-discrete-mathematics-an-open-introduction",
-    "title": "Discrete Mathematics: An Open Introduction",
-    "authors": [
-      "Oscar Levin"
-    ],
-    "year": 2021,
-    "level": "undergraduate",
-    "topics": [
-      "combinatorics",
-      "logic"
-    ],
-    "license": "CC-BY-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "home_url": "https://discrete.openmathbooks.org/",
-    "pdf_url": null,
-    "listed_by": [
-      "otl"
-    ],
-    "description_en": "Counting, sequences, logic, proofs and graph theory, written around inquiry-based exercises.",
-    "description_tr": "Sayma, diziler, mantık, ispatlar ve çizge kuramı; sorgulamaya dayalı alıştırmalar etrafında yazılmıştır."
-  },
-  {
-    "id": "book-elementary-number-theory-primes-congruences-and-secrets",
-    "title": "Elementary Number Theory: Primes, Congruences, and Secrets",
-    "authors": [
-      "William Stein"
-    ],
-    "year": 2009,
-    "level": "graduate",
-    "topics": [
-      "number-theory"
-    ],
-    "license": "public-domain",
-    "license_url": null,
-    "home_url": "https://wstein.org/ent/",
-    "pdf_url": "https://wstein.org/ent/ent.pdf",
-    "listed_by": [
-      "aim"
-    ],
-    "description_en": "Primes, congruences, quadratic reciprocity and elliptic curves, with an eye to cryptography and computation.",
-    "description_tr": "Asal sayılar, denklikler, ikinci dereceden karşılıklılık ve eliptik eğriler; kriptografi ve hesaplamaya yönelik bir bakışla."
-  }
+ {
+  "id": "book-book-of-proof",
+  "title": "Book of Proof",
+  "authors": [
+   "Richard Hammack"
+  ],
+  "year": 2018,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-ND",
+  "license_url": "https://creativecommons.org/licenses/by-nd/",
+  "home_url": "https://richardhammack.github.io/BookOfProof/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "Introduces mathematical proof, sets, logic, relations and functions for students moving from calculus to proof-based mathematics.",
+  "description_tr": "Matematiksel ispat, kümeler, mantık, bağıntılar ve fonksiyonları tanıtır; analizden ispat temelli matematiğe geçen öğrenciler içindir."
+ },
+ {
+  "id": "book-gentle-introduction-art-of-mathematics",
+  "title": "A Gentle Introduction to the Art of Mathematics",
+  "authors": [
+   "Joseph E. Fields"
+  ],
+  "year": 2015,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "https://osj1961.github.io/giam/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A bridge course on proof, logic, sets, number theory and counting for students preparing for upper-division mathematics.",
+  "description_tr": "İspat, mantık, kümeler, sayı kuramı ve sayma konularını işleyen, ileri düzey matematiğe hazırlık yapan bir geçiş dersi kitabı."
+ },
+ {
+  "id": "book-sundstrom-reasoning-writing-proof",
+  "title": "Mathematical Reasoning: Writing and Proof",
+  "authors": [
+   "Ted Sundstrom"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://www.tedsundstrom.com/mathematical-reasoning-writing-and-proof",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A first course in constructing and writing proofs, covering logic, sets, induction, functions, relations and cardinality.",
+  "description_tr": "Mantık, kümeler, tümevarım, fonksiyonlar, bağıntılar ve kardinaliteyi kapsayan, ispat kurma ve yazma üzerine ilk ders kitabı."
+ },
+ {
+  "id": "book-ernst-intro-to-proof-ibl",
+  "title": "An Introduction to Proof via Inquiry-Based Learning",
+  "authors": [
+   "Dana Ernst"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "http://danaernst.com/IBL-IntroToProof/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "An inquiry-based one-semester introduction to proof writing, logic, sets, functions and induction.",
+  "description_tr": "Mantık, kümeler, fonksiyonlar ve tümevarımı sorgulamaya dayalı yöntemle işleyen, tek dönemlik ispat giriş kitabı."
+ },
+ {
+  "id": "book-proofs-and-concepts",
+  "title": "Proofs and Concepts: The Fundamentals of Abstract Mathematics",
+  "authors": [
+   "Dave Witte Morris",
+   "Joy Morris"
+  ],
+  "year": 2013,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://people.uleth.ca/~dave.morris/books/proofs+concepts.html",
+  "pdf_url": "https://deductivepress.ca/dmorris//books/proofs+concepts.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An introduction to proofs, logic, sets, functions and other foundations of abstract mathematics for undergraduates.",
+  "description_tr": "Lisans öğrencileri için ispat, mantık, kümeler, fonksiyonlar ve soyut matematiğin diğer temellerine giriş."
+ },
+ {
+  "id": "book-transition-to-higher-mathematics",
+  "title": "Transition to Higher Mathematics: Structure and Proof",
+  "authors": [
+   "Bob A. Dumas",
+   "John E. McCarthy"
+  ],
+  "year": 2015,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://openscholarship.wustl.edu/books/10/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A transition-to-proof text for students who have finished calculus, covering logic, sets, relations, functions and basic structures.",
+  "description_tr": "Analizi bitirmiş öğrenciler için mantık, kümeler, bağıntılar, fonksiyonlar ve temel yapıları işleyen ispata geçiş kitabı."
+ },
+ {
+  "id": "book-open-logic-project",
+  "title": "Open Logic Project",
+  "authors": [
+   "Richard Zach",
+   "Open Logic Project contributors"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "http://openlogicproject.org",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A modular open text on formal logic, computability, set theory and metatheory, starting after an introductory logic course.",
+  "description_tr": "Giriş mantık dersinden sonra biçimsel mantık, hesaplanabilirlik, küme kuramı ve üstkuramı işleyen modüler açık kaynak ders metni."
+ },
+ {
+  "id": "book-friendly-intro-mathematical-logic",
+  "title": "A Friendly Introduction to Mathematical Logic",
+  "authors": [
+   "Christopher C. Leary",
+   "Lars Kristiansen"
+  ],
+  "year": 2015,
+  "level": "undergraduate",
+  "topics": [
+   "logic"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://milneopentextbooks.org/a-friendly-introduction-to-mathematical-logic/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "Covers first-order logic, completeness, compactness, incompleteness and computability for a one-semester undergraduate course.",
+  "description_tr": "Birinci dereceden mantık, tamlık, kompaktlık, eksiklik ve hesaplanabilirliği işleyen, tek dönemlik lisans düzeyi mantık kitabı."
+ },
+ {
+  "id": "book-whitman-calculus",
+  "title": "Whitman Calculus",
+  "authors": [
+   "David Guichard"
+  ],
+  "year": 2010,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://www.whitman.edu/mathematics/calculus",
+  "pdf_url": "https://www.whitman.edu/mathematics/calculus/calculus.pdf",
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A single- and multivariable calculus text covering limits, derivatives, integrals, series and vector calculus.",
+  "description_tr": "Limit, türev, integral, seriler ve vektör analizini kapsayan tek ve çok değişkenli analiz ders kitabı."
+ },
+ {
+  "id": "book-calculus-early-transcendentals-lyryx",
+  "title": "Calculus: Early Transcendentals (Lyryx edition)",
+  "authors": [
+   "David Guichard"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://collection.bccampus.ca/textbooks/calculus-early-transcendentals-2021a-lyryx-63/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A Lyryx redesign of Guichard's calculus text covering single-variable and multivariable calculus with early transcendental functions.",
+  "description_tr": "Guichard'ın analiz kitabının Lyryx uyarlaması; erken aşkın fonksiyonlarla tek ve çok değişkenli analizi kapsar."
+ },
+ {
+  "id": "book-active-calculus",
+  "title": "Active Calculus",
+  "authors": [
+   "Matt Boelkins",
+   "David Austin",
+   "Steve Schlicker"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://activecalculus.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "An activity-driven single-variable calculus text read online, built around exploratory problems before formal exposition.",
+  "description_tr": "Resmi anlatımdan önce keşfedici etkinliklere dayanan, çevrim içi okunan tek değişkenli analiz kitabı."
+ },
+ {
+  "id": "book-active-calculus-multivariable",
+  "title": "Active Calculus Multivariable",
+  "authors": [
+   "Steven Schlicker",
+   "David Austin",
+   "Matthew Boelkins"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://activecalculus.org/multi/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "The multivariable continuation of Active Calculus, treating partial derivatives, multiple integrals and vector fields through activities.",
+  "description_tr": "Active Calculus'un çok değişkenli devamı; kısmi türevleri, çoklu integralleri ve vektör alanlarını etkinliklerle işler."
+ },
+ {
+  "id": "book-apex-calculus",
+  "title": "APEX Calculus",
+  "authors": [
+   "Gregory Hartman",
+   "Brian Heinold",
+   "Troy Siemers",
+   "Dimplekumar Chalishajar",
+   "Jennifer Bowen"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "http://www.apexcalculus.com",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A three-volume mainstream calculus text covering limits, derivatives, integration, sequences, series and multivariable calculus.",
+  "description_tr": "Limit, türev, integral, diziler, seriler ve çok değişkenli analizi kapsayan üç ciltlik standart analiz kitabı."
+ },
+ {
+  "id": "book-clp-calculus",
+  "title": "CLP Calculus",
+  "authors": [
+   "Joel Feldman",
+   "Andrew Rechnitzer",
+   "Elyse Yeager"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://www.math.ubc.ca/~CLP/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A four-volume calculus sequence from UBC covering differential, integral, vector and multivariable calculus with extensive exercises.",
+  "description_tr": "UBC kaynaklı; diferansiyel, integral ve çok değişkenli vektör analizini bol alıştırmayla işleyen dört ciltlik analiz dizisi."
+ },
+ {
+  "id": "book-calculus-in-context",
+  "title": "Calculus in Context",
+  "authors": [
+   "James Callahan",
+   "David Cox",
+   "Kenneth Hoffman",
+   "Donal O'Shea",
+   "Harriet Pollatsek",
+   "Lester Senechal"
+  ],
+  "year": 1994,
+  "level": "undergraduate",
+  "topics": [
+   "analysis",
+   "differential-equations"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "http://www.math.smith.edu/~callahan/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A two-semester calculus text that develops calculus through scientific applications and differential equations.",
+  "description_tr": "Analizi bilimsel uygulamalar ve diferansiyel denklemler üzerinden geliştiren, iki dönemlik analiz kitabı."
+ },
+ {
+  "id": "book-corral-elementary-calculus",
+  "title": "Elementary Calculus",
+  "authors": [
+   "Michael Corral"
+  ],
+  "year": 2020,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "http://www.mecmath.net/calculus",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A year-long single-variable calculus text covering limits, differentiation, integration and infinite series.",
+  "description_tr": "Limit, türev, integral ve sonsuz serileri içeren, yıllık tek değişkenli analiz kitabı."
+ },
+ {
+  "id": "book-corral-vector-calculus",
+  "title": "Vector Calculus",
+  "authors": [
+   "Michael Corral"
+  ],
+  "year": 2013,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "http://www.mecmath.net/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "An elementary multivariable calculus text on vectors, partial derivatives, multiple integrals and line and surface integrals.",
+  "description_tr": "Vektörler, kısmi türevler, çoklu integraller ile çizgi ve yüzey integrallerini işleyen temel çok değişkenli analiz kitabı."
+ },
+ {
+  "id": "book-calculus-one-mooculus",
+  "title": "Calculus One",
+  "authors": [
+   "Roman Holowinsky",
+   "Johann Thiel",
+   "David Lindberg"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://mooculus.osu.edu",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A first single-variable calculus course on limits, derivatives and integrals, developed at Ohio State alongside video lectures.",
+  "description_tr": "Limit, türev ve integrali işleyen, video derslerle birlikte Ohio State'te geliştirilen ilk tek değişkenli analiz kitabı."
+ },
+ {
+  "id": "book-openstax-calculus-volume-1",
+  "title": "Calculus Volume 1",
+  "authors": [
+   "Gilbert Strang",
+   "Edwin Herman"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://openstax.org/books/calculus-volume-1/pages/1-introduction",
+  "pdf_url": "https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "OpenStax text for the first semester of calculus: functions, limits, derivatives and integration.",
+  "description_tr": "Analizin ilk dönemi için OpenStax kitabı: fonksiyonlar, limitler, türevler ve integral."
+ },
+ {
+  "id": "book-openstax-calculus-volume-2",
+  "title": "Calculus Volume 2",
+  "authors": [
+   "Gilbert Strang",
+   "Edwin Herman"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "analysis",
+   "differential-equations"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://openstax.org/details/books/calculus-volume-2",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "OpenStax text for second-semester calculus: integration techniques, sequences, series, parametric curves and differential equations.",
+  "description_tr": "Analiz ikinci dönemi için OpenStax kitabı: integral teknikleri, diziler, seriler, parametrik eğriler ve diferansiyel denklemler."
+ },
+ {
+  "id": "book-openstax-calculus-volume-3",
+  "title": "Calculus Volume 3",
+  "authors": [
+   "Gilbert Strang",
+   "Edwin Herman"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://openstax.org/books/calculus-volume-3/pages/1-introduction",
+  "pdf_url": "https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume3-OP.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "OpenStax text for multivariable calculus: vectors, partial derivatives, multiple integrals and vector calculus.",
+  "description_tr": "Çok değişkenli analiz için OpenStax kitabı: vektörler, kısmi türevler, çoklu integraller ve vektör analizi."
+ },
+ {
+  "id": "book-strang-calculus",
+  "title": "Calculus (Strang)",
+  "authors": [
+   "Gilbert Strang"
+  ],
+  "year": 1991,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/pages/open-textbook/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Strang's classic calculus text covering single and multivariable calculus with an emphasis on ideas and applications.",
+  "description_tr": "Fikirlere ve uygulamalara vurgu yapan, tek ve çok değişkenli analizi kapsayan Strang'ın klasik analiz kitabı."
+ },
+ {
+  "id": "book-shimamoto-multivariable-calculus",
+  "title": "Multivariable Calculus",
+  "authors": [
+   "Don Shimamoto"
+  ],
+  "year": 2019,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "https://drive.google.com/drive/folders/1VBn7HiZBlvOVbMCcjL1Yh5AoJcB7gj-j",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A one-semester multivariable calculus text on curves, differentiability, partial derivatives, multiple integrals and vector calculus.",
+  "description_tr": "Eğriler, türevlenebilirlik, kısmi türevler, çoklu integraller ve vektör analizini kapsayan tek dönemlik çok değişkenli analiz kitabı."
+ },
+ {
+  "id": "book-business-calculus-with-excel",
+  "title": "Business Calculus with Excel",
+  "authors": [
+   "Mike May",
+   "Anneke Bart"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://excelcalculus.org/LandingPage.html",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A one-semester calculus course for business students that uses spreadsheets to explore derivatives and integrals.",
+  "description_tr": "İşletme öğrencileri için, türev ve integrali elektronik tablolarla inceleyen tek dönemlik analiz kitabı."
+ },
+ {
+  "id": "book-yet-another-calculus-text",
+  "title": "Yet Another Calculus Text",
+  "authors": [
+   "Dan Sloughter"
+  ],
+  "year": 2007,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://www.synechism.org/wp/yet-another-calculus-text/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A calculus introduction based on the hyperreal number system, using infinitesimals freely to develop limits, derivatives and integrals.",
+  "description_tr": "Hipergerçel sayı sistemine dayanan, sonsuz küçükleri kullanarak limit, türev ve integrali geliştiren analiz girişi."
+ },
+ {
+  "id": "book-optimal-integral-likely",
+  "title": "Optimal, Integral, Likely",
+  "authors": [
+   "Bruno Belevan",
+   "Parham Hamidi",
+   "Nisha Malhotra",
+   "Elyse Yeager"
+  ],
+  "year": 2020,
+  "level": "undergraduate",
+  "topics": [
+   "analysis",
+   "probability"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://nisha-malhotra.arts.ubc.ca/open-textbook/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Covers optimization, integral calculus and probability for commerce and social science students in a UBC calculus course.",
+  "description_tr": "Ticaret ve sosyal bilimler öğrencileri için eniyileme, integral hesabı ve olasılığı işleyen UBC analiz dersi kitabı."
+ },
+ {
+  "id": "book-basic-analysis",
+  "title": "Basic Analysis: Introduction to Real Analysis",
+  "authors": [
+   "Jiří Lebl"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "http://www.jirka.org/ra/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A two-volume undergraduate real analysis text covering the reals, sequences, continuity, derivatives, Riemann integration and metric spaces.",
+  "description_tr": "Gerçel sayılar, diziler, süreklilik, türev, Riemann integrali ve metrik uzayları işleyen iki ciltlik lisans reel analiz kitabı."
+ },
+ {
+  "id": "book-trench-introduction-real-analysis",
+  "title": "Introduction to Real Analysis",
+  "authors": [
+   "William F. Trench"
+  ],
+  "year": 2013,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "home_url": "http://digitalcommons.trinity.edu/mono/7/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A two-term real analysis text for junior and senior mathematics majors, covering the real line, functions of several variables and integration.",
+  "description_tr": "Matematik bölümü üst sınıf öğrencileri için gerçel doğru, çok değişkenli fonksiyonlar ve integrasyonu işleyen reel analiz kitabı."
+ },
+ {
+  "id": "book-zakon-mathematical-analysis-i",
+  "title": "Mathematical Analysis I",
+  "authors": [
+   "Elias Zakon"
+  ],
+  "year": 2004,
+  "level": "undergraduate",
+  "topics": [
+   "analysis",
+   "topology"
+  ],
+  "license": "CC-BY-3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "home_url": "http://www.trillia.com/zakon-analysisI.html",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A rigorous real analysis text covering metric spaces, convergence, continuity, differentiation and integration.",
+  "description_tr": "Metrik uzaylar, yakınsaklık, süreklilik, türev ve integrali titizlikle işleyen reel analiz kitabı."
+ },
+ {
+  "id": "book-how-we-got-from-there-to-here",
+  "title": "How We Got from There to Here: A Story of Real Analysis",
+  "authors": [
+   "Robert Rogers",
+   "Eugene Boman"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "home_url": "https://milneopentextbooks.org/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "Teaches real analysis through its historical development, from Fourier series and infinite series to the rigorous definition of limits.",
+  "description_tr": "Reel analizi Fourier serilerinden limitin titiz tanımına uzanan tarihsel gelişimi üzerinden öğretir."
+ },
+ {
+  "id": "book-primer-of-real-analysis",
+  "title": "A Primer of Real Analysis",
+  "authors": [
+   "Dan Sloughter"
+  ],
+  "year": 2009,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://www.synechism.org/wp/a-primer-of-real-analysis/",
+  "pdf_url": "https://synechism.org/primer/primer-real-analysis.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A short introduction to the fundamentals of real analysis for readers with a calculus background.",
+  "description_tr": "Analiz bilgisi olan okurlar için reel analizin temellerine kısa bir giriş."
+ },
+ {
+  "id": "book-first-course-complex-analysis",
+  "title": "A First Course in Complex Analysis",
+  "authors": [
+   "Matthias Beck",
+   "Gerald Marchesi",
+   "Dennis Pixton",
+   "Lucas Sabalka"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "https://matthbeck.github.io/complex.html",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A one-semester complex analysis course on holomorphic functions, Cauchy's theorem, residues and conformal maps.",
+  "description_tr": "Holomorf fonksiyonlar, Cauchy teoremi, kalıntılar ve konform dönüşümleri işleyen tek dönemlik karmaşık analiz kitabı."
+ },
+ {
+  "id": "book-howell-complex-analysis",
+  "title": "Complex Analysis",
+  "authors": [
+   "Russell Howell",
+   "John Mathews"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "analysis"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://complexanalysis.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A one-semester undergraduate complex analysis text with applications and technology-based exploration.",
+  "description_tr": "Uygulamalar ve teknoloji destekli keşiflerle zenginleştirilmiş, tek dönemlik lisans karmaşık analiz kitabı."
+ },
+ {
+  "id": "book-measure-integration-real-analysis",
+  "title": "Measure, Integration & Real Analysis",
+  "authors": [
+   "Sheldon Axler"
+  ],
+  "year": 2020,
+  "level": "graduate",
+  "topics": [
+   "analysis",
+   "functional-analysis"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "https://measure.axler.net/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A graduate text on measure theory, Lebesgue integration, Banach and Hilbert spaces, and Fourier analysis.",
+  "description_tr": "Ölçü kuramı, Lebesgue integrali, Banach ve Hilbert uzayları ile Fourier analizini işleyen lisansüstü ders kitabı."
+ },
+ {
+  "id": "book-beezer-first-course-linear-algebra",
+  "title": "A First Course in Linear Algebra",
+  "authors": [
+   "Robert A. Beezer"
+  ],
+  "year": 2015,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "https://linear.pugetsound.edu/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A proof-oriented first course in linear algebra for sophomores and juniors, covering systems, vector spaces and eigenvalues.",
+  "description_tr": "Doğrusal sistemler, vektör uzayları ve özdeğerleri işleyen, ispat odaklı ilk doğrusal cebir ders kitabı."
+ },
+ {
+  "id": "book-axler-linear-algebra-done-right",
+  "title": "Linear Algebra Done Right",
+  "authors": [
+   "Sheldon Axler"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "https://linear.axler.net/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A second course in linear algebra for advanced undergraduates, treating eigenvalues without determinants and emphasizing abstract vector spaces.",
+  "description_tr": "Özdeğerleri determinantsız ele alan ve soyut vektör uzaylarına vurgu yapan, ileri lisans düzeyinde ikinci doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-hefferon-linear-algebra",
+  "title": "Linear Algebra",
+  "authors": [
+   "Jim Hefferon"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://hefferon.net/linearalgebra/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A first linear algebra course covering systems, vector spaces, linear maps, determinants and eigenvalues, with many worked examples.",
+  "description_tr": "Sistemler, vektör uzayları, doğrusal dönüşümler, determinantlar ve özdeğerleri çözümlü örneklerle işleyen ilk doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-treil-linear-algebra-done-wrong",
+  "title": "Linear Algebra Done Wrong",
+  "authors": [
+   "Sergei Treil"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC-ND-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-nd/3.0/",
+  "home_url": "https://sites.google.com/a/brown.edu/sergei-treil-homepage/linear-algebra-done-wrong",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "An honors-level first linear algebra course emphasizing abstract vector spaces, with attention to inner products and spectral theory.",
+  "description_tr": "Soyut vektör uzaylarına, iç çarpıma ve spektral kurama yer veren, onur düzeyinde ilk doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-austin-understanding-linear-algebra",
+  "title": "Understanding Linear Algebra",
+  "authors": [
+   "David Austin"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "http://gvsu.edu/s/0Ck",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "An active-learning introduction to linear algebra with interactive exercises on systems, matrices, eigenvalues and applications.",
+  "description_tr": "Sistemler, matrisler, özdeğerler ve uygulamalar üzerine etkileşimli alıştırmalarla doğrusal cebire aktif öğrenme yaklaşımlı giriş."
+ },
+ {
+  "id": "book-kuttler-first-course-linear-algebra",
+  "title": "A First Course in Linear Algebra (Lyryx edition)",
+  "authors": [
+   "Ken Kuttler"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A first linear algebra text for science and engineering students, redesigned by Lyryx, covering matrices, vector spaces and eigenvalues.",
+  "description_tr": "Fen ve mühendislik öğrencileri için matrisler, vektör uzayları ve özdeğerleri işleyen, Lyryx tarafından yeniden düzenlenmiş doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-kuttler-linear-algebra-theory-applications",
+  "title": "Linear Algebra, Theory and Applications",
+  "authors": [
+   "Kenneth Kuttler"
+  ],
+  "year": 2012,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://www.saylor.org/site/wp-content/uploads/2012/02/Linear-Algebra-Kuttler-1-30-11-OTC.pdf",
+  "pdf_url": "https://www.saylor.org/site/wp-content/uploads/2012/02/Linear-Algebra-Kuttler-1-30-11-OTC.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A self-contained book on linear algebra and matrix theory, best for readers with some prior exposure, with theory and applications.",
+  "description_tr": "Biraz ön bilgisi olan okurlar için kuram ve uygulamaları birlikte sunan, doğrusal cebir ve matris kuramı kitabı."
+ },
+ {
+  "id": "book-nicholson-linear-algebra-applications",
+  "title": "Linear Algebra with Applications",
+  "authors": [
+   "W. Keith Nicholson"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://collection.bccampus.ca/textbooks/linear-algebra-with-applications-2023-a-d-vretta-lyryx-inc-446/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Balances computation, theory and applications in an introduction to linear algebra, with a relatively advanced treatment of vector spaces.",
+  "description_tr": "Hesaplama, kuram ve uygulamaları dengeleyen, vektör uzaylarına görece ileri düzeyde yer veren doğrusal cebir girişi."
+ },
+ {
+  "id": "book-cherney-linear-algebra",
+  "title": "Linear Algebra",
+  "authors": [
+   "David Cherney",
+   "Tom Denton",
+   "Andrew Waldon"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "home_url": "https://www.math.ucdavis.edu/~linear/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A UC Davis linear algebra text for sophomores with a calculus background, teachable in about twenty-five lectures.",
+  "description_tr": "Analiz geçmişi olan ikinci sınıf öğrencileri için, yaklaşık yirmi beş derste işlenebilen UC Davis doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-linear-transformations-on-vector-spaces",
+  "title": "Linear Transformations on Vector Spaces",
+  "authors": [
+   "Scott Kaschner",
+   "Amber Russell"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://pressbooks.palni.org/lineartransformationsonvectorspaces/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An undergraduate linear algebra text that foregrounds linear transformations and vector spaces before matrix computation.",
+  "description_tr": "Matris hesaplarından önce doğrusal dönüşümleri ve vektör uzaylarını öne çıkaran lisans doğrusal cebir kitabı."
+ },
+ {
+  "id": "book-tea-time-linear-algebra",
+  "title": "Tea Time Linear Algebra",
+  "authors": [
+   "Leon Q. Brin"
+  ],
+  "year": 2022,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://lqbrin.github.io/tea-time-linear/",
+  "pdf_url": "https://raw.githubusercontent.com/lqbrin/tea-time-linear/main/TeaTimeLinearAlgebra-edition02.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A general-purpose open linear algebra text with a complete, engaging introduction suited to varied course styles.",
+  "description_tr": "Farklı ders türlerine uygun, eksiksiz ve ilgi çekici bir doğrusal cebir girişi sunan açık ders kitabı."
+ },
+ {
+  "id": "book-fundamentals-of-matrix-algebra",
+  "title": "Fundamentals of Matrix Algebra",
+  "authors": [
+   "Gregory Hartman"
+  ],
+  "year": 2011,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "http://www.apexcalculus.com/other-texts",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A college-level text on linear systems, matrix arithmetic, determinants, eigenvalues and basic linear algebra.",
+  "description_tr": "Doğrusal sistemler, matris aritmetiği, determinantlar ve özdeğerleri içeren üniversite düzeyi matris cebiri kitabı."
+ },
+ {
+  "id": "book-judson-abstract-algebra",
+  "title": "Abstract Algebra: Theory and Applications",
+  "authors": [
+   "Thomas W. Judson"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "https://judsonbooks.org/abstract-algebra-theory-and-applications/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A one- or two-semester undergraduate abstract algebra text on groups, rings and fields with applications to coding and cryptography.",
+  "description_tr": "Gruplar, halkalar ve cisimleri kodlama ve kriptografi uygulamalarıyla işleyen, bir veya iki dönemlik soyut cebir kitabı."
+ },
+ {
+  "id": "book-elementary-abstract-algebra-hill-thron",
+  "title": "Elementary Abstract Algebra: Examples and Applications",
+  "authors": [
+   "Justin Hill",
+   "Chris Thron"
+  ],
+  "year": 2019,
+  "level": "undergraduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://abstractalgebra.altervista.org/index.html",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An example-driven abstract algebra text on groups, rings and fields, written for prospective teachers and applied majors.",
+  "description_tr": "Gruplar, halkalar ve cisimleri örneklerle işleyen, öğretmen adayları ve uygulamalı alan öğrencileri için soyut cebir kitabı."
+ },
+ {
+  "id": "book-grabowski-representation-theory",
+  "title": "Representation Theory",
+  "authors": [
+   "Jan Grabowski"
+  ],
+  "year": 2025,
+  "level": "graduate",
+  "topics": [
+   "algebra"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "https://www.openbookpublishers.com/books/10.11647/obp.0492",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A modern introduction to representation theory linking structure theory of algebras and groups with their representations.",
+  "description_tr": "Cebir ve grupların yapı kuramı ile temsilleri arasındaki bağı kuran, temsil kuramına çağdaş bir giriş."
+ },
+ {
+  "id": "book-introduction-to-arithmetic-groups",
+  "title": "Introduction to Arithmetic Groups",
+  "authors": [
+   "Dave Witte Morris"
+  ],
+  "year": 2015,
+  "level": "graduate",
+  "topics": [
+   "algebra",
+   "number-theory"
+  ],
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "home_url": "https://arxiv.org/abs/math/0106063",
+  "pdf_url": "https://arxiv.org/src/math/0106063v6/anc/IntroArithGrps-FINAL.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A graduate-level introduction to arithmetic groups, lattices in Lie groups and the structure theory behind them.",
+  "description_tr": "Aritmetik grupları, Lie gruplarındaki örgüleri ve altta yatan yapı kuramını işleyen lisansüstü düzeyde giriş."
+ },
+ {
+  "id": "book-shoup-computational-number-theory-algebra",
+  "title": "A Computational Introduction to Number Theory and Algebra",
+  "authors": [
+   "Victor Shoup"
+  ],
+  "year": 2009,
+  "level": "undergraduate",
+  "topics": [
+   "number-theory",
+   "algebra",
+   "information-computation"
+  ],
+  "license": "CC-BY-NC-ND",
+  "license_url": "https://creativecommons.org/licenses/by-nc-nd/",
+  "home_url": "http://shoup.net/ntb/",
+  "pdf_url": "https://shoup.net/ntb/ntb-v2.pdf",
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "Develops number theory and algebra from scratch alongside applications to cryptography and algorithms, assuming only basic calculus.",
+  "description_tr": "Yalnızca temel analiz bilgisiyle, kriptografi ve algoritma uygulamalarıyla birlikte sayı kuramı ve cebiri sıfırdan geliştirir."
+ },
+ {
+  "id": "book-crisman-number-theory-in-context",
+  "title": "Number Theory: In Context and Interactive",
+  "authors": [
+   "Karl-Dieter Crisman"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "number-theory"
+  ],
+  "license": "CC-BY-ND-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "home_url": "http://math.gordon.edu/ntic/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A first number theory course with interactive computation in Sage, covering divisibility, congruences and primes.",
+  "description_tr": "Bölünebilirlik, denklikler ve asalları Sage ile etkileşimli hesaplamalarla işleyen ilk sayı kuramı kitabı."
+ },
+ {
+  "id": "book-poritz-introductory-number-theory",
+  "title": "Yet Another Introductory Number Theory Textbook (Cryptology Emphasis)",
+  "authors": [
+   "Jonathan A. Poritz"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "number-theory",
+   "information-computation"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://www.poritz.net/jonathan/share",
+  "pdf_url": "https://www.poritz.net/jonathan/share/yaintt.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An introductory number theory text with an emphasis on cryptology, covering congruences, primes and public-key ideas.",
+  "description_tr": "Denklikler, asallar ve açık anahtarlı şifreleme fikirlerini kapsayan, kriptolojiye vurgu yapan sayı kuramı girişi."
+ },
+ {
+  "id": "book-moser-introduction-theory-of-numbers",
+  "title": "An Introduction to the Theory of Numbers",
+  "authors": [
+   "Leo Moser"
+  ],
+  "year": 2011,
+  "level": "undergraduate",
+  "topics": [
+   "number-theory"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "http://www.trillia.com/moser-number.html",
+  "pdf_url": "http://www.trillia.com/dA/moser-number-us-one.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A concise classical introduction to elementary number theory, covering divisibility, congruences and Diophantine problems.",
+  "description_tr": "Bölünebilirlik, denklikler ve Diophant problemlerini kapsayan, temel sayı kuramına kısa klasik bir giriş."
+ },
+ {
+  "id": "book-rosulek-joy-of-cryptography",
+  "title": "The Joy of Cryptography",
+  "authors": [
+   "Mike Rosulek"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "information-computation",
+   "number-theory"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "http://web.engr.oregonstate.edu/~rosulekm/crypto/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A rigorous undergraduate introduction to provable-security cryptography, covering encryption, hashing and public-key schemes.",
+  "description_tr": "Şifreleme, özetleme ve açık anahtar şemalarını kapsayan, kanıtlanabilir güvenliğe dayalı lisans kriptografi girişi."
+ },
+ {
+  "id": "book-levin-discrete-mathematics-open-introduction",
+  "title": "Discrete Mathematics: An Open Introduction",
+  "authors": [
+   "Oscar Levin"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics",
+   "logic"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "https://discrete.openmathbooks.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A discrete mathematics text on logic, proof, counting, graphs and sequences for first- or second-year mathematics and computer science majors.",
+  "description_tr": "Mantık, ispat, sayma, graflar ve dizileri işleyen, birinci ve ikinci sınıf matematik ve bilgisayar öğrencileri için ayrık matematik kitabı."
+ },
+ {
+  "id": "book-doerr-levasseur-applied-discrete-structures",
+  "title": "Applied Discrete Structures",
+  "authors": [
+   "Alan Doerr",
+   "Kenneth Levasseur"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics",
+   "algebra"
+  ],
+  "license": "CC-BY-NC-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "home_url": "https://discretemath.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A sophomore-level discrete structures text on logic, counting, graphs, relations and algebraic structures.",
+  "description_tr": "Mantık, sayma, graflar, bağıntılar ve cebirsel yapıları işleyen ikinci sınıf düzeyinde ayrık yapılar kitabı."
+ },
+ {
+  "id": "book-keller-trotter-applied-combinatorics",
+  "title": "Applied Combinatorics",
+  "authors": [
+   "Mitchel T. Keller",
+   "William T. Trotter"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "http://appliedcombinatorics.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "Covers enumeration, graph theory, posets, inclusion-exclusion and generating functions for a one-semester combinatorics course.",
+  "description_tr": "Sayım, çizge kuramı, kısmi sıralı kümeler, dahil etme-dışarıda bırakma ve üreteç fonksiyonlarını işleyen tek dönemlik kombinatorik kitabı."
+ },
+ {
+  "id": "book-bogart-combinatorics-guided-discovery",
+  "title": "Combinatorics Through Guided Discovery",
+  "authors": [
+   "Kenneth P. Bogart"
+  ],
+  "year": 2004,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "http://bogart.openmathbooks.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A discovery-based introduction to combinatorics emphasizing counting, graphs, generating functions and problem solving.",
+  "description_tr": "Sayma, graflar ve üreteç fonksiyonlarına vurgu yapan, keşfe dayalı kombinatorik girişi."
+ },
+ {
+  "id": "book-kwong-spiral-workbook-discrete-mathematics",
+  "title": "Spiral Workbook for Discrete Mathematics",
+  "authors": [
+   "Harris Kwong"
+  ],
+  "year": 2015,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics",
+   "logic"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://milneopentextbooks.org/a-spiral-workbook-for-discrete-mathematics/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A sophomore-level discrete mathematics workbook on logic, sets, proof techniques, relations, counting and graphs.",
+  "description_tr": "Mantık, kümeler, ispat teknikleri, bağıntılar, sayma ve graflar üzerine ikinci sınıf düzeyinde ayrık matematik çalışma kitabı."
+ },
+ {
+  "id": "book-davies-cool-brisk-walk-discrete-mathematics",
+  "title": "A Cool Brisk Walk Through Discrete Mathematics",
+  "authors": [
+   "Stephen Davies"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "combinatorics",
+   "probability"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "http://stephendavies.org/",
+  "pdf_url": "https://stephendavies.org/brisk.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A readable introduction to discrete mathematics covering sets, counting, logic, graphs, proof and probability for computer science students.",
+  "description_tr": "Kümeler, sayma, mantık, graflar, ispat ve olasılığı kapsayan, bilgisayar bilimi öğrencileri için okunaklı ayrık matematik girişi."
+ },
+ {
+  "id": "book-nordstrom-introduction-game-theory",
+  "title": "Introduction to Game Theory: A Discovery Approach",
+  "authors": [
+   "Jennifer Firkins Nordstrom"
+  ],
+  "year": 2025,
+  "level": "undergraduate",
+  "topics": [
+   "optimization",
+   "combinatorics"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://nordstrommath.com/IntroGameTheoryText",
+  "pdf_url": "https://nordstrommath.com/IGT2ndEd.pdf",
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A one-semester discovery-based introduction to game theory, with mathematical models of strategic decision making.",
+  "description_tr": "Stratejik karar vermenin matematiksel modellerini içeren, keşfe dayalı tek dönemlik oyun kuramı girişi."
+ },
+ {
+  "id": "book-hitchman-geometry-cosmic-topology",
+  "title": "Geometry with an Introduction to Cosmic Topology",
+  "authors": [
+   "Michael P. Hitchman"
+  ],
+  "year": 2020,
+  "level": "undergraduate",
+  "topics": [
+   "geometry",
+   "topology"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "http://mphitchman.com/gct",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "Uses Mobius transformations to develop hyperbolic, elliptic and Euclidean geometry, motivated by questions about the shape of the universe.",
+  "description_tr": "Evrenin biçimi sorularından yola çıkarak Möbius dönüşümleriyle hiperbolik, eliptik ve Öklid geometrisini geliştirir."
+ },
+ {
+  "id": "book-petrunin-euclidean-plane-and-its-relatives",
+  "title": "Euclidean Plane and Its Relatives",
+  "authors": [
+   "Anton Petrunin"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "geometry"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "http://anton-petrunin.github.io/birkhoff/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A rigorous minimalist one-semester course on plane geometry, including hyperbolic and spherical relatives.",
+  "description_tr": "Hiperbolik ve küresel akrabalarını da içeren, titiz ve sade, tek dönemlik düzlem geometrisi kitabı."
+ },
+ {
+  "id": "book-trench-elementary-differential-equations",
+  "title": "Elementary Differential Equations with Boundary Value Problems",
+  "authors": [
+   "William F. Trench"
+  ],
+  "year": 2013,
+  "level": "undergraduate",
+  "topics": [
+   "differential-equations"
+  ],
+  "license": "CC-BY-NC-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "home_url": "http://digitalcommons.trinity.edu/mono/9/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A differential equations text for science, engineering and mathematics students covering first-order, linear, series, Laplace and boundary value problems.",
+  "description_tr": "Birinci mertebe, doğrusal denklemler, seriler, Laplace dönüşümü ve sınır değer problemlerini kapsayan diferansiyel denklemler kitabı."
+ },
+ {
+  "id": "book-lebl-notes-on-diffy-qs",
+  "title": "Notes on Diffy Qs: Differential Equations for Engineers",
+  "authors": [
+   "Jiří Lebl"
+  ],
+  "year": 2014,
+  "level": "undergraduate",
+  "topics": [
+   "differential-equations"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "home_url": "http://www.jirka.org/diffyqs/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A one-semester first course on ordinary and partial differential equations aimed at engineering students with calculus.",
+  "description_tr": "Analiz bilen mühendislik öğrencileri için adi ve kısmi diferansiyel denklemlere tek dönemlik ilk ders kitabı."
+ },
+ {
+  "id": "book-judson-ordinary-differential-equations-project",
+  "title": "The Ordinary Differential Equations Project",
+  "authors": [
+   "Thomas Judson"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "differential-equations",
+   "dynamical-systems"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "https://judsonbooks.org/the-ordinary-differential-equations-project/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A project-based ODE course covering first-order equations, linear systems, phase portraits and qualitative methods with computing.",
+  "description_tr": "Birinci mertebe denklemler, doğrusal sistemler, faz portreleri ve nitel yöntemleri hesaplamalarla işleyen projeye dayalı ODE kitabı."
+ },
+ {
+  "id": "book-wiggins-ordinary-differential-equations",
+  "title": "Ordinary Differential Equations",
+  "authors": [
+   "Stephen Wiggins"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "differential-equations",
+   "dynamical-systems"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "https://figshare.com/articles/Ordinary_Differential_Equations/5311612",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Ten weeks of material on ordinary differential equations for second-year mathematics majors, with a dynamical systems perspective.",
+  "description_tr": "İkinci sınıf matematik öğrencileri için dinamik sistemler bakış açısıyla on haftalık adi diferansiyel denklemler içeriği."
+ },
+ {
+  "id": "book-brin-tea-time-numerical-analysis",
+  "title": "Tea Time Numerical Analysis",
+  "authors": [
+   "Leon Q. Brin"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "http://lqbrin.github.io/tea-time-numerical/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "An introductory numerical analysis text covering root finding, interpolation, quadrature and linear systems for mathematics students.",
+  "description_tr": "Kök bulma, interpolasyon, nümerik integrasyon ve doğrusal sistemleri işleyen, matematik öğrencileri için sayısal analiz girişi."
+ },
+ {
+  "id": "book-okten-numerical-analysis-julia",
+  "title": "First Semester in Numerical Analysis with Julia",
+  "authors": [
+   "Giray Ökten"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://repository.lib.fsu.edu/islandora/object/fsu:657877",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Presents numerical analysis theory and methods with algorithm implementations in the Julia language.",
+  "description_tr": "Sayısal analiz kuramı ve yöntemlerini Julia dilinde algoritma uygulamalarıyla sunar."
+ },
+ {
+  "id": "book-liu-numerical-analysis-python",
+  "title": "First Semester in Numerical Analysis with Python",
+  "authors": [
+   "Yaning Liu"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://open.umn.edu/opentextbooks/textbooks/first-semester-in-numerical-analysis-with-python",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A Python adaptation of Ökten's numerical analysis text, retaining the theory and recasting the algorithms in Python.",
+  "description_tr": "Ökten'in sayısal analiz kitabının Python uyarlaması; kuramı korur, algoritmaları Python ile yeniden yazar."
+ },
+ {
+  "id": "book-van-kan-classical-numerical-methods",
+  "title": "Classical Numerical Methods in Scientific Computing",
+  "authors": [
+   "Jos van Kan",
+   "Guus Segal",
+   "Fred Vermolen",
+   "Hans Kraaijevanger"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis",
+   "differential-equations"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://books.open.tudelft.nl/home/catalog/book/168",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Starts with a crash course on partial differential equations and develops classical numerical methods for them.",
+  "description_tr": "Kısmi diferansiyel denklemler üzerine hızlı bir girişle başlayıp bunlar için klasik sayısal yöntemleri geliştirir."
+ },
+ {
+  "id": "book-vuik-numerical-methods-ordinary-differential-equations",
+  "title": "Numerical Methods for Ordinary Differential Equations",
+  "authors": [
+   "Kees Vuik",
+   "Fred Vermolen",
+   "Martin van Gijzen",
+   "Domenico Mascheroni"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis",
+   "differential-equations"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://books.open.tudelft.nl/home/catalog/book/165",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Discusses numerical methods for ordinary differential equations with emphasis on aspects important in practical problems.",
+  "description_tr": "Pratik problemlerde önemli olan yönleri vurgulayarak adi diferansiyel denklemler için sayısal yöntemleri ele alır."
+ },
+ {
+  "id": "book-van-kan-numerical-methods-scientific-computing",
+  "title": "Numerical Methods in Scientific Computing",
+  "authors": [
+   "Jos van Kan",
+   "Guus Segal",
+   "Fred Vermolen"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "home_url": "https://books.open.tudelft.nl/home/catalog/book/169",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A book on numerically solving partial differential equations that arise in technical and physical contexts.",
+  "description_tr": "Teknik ve fiziksel bağlamlarda ortaya çıkan kısmi diferansiyel denklemlerin sayısal çözümü üzerine bir kitap."
+ },
+ {
+  "id": "book-murphy-art-of-polynomial-interpolation",
+  "title": "The Art of Polynomial Interpolation",
+  "authors": [
+   "Stuart Murphy"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "numerical-analysis"
+  ],
+  "license": "CC-BY-NC-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "home_url": "https://psu.pb.unizin.org/polynomialinterpretation/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An accessible text on polynomial interpolation, from simple curve fitting to Lagrange and Newton methods.",
+  "description_tr": "Basit eğri uydurmadan Lagrange ve Newton yöntemlerine kadar polinom interpolasyonunu anlatan erişilebilir bir ders metni."
+ },
+ {
+  "id": "book-zimmermann-computational-mathematics-sagemath",
+  "title": "Computational Mathematics with SageMath",
+  "authors": [
+   "Paul Zimmermann",
+   "Alexandre Casamayou",
+   "Nathann Cohen",
+   "Guillaume Connan",
+   "Thierry Dumont",
+   "Laurent Fousse",
+   "François Maltey",
+   "Matthias Meulien",
+   "Marc Mezzarobba",
+   "Clément Pernet",
+   "Nicolas M. Thiéry"
+  ],
+  "year": 2018,
+  "level": "undergraduate",
+  "topics": [
+   "information-computation",
+   "algebra"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "home_url": "https://www.sagemath.org/sagebook/english.html",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "A hands-on guide to computational mathematics with SageMath, covering calculus, algebra, combinatorics and numerical methods.",
+  "description_tr": "SageMath ile analiz, cebir, kombinatorik ve sayısal yöntemleri uygulamalı olarak işleyen hesaplamalı matematik rehberi."
+ },
+ {
+  "id": "book-grinstead-snell-introduction-to-probability",
+  "title": "Introduction to Probability",
+  "authors": [
+   "Charles M. Grinstead",
+   "J. Laurie Snell"
+  ],
+  "year": 2006,
+  "level": "undergraduate",
+  "topics": [
+   "probability"
+  ],
+  "license": "GFDL",
+  "license_url": "https://www.gnu.org/licenses/fdl.html",
+  "home_url": "https://chance.dartmouth.edu/teaching_aids/books_articles/probability_book/book.html",
+  "pdf_url": "https://math.dartmouth.edu/~prob/prob/prob.pdf",
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A first probability course covering discrete and continuous distributions, expectation, limit theorems and Markov chains.",
+  "description_tr": "Kesikli ve sürekli dağılımlar, beklenen değer, limit teoremleri ve Markov zincirlerini kapsayan ilk olasılık dersi kitabı."
+ },
+ {
+  "id": "book-huber-probability-lectures-and-labs",
+  "title": "Probability: Lectures and Labs",
+  "authors": [
+   "Mark Huber"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "probability"
+  ],
+  "license": "CC-BY-NC-ND",
+  "license_url": "https://creativecommons.org/licenses/by-nc-nd/",
+  "home_url": "https://autotomic.wixsite.com/markhubernews/probability-textbook",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "An upper-division one-semester probability text pairing lectures with computational labs.",
+  "description_tr": "Derslerle hesaplamalı laboratuvarları birleştiren, üst sınıf düzeyinde tek dönemlik olasılık kitabı."
+ },
+ {
+  "id": "book-pfeiffer-applied-probability",
+  "title": "Applied Probability",
+  "authors": [
+   "Paul Pfeiffer"
+  ],
+  "year": 2009,
+  "level": "undergraduate",
+  "topics": [
+   "probability"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "http://cnx.org/contents/HLT_qvJK@6.2:wsOQ6HtH@8/Preface-to-Pfeiffer-Applied-Pr",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A first probability course using calculus and basic matrix algebra, with emphasis on applications and computation.",
+  "description_tr": "Analiz ve temel matris cebiri kullanan, uygulamalara ve hesaplamaya vurgu yapan ilk olasılık dersi kitabı."
+ },
+ {
+  "id": "book-openintro-statistics",
+  "title": "OpenIntro Statistics",
+  "authors": [
+   "David M. Diez",
+   "Mine Çetinkaya-Rundel",
+   "Christopher D. Barr"
+  ],
+  "year": 2019,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "http://www.openintro.org/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A first applied statistics course covering data, probability, inference, regression and modelling.",
+  "description_tr": "Veri, olasılık, çıkarım, regresyon ve modellemeyi kapsayan ilk uygulamalı istatistik dersi kitabı."
+ },
+ {
+  "id": "book-introduction-to-modern-statistics",
+  "title": "Introduction to Modern Statistics",
+  "authors": [
+   "Mine Çetinkaya-Rundel",
+   "Johanna Hardin"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "home_url": "https://www.openintro.org/book/ims/",
+  "pdf_url": null,
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A modern first statistics course using simulation and randomization, covering exploratory analysis, inference and regression.",
+  "description_tr": "Simülasyon ve rastgeleleştirme kullanan; keşifsel analiz, çıkarım ve regresyonu kapsayan çağdaş ilk istatistik kitabı."
+ },
+ {
+  "id": "book-vu-harrington-introductory-statistics-life-sciences",
+  "title": "Introductory Statistics for the Life and Biomedical Sciences",
+  "authors": [
+   "Julie Vu",
+   "David Harrington"
+  ],
+  "year": null,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-SA-3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "home_url": "http://www.openintro.org",
+  "pdf_url": null,
+  "listed_by": [
+   "aim"
+  ],
+  "description_en": "An introductory statistics text with examples from the life and biomedical sciences, covering inference and regression.",
+  "description_tr": "Çıkarım ve regresyonu yaşam ve biyomedikal bilim örnekleriyle işleyen giriş düzeyi istatistik kitabı."
+ },
+ {
+  "id": "book-lane-online-statistics-education",
+  "title": "Online Statistics Education: A Multimedia Course of Study",
+  "authors": [
+   "David Lane"
+  ],
+  "year": 2003,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "public-domain",
+  "license_url": null,
+  "home_url": "http://onlinestatbook.com/",
+  "pdf_url": "https://onlinestatbook.com/Online_Statistics_Education.pdf",
+  "listed_by": [
+   "aim",
+   "otl"
+  ],
+  "description_en": "A complete interactive public-domain introduction to statistics, from descriptive methods to inference and regression.",
+  "description_tr": "Betimleyici yöntemlerden çıkarım ve regresyona uzanan, tamamen kamu malı, etkileşimli istatistik giriş dersi."
+ },
+ {
+  "id": "book-openstax-introductory-statistics",
+  "title": "Introductory Statistics",
+  "authors": [
+   "Barbara Illowsky",
+   "Susan Dean"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "https://openstax.org/details/books/introductory-statistics-2e",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "OpenStax text for a one-semester introductory statistics course covering descriptive statistics, probability and inference.",
+  "description_tr": "Betimleyici istatistik, olasılık ve çıkarımı kapsayan tek dönemlik giriş istatistik dersi için OpenStax kitabı."
+ },
+ {
+  "id": "book-shafer-zhang-introductory-statistics",
+  "title": "Introductory Statistics",
+  "authors": [
+   "Douglas S. Shafer",
+   "Zhiyi Zhang"
+  ],
+  "year": 2012,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-NC-SA",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/",
+  "home_url": "https://saylordotorg.github.io/text_introductory-statistics/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A concise introductory statistics text covering descriptive statistics, probability, estimation and hypothesis testing.",
+  "description_tr": "Betimleyici istatistik, olasılık, kestirim ve hipotez testlerini kapsayan kısa giriş istatistik kitabı."
+ },
+ {
+  "id": "book-greenwood-intermediate-statistics-with-r",
+  "title": "Intermediate Statistics with R",
+  "authors": [
+   "Mark C. Greenwood"
+  ],
+  "year": 2021,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "https://scholarworks.montana.edu/items/8d0ebbc9-147f-498b-8c9f-f1735d8e74cf",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A second statistics course using R, covering ANOVA, linear models, regression and categorical data analysis.",
+  "description_tr": "R ile ANOVA, doğrusal modeller, regresyon ve kategorik veri analizini işleyen ikinci istatistik ders kitabı."
+ },
+ {
+  "id": "book-lilja-linear-regression-using-r",
+  "title": "Linear Regression Using R: An Introduction to Data Modeling",
+  "authors": [
+   "David J. Lilja"
+  ],
+  "year": 2016,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "https://conservancy.umn.edu/items/3de2f9b4-116f-4159-a582-1d1c68e98ba3",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An informal tutorial on linear regression modelling with R, from simple to multiple regression and model selection.",
+  "description_tr": "Basit regresyondan çoklu regresyona ve model seçimine kadar R ile doğrusal regresyon modellemesine gayri resmi öğretici."
+ },
+ {
+  "id": "book-poldrack-statistical-thinking-21st-century",
+  "title": "Statistical Thinking for the 21st Century",
+  "authors": [
+   "Russell A. Poldrack"
+  ],
+  "year": 2018,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY-NC",
+  "license_url": "https://creativecommons.org/licenses/by-nc/",
+  "home_url": "http://statsthinking21.org/index.html",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "A modern introduction to statistics with computing, covering data summaries, resampling, inference and Bayesian ideas.",
+  "description_tr": "Veri özetleri, yeniden örnekleme, çıkarım ve Bayesci fikirleri hesaplamayla birlikte işleyen çağdaş istatistik girişi."
+ },
+ {
+  "id": "book-fieberg-statistics-for-ecologists",
+  "title": "Statistics for Ecologists: A Frequentist and Bayesian Treatment of Modern Regression Models",
+  "authors": [
+   "John R. Fieberg"
+  ],
+  "year": 2024,
+  "level": "undergraduate",
+  "topics": [
+   "statistics"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "https://conservancy.umn.edu/handle/11299/188695",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "Covers regression models for ecological data from both frequentist and Bayesian viewpoints, for upper-level students and researchers.",
+  "description_tr": "Ekolojik veriler için regresyon modellerini hem sıklıkçı hem Bayesci bakışla ele alan, ileri düzey öğrenci ve araştırmacılara yönelik kitap."
+ },
+ {
+  "id": "book-blais-statistical-inference-for-everyone",
+  "title": "Statistical Inference for Everyone",
+  "authors": [
+   "Brian Blais"
+  ],
+  "year": 2017,
+  "level": "undergraduate",
+  "topics": [
+   "statistics",
+   "probability"
+  ],
+  "license": "CC-BY-SA",
+  "license_url": "https://creativecommons.org/licenses/by-sa/",
+  "home_url": "https://github.com/bblais/Statistical-Inference-for-Everyone",
+  "pdf_url": "https://raw.githubusercontent.com/bblais/Statistical-Inference-for-Everyone/master/Statistical%20Inference%20For%20Everyone.pdf",
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An introductory inference text built on probability as logic and Bayesian reasoning, for a first college statistics course.",
+  "description_tr": "Mantık olarak olasılık ve Bayesci akıl yürütmeye dayanan, ilk üniversite istatistik dersi için çıkarım kitabı."
+ },
+ {
+  "id": "book-introducing-mathematical-biology",
+  "title": "Introducing Mathematical Biology",
+  "authors": [
+   "Alex Best"
+  ],
+  "year": 2023,
+  "level": "undergraduate",
+  "topics": [
+   "differential-equations",
+   "dynamical-systems"
+  ],
+  "license": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/",
+  "home_url": "https://sheffield.pressbooks.pub/introducingmathematicalbiology/",
+  "pdf_url": null,
+  "listed_by": [
+   "otl"
+  ],
+  "description_en": "An undergraduate introduction to mathematical modelling in biology using difference and differential equations and dynamical systems ideas.",
+  "description_tr": "Biyolojide matematiksel modellemeyi fark ve diferansiyel denklemler ile dinamik sistem fikirleriyle işleyen lisans düzeyi giriş."
+ }
 ]
