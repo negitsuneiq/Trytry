@@ -7,10 +7,12 @@ import { join } from 'node:path';
 import {
   DOC_TYPES,
   LEVELS,
+  BOOK_LISTS,
   MAX_HOSTED_FILE_BYTES,
   MAX_HOSTED_TOTAL_BYTES,
   isRedistributable,
   LICENSE_INFO,
+  type BookRecord,
   type DocumentRecord,
   type University,
 } from '../src/lib/schema.ts';
@@ -19,6 +21,7 @@ import { DATA_DIR, PUBLIC_DIR, readJson } from './lib/io.ts';
 
 const unis = readJson<University[]>(join(DATA_DIR, 'universities.json'));
 const docs = readJson<DocumentRecord[]>(join(DATA_DIR, 'documents.json'));
+const books = readJson<BookRecord[]>(join(DATA_DIR, 'books.json'));
 const errors: string[] = [];
 const err = (id: string, m: string) => errors.push(`${id}: ${m}`);
 
@@ -77,6 +80,38 @@ for (const d of docs) {
   }
 }
 
+const httpUrl = (u: unknown): u is string => {
+  if (typeof u !== 'string') return false;
+  try {
+    return /^https?:$/.test(new URL(u).protocol);
+  } catch {
+    return false;
+  }
+};
+const bookIds = new Set<string>();
+const str = (v: unknown) => typeof v === 'string' && v.trim() !== '';
+if (!Array.isArray(books)) errors.push('books.json: must be an array');
+else
+  for (const b of books) {
+    const id = String(b?.id);
+    if (!/^book-[a-z0-9-]+$/.test(id)) err(id, 'book id must be "book-" + kebab-case');
+    if (bookIds.has(id)) err(id, 'duplicate book id');
+    bookIds.add(id);
+    if (!str(b.title)) err(id, 'missing title');
+    if (!Array.isArray(b.authors) || !b.authors.every(str)) err(id, 'authors must be an array of strings');
+    if (b.year !== null && !(Number.isInteger(b.year) && b.year > 1800 && b.year <= new Date().getFullYear() + 1)) err(id, `bad year ${b.year}`);
+    if (!LEVELS.includes(b.level)) err(id, `bad level ${b.level}`);
+    if (!Array.isArray(b.topics) || b.topics.length < 1 || b.topics.length > 3) err(id, 'topics must have 1–3 entries');
+    else for (const tp of b.topics) if (!TOPIC_BY_SLUG.has(tp)) err(id, `unknown topic ${tp}`);
+    if (!str(b.license)) err(id, 'missing license');
+    if (b.license_url !== null && !httpUrl(b.license_url)) err(id, 'license_url must be null or http(s)');
+    if (!httpUrl(b.home_url)) err(id, 'home_url must be http(s)');
+    if (b.pdf_url !== null && !httpUrl(b.pdf_url)) err(id, 'pdf_url must be null or http(s)');
+    if (!Array.isArray(b.listed_by) || !b.listed_by.every((x) => (BOOK_LISTS as readonly string[]).includes(x))) err(id, 'listed_by must contain only aim/otl');
+    if (!str(b.description_en)) err(id, 'missing description_en');
+    if (!str(b.description_tr)) err(id, 'missing description_tr');
+  }
+
 if (hostedTotal > MAX_HOSTED_TOTAL_BYTES) errors.push(`hosted total ${(hostedTotal / 2 ** 20).toFixed(0)} MB exceeds 700 MB`);
 
 if (errors.length) {
@@ -84,5 +119,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `✓ ${unis.length} universities, ${docs.length} documents (${docs.filter((d) => d.hosted).length} hosted, ${(hostedTotal / 2 ** 20).toFixed(1)} MB)`,
+  `✓ ${unis.length} universities, ${docs.length} documents, ${books.length} books (${docs.filter((d) => d.hosted).length} hosted, ${(hostedTotal / 2 ** 20).toFixed(1)} MB)`,
 );

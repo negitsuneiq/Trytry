@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { DocumentRecord, University } from './schema';
+import type { BookRecord, DocumentRecord, University } from './schema';
 import { TOPICS } from './topics';
 
 // OL_DATA_DIR lets local design work point at a scratch fixture without
@@ -53,4 +53,11 @@ export function similarDocuments(doc: DocumentRecord, n = 4) {
     .sort((a, b) => b.score - a.score || a.d.title.localeCompare(b.d.title))
     .slice(0, n)
     .map((x) => x.d);
+}
+
+/** Openly licensed textbooks (data/books.json): a separate collection, never mixed with documents. */
+export const books: BookRecord[] = load<BookRecord[]>('books.json').sort((a, b) => a.title.localeCompare(b.title, 'en'));
+
+export function booksForTopic(slug: string) {
+  return books.filter((b) => b.topics.includes(slug));
 }

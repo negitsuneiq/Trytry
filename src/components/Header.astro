@@ -10,6 +10,7 @@ const s = t(lang);
 const path = Astro.url.pathname;
 const links = [
   { key: 'library', label: s.nav.library },
+  { key: 'books', label: s.nav.books },
   { key: 'universities', label: s.nav.universities },
   { key: 'topics', label: s.nav.topics },
   { key: 'about', label: s.nav.about },
@@ -30,7 +31,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
 
     <nav class="nav" aria-label={s.a11y.navPrimary}>
       {
-        links.slice(0, 4).map((l) => (
+        links.slice(0, 5).map((l) => (
           <a href={href(lang, l.key)} aria-current={isActive(l.key) ? 'page' : undefined}>
             {l.label}
           </a>

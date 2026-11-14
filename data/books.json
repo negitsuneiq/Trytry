@@ -1,0 +1,177 @@
+[
+  {
+    "id": "book-abstract-algebra-theory-and-applications",
+    "title": "Abstract Algebra: Theory and Applications",
+    "authors": [
+      "Thomas W. Judson"
+    ],
+    "year": 2022,
+    "level": "undergraduate",
+    "topics": [
+      "algebra"
+    ],
+    "license": "GFDL",
+    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
+    "home_url": "http://abstract.ups.edu/",
+    "pdf_url": "http://abstract.ups.edu/download/aata-20220913.pdf",
+    "listed_by": [
+      "aim",
+      "otl"
+    ],
+    "description_en": "An introduction to groups, rings and fields with applications to coding theory and cryptography, with exercises and Sage material.",
+    "description_tr": "Gruplar, halkalar ve cisimlere giriş; kodlama kuramı ve kriptografi uygulamaları, alıştırmalar ve Sage materyali içerir."
+  },
+  {
+    "id": "book-a-first-course-in-linear-algebra",
+    "title": "A First Course in Linear Algebra",
+    "authors": [
+      "Robert A. Beezer"
+    ],
+    "year": 2021,
+    "level": "undergraduate",
+    "topics": [
+      "algebra"
+    ],
+    "license": "GFDL",
+    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
+    "home_url": "http://linear.ups.edu/",
+    "pdf_url": "http://linear.ups.edu/download/fcla-3.50-print.pdf",
+    "listed_by": [
+      "aim",
+      "otl"
+    ],
+    "description_en": "A theorem-based first course in linear algebra, from systems of equations to eigenvalues and canonical forms.",
+    "description_tr": "Doğrusal denklem sistemlerinden özdeğerlere ve kanonik biçimlere uzanan, teorem temelli bir ilk doğrusal cebir kitabı."
+  },
+  {
+    "id": "book-linear-algebra-hefferon",
+    "title": "Linear Algebra",
+    "authors": [
+      "Jim Hefferon"
+    ],
+    "year": 2020,
+    "level": "undergraduate",
+    "topics": [
+      "algebra"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "home_url": "https://hefferon.net/linearalgebra/",
+    "pdf_url": "https://hefferon.net/linearalgebra/book.pdf",
+    "listed_by": [
+      "aim"
+    ],
+    "description_en": "A proof-oriented text that treats vector spaces and linear maps with many worked examples and solutions to exercises.",
+    "description_tr": "Vektör uzaylarını ve doğrusal dönüşümleri çok sayıda çözümlü örnekle ele alan, ispat odaklı bir ders kitabı."
+  },
+  {
+    "id": "book-basic-analysis-introduction-to-real-analysis",
+    "title": "Basic Analysis: Introduction to Real Analysis",
+    "authors": [
+      "Jiří Lebl"
+    ],
+    "year": 2022,
+    "level": "undergraduate",
+    "topics": [
+      "analysis"
+    ],
+    "license": "CC-BY-NC-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "home_url": "https://www.jirka.org/ra/",
+    "pdf_url": "https://www.jirka.org/ra/realanal.pdf",
+    "listed_by": [
+      "aim",
+      "otl"
+    ],
+    "description_en": "A rigorous one-year course in real analysis covering sequences, continuity, differentiation, integration and metric spaces.",
+    "description_tr": "Diziler, süreklilik, türev, integral ve metrik uzayları kapsayan, bir yıllık titiz bir gerçel analiz dersi."
+  },
+  {
+    "id": "book-notes-on-diffy-qs",
+    "title": "Notes on Diffy Qs: Differential Equations for Engineers",
+    "authors": [
+      "Jiří Lebl"
+    ],
+    "year": 2022,
+    "level": "undergraduate",
+    "topics": [
+      "differential-equations"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "home_url": "https://www.jirka.org/diffyqs/",
+    "pdf_url": "https://www.jirka.org/diffyqs/diffyqs.pdf",
+    "listed_by": [
+      "aim",
+      "otl"
+    ],
+    "description_en": "Ordinary and partial differential equations, Fourier series and Laplace transforms for a first course.",
+    "description_tr": "Bir ilk ders için adi ve kısmi diferansiyel denklemler, Fourier serileri ve Laplace dönüşümleri."
+  },
+  {
+    "id": "book-introduction-to-probability-grinstead-snell",
+    "title": "Introduction to Probability",
+    "authors": [
+      "Charles M. Grinstead",
+      "J. Laurie Snell"
+    ],
+    "year": 1997,
+    "level": "undergraduate",
+    "topics": [
+      "probability",
+      "statistics"
+    ],
+    "license": "GFDL",
+    "license_url": "https://www.gnu.org/licenses/fdl-1.3.html",
+    "home_url": "https://math.dartmouth.edu/~prob/prob/prob.pdf",
+    "pdf_url": "https://math.dartmouth.edu/~prob/prob/prob.pdf",
+    "listed_by": [
+      "aim"
+    ],
+    "description_en": "A classic text on discrete and continuous probability, with simulations, Markov chains and many exercises.",
+    "description_tr": "Kesikli ve sürekli olasılığı benzetimler, Markov zincirleri ve çok sayıda alıştırmayla işleyen klasik bir kitap."
+  },
+  {
+    "id": "book-discrete-mathematics-an-open-introduction",
+    "title": "Discrete Mathematics: An Open Introduction",
+    "authors": [
+      "Oscar Levin"
+    ],
+    "year": 2021,
+    "level": "undergraduate",
+    "topics": [
+      "combinatorics",
+      "logic"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "home_url": "https://discrete.openmathbooks.org/",
+    "pdf_url": null,
+    "listed_by": [
+      "otl"
+    ],
+    "description_en": "Counting, sequences, logic, proofs and graph theory, written around inquiry-based exercises.",
+    "description_tr": "Sayma, diziler, mantık, ispatlar ve çizge kuramı; sorgulamaya dayalı alıştırmalar etrafında yazılmıştır."
+  },
+  {
+    "id": "book-elementary-number-theory-primes-congruences-and-secrets",
+    "title": "Elementary Number Theory: Primes, Congruences, and Secrets",
+    "authors": [
+      "William Stein"
+    ],
+    "year": 2009,
+    "level": "graduate",
+    "topics": [
+      "number-theory"
+    ],
+    "license": "public-domain",
+    "license_url": null,
+    "home_url": "https://wstein.org/ent/",
+    "pdf_url": "https://wstein.org/ent/ent.pdf",
+    "listed_by": [
+      "aim"
+    ],
+    "description_en": "Primes, congruences, quadratic reciprocity and elliptic curves, with an eye to cryptography and computation.",
+    "description_tr": "Asal sayılar, denklikler, ikinci dereceden karşılıklılık ve eliptik eğriler; kriptografi ve hesaplamaya yönelik bir bakışla."
+  }
+]
