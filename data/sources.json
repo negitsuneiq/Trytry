@@ -412,15 +412,64 @@
       "https://ocw.mit.edu/courses/18-s997-the-polynomial-method-fall-2012/resources/lecture-notes/",
       "https://ocw.mit.edu/courses/18-s997-the-polynomial-method-fall-2012/pages/lecture-notes/",
       "https://ocw.mit.edu/courses/18-s997-the-polynomial-method-fall-2012/resources/assignments/",
-      "https://ocw.mit.edu/courses/18-s997-the-polynomial-method-fall-2012/pages/assignments/"
+      "https://ocw.mit.edu/courses/18-s997-the-polynomial-method-fall-2012/pages/assignments/",
+      "https://ocw.mit.edu/courses/24-241-logic-i-fall-2009/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/24-241-logic-i-fall-2009/pages/assignments/",
+      "https://ocw.mit.edu/courses/24-241-logic-i-fall-2009/pages/exams/",
+      "https://ocw.mit.edu/courses/24-242-logic-ii-spring-2004/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/24-242-logic-ii-spring-2004/pages/assignments/",
+      "https://ocw.mit.edu/courses/24-244-modal-logic-spring-2015/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/pages/assignments/",
+      "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/pages/exams/",
+      "https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-093j-optimization-methods-fall-2009/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-093j-optimization-methods-fall-2009/pages/assignments/",
+      "https://ocw.mit.edu/courses/15-093j-optimization-methods-fall-2009/pages/exams/",
+      "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/assignments/",
+      "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/pages/exams/",
+      "https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/pages/assignments/",
+      "https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/pages/exams/",
+      "https://ocw.mit.edu/courses/6-252j-nonlinear-programming-spring-2003/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/pages/assignments/",
+      "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/pages/exams/",
+      "https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/pages/assignments/",
+      "https://ocw.mit.edu/courses/15-082j-network-optimization-fall-2010/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-231-dynamic-programming-and-stochastic-control-fall-2015/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-231-dynamic-programming-and-stochastic-control-fall-2015/pages/assignments/",
+      "https://ocw.mit.edu/courses/6-231-dynamic-programming-and-stochastic-control-fall-2015/pages/exams/",
+      "https://ocw.mit.edu/courses/16-323-principles-of-optimal-control-spring-2008/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-079-introduction-to-convex-optimization-fall-2009/pages/lecture-notes/",
+      "https://ocw.mit.edu/courses/6-079-introduction-to-convex-optimization-fall-2009/pages/assignments/"
     ],
     "scope": [
-      "https://ocw.mit.edu/courses/18-"
+      "https://ocw.mit.edu/courses/18-",
+      "https://ocw.mit.edu/courses/24-241-logic-i-fall-2009/",
+      "https://ocw.mit.edu/courses/24-242-logic-ii-spring-2004/",
+      "https://ocw.mit.edu/courses/24-244-modal-logic-spring-2015/",
+      "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/",
+      "https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/",
+      "https://ocw.mit.edu/courses/15-093j-optimization-methods-fall-2009/",
+      "https://ocw.mit.edu/courses/6-253-convex-analysis-and-optimization-spring-2012/",
+      "https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/",
+      "https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/",
+      "https://ocw.mit.edu/courses/6-252j-nonlinear-programming-spring-2003/",
+      "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/",
+      "https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/",
+      "https://ocw.mit.edu/courses/15-082j-network-optimization-fall-2010/",
+      "https://ocw.mit.edu/courses/6-231-dynamic-programming-and-stochastic-control-fall-2015/",
+      "https://ocw.mit.edu/courses/16-323-principles-of-optimal-control-spring-2008/",
+      "https://ocw.mit.edu/courses/6-079-introduction-to-convex-optimization-fall-2009/"
     ],
     "maxDepth": 1,
-    "maxPages": 2500,
-    "maxPdfs": 1200,
-    "notes": "MIT OpenCourseWare (CC BY-NC-SA 4.0). OCW links \"(PDF)\" to an HTML resource page that holds the file, hence maxDepth 1. MIT OCW mathematics (18.xxx, CC BY-NC-SA 4.0): lecture-notes, assignments, problem-set, exam and solution index pages for 98 further courses (plus assignments/exams pages of the 18 already seeded courses), all verified 200 and linking OCW resource pages (depth 1 reaches the PDFs). Selected from the OCW per-course sitemaps; calculus/ODE service courses, video-only and CS-theory courses left out. ocw.mit.edu robots.txt allows all."
+    "maxPages": 4000,
+    "maxPdfs": 1963,
+    "notes": "MIT OpenCourseWare (CC BY-NC-SA 4.0). OCW links \"(PDF)\" to an HTML resource page that holds the file, hence maxDepth 1. MIT OCW mathematics (18.xxx, CC BY-NC-SA 4.0): lecture-notes, assignments, problem-set, exam and solution index pages for 98 further courses (plus assignments/exams pages of the 18 already seeded courses), all verified 200 and linking OCW resource pages (depth 1 reaches the PDFs). Selected from the OCW per-course sitemaps; calculus/ODE service courses, video-only and CS-theory courses left out. ocw.mit.edu robots.txt allows all. OCW listing pages (lecture-notes/assignments/exams) per course; each links ~10-50 resource pages, depth 1 reaches the PDFs. Logic: 24.241 Logic I, 24.242 Logic II, 24.244 Modal Logic, 18.404J Theory of Computation (computability), 6.045J. Optimization: 15.093J, 6.253 convex analysis, 6.251J LP, 15.084J/6.252J nonlinear programming, 15.083J integer programming, 15.053, 15.082J network optimization, 6.231 dynamic programming/stochastic control, 16.323 optimal control/calculus of variations, 6.079 convex optimization. Lecture-note PDFs verified 200."
   },
   {
     "university": "oxford",
@@ -433,12 +482,13 @@
       "https://people.maths.ox.ac.uk/gilesm/mc/",
       "https://people.maths.ox.ac.uk/gilesm/AIMS/index_AIMS.html",
       "https://people.maths.ox.ac.uk/gilesm/cuda/index.html",
-      "https://people.maths.ox.ac.uk/gilesm/OpenMP/"
+      "https://people.maths.ox.ac.uk/gilesm/OpenMP/",
+      "https://people.maths.ox.ac.uk/bays/"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "courses.maths.ox.ac.uk is a Moodle LMS and its robots.txt disallows /pluginfile.php/, where the course PDFs live, so it is not crawled. Public people.maths.ox.ac.uk teaching pages: Norbury (applied analysis notes and sheets) and M. Giles (Monte Carlo, AIMS numerical methods, CUDA and OpenMP lectures). Lackenby, Lauder, Suli home pages are research-heavy and were skipped; courses.maths.ox.ac.uk is a login LMS (not used); gilesm/fd/ and batty answer 403.",
-    "maxPdfs": 250
+    "notes": "courses.maths.ox.ac.uk is a Moodle LMS and its robots.txt disallows /pluginfile.php/, where the course PDFs live, so it is not crawled. Public people.maths.ox.ac.uk teaching pages: Norbury (applied analysis notes and sheets) and M. Giles (Monte Carlo, AIMS numerical methods, CUDA and OpenMP lectures). Lackenby, Lauder, Suli home pages are research-heavy and were skipped; courses.maths.ox.ac.uk is a login LMS (not used); gilesm/fd/ and batty answer 403. Logic: Martin Bays page links B1.1 Logic and B1.2 Set Theory lecture notes, model theory (Logik II) and geometric stability theory notes; also some talk slides/papers. Oxford courses.maths.ox.ac.uk is Moodle/SSO, skipped; people.maths.ox.ac.uk/hauser is 403.",
+    "maxPdfs": 424
   },
   {
     "university": "cambridge",
@@ -458,7 +508,10 @@
       "http://www.damtp.cam.ac.uk/user/na/PartII/Handouts.html",
       "https://www.damtp.cam.ac.uk/user/examples/indexP3.html",
       "https://www.damtp.cam.ac.uk/user/rrh/",
-      "https://www.damtp.cam.ac.uk/user/us248/Lectures/"
+      "https://www.damtp.cam.ac.uk/user/us248/Lectures/",
+      "https://www.cl.cam.ac.uk/teaching/2425/LogicProof/materials.html",
+      "https://www.cl.cam.ac.uk/teaching/2425/CompTheory/materials.html",
+      "https://www.cl.cam.ac.uk/teaching/2223/LogicProof/"
     ],
     "scope": [
       "https://davidtong.org/teaching/",
@@ -466,8 +519,8 @@
     ],
     "maxDepth": 2,
     "maxPages": 250,
-    "maxPdfs": 350,
-    "notes": "davidtong.org is David Tong's (DAMTP) own site. damtp/user/examples holds the Tripos example sheets. DAMTP faculty pages (Dunajski, Skinner AQFT, Iserles numerical analysis IB/II, Hall, Sperhake GW-numerical-relativity notes) plus the Part III example-sheet index. www.dpmms.cam.ac.uk and www.statslab.cam.ac.uk fail TLS verification from the container (curl exit 60/000), so DPMMS/Statslab pages were not usable; maths.cam.ac.uk tripos-specific-resources mostly links dpmms."
+    "maxPdfs": 599,
+    "notes": "davidtong.org is David Tong's (DAMTP) own site. damtp/user/examples holds the Tripos example sheets. DAMTP faculty pages (Dunajski, Skinner AQFT, Iserles numerical analysis IB/II, Hall, Sperhake GW-numerical-relativity notes) plus the Part III example-sheet index. www.dpmms.cam.ac.uk and www.statslab.cam.ac.uk fail TLS verification from the container (curl exit 60/000), so DPMMS/Statslab pages were not usable; maths.cam.ac.uk tripos-specific-resources mostly links dpmms. Logic/computability from Computer Laboratory (Logic and Proof notes; Computation Theory notes/handouts). dpmms.cam.ac.uk and statslab.cam.ac.uk fail TLS verification from this container, so Part II Logic and Set Theory / Optimisation pages could not be confirmed."
   },
   {
     "university": "harvard",
@@ -507,7 +560,8 @@
       "https://people.math.harvard.edu/archive/21a_fall_14/homework.html",
       "https://people.math.harvard.edu/archive/21a_fall_15/homework.html",
       "https://people.math.harvard.edu/archive/21a_fall_16/homework.html",
-      "https://people.math.harvard.edu/archive/21a_fall_17/homework.html"
+      "https://people.math.harvard.edu/archive/21a_fall_17/homework.html",
+      "https://people.math.harvard.edu/~wboney/fall16/"
     ],
     "scope": [
       "https://people.math.harvard.edu/~ctm/home/text/class/harvard/",
@@ -515,8 +569,8 @@
       "https://people.math.harvard.edu/~elkies/"
     ],
     "maxDepth": 1,
-    "notes": "www.math.harvard.edu answers 403 to the crawler. Faculty course pages on people.math.harvard.edu: McMullen (courses.html indexes ~25 per-course pages, each with course.pdf notes; depth 1 follows them), Ullery (Math 101/122/131/137/221 notes and problem sets), Elkies (Math 55a/55b problem sets and notes, 8 course years), Lurie Math 131. Verified 200 HTML and PDFs reachable; robots.txt only disallows /run. Excluded: Auroux pages (403), student-written notes (Achenjang, Landesman). Roughly 400+ PDFs available, so maxPdfs raised to 200. New round: more Knill course pages (Math 1a/22b/136/154/E-320/summer exams, 2022-2026), Auroux Math 112 (2019) and Collins Math 112 (2015) pages, and people.math.harvard.edu/archive Math 21a homework pages (2014-2017). All 200 HTML with PDFs reachable; robots only disallows /run. Blocked: ~yau 403; knill math22a2018/22b2019 pages have some 403 PDFs. www.math.harvard.edu not tried (403 per earlier note).",
-    "maxPdfs": 950
+    "notes": "www.math.harvard.edu answers 403 to the crawler. Faculty course pages on people.math.harvard.edu: McMullen (courses.html indexes ~25 per-course pages, each with course.pdf notes; depth 1 follows them), Ullery (Math 101/122/131/137/221 notes and problem sets), Elkies (Math 55a/55b problem sets and notes, 8 course years), Lurie Math 131. Verified 200 HTML and PDFs reachable; robots.txt only disallows /run. Excluded: Auroux pages (403), student-written notes (Achenjang, Landesman). Roughly 400+ PDFs available, so maxPdfs raised to 200. New round: more Knill course pages (Math 1a/22b/136/154/E-320/summer exams, 2022-2026), Auroux Math 112 (2019) and Collins Math 112 (2015) pages, and people.math.harvard.edu/archive Math 21a homework pages (2014-2017). All 200 HTML with PDFs reachable; robots only disallows /run. Blocked: ~yau 403; knill math22a2018/22b2019 pages have some 403 PDFs. www.math.harvard.edu not tried (403 per earlier note). Logic: Boney Math 145a Set Theory 2016 (notes, exam, ultrafilter/Suslin notes, ~20 PDFs). Harvard Math 141A is on Canvas, not usable.",
+    "maxPdfs": 1150
   },
   {
     "university": "princeton",
@@ -671,13 +725,17 @@
       "https://math.berkeley.edu/~evans/",
       "https://math.berkeley.edu/~btw/teaching.html",
       "https://math.berkeley.edu/~lott/teaching.html",
-      "https://math.berkeley.edu/~ogus/"
+      "https://math.berkeley.edu/~ogus/",
+      "https://math.berkeley.edu/~pglutz/114snotes.html",
+      "https://math.berkeley.edu/~antonio/math125A/",
+      "https://math.berkeley.edu/~scanlon/"
     ],
     "scope": [
       "https://math.berkeley.edu/~ogus/"
     ],
     "maxDepth": 1,
-    "notes": "Some faculty pages (e.g. ~hutching, ~wodzicki) answer 403 to the crawler."
+    "notes": "Some faculty pages (e.g. ~hutching, ~wodzicki) answer 403 to the crawler. Logic: Glutz Math 114S set theory notes/exams (some pages link external non-Berkeley PDFs), Montalban Math 125A mathematical logic notes (~19 PDFs), Scanlon model theory notes (225A). No optimization found at Berkeley (EECS127 pages have <=1 PDF).",
+    "maxPdfs": 320
   },
   {
     "university": "nus",
@@ -755,14 +813,19 @@
       "https://www.math.ucla.edu/~visan/PreviousTeaching/Math33B_F16/index.html",
       "https://www.math.ucla.edu/~vsv/liegroups2007/liegroups2007.html",
       "https://www.math.ucla.edu/~vsv/",
-      "https://www.math.ucla.edu/~pak/courses/184-Spring-2022/184-Spring-2022.html"
+      "https://www.math.ucla.edu/~pak/courses/184-Spring-2022/184-Spring-2022.html",
+      "http://www.math.ucla.edu/~ynm/lectures.htm",
+      "http://www.math.ucla.edu/~ynm/books.htm",
+      "http://www.math.ucla.edu/~ynm/114l.1.21s",
+      "http://www.math.ucla.edu/~ynm/114c.1.19w",
+      "https://www.math.ucla.edu/~ineeman/220a.1.11f/"
     ],
     "scope": [
       "https://www.math.ucla.edu/~tao/resource/general/"
     ],
     "maxDepth": 2,
-    "maxPdfs": 300,
-    "notes": "Department past qualifying exams archive (~400 PDFs, ww3.math.ucla.edu, robots allows), Nicholas Hu 131A notes, Tao 247A/B notes, Visan course pages (exams/HW), Varadarajan Lie groups notes. Some pak/vsv pages link research papers/external PDFs; no hosts blocked."
+    "maxPdfs": 506,
+    "notes": "Department past qualifying exams archive (~400 PDFs, ww3.math.ucla.edu, robots allows), Nicholas Hu 131A notes, Tao 247A/B notes, Visan course pages (exams/HW), Varadarajan Lie groups notes. Some pak/vsv pages link research papers/external PDFs; no hosts blocked. Logic/set theory/computability: Moschovakis lecture notes and books (~31+12 PDFs), Math 114L/114C course pages, Neeman 220A logic course page (links external qual PDFs). Marks' old UCLA pages are 404."
   },
   {
     "university": "peking",
@@ -801,12 +864,16 @@
       "https://www.math.toronto.edu/courses/apm236h1/20159/apm236.html",
       "https://www.math.toronto.edu/mein/teaching/MAT363/363S.html",
       "https://www.math.toronto.edu/mein/teaching/MAT1341_LieGroupoids/",
-      "https://www.math.toronto.edu/laithy/"
+      "https://www.math.toronto.edu/laithy/",
+      "https://www.math.utoronto.ca/~weiss/set_theory.html",
+      "https://www.math.utoronto.ca/~weiss/model_theory.html",
+      "https://www.cs.toronto.edu/~shaharry/csc438/",
+      "https://www.math.toronto.edu/campesat/mat246.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "maxPdfs": 300,
-    "notes": "Instructor course pages (MAT327, MAT223, MAT137/237, MAT240, MAT1300, APM236, MAT363) with notes, problem sets, exams. Some old pdf links on mein pages 404 (utoronto.ca vs toronto.edu host). Bar-Natan classes link to drorbn.net wiki (out of scope). Mostly 2008-2023 material."
+    "maxPdfs": 500,
+    "notes": "Instructor course pages (MAT327, MAT223, MAT137/237, MAT240, MAT1300, APM236, MAT363) with notes, problem sets, exams. Some old pdf links on mein pages 404 (utoronto.ca vs toronto.edu host). Bar-Natan classes link to drorbn.net wiki (out of scope). Mostly 2008-2023 material. Logic: Weiss set theory and model theory books (direct PDFs), CSC438 Logic and Computation lecture PDFs, MAT246 notes (logic/sets part is introductory, rest abstract maths)."
   },
   {
     "university": "epfl",

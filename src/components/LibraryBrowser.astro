@@ -6,9 +6,8 @@ import { t, type Lang } from '../i18n/strings';
 import { documents, universities, usedTopics } from '../lib/data';
 import { TOPICS } from '../lib/topics';
 import { DOC_TYPES, LEVELS, licenseLabel, type License } from '../lib/schema';
-import { asset } from '../lib/paths';
 import { courses } from '../lib/courses';
-import type { CourseCfg } from '../lib/courseRec';
+import { courseCfg } from '../lib/courseCfg';
 
 interface Props {
   lang: Lang;
@@ -28,16 +27,7 @@ const licenses = [...new Set(documents.map((d) => d.license))].sort() as License
 const types = DOC_TYPES.filter((ty) => documents.some((d) => d.type === ty));
 const defaultView = Astro.props.defaultView ?? (urlState ? 'courses' : 'docs');
 const hasCourses = courses.length > 0;
-const pair = (f: (n: number) => string): [string, string] => [f(1).replace('1', '{n}'), f(2).replace('2', '{n}')];
-const courseCfg: CourseCfg = {
-  index: asset('courses-index.json'),
-  types: DOC_TYPES,
-  counts: Object.fromEntries(DOC_TYPES.map((ty) => [ty, pair(s.course.typeCount[ty])])),
-  docs: pair(s.course.docsCount),
-  results: pair(s.library.courseResults),
-  stripTitle: s.library.stripTitle,
-  stripAll: s.library.stripAll(0),
-};
+const cc = courseCfg(s);
 
 const groups = [
   { key: 'u', label: s.library.university, options: uniOptions.map((u) => ({ value: u.slug, label: u.name, en: true })) },
@@ -179,7 +169,7 @@ const groups = [
         </div>
       </div>
       <CardConfig lang={lang} />
-      {hasCourses && <script type="application/json" id="course-cfg" set:html={JSON.stringify(courseCfg)} />}
+      {hasCourses && <script type="application/json" id="course-cfg" set:html={JSON.stringify(cc)} />}
     </div>
   )
 }

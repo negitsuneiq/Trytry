@@ -1,6 +1,7 @@
 ---
 import { t, type Lang } from '../../i18n/strings';
 import LibraryBrowser from '../LibraryBrowser.astro';
+import { href } from '../../lib/paths';
 
 interface Props {
   lang: Lang;
@@ -18,6 +19,11 @@ const s = t(lang);
       </h2>
       <p class="lede">{s.home.libLede}</p>
     </header>
+    <p class="resume mono" hidden data-resume data-doc={href(lang, 'doc')}>
+      <span class="r-l">{s.saved.resume}:</span>
+      <a class="r-main" href={href(lang, 'saved')} data-resume-link><span data-resume-t></span><span class="r-c" data-resume-c></span> →</a>
+      <a class="r-list" href={href(lang, 'saved')}>{s.nav.saved}</a>
+    </p>
     <LibraryBrowser lang={lang} cardHeading="h3" />
   </div>
 </section>

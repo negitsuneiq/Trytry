@@ -6,6 +6,8 @@ import type { CardCfg } from '../lib/cardRec';
 import type { CourseCfg, CourseRec } from '../lib/courseRec';
 import { authorsLine } from '../lib/format';
 import { uniShort } from '../lib/cover';
+import { saveIcon } from '../lib/saveBtn';
+import { isSaved } from './saved';
 
 const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ESC[c]);
@@ -30,12 +32,16 @@ export function loadCourses(cfg: CourseCfg): Promise<CourseRec[]> {
   return promise;
 }
 
-export function courseCardHtml(r: CourseRec, cc: CourseCfg, cfg: CardCfg, heading: 'h2' | 'h3'): string {
-  const uni = uniShort(r.u, cfg.unis[r.u]?.[0]);
-  const counts = cc.types
+/** "12 lecture notes · 3 exams" */
+export const courseCounts = (r: CourseRec, cc: CourseCfg) =>
+  cc.types
     .map((ty, i) => (r.ct[i] ? fill(cc.counts[ty], r.ct[i]) : ''))
     .filter(Boolean)
     .join(' · ');
+
+export function courseCardHtml(r: CourseRec, cc: CourseCfg, cfg: CardCfg, heading: 'h2' | 'h3'): string {
+  const uni = uniShort(r.u, cfg.unis[r.u]?.[0]);
+  const counts = courseCounts(r, cc);
   const topics = r.p.map((tp) => cfg.topics[tp]?.[cfg.lang === 'tr' ? 1 : 0] ?? tp).join(' / ');
   const years = r.y ? (r.y[0] === r.y[1] ? String(r.y[0]) : `${r.y[0]}–${r.y[1]}`) : '';
   return (
@@ -46,7 +52,9 @@ export function courseCardHtml(r: CourseRec, cc: CourseCfg, cfg: CardCfg, headin
     (r.a?.length ? `<p class="cby" lang="en">${esc(authorsLine(r.a))}</p>` : '') +
     `<p class="mono cnts">${esc(counts)}</p>` +
     `<p class="mono cfoot"><span>${esc(topics)}</span>${years ? `<span class="yrs">${years}</span>` : ''}</p>` +
-    `</a></article>`
+    `</a>` +
+    saveIcon('course', r.s, isSaved('course', r.s), cfg.save) +
+    `</article>`
   );
 }
 

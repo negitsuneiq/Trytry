@@ -25,7 +25,7 @@ export interface CourseRec {
   ct: number[];
   /** number of hosted documents */
   h: number;
-  /** position in the default order (university rank, then size) */
+  /** position in the default order: round-robin across universities (by rank), each one's courses by size */
   o: number;
   /** position in the title-sorted order */
   n: number;

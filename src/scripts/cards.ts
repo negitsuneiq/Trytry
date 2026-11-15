@@ -6,6 +6,8 @@ import '../styles/card.css';
 import type { CardCfg, CardRec } from '../lib/cardRec';
 import { coverHtml, uniShort } from '../lib/cover';
 import { authorsLine, realYear } from '../lib/format';
+import { saveIcon } from '../lib/saveBtn';
+import { isSaved } from './saved';
 
 const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ESC[c]);
@@ -48,7 +50,9 @@ export function cardHtml(r: CardRec, cfg: CardCfg, heading: 'h2' | 'h3' = 'h3'):
     `<p class="mono meta"><span lang="en">${esc(uni)}</span><span aria-hidden="true">·</span><span>${esc(cfg.types[r.ty])}</span></p>` +
     `<p class="topics mono">${esc(r.p.map((tp) => cfg.topics[tp]?.[cfg.lang === 'tr' ? 1 : 0] ?? tp).join(' / '))}</p></div></a>` +
     `<div class="foot"><span class="badges"><span class="chip${r.h ? ' chip-accent' : ''}"><span class="dot" aria-hidden="true"></span>${esc(r.h ? cfg.hosted : cfg.external)}</span>` +
-    `<span class="chip">${esc(cfg.licenses[r.li] ?? r.li)}</span></span><span class="mono lvl">${esc(lvl)}</span></div></article>`
+    `<span class="chip">${esc(cfg.licenses[r.li] ?? r.li)}</span></span><span class="mono lvl">${esc(lvl)}</span></div>` +
+    saveIcon('doc', r.i, isSaved('doc', r.i), cfg.save) +
+    `</article>`
   );
 }
 

@@ -8,12 +8,13 @@ import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { documents, universityBySlug, similarDocuments } from '../../../lib/data';
 import { courseOfDoc, relatedDocuments } from '../../../lib/courses';
-import { shortTitle } from '../../../lib/short';
+import { shortTitle, courseLine } from '../../../lib/short';
 import { LICENSE_INFO, licenseLabel, type DocumentRecord } from '../../../lib/schema';
 import { href, asset } from '../../../lib/paths';
 import { inlineTex, plainTex } from '../../../lib/math';
 import { topicName } from '../../../lib/topics';
 import { bytes, date, authorsLine, realYear } from '../../../lib/format';
+import { saveText } from '../../../lib/saveBtn';
 
 export function getStaticPaths() {
   return langCross(documents.map((doc) => ({ params: { id: doc.id }, props: { doc } })));
@@ -37,6 +38,7 @@ const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected
 const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
 const canPreview = doc.hosted && !!doc.file_path && doc.file_path.toLowerCase().endsWith('.pdf');
 const year = realYear(doc.year, doc.accessed_at);
+const saveBtn = saveText('doc', doc.id, false, { add: s.saved.save, remove: s.saved.unsave });
 
 const rows: [string, string | null, string?][] = [
   [s.doc.university, uni?.name ?? doc.university, href(lang, `universities/${doc.university}`)],
@@ -50,7 +52,7 @@ const rows: [string, string | null, string?][] = [
 ---
 
 <Base lang={lang} title={plainTex(doc.title)} description={`${doc.authors.join(', ')} — ${uni?.name ?? ''}. ${s.types[doc.type]}, ${s.levels[doc.level]}.`}>
-  <article class="doc">
+  <article class="doc" data-doc-view={doc.id} data-doc-title={plainTex(short ?? doc.title)} data-doc-course={courseLine(doc) ?? undefined} data-course-slug={course?.slug}>
     <div class="wrap">
       <nav class="crumbs mono" aria-label={s.a11y.breadcrumb}>
         <a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
@@ -90,6 +92,7 @@ const rows: [string, string | null, string?][] = [
               {doc.hosted ? (doc.file_size ? `${s.doc.openPdf} · ${bytes(doc.file_size, lang)}` : s.doc.openPdf) : s.doc.openSource}
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
+            <Fragment set:html={saveBtn} />
             {
               canPreview && (
                 <button class="btn preview-btn" type="button" data-preview-toggle aria-expanded="false" aria-controls="pdf-preview" data-show={s.doc.preview} data-hide={s.doc.previewHide}>

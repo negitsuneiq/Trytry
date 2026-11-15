@@ -67,4 +67,6 @@ export interface CardCfg {
   courseWord: string;
   /** "{shown} / {total}" etc. */
   ui: { error: string };
+  /** labels of the reading-list toggle */
+  save: { add: string; remove: string };
 }

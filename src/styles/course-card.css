@@ -172,3 +172,8 @@ results. Global, scoped by class, because the markup is built client-side
     white-space: normal;
   }
 }
+
+/* Room for the bookmark tab in the top-right corner (lib/saveBtn.ts). */
+.course-card .meta {
+  padding-right: 40px;
+}

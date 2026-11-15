@@ -11,6 +11,7 @@ import { shortTitle, courseLine } from '../lib/short';
 import { authorsLine, realYear } from '../lib/format';
 import Cover from './Cover.astro';
 import LicenseBadge from './LicenseBadge.astro';
+import { saveIcon } from '../lib/saveBtn';
 
 interface Props {
   doc: DocumentRecord;
@@ -27,6 +28,7 @@ const cLine = courseLine(doc);
 const short = course ? shortTitle(doc) : null;
 const docHref = href(lang, `doc/${doc.id}`);
 const year = realYear(doc.year, doc.accessed_at);
+const save = saveIcon('doc', doc.id, false, { add: s.saved.save, remove: s.saved.unsave });
 ---
 
 <article class="card doc-card">
@@ -58,4 +60,5 @@ const year = realYear(doc.year, doc.accessed_at);
     <LicenseBadge doc={doc} lang={lang} />
     <span class="mono lvl">{s.levels[doc.level]}{year ? ` · ${year}` : ''}</span>
   </div>
+  <Fragment set:html={save} />
 </article>

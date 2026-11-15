@@ -34,12 +34,16 @@ const known = new Set(instructors ?? []);
       if (doc.pages) bits.push(s.course.pagesShort(doc.pages));
       return (
         <li>
-          <a class="row" href={href(lang, `doc/${doc.id}`)}>
+          <a class="row" href={href(lang, `doc/${doc.id}`)} data-doc-id={doc.id}>
             <span class="lbl">
               <span class="t" set:html={inlineTex(lbl)} />
               {author && <span class="by">{author}</span>}
             </span>
             <span class="meta mono">
+              <span class="seen">
+                <svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10" focusable="false"><path d="M2 6.4 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg>
+                {s.saved.seen}
+              </span>
               {bits.length > 0 && <span>{bits.join(' · ')}</span>}
               {doc.hosted && (
                 <span class="hosted" title={s.course.hostedLabel}>
@@ -119,6 +123,15 @@ const known = new Set(instructors ?? []);
     align-items: center;
     gap: 5px;
     color: var(--fg);
+  }
+  .seen {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    color: var(--fg-muted);
+  }
+  .row[data-seen] .seen {
+    display: inline-flex;
   }
   .dot {
     width: 6px;

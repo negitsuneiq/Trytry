@@ -41,6 +41,10 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     </nav>
 
     <div class="tools">
+      <a class="saved-link" href={href(lang, 'saved')} hidden data-saved-link aria-label={s.saved.listWithCount.replace('{n}', '0')} aria-current={path.includes(`/${lang}/saved/`) ? 'page' : undefined}>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.5 3.5h11v17L12 16.6 6.5 20.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+        <span class="saved-count mono" aria-hidden="true" data-saved-count>0</span>
+      </a>
       <div class="lang" role="group" aria-label={s.a11y.langSwitch}>
         {
           (['tr', 'en'] as const).map((l) => (
@@ -77,6 +81,12 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
             </li>
           ))
         }
+        <li hidden data-saved-item>
+          <span class="mono muted">{String(links.length + 1).padStart(2, '0')}</span>
+          <a href={href(lang, 'saved')} class="display" aria-current={path.includes(`/${lang}/saved/`) ? 'page' : undefined}>
+            {s.nav.saved} <span class="mono menu-count" data-saved-count>0</span>
+          </a>
+        </li>
       </ol>
     </nav>
   </div>
@@ -192,6 +202,44 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
   }
   .lang a:not(.on):hover {
     color: var(--fg);
+  }
+  .saved-link {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 44px;
+    color: var(--fg-muted);
+    transition: color 0.3s;
+  }
+  .saved-link[hidden] {
+    display: none;
+  }
+  .saved-link:hover,
+  .saved-link[aria-current='page'] {
+    color: var(--fg);
+  }
+  .saved-count {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 0.625rem;
+    line-height: 17px;
+    text-align: center;
+  }
+  .menu li[hidden] {
+    display: none;
+  }
+  .menu-count {
+    font-size: 0.8125rem;
+    vertical-align: super;
+    color: var(--accent);
   }
   .menu-btn {
     width: 44px;
