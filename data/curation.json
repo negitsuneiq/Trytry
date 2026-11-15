@@ -43315,5 +43315,4075 @@
     ],
     "year": 2019,
     "priority": 60
+  },
+  {
+    "url": "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/Topo.pdf",
+    "id": "sorbonne-schapira-general-topology",
+    "title": "General Topology: Lecture Notes",
+    "authors": [
+      "Pierre Schapira"
+    ],
+    "course_code": null,
+    "course_title": "General Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/CalD.pdf",
+    "id": "sorbonne-schapira-differential-calculus",
+    "title": "Differential Calculus: Lecture Notes",
+    "authors": [
+      "Pierre Schapira"
+    ],
+    "course_code": null,
+    "course_title": "Differential Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2011,
+    "priority": 60
+  },
+  {
+    "url": "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/ALTOintro.pdf",
+    "id": "sorbonne-schapira-algebra-topology-intro",
+    "title": "Introduction to Algebra and Topology: Lecture Notes",
+    "authors": [
+      "Pierre Schapira"
+    ],
+    "course_code": null,
+    "course_title": "Algebra and Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/AlTo.pdf",
+    "id": "sorbonne-schapira-algebra-topology-2007",
+    "title": "Algebra and Topology: Course Notes 2007/2008",
+    "authors": [
+      "Pierre Schapira"
+    ],
+    "course_code": null,
+    "course_title": "Algebra and Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra",
+      "topology"
+    ],
+    "year": 2008,
+    "priority": 60
+  },
+  {
+    "url": "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/CatShv.pdf",
+    "id": "sorbonne-schapira-categories-sheaves",
+    "title": "Categories and Sheaves",
+    "authors": [
+      "Masaki Kashiwara",
+      "Pierre Schapira"
+    ],
+    "course_code": null,
+    "course_title": "Categories and Sheaves",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "algebra",
+      "algebraic-geometry",
+      "topology"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part2-1.pdf",
+    "id": "epfl-anchp-implicit-runge-kutta",
+    "title": "Advanced Numerical Analysis: Chapter 3, Implicit Runge-Kutta Methods",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part3-1.pdf",
+    "id": "epfl-anchp-part3-2015",
+    "title": "Advanced Numerical Analysis: Lecture Notes Part 3",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part3a.pdf",
+    "id": "epfl-anchp-part3a-2015",
+    "title": "Advanced Numerical Analysis: Lecture Notes Part 3a, Unconstrained Optimization",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part4-1.pdf",
+    "id": "epfl-anchp-part4-2015",
+    "title": "Advanced Numerical Analysis: Lecture Notes Part 4, Unconstrained Optimization",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part5-1.pdf",
+    "id": "epfl-anchp-part5-2015",
+    "title": "Advanced Numerical Analysis: Lecture Notes Part 5, Quadratic Programming",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/anchp/wp-content/uploads/2018/05/part6-1.pdf",
+    "id": "epfl-anchp-part6-2015",
+    "title": "Advanced Numerical Analysis: Lecture Notes Part 6, Projected Gradient Methods",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Advanced Numerical Analysis",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "numerical-analysis",
+      "optimization"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2020/01/GT19_notes_to_date.pdf",
+    "id": "epfl-graph-theory-notes-2019",
+    "title": "Graph Theory: Lecture Notes (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/10/problemset6.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-6",
+    "title": "Graph Theory: Problem Set 6 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/09/problemset1.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-1",
+    "title": "Graph Theory: Problem Set 1 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/09/problemset2.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-2",
+    "title": "Graph Theory: Problem Set 2 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/10/problemset3.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-3",
+    "title": "Graph Theory: Problem Set 3 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/10/problemset4-4.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-4",
+    "title": "Graph Theory: Problem Set 4 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/10/problemset5-3.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-5",
+    "title": "Graph Theory: Problem Set 5 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/10/problemset7.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-7",
+    "title": "Graph Theory: Problem Set 7 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/11/problemset8.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-8",
+    "title": "Graph Theory: Problem Set 8 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/11/problemset9.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-9",
+    "title": "Graph Theory: Problem Set 9 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/11/problemset10.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-10",
+    "title": "Graph Theory: Problem Set 10 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/11/problemset11.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-11",
+    "title": "Graph Theory: Problem Set 11 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/12/problemset12.pdf",
+    "id": "epfl-graph-theory-2019-problem-set-12",
+    "title": "Graph Theory: Problem Set 12 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/12/quiz1.pdf",
+    "id": "epfl-graph-theory-2019-quiz-1",
+    "title": "Graph Theory: Quiz 1 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2019/12/quiz2.pdf",
+    "id": "epfl-graph-theory-2019-quiz-2",
+    "title": "Graph Theory: Quiz 2 (2019)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Graph Theory",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "combinatorics"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2022/09/exercise01.pdf",
+    "id": "epfl-metric-embeddings-2022-problem-set-1",
+    "title": "Metric Embeddings: Problem Set 1 (2022)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Metric Embeddings",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "geometry",
+      "combinatorics"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2022/10/exercise02.pdf",
+    "id": "epfl-metric-embeddings-2022-problem-set-2",
+    "title": "Metric Embeddings: Problem Set 2 (2022)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Metric Embeddings",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "geometry",
+      "combinatorics"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://www.epfl.ch/labs/disopt/wp-content/uploads/2022/10/exercise03-1.pdf",
+    "id": "epfl-metric-embeddings-2022-problem-set-3",
+    "title": "Metric Embeddings: Problem Set 3 (2022)",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Metric Embeddings",
+    "level": "graduate",
+    "type": "problem-set",
+    "topics": [
+      "geometry",
+      "combinatorics"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://www.imo.universite-paris-saclay.fr/~frederic.paulin/notescours/td5-26.pdf",
+    "id": "paris-saclay-paulin-groups-geometry-sheet-5-2026",
+    "title": "Groups and Geometry: Exercise Sheet 5 (2026)",
+    "authors": [
+      "Frédéric Paulin"
+    ],
+    "course_code": null,
+    "course_title": "Groups and Geometry",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "geometry",
+      "algebra"
+    ],
+    "year": 2026,
+    "priority": 60
+  },
+  {
+    "url": "https://www.imo.universite-paris-saclay.fr/~frederic.paulin/notescours/TD03_2026_corr.pdf",
+    "id": "paris-saclay-paulin-dynamical-systems-td3-solutions-2026",
+    "title": "Dynamical Systems: Exercise Sheet 3 Corrections (2026)",
+    "authors": [
+      "Frédéric Paulin"
+    ],
+    "course_code": null,
+    "course_title": "Dynamical Systems",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "dynamical-systems"
+    ],
+    "year": 2026,
+    "priority": 60
+  },
+  {
+    "url": "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/Cornell.pdf",
+    "id": "paris-saclay-legall-random-trees-cornell",
+    "title": "Random Trees and Applications: Lecture Notes",
+    "authors": [
+      "Jean-François Le Gall"
+    ],
+    "course_code": null,
+    "course_title": "Random Trees and Applications",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "priority": 60
+  },
+  {
+    "url": "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/Cours-Buziosf.pdf",
+    "id": "paris-saclay-legall-scaling-limits-trees-buzios",
+    "title": "Scaling Limits of Random Trees and Planar Maps: Lecture Notes",
+    "authors": [
+      "Jean-François Le Gall",
+      "Grégory Miermont"
+    ],
+    "course_code": null,
+    "course_title": "Scaling Limits of Random Trees and Planar Maps",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://www.imo.universite-paris-saclay.fr/~giraud/Orsay/Bookv3.pdf",
+    "id": "paris-saclay-giraud-high-dimensional-statistics-book",
+    "title": "Introduction to High-Dimensional Statistics",
+    "authors": [
+      "Christophe Giraud"
+    ],
+    "course_code": null,
+    "course_title": "High-Dimensional Statistics",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "statistics",
+      "probability"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec2.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-2",
+    "title": "MAT327 Topology: Lecture 2 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec3.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-3",
+    "title": "MAT327 Topology: Lecture 3 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec4.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-4",
+    "title": "MAT327 Topology: Lecture 4 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec5.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-5",
+    "title": "MAT327 Topology: Lecture 5 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec6.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-6",
+    "title": "MAT327 Topology: Lecture 6 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec7.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-7",
+    "title": "MAT327 Topology: Lecture 7 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec8.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-8",
+    "title": "MAT327 Topology: Lecture 8 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec9.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-9",
+    "title": "MAT327 Topology: Lecture 9 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec10.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-10",
+    "title": "MAT327 Topology: Lecture 10 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec11.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-11",
+    "title": "MAT327 Topology: Lecture 11 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec12.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-12",
+    "title": "MAT327 Topology: Lecture 12 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec13.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-13",
+    "title": "MAT327 Topology: Lecture 13 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec14.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-14",
+    "title": "MAT327 Topology: Lecture 14 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec15.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-15",
+    "title": "MAT327 Topology: Lecture 15 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec16.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-16",
+    "title": "MAT327 Topology: Lecture 16 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec17.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-17",
+    "title": "MAT327 Topology: Lecture 17 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec18.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-18",
+    "title": "MAT327 Topology: Lecture 18 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec19.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-19",
+    "title": "MAT327 Topology: Lecture 19 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec20.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-20",
+    "title": "MAT327 Topology: Lecture 20 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec21.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-21",
+    "title": "MAT327 Topology: Lecture 21 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec22.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-22",
+    "title": "MAT327 Topology: Lecture 22 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec23.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-23",
+    "title": "MAT327 Topology: Lecture 23 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327lec24.pdf",
+    "id": "toronto-mat327-summer-2023-lecture-24",
+    "title": "MAT327 Topology: Lecture 24 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut1.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-1",
+    "title": "MAT327 Topology: Tutorial 1 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut2.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-2",
+    "title": "MAT327 Topology: Tutorial 2 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut3.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-3",
+    "title": "MAT327 Topology: Tutorial 3 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut4.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-4",
+    "title": "MAT327 Topology: Tutorial 4 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut5.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-5",
+    "title": "MAT327 Topology: Tutorial 5 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327tut11.pdf",
+    "id": "toronto-mat327-summer-2023-tutorial-11",
+    "title": "MAT327 Topology: Tutorial 11 Notes (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327ps1sol.pdf",
+    "id": "toronto-mat327-summer-2023-assignment-1-solutions",
+    "title": "MAT327 Topology: Assignment 1 Solutions (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327ps2sol.pdf",
+    "id": "toronto-mat327-summer-2023-assignment-2-solutions",
+    "title": "MAT327 Topology: Assignment 2 Solutions (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/laithy/3272023/327ps3sol.pdf",
+    "id": "toronto-mat327-summer-2023-assignment-3-solutions",
+    "title": "MAT327 Topology: Assignment 3 Solutions (Summer 2023)",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/ivan/mat327/docs/biglist.pdf",
+    "id": "toronto-mat327-big-list-of-problems",
+    "title": "MAT327 Topology: Big List of Problems",
+    "authors": [],
+    "course_code": "MAT327",
+    "course_title": "Introduction to Topology",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "topology"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/PRACTICE_final.pdf",
+    "id": "toronto-mat223-practice-final-2018",
+    "title": "MAT223 Linear Algebra: Practice Final Exam (2018)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/test2_SOLUTIONS.pdf",
+    "id": "toronto-mat223-midterm-2-solutions-2018",
+    "title": "MAT223 Linear Algebra: Midterm 2 Solutions (Winter 2018)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Test1_SOLUTIONS.pdf",
+    "id": "toronto-mat223-midterm-1-solutions-2017",
+    "title": "MAT223 Linear Algebra: Midterm 1 Solutions (Winter 2017)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Practice_midterm_2.pdf",
+    "id": "toronto-mat223-practice-midterm-2-2018",
+    "title": "MAT223 Linear Algebra: Practice Midterm 2 (2018)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Practice_midterm1.pdf",
+    "id": "toronto-mat223-practice-midterm-1-2018",
+    "title": "MAT223 Linear Algebra: Practice Midterm 1 (2018)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/223_course_notes.pdf",
+    "id": "toronto-mat223-course-notes",
+    "title": "MAT223 Linear Algebra: Course Notes",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Test1_solutions.pdf",
+    "id": "toronto-mat223-midterm-1-solutions-2018",
+    "title": "MAT223 Linear Algebra: Midterm 1 Solutions (Winter 2018)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Midterm_2_SOLUTIONS.pdf",
+    "id": "toronto-mat223-midterm-2-solutions-2016",
+    "title": "MAT223 Linear Algebra: Midterm 2 Solutions (2016)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/Practice_Final.pdf",
+    "id": "toronto-mat223-practice-final-2016",
+    "title": "MAT223 Linear Algebra: Practice Final Exam (2016)",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.utoronto.ca/nhoell/MAT223/mat223-review.pdf",
+    "id": "toronto-mat223-review-sheet-2016",
+    "title": "MAT223 Linear Algebra: Review Sheet",
+    "authors": [
+      "Nicholas Hoell"
+    ],
+    "course_code": "MAT223",
+    "course_title": "Linear Algebra I",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/fall-notes.pdf",
+    "id": "toronto-mat237-fall-2019-notes",
+    "title": "MAT237 Multivariable Calculus: Fall 2019 Notes",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0912-1.pdf",
+    "id": "toronto-mat237-slides-2019-09-12-level-sets",
+    "title": "MAT237 Multivariable Calculus: Level Sets (Slides, 2019-09-12)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0924.pdf",
+    "id": "toronto-mat237-slides-2019-09-24-dedekind",
+    "title": "MAT237 Multivariable Calculus: Dedekind-Completeness (Slides, 2019-09-24)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/1001.pdf",
+    "id": "toronto-mat237-interior-closure-boundary-q",
+    "title": "MAT237 Multivariable Calculus: Interior, Closure and Boundary of Q",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/1114.pdf",
+    "id": "toronto-mat237-slides-2019-11-14-review",
+    "title": "MAT237 Multivariable Calculus: Review Slides (2019-11-14)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/IFT.pdf",
+    "id": "toronto-mat237-ift-questions",
+    "title": "MAT237 Multivariable Calculus: Implicit Function Theorem: Questions",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/IFT-sol.pdf",
+    "id": "toronto-mat237-ift-solutions",
+    "title": "MAT237 Multivariable Calculus: Implicit Function Theorem: Sample Solutions",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/IFT-MVT.pdf",
+    "id": "toronto-mat237-mvt-like-inequality",
+    "title": "MAT237 Multivariable Calculus: A MVT-like Inequality",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/winter-notes.pdf",
+    "id": "toronto-mat237-winter-2020-notes",
+    "title": "MAT237 Multivariable Calculus: Winter 2020 Notes",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/darboux.pdf",
+    "id": "toronto-mat237-darboux-riemann-integral",
+    "title": "MAT237 Multivariable Calculus: Darboux's Construction of the Riemann Integral",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/CoV.pdf",
+    "id": "toronto-mat237-change-of-variables",
+    "title": "MAT237 Multivariable Calculus: Change of Variables: Usual Coordinate Systems",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/rw-winter.pdf",
+    "id": "toronto-mat237-reading-week-questions",
+    "title": "MAT237 Multivariable Calculus: Reading Week Questions",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0227-mat137.pdf",
+    "id": "toronto-mat237-improper-integrals",
+    "title": "MAT237 Multivariable Calculus: Improper Integrals in One Variable",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0319-questions.pdf",
+    "id": "toronto-mat237-review-questions-test-4",
+    "title": "MAT237 Multivariable Calculus: Review Questions for Test 4",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0319-solutions.pdf",
+    "id": "toronto-mat237-review-solutions-test-4",
+    "title": "MAT237 Multivariable Calculus: Solutions to Test 4 Review Questions",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0402.pdf",
+    "id": "toronto-mat237-slides-2020-04-02-stokes-boundary",
+    "title": "MAT237 Multivariable Calculus: Relative Boundary in Stokes' Theorem (Slides, 2020-04-02)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/poincare.pdf",
+    "id": "toronto-mat237-poincare-lemma",
+    "title": "MAT237 Multivariable Calculus: Poincaré Lemma: Potentials and Vector Potentials",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/gamma-beta.pdf",
+    "id": "toronto-mat237-gamma-beta-questions",
+    "title": "MAT237 Multivariable Calculus: The Gamma and Beta Functions: Questions",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/last-review.pdf",
+    "id": "toronto-mat237-last-review-questions",
+    "title": "MAT237 Multivariable Calculus: Review Questions, Sections 5.5-5.7",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0905.pdf",
+    "id": "toronto-mat237-in-class-questions-2019-09-05",
+    "title": "MAT237 Multivariable Calculus: In-Class Questions (2019-09-05)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0917-sol.pdf",
+    "id": "toronto-mat237-in-class-questions-solutions-2019-09-17",
+    "title": "MAT237 Multivariable Calculus: Solutions to In-Class Questions (2019-09-17)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0924-questions.pdf",
+    "id": "toronto-mat237-in-class-questions-2019-09-24",
+    "title": "MAT237 Multivariable Calculus: In-Class Questions (2019-09-24)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/1024.pdf",
+    "id": "toronto-mat237-slides-2019-10-24-differentiability",
+    "title": "MAT237 Multivariable Calculus: Differentiability Summary (Slides, 2019-10-24)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0213-notes.pdf",
+    "id": "toronto-mat237-notes-2020-02-13",
+    "title": "MAT237 Multivariable Calculus: Notes of 2020-02-13",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1920/0326-notes.pdf",
+    "id": "toronto-mat237-notes-2020-03-26-stokes",
+    "title": "MAT237 Multivariable Calculus: Stokes' Theorem Notes (2020-03-26)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT237",
+    "course_title": "Multivariable Calculus",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS01.pdf",
+    "id": "toronto-mat137-problem-set-1-solutions",
+    "title": "MAT137 Calculus: Problem Set 1 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS02.pdf",
+    "id": "toronto-mat137-problem-set-2-solutions",
+    "title": "MAT137 Calculus: Problem Set 2 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS03.pdf",
+    "id": "toronto-mat137-problem-set-3-solutions",
+    "title": "MAT137 Calculus: Problem Set 3 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS04.pdf",
+    "id": "toronto-mat137-problem-set-4-solutions",
+    "title": "MAT137 Calculus: Problem Set 4 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS05.pdf",
+    "id": "toronto-mat137-problem-set-5-solutions",
+    "title": "MAT137 Calculus: Problem Set 5 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS06.pdf",
+    "id": "toronto-mat137-problem-set-6-solutions",
+    "title": "MAT137 Calculus: Problem Set 6 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS07.pdf",
+    "id": "toronto-mat137-problem-set-7-solutions",
+    "title": "MAT137 Calculus: Problem Set 7 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS08.pdf",
+    "id": "toronto-mat137-problem-set-8-solutions",
+    "title": "MAT137 Calculus: Problem Set 8 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS09.pdf",
+    "id": "toronto-mat137-problem-set-9-solutions",
+    "title": "MAT137 Calculus: Problem Set 9 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/archives/PS10.pdf",
+    "id": "toronto-mat137-problem-set-10-solutions",
+    "title": "MAT137 Calculus: Problem Set 10 Sample Solutions (2018-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec01-0910.pdf",
+    "id": "toronto-mat137-lecture-01-slides-0910",
+    "title": "MAT137 Calculus: Lecture 01 Slides (2018-09-10)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec02-0912.pdf",
+    "id": "toronto-mat137-lecture-02-slides-0912",
+    "title": "MAT137 Calculus: Lecture 02 Slides (2018-09-12)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec03-0917.pdf",
+    "id": "toronto-mat137-lecture-03-slides-0917",
+    "title": "MAT137 Calculus: Lecture 03 Slides (2018-09-17)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec04-0919.pdf",
+    "id": "toronto-mat137-lecture-04-slides-0919",
+    "title": "MAT137 Calculus: Lecture 04 Slides (2018-09-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec05-0924.pdf",
+    "id": "toronto-mat137-lecture-05-slides-0924",
+    "title": "MAT137 Calculus: Lecture 05 Slides (2018-09-24)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec06-0926.pdf",
+    "id": "toronto-mat137-lecture-06-slides-0926",
+    "title": "MAT137 Calculus: Lecture 06 Slides (2018-09-26)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec07-1001.pdf",
+    "id": "toronto-mat137-lecture-07-slides-1001",
+    "title": "MAT137 Calculus: Lecture 07 Slides (2018-10-01)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec08-1003.pdf",
+    "id": "toronto-mat137-lecture-08-slides-1003",
+    "title": "MAT137 Calculus: Lecture 08 Slides (2018-10-03)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec09-1010.pdf",
+    "id": "toronto-mat137-lecture-09-slides-1010",
+    "title": "MAT137 Calculus: Lecture 09 Slides (2018-10-10)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec10-1015.pdf",
+    "id": "toronto-mat137-lecture-10-slides-1015",
+    "title": "MAT137 Calculus: Lecture 10 Slides (2018-10-15)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec11-1017-part2.pdf",
+    "id": "toronto-mat137-lecture-11-slides-1017",
+    "title": "MAT137 Calculus: Lecture 11 Slides (2018-10-17)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec12-1022.pdf",
+    "id": "toronto-mat137-lecture-12-slides-1022",
+    "title": "MAT137 Calculus: Lecture 12 Slides (2018-10-22)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec13-1024.pdf",
+    "id": "toronto-mat137-lecture-13-slides-1024",
+    "title": "MAT137 Calculus: Lecture 13 Slides (2018-10-24)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/circle.pdf",
+    "id": "toronto-mat137-circle-problem-proof",
+    "title": "MAT137 Calculus: A Proof of the Circle Problem",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec07-notes.pdf",
+    "id": "toronto-mat137-lecture-07-notes-first-proof",
+    "title": "MAT137 Calculus: Lecture 7 Notes: Your First Epsilon-Delta Proof",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec08-notes.pdf",
+    "id": "toronto-mat137-lecture-08-notes-non-existence",
+    "title": "MAT137 Calculus: Lecture 8 Notes: Proof of Non-Existence of a Limit",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec14-1029.pdf",
+    "id": "toronto-mat137-lecture-14-slides-1029",
+    "title": "MAT137 Calculus: Lecture 14 Slides (2018-10-29)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec15-1031.pdf",
+    "id": "toronto-mat137-lecture-15-slides-1031",
+    "title": "MAT137 Calculus: Lecture 15 Slides (2018-10-31)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec16-1112.pdf",
+    "id": "toronto-mat137-lecture-16-slides-1112",
+    "title": "MAT137 Calculus: Lecture 16 Slides (2018-11-12)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec17-1114.pdf",
+    "id": "toronto-mat137-lecture-17-slides-1114",
+    "title": "MAT137 Calculus: Lecture 17 Slides (2018-11-14)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec18-1119.pdf",
+    "id": "toronto-mat137-lecture-18-slides-1119",
+    "title": "MAT137 Calculus: Lecture 18 Slides (2018-11-19)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec19-1121.pdf",
+    "id": "toronto-mat137-lecture-19-slides-1121",
+    "title": "MAT137 Calculus: Lecture 19 Slides (2018-11-21)",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec18-notes.pdf",
+    "id": "toronto-mat137-lecture-18-notes-slide-4",
+    "title": "MAT137 Calculus: Lecture 18 Notes, About Slide 4",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://www.math.toronto.edu/campesat/ens/1819/lec19-notes.pdf",
+    "id": "toronto-mat137-lecture-19-notes-slide-7",
+    "title": "MAT137 Calculus: Lecture 19 Notes, About Slide 7",
+    "authors": [
+      "Jean-Baptiste Campesato"
+    ],
+    "course_code": "MAT137",
+    "course_title": "Calculus!",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "http://www.math.ethz.ch/~jteichma/measure-integral_120615.pdf",
+    "id": "eth-zurich-kowalski-measure-integral-book",
+    "title": "Measure and Integral",
+    "authors": [
+      "Emmanuel Kowalski"
+    ],
+    "course_code": null,
+    "course_title": "Measure and Integral",
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~abandeira//TenLecturesFortyTwoProblems.pdf",
+    "id": "eth-zurich-bandeira-ten-lectures-book",
+    "title": "Ten Lectures and Forty-Two Open Problems in the Mathematics of Data Science",
+    "authors": [
+      "Afonso S. Bandeira"
+    ],
+    "course_code": null,
+    "course_title": null,
+    "level": "graduate",
+    "type": "book",
+    "topics": [
+      "statistics",
+      "information-computation",
+      "probability"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_winter_2020_english.pdf",
+    "id": "eth-zurich-math-1-exam-winter-2020",
+    "title": "Mathematics I: Exam, Winter 2020",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_winter_2021_english.pdf",
+    "id": "eth-zurich-math-1-exam-winter-2021",
+    "title": "Mathematics I: Exam, Winter 2021",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_and_II_winter_2020_english.pdf",
+    "id": "eth-zurich-math-1-2-exam-winter-2020",
+    "title": "Mathematics I/II: Exam, Winter 2020",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I and II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_and_II_summer_2020_english.pdf",
+    "id": "eth-zurich-math-1-2-exam-summer-2020",
+    "title": "Mathematics I/II: Exam, Summer 2020",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I and II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_and_II_winter_2021_english.pdf",
+    "id": "eth-zurich-math-1-2-exam-winter-2021",
+    "title": "Mathematics I/II: Exam, Winter 2021",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I and II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_and_II_winter_2023_english.pdf",
+    "id": "eth-zurich-math-1-2-exam-winter-2023",
+    "title": "Mathematics I/II: Exam, Winter 2023",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I and II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~acannas/Teaching/Math_EN/Exams/exam_math_I_and_II_summer_2023_english.pdf",
+    "id": "eth-zurich-math-1-2-exam-summer-2023",
+    "title": "Mathematics I/II: Exam, Summer 2023",
+    "authors": [],
+    "course_code": "406-0251-AAL",
+    "course_title": "Mathematics I and II",
+    "level": "undergraduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "differential-equations"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/slides_week1to3.pdf",
+    "id": "eth-zurich-teichmann-semimartingale-slides",
+    "title": "Mathematical Finance: Introduction to Semimartingale Theory (Slides)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/slides_ftap.pdf",
+    "id": "eth-zurich-teichmann-ftap-slides",
+    "title": "Mathematical Finance: Fundamental Theorem of Asset Pricing (Slides)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/slides_portfolioselection.pdf",
+    "id": "eth-zurich-teichmann-portfolio-selection-slides",
+    "title": "Mathematical Finance: Portfolio Selection (Slides)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/questions_hs2020.pdf",
+    "id": "eth-zurich-teichmann-oral-exam-questions-2020",
+    "title": "Mathematical Finance: Oral Exam Questions (2020)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/lecturenotesMF20191212.pdf",
+    "id": "eth-zurich-teichmann-mathematical-finance-notes",
+    "title": "Mathematical Finance: Lecture Notes",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/lecture_ml_web/lecture_uat_2021.pdf",
+    "id": "eth-zurich-teichmann-universal-approximation-slides",
+    "title": "Machine Learning in Finance: Universal Approximation Theorems (Slides)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Machine Learning in Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/lecture_ml_web/lecture_signatures_2021.pdf",
+    "id": "eth-zurich-teichmann-signatures-slides",
+    "title": "Machine Learning in Finance: Aspects of Signatures (Slides)",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Machine Learning in Finance",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "information-computation",
+      "probability"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://people.math.ethz.ch/~jteichma/exam_200712.pdf",
+    "id": "eth-zurich-teichmann-exam-2020-08-13",
+    "title": "Mathematical Finance: Exam, August 2020",
+    "authors": [
+      "Josef Teichmann"
+    ],
+    "course_code": null,
+    "course_title": "Mathematical Finance",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "probability",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ethz.ch/content/dam/ethz/special-interest/math/department/Research/Research_Groups/Sznitman/Lectures/BrMoStCa13.pdf",
+    "id": "eth-zurich-sznitman-brownian-motion-stochastic-calculus-2013",
+    "title": "Brownian Motion and Stochastic Calculus: Lecture Notes (Spring 2013)",
+    "authors": [
+      "Alain-Sol Sznitman"
+    ],
+    "course_code": null,
+    "course_title": "Brownian Motion and Stochastic Calculus",
+    "level": "graduate",
+    "type": "lecture-notes",
+    "topics": [
+      "probability"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/sc/Analysis_1___D_MATH___ETH.pdf#page=5",
+    "id": "eth-zurich-401-1261-analysis-1-notes-2025",
+    "title": "401-1261 Analysis I: Lecture Notes (Autumn 2025)",
+    "authors": [
+      "Alessio Figalli"
+    ],
+    "course_code": "401-1261-07L",
+    "course_title": "Analysis I: Single Variable",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/sc/Repetition1.pdf",
+    "id": "eth-zurich-401-1261-analysis-1-repetition-1-2025",
+    "title": "401-1261 Analysis I: Repetition 1, Exam Structure and Review (Autumn 2025)",
+    "authors": [],
+    "course_code": "401-1261-07L",
+    "course_title": "Analysis I: Single Variable",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/sc/Repetition2.pdf",
+    "id": "eth-zurich-401-1261-analysis-1-repetition-2-2025",
+    "title": "401-1261 Analysis I: Repetition 2, Continuous Functions (Autumn 2025)",
+    "authors": [],
+    "course_code": "401-1261-07L",
+    "course_title": "Analysis I: Single Variable",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/sc/Repetition3.pdf",
+    "id": "eth-zurich-401-1261-analysis-1-repetition-3-2025",
+    "title": "401-1261 Analysis I: Repetition 3, Taylor Approximation and Analytic Functions (Autumn 2025)",
+    "authors": [],
+    "course_code": "401-1261-07L",
+    "course_title": "Analysis I: Single Variable",
+    "level": "undergraduate",
+    "type": "lecture-notes",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/ex/Sol12_Analysis1_eng.pdf",
+    "id": "eth-zurich-401-1261-analysis-1-solutions-12-2025",
+    "title": "401-1261 Analysis I: Exercise Sheet 12 Solutions (Autumn 2025)",
+    "authors": [
+      "Alessio Figalli"
+    ],
+    "course_code": "401-1261-07L",
+    "course_title": "Analysis I: Single Variable",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/notes/AnalysisI.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-notes-2024",
+    "title": "401-1262 Analysis I: Lecture Notes (Spring 2024)",
+    "authors": [],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "book",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps1sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-1-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 1 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps2sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-2-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 2 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps3sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-3-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 3 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps4sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-4-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 4 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps5sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-5-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 5 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps6sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-6-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 6 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps7sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-7-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 7 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/ex/ps8sol.pdf",
+    "id": "eth-zurich-401-1262-analysis-1-problem-set-8-solutions-2024",
+    "title": "401-1262 Analysis I: Problem Set 8 Solutions (Spring 2024)",
+    "authors": [
+      "Federico Franceschini"
+    ],
+    "course_code": "401-1262-07L",
+    "course_title": "Analysis I",
+    "level": "undergraduate",
+    "type": "problem-set",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-12S.pdf",
+    "id": "ucla-qual-basic-winter-2012",
+    "title": "UCLA Basic Qualifying Exam, Winter 2012",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-13F.pdf",
+    "id": "ucla-qual-basic-fall-2013",
+    "title": "UCLA Basic Qualifying Exam, Fall 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-13S.pdf",
+    "id": "ucla-qual-basic-spring-2013",
+    "title": "UCLA Basic Qualifying Exam, Spring 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-14F.pdf",
+    "id": "ucla-qual-basic-fall-2014",
+    "title": "UCLA Basic Qualifying Exam, Fall 2014",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-15S.pdf",
+    "id": "ucla-qual-basic-spring-2015",
+    "title": "UCLA Basic Qualifying Exam, Spring 2015",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-16F.pdf",
+    "id": "ucla-qual-basic-fall-2016",
+    "title": "UCLA Basic Qualifying Exam, Fall 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-16S.pdf",
+    "id": "ucla-qual-basic-spring-2016",
+    "title": "UCLA Basic Qualifying Exam, Spring 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-17F.pdf",
+    "id": "ucla-qual-basic-fall-2017",
+    "title": "UCLA Basic Qualifying Exam, Fall 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-17S.pdf",
+    "id": "ucla-qual-basic-spring-2017",
+    "title": "UCLA Basic Qualifying Exam, Spring 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-18F.pdf",
+    "id": "ucla-qual-basic-fall-2018",
+    "title": "UCLA Basic Qualifying Exam, Fall 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-18S.pdf",
+    "id": "ucla-qual-basic-spring-2018",
+    "title": "UCLA Basic Qualifying Exam, Spring 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-19F.pdf",
+    "id": "ucla-qual-basic-fall-2019",
+    "title": "UCLA Basic Qualifying Exam, Fall 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-19S.pdf",
+    "id": "ucla-qual-basic-spring-2019",
+    "title": "UCLA Basic Qualifying Exam, Spring 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/basic-20F.pdf",
+    "id": "ucla-qual-basic-fall-2020",
+    "title": "UCLA Basic Qualifying Exam, Fall 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2022/02/BasicF2021.pdf",
+    "id": "ucla-qual-basic-fall-2021",
+    "title": "UCLA Basic Qualifying Exam, Fall 2021",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2022/09/Basic-Exam-Spring-2021.pdf",
+    "id": "ucla-qual-basic-spring-2021",
+    "title": "UCLA Basic Qualifying Exam, Spring 2021",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/03/Basic-F22.pdf",
+    "id": "ucla-qual-basic-fall-2022",
+    "title": "UCLA Basic Qualifying Exam, Fall 2022",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/01/Basic-qual-F23.pdf",
+    "id": "ucla-qual-basic-fall-2023",
+    "title": "UCLA Basic Qualifying Exam, Fall 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/09/Basic-qual-23S.pdf",
+    "id": "ucla-qual-basic-spring-2023",
+    "title": "UCLA Basic Qualifying Exam, Spring 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/02/basic.f24.pdf",
+    "id": "ucla-qual-basic-fall-2024",
+    "title": "UCLA Basic Qualifying Exam, Fall 2024",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/10/Basic-F25.pdf",
+    "id": "ucla-qual-basic-fall-2025",
+    "title": "UCLA Basic Qualifying Exam, Fall 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/04/BasicExam_S25_FinalDraft.pdf",
+    "id": "ucla-qual-basic-spring-2025",
+    "title": "UCLA Basic Qualifying Exam, Spring 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2026/10/Basic_Qual_Exam_26F.pdf",
+    "id": "ucla-qual-basic-fall-2026",
+    "title": "UCLA Basic Qualifying Exam, Fall 2026",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2026,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2026/04/Basic_Qual_Exam_26S.pdf",
+    "id": "ucla-qual-basic-spring-2026",
+    "title": "UCLA Basic Qualifying Exam, Spring 2026",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Basic Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis",
+      "algebra"
+    ],
+    "year": 2026,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-12S.pdf",
+    "id": "ucla-qual-algebra-spring-2012",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2012",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-13F.pdf",
+    "id": "ucla-qual-algebra-fall-2013",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-13S.pdf",
+    "id": "ucla-qual-algebra-spring-2013",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-14F.pdf",
+    "id": "ucla-qual-algebra-fall-2014",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2014",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-15S.pdf",
+    "id": "ucla-qual-algebra-spring-2015",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2015",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-16F.pdf",
+    "id": "ucla-qual-algebra-fall-2016",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-16S.pdf",
+    "id": "ucla-qual-algebra-spring-2016",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-17F.pdf",
+    "id": "ucla-qual-algebra-fall-2017",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-18F.pdf",
+    "id": "ucla-qual-algebra-fall-2018",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-18S.pdf",
+    "id": "ucla-qual-algebra-spring-2018",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-19F.pdf",
+    "id": "ucla-qual-algebra-fall-2019",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-19S.pdf",
+    "id": "ucla-qual-algebra-spring-2019",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-20F.pdf",
+    "id": "ucla-qual-algebra-fall-2020",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/algebra-20S.pdf",
+    "id": "ucla-qual-algebra-spring-2020",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2022/02/algebra.pdf",
+    "id": "ucla-qual-algebra-fall-2021",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2021",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/03/Algebra-F22.pdf",
+    "id": "ucla-qual-algebra-fall-2022",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2022",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/01/Algebra-qual-F23.pdf",
+    "id": "ucla-qual-algebra-fall-2023",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/09/algebra-qual-23S.pdf",
+    "id": "ucla-qual-algebra-spring-2023",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/07/Algebra_S24.pdf",
+    "id": "ucla-qual-algebra-spring-2024",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2024",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/10/Algebra-F25.pdf",
+    "id": "ucla-qual-algebra-fall-2025",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/04/algebra-qual_S25.pdf",
+    "id": "ucla-qual-algebra-spring-2025",
+    "title": "UCLA Algebra Qualifying Exam, Spring 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2026/10/Algebra_Qual_Exam_26F.pdf",
+    "id": "ucla-qual-algebra-fall-2026",
+    "title": "UCLA Algebra Qualifying Exam, Fall 2026",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Algebra Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "algebra"
+    ],
+    "year": 2026,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-12S.pdf",
+    "id": "ucla-qual-analysis-spring-2012",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2012",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-13S.pdf",
+    "id": "ucla-qual-analysis-spring-2013",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-15S.pdf",
+    "id": "ucla-qual-analysis-spring-2015",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2015",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-16F.pdf",
+    "id": "ucla-qual-analysis-fall-2016",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-16S.pdf",
+    "id": "ucla-qual-analysis-spring-2016",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-17F.pdf",
+    "id": "ucla-qual-analysis-fall-2017",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-17S.pdf",
+    "id": "ucla-qual-analysis-spring-2017",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-18F.pdf",
+    "id": "ucla-qual-analysis-fall-2018",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-18S.pdf",
+    "id": "ucla-qual-analysis-spring-2018",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-19F.pdf",
+    "id": "ucla-qual-analysis-fall-2019",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-20F.pdf",
+    "id": "ucla-qual-analysis-fall-2020",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/analysis-20S.pdf",
+    "id": "ucla-qual-analysis-spring-2020",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/03/Analysis-F22.pdf",
+    "id": "ucla-qual-analysis-fall-2022",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2022",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2022,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/01/Analysis-qual-F23.pdf",
+    "id": "ucla-qual-analysis-fall-2023",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/09/Analysis-qual-23S-v3.pdf",
+    "id": "ucla-qual-analysis-spring-2023",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/10/Analysis_qual_F24.pdf",
+    "id": "ucla-qual-analysis-fall-2024",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2024",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2024,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/10/Analysis-F25.pdf",
+    "id": "ucla-qual-analysis-fall-2025",
+    "title": "UCLA Analysis Qualifying Exam, Fall 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/04/AnalysisQualMar2025.pdf",
+    "id": "ucla-qual-analysis-spring-2025",
+    "title": "UCLA Analysis Qualifying Exam, Spring 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Analysis Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-12S.pdf",
+    "id": "ucla-qual-ade-spring-2012",
+    "title": "UCLA ADE Qualifying Exam, Spring 2012",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-13F.pdf",
+    "id": "ucla-qual-ade-fall-2013",
+    "title": "UCLA ADE Qualifying Exam, Fall 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-13S.pdf",
+    "id": "ucla-qual-ade-spring-2013",
+    "title": "UCLA ADE Qualifying Exam, Spring 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-14F.pdf",
+    "id": "ucla-qual-ade-fall-2014",
+    "title": "UCLA ADE Qualifying Exam, Fall 2014",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-15S.pdf",
+    "id": "ucla-qual-ade-spring-2015",
+    "title": "UCLA ADE Qualifying Exam, Spring 2015",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2015,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-16F.pdf",
+    "id": "ucla-qual-ade-fall-2016",
+    "title": "UCLA ADE Qualifying Exam, Fall 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-17F.pdf",
+    "id": "ucla-qual-ade-fall-2017",
+    "title": "UCLA ADE Qualifying Exam, Fall 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-18F.pdf",
+    "id": "ucla-qual-ade-fall-2018",
+    "title": "UCLA ADE Qualifying Exam, Fall 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-19F.pdf",
+    "id": "ucla-qual-ade-fall-2019",
+    "title": "UCLA ADE Qualifying Exam, Fall 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2019,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/ade-20F.pdf",
+    "id": "ucla-qual-ade-fall-2020",
+    "title": "UCLA ADE Qualifying Exam, Fall 2020",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2020,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2022/09/ADE-spring2021.pdf",
+    "id": "ucla-qual-ade-spring-2021",
+    "title": "UCLA ADE Qualifying Exam, Spring 2021",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2021,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2024/01/ADE-qual-F23.pdf",
+    "id": "ucla-qual-ade-fall-2023",
+    "title": "UCLA ADE Qualifying Exam, Fall 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2023/09/ADE-qual-23S.pdf",
+    "id": "ucla-qual-ade-spring-2023",
+    "title": "UCLA ADE Qualifying Exam, Spring 2023",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2023,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/10/ADE-F25.pdf",
+    "id": "ucla-qual-ade-fall-2025",
+    "title": "UCLA ADE Qualifying Exam, Fall 2025",
+    "authors": [],
+    "course_code": null,
+    "course_title": "ADE Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "differential-equations",
+      "analysis"
+    ],
+    "year": 2025,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-12S.pdf",
+    "id": "ucla-qual-geometry-topology-spring-2012",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Spring 2012",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2012,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-13F.pdf",
+    "id": "ucla-qual-geometry-topology-fall-2013",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Fall 2013",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2013,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-14F.pdf",
+    "id": "ucla-qual-geometry-topology-fall-2014",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Fall 2014",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2014,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-16S.pdf",
+    "id": "ucla-qual-geometry-topology-spring-2016",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Spring 2016",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2016,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-17F.pdf",
+    "id": "ucla-qual-geometry-topology-fall-2017",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Fall 2017",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2017,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-18F.pdf",
+    "id": "ucla-qual-geometry-topology-fall-2018",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Fall 2018",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2018,
+    "priority": 60
+  },
+  {
+    "url": "https://ww3.math.ucla.edu/wp-content/uploads/2021/09/gt-19F.pdf",
+    "id": "ucla-qual-geometry-topology-fall-2019",
+    "title": "UCLA Geometry/Topology Qualifying Exam, Fall 2019",
+    "authors": [],
+    "course_code": null,
+    "course_title": "Geometry/Topology Qualifying Exam",
+    "level": "graduate",
+    "type": "exam",
+    "topics": [
+      "geometry",
+      "topology"
+    ],
+    "year": 2019,
+    "priority": 60
   }
 ]
