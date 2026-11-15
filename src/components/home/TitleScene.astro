@@ -2,7 +2,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { t, type Lang } from '../../i18n/strings';
-import { href, asset } from '../../lib/paths';
+import { asset } from '../../lib/paths';
 import { stats, universities } from '../../lib/data';
 import { stormPages, stormLayout } from '../../lib/home';
 import { TOPIC_BY_SLUG } from '../../lib/topics';
@@ -53,15 +53,6 @@ const hasSmall = (id: string) => existsSync(join(process.cwd(), 'public', small(
         <span class="ln" style="--i:2"><span><em>{s.hero.titleC}</em></span></span>
       </h1>
 
-      <div class="abstract" data-rise style="--d:.35s">
-        <p class="thm">{s.hero.abstract}</p>
-        <p class="lede">{s.hero.lede}</p>
-      </div>
-
-      <div class="ctas" data-rise style="--d:.5s">
-        <a class="btn btn-primary" href={href(lang, 'library')}>{s.hero.cta}<span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn" href={href(lang, 'about')}>{s.hero.ctaSecondary}</a>
-      </div>
     </div>
 
     <p class="cue mono" aria-hidden="true" data-fade><span class="cue-line"></span>{s.hero.scroll}</p>
@@ -127,8 +118,9 @@ const hasSmall = (id: string) => existsSync(join(process.cwd(), 'public', small(
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: var(--header-h);
-    gap: clamp(20px, 3vh, 36px);
+    /* Optical centre: the running line above and the scroll cue below balance the headline. */
+    padding-top: calc(var(--header-h) + 8px);
+    padding-bottom: 56px;
   }
   /* A pool of clean paper behind the type, so the pages never fight it. */
   .titlepage::before {
@@ -175,24 +167,6 @@ const hasSmall = (id: string) => existsSync(join(process.cwd(), 'public', small(
       transform: translateY(102%);
     }
   }
-  .abstract {
-    display: grid;
-    justify-items: center;
-    gap: 10px;
-    max-width: 46ch;
-  }
-  .abstract .thm::after {
-    display: none;
-  }
-  .abstract .lede {
-    max-width: none;
-  }
-  .ctas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
   .cue {
     position: absolute;
     left: 50%;
@@ -226,14 +200,6 @@ const hasSmall = (id: string) => existsSync(join(process.cwd(), 'public', small(
     }
     .running span:last-child {
       display: none;
-    }
-    .ctas {
-      flex-direction: column;
-      align-items: stretch;
-      width: min(100%, 320px);
-    }
-    .ctas .btn {
-      justify-content: center;
     }
   }
   @media (max-height: 700px) {

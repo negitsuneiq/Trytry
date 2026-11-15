@@ -1,8 +1,8 @@
 // Home page choreography. The page reads like a paper (title, definition,
-// lemma, proof, theorem, Q.E.D.) and the scroll turns its pages: the title
-// scene dollies through a desk of real first pages, the definition inks in
-// word by word, the departments run sideways, the proof's ribbons draw
-// themselves and the tombstone fills. Built inside gsap.matchMedia, so
+// lemma, theorem, Q.E.D.) and the scroll turns its pages: the title scene
+// dollies through a desk of real first pages, the definition inks in word
+// by word, the departments run sideways, the library follows as plain
+// document flow and the tombstone fills. Built inside gsap.matchMedia, so
 // reduced motion gets the static layout and every resize rebuilds cleanly.
 
 import { gsap } from 'gsap';
@@ -25,17 +25,16 @@ export function initHome(): Off | null {
     {
       motion: '(prefers-reduced-motion: no-preference)',
       reduce: '(prefers-reduced-motion: reduce)',
-      wide: '(min-width: 760px)',
     },
     (ctx) => {
-      const { reduce, wide } = ctx.conditions as Record<string, boolean>;
+      const { reduce } = ctx.conditions as Record<string, boolean>;
       if (reduce) return staticState(home);
-      const offs = [titleScene(home), definitionScene(home), departments(home), flow(home, wide), shelf(home), qed(home), margin(home)];
+      const offs = [titleScene(home), definitionScene(home), departments(home), qed(home), margin(home)];
       return () => offs.forEach((o) => o());
     },
   );
 
-  const offs = [flowFocus(home), shelfPreview(home)];
+  const offs = [watchLibrary(home)];
   // Web fonts change line heights, and every pin below them moves.
   document.fonts?.ready.then(() => ScrollTrigger.refresh());
 
@@ -221,91 +220,6 @@ function departments(home: HTMLElement): Off {
   };
 }
 
-// ── Proof: the panel opens and the ribbons draw ────────────────────────
-function flow(home: HTMLElement, wide: boolean): Off {
-  const stage = $('[data-flow-stage]', home)!;
-  const panel = $('[data-flow-panel]', stage)!;
-  gsap.fromTo(
-    panel,
-    { clipPath: 'inset(6% 4% 0% 4% round 32px)' },
-    { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: stage, start: 'top bottom', end: 'top top', scrub: true } },
-  );
-  const clip = $<SVGRectElement>('[data-flow-clip]', stage);
-  if (!wide || !clip) return () => gsap.set(panel, { clearProps: 'clipPath' });
-
-  const tl = gsap.timeline({ scrollTrigger: { trigger: stage, start: 'top top', end: '+=100%', pin: true, scrub: 0.6 } });
-  tl.from($$('.node.src', stage), { opacity: 0, x: 14, stagger: 0.03, duration: 0.25 }, 0)
-    .fromTo(clip, { attr: { width: 300 } }, { attr: { width: 1000 }, ease: 'power1.inOut', duration: 1 }, 0.15)
-    .from($$('.node.tgt', stage), { opacity: 0, x: -14, stagger: 0.03, duration: 0.25 }, 0.75);
-  return () => gsap.set(panel, { clearProps: 'clipPath' });
-}
-
-function flowFocus(home: HTMLElement): Off {
-  const svg = $<SVGSVGElement>('[data-flow]', home);
-  if (!svg) return () => {};
-  const ribs = $$<SVGPathElement>('.rib', svg);
-  const nodes = $$<SVGAElement>('[data-node]', svg);
-  const focus = (key?: string, side?: string) => {
-    svg.classList.toggle('has-focus', !!key);
-    const linked = new Set<string>();
-    for (const r of ribs) {
-      const on = !!key && (side === 's' ? r.dataset.s === key : r.dataset.t === key);
-      r.classList.toggle('on', on);
-      if (on) linked.add(r.dataset.s!).add(r.dataset.t!);
-    }
-    for (const n of nodes) n.classList.toggle('on', linked.has(n.dataset.node!));
-  };
-  const over = (e: Event) => {
-    const n = (e.target as Element).closest<SVGAElement>('[data-node]');
-    focus(n?.dataset.node, n?.dataset.side);
-  };
-  const out = () => focus();
-  svg.addEventListener('pointerover', over);
-  svg.addEventListener('pointerleave', out);
-  svg.addEventListener('focusin', over);
-  svg.addEventListener('focusout', out);
-  return () => {
-    svg.removeEventListener('pointerover', over);
-    svg.removeEventListener('pointerleave', out);
-    svg.removeEventListener('focusin', over);
-    svg.removeEventListener('focusout', out);
-  };
-}
-
-// ── Theorem: books rise onto the shelf ─────────────────────────────────────
-function shelf(home: HTMLElement): Off {
-  const box = $('[data-shelf]', home);
-  if (!box) return () => {};
-  gsap.from($$('.spines li', box), {
-    yPercent: 104,
-    ease: 'power3.out',
-    stagger: 0.07,
-    scrollTrigger: { trigger: box, start: 'top 85%', end: 'top 35%', scrub: 0.8 },
-  });
-  return () => {};
-}
-
-function shelfPreview(home: HTMLElement): Off {
-  const spines = $$<HTMLAnchorElement>('[data-book]', home);
-  const cards = $$('[data-card]', home);
-  if (!spines.length) return () => {};
-  const show = (i: string) => {
-    cards.forEach((c) => (c.hidden = c.dataset.card !== i));
-    spines.forEach((s) => s.classList.toggle('is-pulled', s.dataset.book === i));
-  };
-  const pick = (e: Event) => show((e.currentTarget as HTMLElement).dataset.book!);
-  spines.forEach((s) => {
-    s.addEventListener('pointerenter', pick);
-    s.addEventListener('focus', pick);
-  });
-  show('0');
-  return () =>
-    spines.forEach((s) => {
-      s.removeEventListener('pointerenter', pick);
-      s.removeEventListener('focus', pick);
-    });
-}
-
 // ── Q.E.D.: the tombstone fills ────────────────────────────────────────────
 function qed(home: HTMLElement): Off {
   const tomb = $('[data-tomb]', home);
@@ -342,4 +256,28 @@ function margin(home: HTMLElement): Off {
     onUpdate: (self) => fill.style.setProperty('--p', self.progress.toFixed(3)),
   });
   return () => {};
+}
+
+// ── Library: client-rendered, so the page height changes after load ────────
+// The grid arrives from /docs-index.json, and grows with "Show more" and with
+// every filter. Pins and the progress bar below/around it need fresh
+// measurements each time (Lenis follows the document height by itself).
+function watchLibrary(home: HTMLElement): Off {
+  const lib = $('[data-library]', home);
+  if (!lib || !('ResizeObserver' in window)) return () => {};
+  let timer = 0;
+  let last = home.offsetHeight;
+  const ro = new ResizeObserver(() => {
+    clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      if (Math.abs(home.offsetHeight - last) < 1) return;
+      last = home.offsetHeight;
+      ScrollTrigger.refresh();
+    }, 120);
+  });
+  ro.observe(lib);
+  return () => {
+    clearTimeout(timer);
+    ro.disconnect();
+  };
 }
