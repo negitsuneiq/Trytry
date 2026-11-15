@@ -29,6 +29,8 @@ export interface CardRec {
   d: string;
   /** position in the title-sorted order */
   n: number;
+  /** position in the default order (varied across universities and courses) */
+  o: number;
   /** slug of the course page, only when the document's course has one */
   k?: string;
   /** "code title" of the course, for search */

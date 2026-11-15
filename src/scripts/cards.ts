@@ -39,7 +39,7 @@ export function cardHtml(r: CardRec, cfg: CardCfg, heading: 'h2' | 'h3' = 'h3'):
   const uni = cfg.unis[r.u]?.[0] ?? r.u;
   const lvl = cfg.levels[r.l] + (r.y ? ` · ${r.y}` : '');
   return (
-    `<article class="card doc-card"><a href="${cfg.doc}/${esc(r.i)}/" class="hit">` +
+    `<article class="card doc-card"><a href="${cfg.doc}${esc(r.i)}/" class="hit">` +
     `<div class="cover" data-kind="${r.th ? 'thumb' : 'art'}">${cover}<span class="code mono" aria-hidden="true">${esc(r.cc ?? msc + '-XX')}</span></div>` +
     `<div class="body"><p class="mono meta"><span lang="en">${esc(uni)}</span><span aria-hidden="true">·</span><span>${esc(cfg.types[r.ty])}</span></p>` +
     `<${heading} class="title">${r.x ?? esc(r.t)}</${heading}>` +

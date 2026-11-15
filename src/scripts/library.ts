@@ -3,12 +3,10 @@
 // of results are created (in batches, see pager.ts). On the /library/ page every control is
 // mirrored into the URL (data-url-state); embedded on the home page the state stays in memory.
 
-import MiniSearch from 'minisearch';
 import { appendCards, loadIndex, readCfg } from './cards';
 import { BATCH, createPager } from './pager';
+import { buildIndex, parseQuery, scoreDoc } from './search';
 import type { CardRec } from '../lib/cardRec';
-
-type Rec = { id: string; title: string; authors: string; course: string; topics: string; university: string };
 
 const FACETS = ['u', 't', 'l', 'ty', 'li'] as const;
 const HAVE: Record<(typeof FACETS)[number], (r: CardRec) => string[]> = {
@@ -30,10 +28,12 @@ export function initLibrary() {
     () => {
       grid.setAttribute('aria-busy', 'false');
       grid.innerHTML = '';
-      const p = root.querySelector<HTMLElement>('[data-none]')!;
+      const box = root.querySelector<HTMLElement>('[data-none]')!;
+      const p = box.querySelector<HTMLElement>('[data-none-msg]')!;
       p.textContent = cfg.ui.error;
-      p.setAttribute('role', 'alert');
-      p.hidden = false;
+      box.querySelectorAll('[data-none-extra]').forEach((e) => ((e as HTMLElement).hidden = true));
+      box.setAttribute('role', 'alert');
+      box.hidden = false;
     },
   );
 }
@@ -42,21 +42,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
   const urlState = root.dataset.urlState === '1';
   const heading = root.dataset.cardHeading === 'h3' ? 'h3' : 'h2';
   const rank = (r: CardRec) => cfg.unis[r.u]?.[1] ?? 99;
-  const topicNames = (r: CardRec) => r.p.map((tp) => `${cfg.topics[tp]?.[0] ?? tp} ${cfg.topics[tp]?.[1] ?? tp}`).join(' ');
-  const records: Rec[] = recs.map((r) => ({
-    id: r.i,
-    title: r.t.replace(/\$([^$]+)\$/g, '$1'),
-    authors: (r.a ?? []).join(' '),
-    course: r.c ?? '',
-    topics: topicNames(r),
-    university: cfg.unis[r.u]?.[0] ?? r.u,
-  }));
-  const ms = new MiniSearch<Rec>({
-    fields: ['title', 'authors', 'course', 'topics', 'university'],
-    storeFields: [],
-    searchOptions: { boost: { title: 3, course: 2, authors: 2 }, prefix: true, fuzzy: 0.2, combineWith: 'AND' },
-  });
-  ms.addAll(records);
+  const docs = buildIndex(recs, cfg);
 
   const q = root.querySelector<HTMLInputElement>('[data-q]')!;
   const sorts = [...root.querySelectorAll<HTMLInputElement>('[data-sort]')];
@@ -71,6 +57,8 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     },
   });
   const none = root.querySelector<HTMLElement>('[data-none]')!;
+  const clearQ = root.querySelector<HTMLButtonElement>('[data-clear-q]')!;
+  const clearF = root.querySelector<HTMLButtonElement>('[data-clear-f]')!;
   const toggle = root.querySelector<HTMLButtonElement>('[data-fs-toggle]')!;
   const panel = root.querySelector<HTMLElement>('[data-panel]')!;
   const activeCount = root.querySelector<HTMLElement>('[data-active-count]')!;
@@ -93,13 +81,19 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
 
   const apply = () => {
     const query = q.value.trim();
+    const parsed = parseQuery(query);
     const scores = new Map<string, number>();
-    if (query) for (const r of ms.search(query)) scores.set(r.id as string, r.score);
+    if (parsed) {
+      for (let k = 0; k < recs.length; k++) {
+        const sc = scoreDoc(docs[k], parsed);
+        if (sc >= 0) scores.set(recs[k].i, sc);
+      }
+    }
 
     const active = Object.fromEntries(FACETS.map((k) => [k, selected(k)]));
     const visible: CardRec[] = [];
     for (const r of recs) {
-      let ok = !query || scores.has(r.i);
+      let ok = !parsed || scores.has(r.i);
       if (ok && hosted.checked) ok = r.h === 1;
       for (const k of FACETS) {
         if (!ok || !active[k].length) continue;
@@ -110,9 +104,11 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     }
 
     const by = sortValue();
+    // A year equal to the year of access is the crawl date, not the document's.
+    const year = (r: CardRec) => (r.y && r.y < Number(r.d.slice(0, 4)) ? r.y : 0);
     const cmp: Record<string, (a: CardRec, b: CardRec) => number> = {
-      relevance: (a, b) => (scores.get(b.i) ?? 0) - (scores.get(a.i) ?? 0) || rank(a) - rank(b),
-      newest: (a, b) => (b.y ?? 0) - (a.y ?? 0) || (a.d < b.d ? 1 : a.d > b.d ? -1 : 0),
+      relevance: (a, b) => (scores.get(b.i) ?? 0) - (scores.get(a.i) ?? 0) || a.o - b.o,
+      newest: (a, b) => year(b) - year(a) || a.o - b.o,
       title: (a, b) => a.n - b.n,
       rank: (a, b) => rank(a) - rank(b) || a.n - b.n,
     };
@@ -148,6 +144,8 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     );
     activeCount.textContent = String(picked.length);
     activeCount.hidden = picked.length === 0;
+    clearQ.hidden = !query;
+    clearF.hidden = picked.length === 0;
 
     // controls → URL
     if (!urlState) return;
@@ -187,6 +185,16 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
   };
   toggle.addEventListener('click', () => setOpen(!isOpen()));
   root.querySelectorAll('[data-fs-close]').forEach((b) => b.addEventListener('click', () => setOpen(false, true)));
+  clearQ.addEventListener('click', () => {
+    q.value = '';
+    apply();
+    q.focus();
+  });
+  clearF.addEventListener('click', () => {
+    boxes.forEach((b) => (b.checked = false));
+    hosted.checked = false;
+    apply();
+  });
   root.querySelector('[data-clear]')!.addEventListener('click', () => {
     boxes.forEach((b) => (b.checked = false));
     hosted.checked = false;

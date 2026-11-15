@@ -22,9 +22,9 @@ const s = t(lang);
     <QedScene lang={lang} />
 
     <aside class="margin" aria-hidden="true">
-      <span class="mono m-label" data-margin-label>§ 1 · {s.home.margin.title}</span>
+      <span class="mono m-label" data-margin-label>§ 0 · {s.home.margin.title}</span>
       <span class="m-rule"><span class="m-fill" data-margin-fill></span></span>
-      <span class="mono m-page" data-margin-page>1 / 5</span>
+      <span class="mono m-page" data-margin-page>0 / 3</span>
     </aside>
   </div>
 </Base>
@@ -82,7 +82,12 @@ const s = t(lang);
       writing-mode: vertical-rl;
       color: var(--fg-muted);
       pointer-events: none;
-      transition: color 0.4s;
+      transition:
+        color 0.4s,
+        opacity 0.4s;
+    }
+    .margin.is-off {
+      opacity: 0;
     }
   }
   .m-rule {
