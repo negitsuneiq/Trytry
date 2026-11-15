@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npx astro check
+
+      - name: Validate data
+        run: npm run validate
+
+      # `npm run build` would also render PDF thumbnails (needs poppler); the site builds without them
+      # (covers are generated for documents without a thumbnail), so this is the cheapest full build.
+      - name: Build
+        run: npx astro build
+        env:
+          SITE: https://example.github.io
+          BASE_PATH: /repo/

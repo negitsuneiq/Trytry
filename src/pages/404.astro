@@ -1,27 +1,106 @@
 ---
 import Base from '../layouts/Base.astro';
 import { t } from '../i18n/strings';
-import { href } from '../lib/paths';
+import { href, asset } from '../lib/paths';
 import { tex } from '../lib/math';
 
-// GitHub Pages serves one 404 for every path; it is rendered in English and
-// links to both languages.
-const s = t('en');
+// GitHub Pages serves one 404 for every path. The page is built in English, and
+// a small script reads the language prefix of the URL (/tr/..., /en/...) to show
+// the matching text, links and header/footer labels. Without JavaScript the
+// English text stays, with a Turkish line below.
+const en = t('en');
 const tr = t('tr');
+
+// English -> Turkish labels for the header and footer that Base renders in English.
+const pairs: Record<string, string> = {
+  [en.a11y.skip]: tr.a11y.skip,
+  [en.a11y.langSwitch]: tr.a11y.langSwitch,
+  [en.a11y.menu]: tr.a11y.menu,
+  [en.a11y.close]: tr.a11y.close,
+  [en.a11y.navPrimary]: tr.a11y.navPrimary,
+  [en.a11y.navMobile]: tr.a11y.navMobile,
+  [en.a11y.navFooter]: tr.a11y.navFooter,
+  [en.nav.library]: tr.nav.library,
+  [en.nav.books]: tr.nav.books,
+  [en.nav.universities]: tr.nav.universities,
+  [en.nav.topics]: tr.nav.topics,
+  [en.nav.courses]: tr.nav.courses,
+  [en.nav.about]: tr.nav.about,
+  [en.nav.license]: tr.nav.license,
+  [en.footer.tagline]: tr.footer.tagline,
+  [en.footer.noAds]: tr.footer.noAds,
+  [en.footer.built]: tr.footer.built,
+  [en.footer.rankingCredit]: tr.footer.rankingCredit,
+};
+const cfg = { base: asset('').replace(/\/$/, ''), pairs, title: tr.notFound.title, skipTitle: '404' };
 ---
 
 <Base lang="en" title="404">
+  <meta slot="head" name="robots" content="noindex" />
   <section class="page-top nf">
     <div class="wrap">
       <div class="eq" set:html={tex(String.raw`\lim_{x \to \text{page}} f(x) = \text{undefined}`, true)} />
-      <h1 class="display h-mega">{s.notFound.title}</h1>
-      <p class="lede">{s.notFound.body} <span lang="tr">{tr.notFound.body}</span></p>
-      <div class="ctas">
-        <a class="btn btn-primary" href={href('en', 'library')}>{s.notFound.back}</a>
-        <a class="btn" href={href('tr', 'library')} lang="tr">{tr.notFound.back}</a>
+      <div data-nf="en">
+        <h1 class="display h-mega">{en.notFound.title}</h1>
+        <p class="lede">{en.notFound.body}</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href={href('en', 'library')}>{en.notFound.back}</a>
+          <a class="btn" href={href('en')}>{en.nav.home}</a>
+        </div>
       </div>
+      <div data-nf="tr" lang="tr" hidden>
+        <h1 class="display h-mega">{tr.notFound.title}</h1>
+        <p class="lede">{tr.notFound.body}</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href={href('tr', 'library')}>{tr.notFound.back}</a>
+          <a class="btn" href={href('tr')}>{tr.nav.home}</a>
+        </div>
+      </div>
+      <noscript>
+        <p class="lede" lang="tr">{tr.notFound.body} <a class="u" href={href('tr', 'library')}>{tr.notFound.back}</a></p>
+      </noscript>
     </div>
   </section>
+  <script is:inline define:vars={{ cfg }}>
+    (function () {
+      var m = location.pathname.indexOf(cfg.base) === 0 ? location.pathname.slice(cfg.base.length) : location.pathname;
+      if (!/^\/tr(\/|$)/.test(m)) return;
+      var root = document.documentElement;
+      root.lang = 'tr';
+      var en = document.querySelector('[data-nf="en"]');
+      var tr = document.querySelector('[data-nf="tr"]');
+      if (en) en.hidden = true;
+      if (tr) tr.hidden = false;
+      document.title = document.title.replace(/^404/, '404 · ' + cfg.title.replace(/\.$/, ''));
+      var tx = function (v) {
+        var k = v.trim();
+        if (cfg.pairs[k]) return v.replace(k, cfg.pairs[k]);
+        if (k.slice(-1) === ':' && cfg.pairs[k.slice(0, -1)]) return v.replace(k, cfg.pairs[k.slice(0, -1)] + ':');
+        return v;
+      };
+      var scope = [document.querySelector('.skip'), document.querySelector('.site-header'), document.querySelector('.site-footer')];
+      scope.forEach(function (el) {
+        if (!el) return;
+        var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        var n;
+        while ((n = w.nextNode())) n.nodeValue = tx(n.nodeValue);
+        el.querySelectorAll('[aria-label]').forEach(function (a) {
+          a.setAttribute('aria-label', tx(a.getAttribute('aria-label')));
+        });
+        el.querySelectorAll('a[href]').forEach(function (a) {
+          if (a.hasAttribute('data-lang-link')) return;
+          var h = a.getAttribute('href');
+          if (h && h.indexOf(cfg.base + '/en/') === 0) a.setAttribute('href', cfg.base + '/tr/' + h.slice(cfg.base.length + 4));
+        });
+        el.querySelectorAll('[data-lang-link]').forEach(function (a) {
+          var on = a.getAttribute('data-lang-link') === 'tr';
+          a.classList.toggle('on', on);
+          if (on) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    })();
+  </script>
 </Base>
 
 <style>
@@ -45,9 +124,12 @@ const tr = t('tr');
     margin-top: 24px;
     max-width: 52ch;
   }
-  .lede span {
-    display: block;
-    margin-top: 8px;
+  .u {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  [hidden] {
+    display: none !important;
   }
   .ctas {
     display: flex;

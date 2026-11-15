@@ -2,7 +2,8 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { t, type Lang } from '../../i18n/strings';
-import { asset } from '../../lib/paths';
+import { asset, href } from '../../lib/paths';
+import { books, stats } from '../../lib/data';
 import { typeCounts, samplesOfType } from '../../lib/home';
 import type { DocType } from '../../lib/schema';
 
@@ -12,6 +13,10 @@ interface Props {
 const { lang } = Astro.props;
 const s = t(lang);
 const types: DocType[] = ['lecture-notes', 'problem-set', 'exam', 'book'];
+// The rows add up to the headline total: four types, plus "other" below them.
+const label = (ty: DocType) => (ty === 'book' ? s.home.tally.book : s.types[ty]);
+const loc = lang === 'tr' ? 'tr-TR' : 'en-GB';
+const fmt = (n: number) => n.toLocaleString(loc);
 const small = (id: string) => `thumbs/sm/${id}.webp`;
 const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)));
 ---
@@ -43,8 +48,8 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
         {
           types.map((ty) => (
             <div class="row" data-tally={ty}>
-              <dt class="mono">{s.types[ty]}</dt>
-              <dd class="display n">{typeCounts[ty]}</dd>
+              <dt class="mono">{label(ty)}</dt>
+              <dd class="display n">{fmt(typeCounts[ty])}</dd>
               <dd class="fan" aria-hidden="true">
                 {samplesOfType(ty).map((d, i) =>
                   has(d.id) ? <img class="sheet" src={asset(small(d.id))} alt="" width="240" height="320" loading="lazy" decoding="async" style={`--i:${i}`} /> : null,
@@ -53,6 +58,19 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
             </div>
           ))
         }
+        <div class="extra other">
+          <dt class="mono">{s.home.tally.other}</dt>
+          <dd class="display">{fmt(typeCounts.other)}</dd>
+        </div>
+        <div class="extra total">
+          <dt class="mono">{s.home.tally.total}</dt>
+          <dd class="display">{fmt(stats.documents)}</dd>
+        </div>
+        <div class="extra books">
+          <dt class="mono"><a href={href(lang, 'books')}>{s.home.tally.textbooks} <span aria-hidden="true">→</span></a></dt>
+          <dd class="display">{fmt(books.length)}</dd>
+          <dd class="note mono-plain">{s.home.tally.textbooksNote}</dd>
+        </div>
       </dl>
     </div>
   </div>
@@ -168,6 +186,56 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
     transform-origin: 50% 100%;
     transition: transform 0.6s var(--ease-out);
   }
+  /* Compact rows under the four types: the remainder, the sum, and the
+     separate textbook collection. They stay fully visible while the sentence
+     highlights a type. */
+  .extra {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 2px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .extra dt {
+    color: var(--fg-muted);
+  }
+  .extra dd {
+    font-size: 1.35rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .total {
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .total dt,
+  .total dd {
+    color: var(--fg);
+  }
+  .books {
+    margin-top: 18px;
+    border-top: 1px solid var(--line-strong);
+    padding-top: 14px;
+    transition: color 0.25s;
+  }
+  .books dt a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 4px;
+  }
+  .books dt a:hover,
+  .books dt a:focus-visible {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  .books .note {
+    grid-column: 1 / -1;
+    text-align: left;
+    font-size: 0.8125rem;
+    color: var(--fg-muted);
+    line-height: 1.4;
+  }
   .row.is-on .fan img {
     transform: rotate(calc((var(--i) - 1) * 10deg)) translateX(calc(var(--i) * 4px));
   }
@@ -191,6 +259,17 @@ const has = (id: string) => existsSync(join(process.cwd(), 'public', small(id)))
       font-size: 2.2rem;
     }
     .fan {
+      display: none;
+    }
+    .extra {
+      padding: 8px 0;
+    }
+    .books {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 10px;
+    }
+    .books .note {
       display: none;
     }
   }

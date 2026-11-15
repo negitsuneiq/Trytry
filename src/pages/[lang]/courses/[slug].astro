@@ -8,7 +8,7 @@ import { universityBySlug } from '../../../lib/data';
 import { DOC_TYPES } from '../../../lib/schema';
 import { topicName } from '../../../lib/topics';
 import { href } from '../../../lib/paths';
-import { authorsLine } from '../../../lib/format';
+import { authorsLine, yearRange } from '../../../lib/format';
 
 export function getStaticPaths() {
   return langCross(courses.map((course) => ({ params: { slug: course.slug }, props: { course } })));
@@ -23,7 +23,7 @@ const groups = DOC_TYPES.map((ty) => ({
   ty,
   rows: course.docs.filter((d) => d.type === ty).map((doc) => ({ doc, label: course.labels[doc.id] })),
 })).filter((g) => g.rows.length > 0);
-const years = course.years ? (course.years[0] === course.years[1] ? String(course.years[0]) : `${course.years[0]}–${course.years[1]}`) : null;
+const years = yearRange(course.docs);
 const heading = [course.code, course.title].filter(Boolean).join(' ');
 const titleLong = course.title.length > 48;
 ---

@@ -498,6 +498,18 @@ const groups = [
   .grid > :global([hidden]) {
     display: none;
   }
+  /* Phones: single column of compact cards (see styles/card.css). */
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+    }
+    .sk {
+      aspect-ratio: auto;
+      height: 149px;
+      border-width: 0 0 1px;
+    }
+  }
   /* Placeholder cards until the index arrives: same cell shape, so nothing jumps. */
   .sk {
     aspect-ratio: 3 / 4;

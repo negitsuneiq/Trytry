@@ -609,3 +609,67 @@ input[type='search']::-webkit-search-cancel-button {
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M5 5l14 14M19 5L5 19'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M5 5l14 14M19 5L5 19'/%3E%3C/svg%3E") center / contain no-repeat;
 }
+
+/* ── Print: the document page on white paper, without site chrome ───────── */
+@media print {
+  :root,
+  .ink {
+    --bg: #fff;
+    --bg-raised: #fff;
+    --bg-sunken: #fff;
+    --fg: #000;
+    --fg-muted: #000;
+    --fg-faint: #000;
+    --line: #999;
+    --line-strong: #999;
+    --accent: #000;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .site-header,
+  .site-footer,
+  .progress,
+  .skip,
+  .menu,
+  .margin,
+  .crumbs,
+  .similar,
+  .pn,
+  button,
+  .btn,
+  .ctas,
+  [data-library] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  [data-reveal],
+  [data-rise],
+  .split-line > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  .doc a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    word-break: break-all;
+    color: #000;
+  }
+  .doc a[href^='http'].btn::after {
+    content: none;
+  }
+}

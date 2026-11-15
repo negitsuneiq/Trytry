@@ -1,11 +1,12 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import 'katex/dist/katex.min.css';
+import katexCss from 'katex/dist/katex.min.css?url';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { t, type Lang } from '../i18n/strings';
-import { swapLang, asset } from '../lib/paths';
+import { swapLang, asset, href } from '../lib/paths';
+import { docFromPath, documentJsonLd, websiteJsonLd } from '../lib/jsonld';
 import displayLatin from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
 import displayLatinExt from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-ext-wght-normal.woff2?url';
 import bodyLatin from '@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url';
@@ -14,15 +15,41 @@ interface Props {
   lang: Lang;
   title?: string;
   description?: string;
+  /** Extra schema.org objects; the layout already adds WebSite (home) and the document record (document pages). */
+  jsonLd?: object | object[];
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, jsonLd } = Astro.props;
 const s = t(lang);
 const fullTitle = title ? `${title} — ${s.meta.title}` : `${s.meta.title} — ${s.hero.eyebrow}`;
-const desc = description ?? s.meta.description;
+// Search results cut titles at about 600px (~65 characters) and descriptions at ~160.
+const cut = (text: string, max: number) => {
+  const flat = text.replace(/\s+/g, ' ').trim();
+  if (flat.length <= max) return flat;
+  const head = flat.slice(0, max - 1);
+  const sp = head.lastIndexOf(' ');
+  return (sp > max * 0.6 ? head.slice(0, sp) : head).replace(/[\s,;:.—-]+$/, '') + '…';
+};
+const suffix = ` — ${s.meta.title}`;
+const shortTitle = title && fullTitle.length > 65 ? cut(title, 65 - suffix.length) + suffix : cut(fullTitle, 65);
+const desc = cut(description ?? s.meta.description, 160);
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site);
 const alt = (l: Lang) => new URL(swapLang(path, l), Astro.site).href;
+const abs = (p: string) => new URL(p, Astro.site).href;
+const ogImage = abs(asset('og.png'));
+const isHome = path.replace(/\/$/, '') === href(lang).replace(/\/$/, '');
+const doc = docFromPath(path, import.meta.env.BASE_URL);
+const ld = [
+  ...(isHome ? [websiteJsonLd(lang, canonical.href, abs(href(lang, 'library')))] : []),
+  ...(doc ? [documentJsonLd(doc, canonical.href)] : []),
+  ...(jsonLd ? [jsonLd].flat() : []),
+];
+const ldJson = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
+// KaTeX's stylesheet (and its fonts) is linked only on pages whose HTML contains rendered math;
+// cards that arrive later from the index load it on demand (scripts/app.ts).
+const body = await Astro.slots.render('default');
+const hasMath = body.includes('class="katex');
 // The display face draws the LCP headline; Turkish text also needs latin-ext.
 const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] : [displayLatin, bodyLatin];
 ---
@@ -32,12 +59,13 @@ const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>{fullTitle}</title>
+    <title>{shortTitle}</title>
     <meta name="description" content={desc} />
     <link rel="canonical" href={canonical.href} />
     <link rel="alternate" hreflang="en" href={alt('en')} />
     <link rel="alternate" hreflang="tr" href={alt('tr')} />
-    <link rel="alternate" hreflang="x-default" href={new URL(asset(''), Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={abs(asset(''))} />
+    <link rel="sitemap" type="application/xml" href={abs(asset('sitemap.xml'))} />
     <meta name="theme-color" content="#f2eee5" />
     <meta name="color-scheme" content="light" />
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
@@ -47,6 +75,19 @@ const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] 
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical.href} />
     <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_GB'} />
+    <meta property="og:locale:alternate" content={lang === 'tr' ? 'en_GB' : 'tr_TR'} />
+    <meta property="og:site_name" content={s.meta.title} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={s.meta.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={cut(fullTitle, 70)} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
+    {hasMath && <link rel="stylesheet" href={katexCss} data-katex />}
+    {ld.map((o) => <script type="application/ld+json" set:html={ldJson(o)} />)}
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
@@ -57,7 +98,7 @@ const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] 
     <a class="skip" href="#main">{s.a11y.skip}</a>
     <Header lang={lang} />
     <main id="main" tabindex="-1">
-      <slot />
+      <Fragment set:html={body} />
     </main>
     <Footer lang={lang} />
     <div class="progress" aria-hidden="true" data-progress></div>

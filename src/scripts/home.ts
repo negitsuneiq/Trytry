@@ -12,6 +12,18 @@ import { SplitText } from 'gsap/SplitText';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 type Off = () => void;
+
+let driven = false;
+/** Lenis runs on GSAP's ticker here, so ScrollTrigger follows its smoothed scroll. Called once by app.ts. */
+export function driveLenis(lenis: { raf(t: number): void; on(ev: 'scroll', fn: () => void): void }) {
+  if (driven) return;
+  driven = true;
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+export const refreshScroll = () => ScrollTrigger.refresh();
+
 const $ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector<T>(sel);
 const $$ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document) => [...root.querySelectorAll<T>(sel)];
 /** Scroll distance of the rail pin per pixel of sideways travel (was 0.8). */

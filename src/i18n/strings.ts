@@ -45,16 +45,10 @@ const en = {
     hosted: 'Hosted here',
   },
   home: {
-    topicsTitle: 'Featured topics',
-    topicsLede: 'Grouped by the top-level areas of the Mathematics Subject Classification (MSC2020).',
-    universitiesTitle: 'University directory',
-    universitiesLede: 'Nineteen universities from the top twenty of the QS World University Rankings by Subject: Mathematics.',
-    recentTitle: 'Recently added',
-    viewAll: 'View all',
     docsCount: (n: number) => (n === 1 ? '1 document' : `${n} documents`),
-    pages: (n: number) => `${n} pp.`,
     margin: { title: 'Title', definition: 'Definition', departments: 'Lemma', library: 'Theorem', qed: 'Q.E.D.' },
     defLabel: 'Definition',
+    tally: { book: 'Book-length notes', other: 'Other', total: 'Documents in all', textbooks: 'Open textbooks', textbooksNote: 'A separate collection, linked from here' },
     definition: [
       { t: 'Open Lemma is a non-commercial library of the ' },
       { t: 'lecture notes', term: 'lecture-notes' },
@@ -63,8 +57,8 @@ const en = {
       { t: ', ' },
       { t: 'exams', term: 'exam' },
       { t: ' and ' },
-      { t: 'books', term: 'book' },
-      { t: ' that the world’s best universities in mathematics give away, each file checked one at a time before it reaches the shelves.' },
+      { t: 'book-length notes', term: 'book' },
+      { t: ' that the world’s best universities in mathematics give away, collected from their public pages and reviewed before they are listed.' },
     ],
     deptLabel: 'Lemma',
     deptTitle: 'Nineteen universities, in ranking order.',
@@ -80,7 +74,7 @@ const en = {
   empty: {
     title: 'The shelves are still empty.',
     body:
-      'No document has passed verification yet. Every entry must be opened, checked for language and licence, and confirmed reachable before it appears here.',
+      'There are no documents in this list yet. Documents are collected automatically from public university pages and reviewed before they are listed.',
   },
   pager: {
     showMore: 'Show more',
@@ -148,7 +142,11 @@ const en = {
     statusUnchecked: 'Not yet checked',
     similar: 'Similar documents',
     externalNote:
-      'This document has no licence that permits redistribution, so it is not stored here. The link opens the author’s original copy.',
+      'This file lives on the university’s own site. Its licence does not let us host a copy, so we only link to it.',
+    preview: 'Preview',
+    previewHide: 'Hide preview',
+    previewTitle: (title: string) => `Preview of ${title}`,
+    previewFallback: 'If the preview does not show, open the file directly:',
     hostedNote: 'An unmodified copy is stored here under the licence above. All rights not granted by that licence remain with the author.',
   },
   university: {
@@ -234,24 +232,27 @@ const en = {
   about: {
     title: 'About',
     lede: 'Open Lemma gathers the mathematics that great departments already give away, and puts it in one quiet, searchable room.',
+    counts: (docs: string, hosted: string, linked: string, courses: string, books: string) =>
+      `Right now: ${docs} documents (${hosted} hosted here, ${linked} linked to the university’s site), ${courses} courses and ${books} open textbooks.`,
     sections: [
       {
         h: 'What is here',
-        p: 'Official teaching material in English: lecture notes, problem sets, exams with solutions, and books that faculty publish freely on their own pages. Student homework is excluded. Every file is a PDF whose language was checked by extracting text from its first pages.',
+        p: 'Teaching material in English from the mathematics departments of leading universities: lecture notes, problem sets, exams (often with solutions) and books that lecturers publish freely on their own pages. Student homework is not included.',
       },
       {
-        h: 'How it was gathered',
-        p: 'A polite crawler visited only public pages, obeyed robots.txt, waited at least two seconds between requests to the same host, and identified itself with a descriptive user agent. It never entered learning-management systems such as Canvas, Moodle or Blackboard, and never tried to get past a login or paywall. Duplicates were removed by SHA-256 hash and title similarity.',
+        h: 'How it was collected',
+        p: 'We only used pages that anyone can open. We never logged in anywhere, never entered course systems such as Canvas, Moodle or Blackboard, and never tried to get around a paywall. A program visited those pages slowly, so as not to burden the sites, and what it found was reviewed before it was listed. Only English-language material is included.',
       },
       {
-        h: 'Hosted or linked',
-        p: 'A document is stored here only when its own licence, stated for that file or its course, permits redistribution. Everything else appears as a catalogue entry that links to the original. Links are re-checked every month.',
+        h: 'Hosted here or linked',
+        p: 'A document is stored on this site only when its own licence allows it to be redistributed. For everything else we link to the original page instead. Links are checked again every month.',
       },
       {
         h: 'Non-commercial, always',
-        p: 'Some hosted material carries a NonCommercial licence, so this site has no advertising, no paid tiers and no tracking.',
+        p: 'Some of the hosted material carries a NonCommercial licence, so this site has no advertising, no paid tiers and no tracking.',
       },
     ],
+    takedown: { h: 'Removal requests', p: 'If you wrote something listed here, or hold the rights to it, you can ask us to remove it or correct the entry.', link: 'How to ask' },
     rankingNote: 'University selection',
     rankingWhy: 'Every university in the top twenty of this ranking that publishes open teaching material in English is included. One is left out because none of its material is public, in English and reachable without a login.',
   },
@@ -332,16 +333,10 @@ const tr: Dict = {
     hosted: 'Burada barındırılan',
   },
   home: {
-    topicsTitle: 'Öne çıkan konular',
-    topicsLede: 'Matematik Konu Sınıflandırması’nın (MSC2020) ana alanlarına göre gruplandı.',
-    universitiesTitle: 'Üniversite dizini',
-    universitiesLede: 'QS World University Rankings by Subject: Mathematics sıralamasının ilk yirmisinden on dokuz üniversite.',
-    recentTitle: 'Son eklenenler',
-    viewAll: 'Tümünü gör',
     docsCount: (n: number) => `${n} belge`,
-    pages: (n: number) => `${n} s.`,
     margin: { title: 'Başlık', definition: 'Tanım', departments: 'Lemma', library: 'Teorem', qed: 'Q.E.D.' },
     defLabel: 'Tanım',
+    tally: { book: 'Kitap boyu notlar', other: 'Diğer', total: 'Toplam belge', textbooks: 'Açık ders kitapları', textbooksNote: 'Ayrı bir koleksiyon, buradan bağlantı verilir' },
     definition: [
       { t: 'Open Lemma, matematikte dünyanın en iyi üniversitelerinin herkese açtığı ' },
       { t: 'ders notlarını', term: 'lecture-notes' },
@@ -350,8 +345,8 @@ const tr: Dict = {
       { t: ', ' },
       { t: 'sınavları', term: 'exam' },
       { t: ' ve ' },
-      { t: 'kitapları', term: 'book' },
-      { t: ' bir araya getiren, ticari olmayan bir kütüphanedir. Her dosya rafa konmadan önce tek tek incelenir.' },
+      { t: 'kitap boyu notları', term: 'book' },
+      { t: ' bir araya getiren, ticari olmayan bir kütüphanedir. Dosyalar herkese açık üniversite sayfalarından toplanır ve listelenmeden önce gözden geçirilir.' },
     ],
     deptLabel: 'Lemma',
     deptTitle: 'On dokuz üniversite, sıralamaya göre.',
@@ -360,14 +355,14 @@ const tr: Dict = {
     deptScroll: 'Kaydırmaya devam edin: çizgi yana doğru ilerler.',
     libLabel: 'Teorem',
     libTitle: 'Bütün kütüphane, tek sayfada.',
-    libLede: 'Başlık, yazar, ders ve konuya göre arayın, sonra süzgeçlerle daraltın.',
+    libLede: 'Başlık, yazar, ders ve konuya göre arayın, sonra filtrelerle daraltın.',
     qedA: 'İspat burada bitiyor.',
     qedB: 'Okuma sizin.',
   },
   empty: {
     title: 'Raflar henüz boş.',
     body:
-      'Henüz doğrulamadan geçen bir belge yok. Her kayıt burada görünmeden önce açılmalı, dili ve lisansı kontrol edilmeli ve erişilebilir olduğu teyit edilmeli.',
+      'Bu listede henüz belge yok. Belgeler herkese açık üniversite sayfalarından otomatik toplanır ve listelenmeden önce gözden geçirilir.',
   },
   pager: {
     showMore: 'Daha fazla göster',
@@ -386,12 +381,12 @@ const tr: Dict = {
     removeFilter: 'Filtreyi kaldır',
     university: 'Üniversite',
     topic: 'Konu',
-    level: 'Seviye',
+    level: 'Düzey',
     type: 'Tür',
     license: 'Lisans',
     hostedOnly: 'Sadece burada barındırılanlar',
     sort: 'Sırala',
-    sortRelevance: 'İlgi düzeyi',
+    sortRelevance: 'En ilgili',
     sortNewest: 'En yeni',
     sortTitle: 'Başlık A–Z',
     sortRank: 'Üniversite sırası',
@@ -402,7 +397,7 @@ const tr: Dict = {
     clearSearch: 'Aramayı temizle',
     showResults: (n: number) => `${n} sonucu göster`,
   },
-  levels: { undergraduate: 'Lisans düzeyi', graduate: 'Lisansüstü' },
+  levels: { undergraduate: 'Lisans dersi', graduate: 'Lisansüstü dersi' },
   licenseStatus: { unknown: 'Lisans belirtilmemiş', 'all-rights-reserved': 'Tüm hakları saklıdır' },
   types: {
     'lecture-notes': 'Ders notu',
@@ -420,7 +415,7 @@ const tr: Dict = {
     authors: 'Yazarlar',
     university: 'Üniversite',
     course: 'Ders',
-    level: 'Seviye',
+    level: 'Düzey',
     type: 'Tür',
     topics: 'Konular',
     year: 'Yıl',
@@ -435,7 +430,11 @@ const tr: Dict = {
     statusUnchecked: 'Henüz kontrol edilmedi',
     similar: 'Benzer belgeler',
     externalNote:
-      'Bu belgenin yeniden dağıtıma izin veren bir lisansı yok, bu yüzden burada saklanmıyor. Bağlantı, yazarın orijinal kopyasını açar.',
+      'Bu dosya üniversitenin kendi sitesinde duruyor. Lisansı kopya barındırmamıza izin vermediği için yalnızca bağlantı veriyoruz.',
+    preview: 'Önizle',
+    previewHide: 'Önizlemeyi gizle',
+    previewTitle: (title: string) => `${title} önizlemesi`,
+    previewFallback: 'Önizleme görünmüyorsa dosyayı doğrudan açın:',
     hostedNote: 'Yukarıdaki lisans kapsamında değiştirilmemiş bir kopya burada saklanıyor. Lisansın tanımadığı tüm haklar yazara aittir.',
   },
   university: {
@@ -452,7 +451,7 @@ const tr: Dict = {
   booksPage: {
     title: 'Kitaplar',
     lede: 'AIM Açık Ders Kitabı Girişimi ve Open Textbook Library’nin listelediği, açık lisanslı ders kitapları. Open Lemma her kitabın kendi sitesine bağlantı verir ve hiçbir şey barındırmaz.',
-    search: 'Başlığa veya yazara göre süz',
+    search: 'Başlığa veya yazara göre filtrele',
     searchPlaceholder: 'örn. cebir, Lebl…',
     topic: 'Konu',
     allTopics: 'Tüm konular',
@@ -463,8 +462,8 @@ const tr: Dict = {
     newTab: '(yeni sekmede açılır)',
     licence: 'Lisans',
     results: (n: number) => `${n} kitap`,
-    noResults: 'Bu süzgeçlere uyan kitap yok.',
-    clear: 'Süzgeçleri temizle',
+    noResults: 'Bu filtrelere uyan kitap yok.',
+    clear: 'Filtreleri temizle',
     onTopic: 'Bu konudaki kitaplar',
     allOnTopic: 'Bu konudaki tüm kitapları gör',
   },
@@ -475,10 +474,10 @@ const tr: Dict = {
   coursesPage: {
     title: 'Dersler',
     lede: 'En az iki belgesi olan her ders için ders notları, problem setleri ve sınavlar, derse göre gruplanmış.',
-    filter: 'Dersleri süz',
+    filter: 'Dersleri filtrele',
     filterPlaceholder: 'örn. 18.05, olasılık, Cambridge…',
     count: (n: number) => `${n} ders`,
-    noResults: 'Bu süzgece uyan ders yok.',
+    noResults: 'Bu filtreye uyan ders yok.',
     all: 'Tüm dersler',
   },
   course: {
@@ -521,24 +520,27 @@ const tr: Dict = {
   about: {
     title: 'Hakkında',
     lede: 'Open Lemma, büyük bölümlerin zaten ücretsiz sunduğu matematiği toplar ve sessiz, aranabilir tek bir odaya koyar.',
+    counts: (docs: string, hosted: string, linked: string, courses: string, books: string) =>
+      `Şu an: ${docs} belge (${hosted} burada barındırılıyor, ${linked} üniversitenin sitesine bağlantı), ${courses} ders ve ${books} açık ders kitabı.`,
     sections: [
       {
         h: 'Burada ne var',
-        p: 'İngilizce resmî öğretim materyalleri: ders notları, problem setleri, çözümlü sınavlar ve öğretim üyelerinin kendi sayfalarında ücretsiz yayımladığı kitaplar. Öğrenci ödevleri dahil değildir. Her dosya bir PDF’tir ve dili ilk sayfalarından metin çıkarılarak kontrol edilmiştir.',
+        p: 'Önde gelen üniversitelerin matematik bölümlerinden İngilizce öğretim materyalleri: ders notları, problem setleri, çoğu zaman çözümlü sınavlar ve öğretim üyelerinin kendi sayfalarında ücretsiz yayımladığı kitaplar. Öğrenci ödevleri yer almaz.',
       },
       {
         h: 'Nasıl toplandı',
-        p: 'Nazik bir tarayıcı yalnızca herkese açık sayfaları ziyaret etti, robots.txt’ye uydu, aynı sunucuya yapılan istekler arasında en az iki saniye bekledi ve açıklayıcı bir kullanıcı aracısıyla kendini tanıttı. Canvas, Moodle veya Blackboard gibi öğrenme yönetim sistemlerine hiç girmedi; hiçbir giriş ekranını veya ödeme duvarını aşmaya çalışmadı. Tekrarlar SHA-256 özeti ve başlık benzerliğiyle ayıklandı.',
+        p: 'Yalnızca herkesin açabildiği sayfaları kullandık. Hiçbir yere giriş yapmadık, Canvas, Moodle ya da Blackboard gibi ders sistemlerine girmedik, ödeme duvarını aşmaya çalışmadık. Bir program bu sayfaları siteleri yormamak için yavaş yavaş dolaştı; bulduklarını listelemeden önce gözden geçirdik. Yalnızca İngilizce materyaller yer alıyor.',
       },
       {
-        h: 'Barındırılan ya da bağlantı verilen',
-        p: 'Bir belge burada yalnızca o dosya ya da dersi için belirtilmiş kendi lisansı yeniden dağıtıma izin veriyorsa saklanır. Diğer her şey, orijinaline bağlantı veren bir katalog kaydı olarak görünür. Bağlantılar her ay yeniden kontrol edilir.',
+        h: 'Burada mı, bağlantı mı?',
+        p: 'Bir belge, yalnızca kendi lisansı başkalarına dağıtılmasına izin veriyorsa bu sitede saklanır. Diğer her şey için orijinal sayfaya bağlantı veririz. Bağlantılar her ay yeniden kontrol edilir.',
       },
       {
         h: 'Her zaman ticari olmayan',
         p: 'Barındırılan bazı materyaller Ticari Olmayan (NonCommercial) lisans taşıdığından bu sitede reklam, ücretli üyelik ve takip yoktur.',
       },
     ],
+    takedown: { h: 'Kaldırma talepleri', p: 'Burada listelenen bir şeyi siz yazdıysanız ya da hakları sizdeyse, kaldırılmasını veya kaydın düzeltilmesini isteyebilirsiniz.', link: 'Nasıl istenir' },
     rankingNote: 'Üniversite seçimi',
     rankingWhy: 'Bu sıralamanın ilk yirmisinden, İngilizce açık ders materyali yayımlayan bütün üniversiteler alındı. Biri, materyallerinin hiçbiri herkese açık, İngilizce ve giriş gerektirmeden erişilebilir olmadığı için dışarıda kaldı.',
   },

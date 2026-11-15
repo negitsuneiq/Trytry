@@ -31,6 +31,14 @@ jobs:
           node-version: 24
           cache: npm
 
+      # Thumbnails are re-rendered only for documents that are new (scripts/thumbnails.ts skips existing files).
+      - name: Cache PDF thumbnails
+        uses: actions/cache@v4
+        with:
+          path: public/thumbs
+          key: thumbs-${{ hashFiles('data/documents.json') }}
+          restore-keys: thumbs-
+
       - name: Install poppler (PDF thumbnails)
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
 

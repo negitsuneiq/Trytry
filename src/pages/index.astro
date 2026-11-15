@@ -1,6 +1,31 @@
 ---
-import { asset } from '../lib/paths';
-const base = asset('');
+import { asset, href } from '../lib/paths';
+import { t } from '../i18n/strings';
+import displayLatin from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
+
+// A small real page: crawlers and no-JS visitors get the two language links,
+// everyone else is sent on by language (see the script).
+const abs = (p: string) => new URL(p, Astro.site).href;
+const en = abs(href('en'));
+const tr = abs(href('tr'));
+const root = abs(asset(''));
+const css = `
+@font-face{font-family:'Bricolage Grotesque Variable';font-weight:200 800;font-display:swap;src:url(${displayLatin}) format('woff2')}
+html{background:#f2eee5;color:#17140f;font-family:system-ui,sans-serif}
+body{display:grid;place-items:center;min-height:100vh;min-height:100svh;margin:0;padding:0 16px;box-sizing:border-box}
+main{text-align:center}
+.brand{display:flex;align-items:center;justify-content:center;gap:14px}
+.mark{width:44px;height:44px}
+.word{font-family:'Bricolage Grotesque Variable',system-ui,sans-serif;font-size:clamp(2.4rem,9vw,4rem);font-weight:400;letter-spacing:-0.035em;line-height:1;font-synthesis:none}
+.word b{font-weight:800}
+.rule{width:56px;height:3px;background:#bf321b;margin:28px auto 22px}
+p{margin:0}
+.lede{color:#5c564c;font-size:1rem;margin-bottom:26px}
+.langs{display:flex;gap:12px;justify-content:center}
+a{color:#17140f;border:1px solid rgb(23 20 15/.28);padding:12px 22px;min-width:44px;min-height:44px;box-sizing:border-box;text-decoration:none;font-size:.95rem;letter-spacing:.02em}
+a:hover,a:focus-visible{border-color:#bf321b;color:#bf321b}
+a:focus-visible{outline:2px solid #bf321b;outline-offset:2px}
+`;
 ---
 
 <!doctype html>
@@ -8,14 +33,30 @@ const base = asset('');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Open Lemma</title>
-    <meta name="description" content="A non-commercial library of open mathematics from the world’s top universities." />
+    <title>Open Lemma — Açık matematik kütüphanesi · Open mathematics library</title>
+    <meta name="description" content={t('en').meta.description} />
     <meta name="theme-color" content="#f2eee5" />
+    <link rel="canonical" href={root} />
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href={`${base}en/`} />
-    <link rel="alternate" hreflang="tr" href={`${base}tr/`} />
-    <noscript><meta http-equiv="refresh" content={`0; url=${base}en/`} /></noscript>
-    <script is:inline define:vars={{ base }}>
+    <link rel="alternate" hreflang="en" href={en} />
+    <link rel="alternate" hreflang="tr" href={tr} />
+    <link rel="alternate" hreflang="x-default" href={root} />
+    <link rel="sitemap" type="application/xml" href={abs(asset('sitemap.xml'))} />
+    <link rel="preload" href={displayLatin} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Open Lemma" />
+    <meta property="og:title" content="Open Lemma" />
+    <meta property="og:description" content={t('en').meta.description} />
+    <meta property="og:url" content={root} />
+    <meta property="og:image" content={abs(asset('og.png'))} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Open Lemma" />
+    <meta name="twitter:description" content={t('en').meta.description} />
+    <meta name="twitter:image" content={abs(asset('og.png'))} />
+    <noscript><meta http-equiv="refresh" content={`0; url=${en}`} /></noscript>
+    <script is:inline define:vars={{ base: asset('') }}>
       // Remembered choice first, then the browser language.
       let lang = null;
       try {
@@ -27,24 +68,23 @@ const base = asset('');
       }
       location.replace(base + lang + '/' + location.search + location.hash);
     </script>
-    <style>
-      html {
-        background: #f2eee5;
-        color: #17140f;
-        font-family: system-ui, sans-serif;
-      }
-      body {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        margin: 0;
-      }
-      a {
-        color: #bf321b;
-      }
-    </style>
+    <style set:html={css}></style>
   </head>
   <body>
-    <p><a href={`${base}en/`}>English</a> · <a href={`${base}tr/`}>Türkçe</a></p>
+    <main>
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" fill="none" stroke="#17140f" stroke-width="1.2"></rect>
+          <path d="M8 6.5v11h8" fill="none" stroke="#bf321b" stroke-width="1.6"></path>
+        </svg>
+        <span class="word">Open <b>Lemma</b></span>
+      </div>
+      <div class="rule"></div>
+      <p class="lede">Açık matematik kütüphanesi · Open mathematics library</p>
+      <nav class="langs" aria-label="Language">
+        <a href={href('tr')} hreflang="tr" lang="tr">Türkçe</a>
+        <a href={href('en')} hreflang="en" lang="en">English</a>
+      </nav>
+    </main>
   </body>
 </html>

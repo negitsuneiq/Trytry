@@ -5,7 +5,7 @@
 import '../styles/card.css';
 import type { CardCfg, CardRec } from '../lib/cardRec';
 import { coverSvg, COVER_VIEWBOX } from '../lib/cover';
-import { authorsLine } from '../lib/format';
+import { authorsLine, realYear } from '../lib/format';
 
 const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ESC[c]);
@@ -37,7 +37,7 @@ export function cardHtml(r: CardRec, cfg: CardCfg, heading: 'h2' | 'h3' = 'h3'):
     ? `<img src="${cfg.thumbs}/${esc(r.i)}.webp" alt="" width="600" height="800" loading="lazy" decoding="async">`
     : `<svg viewBox="${COVER_VIEWBOX}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${coverSvg(r.i, motif as Parameters<typeof coverSvg>[1])}</svg>`;
   const uni = cfg.unis[r.u]?.[0] ?? r.u;
-  const lvl = cfg.levels[r.l] + (r.y ? ` · ${r.y}` : '');
+  const lvl = cfg.levels[r.l] + (realYear(r.y, r.d) ? ` · ${realYear(r.y, r.d)}` : '');
   return (
     `<article class="card doc-card"><a href="${cfg.doc}${esc(r.i)}/" class="hit">` +
     `<div class="cover" data-kind="${r.th ? 'thumb' : 'art'}">${cover}<span class="code mono" aria-hidden="true">${esc(r.cc ?? msc + '-XX')}</span></div>` +

@@ -23,19 +23,37 @@ export function initLibrary() {
   root.dataset.ready = '1';
   const cfg = readCfg();
   const grid = root.querySelector<HTMLElement>('[data-grid]')!;
-  loadIndex(cfg).then(
-    (recs) => setup(root, grid, cfg, recs),
-    () => {
-      grid.setAttribute('aria-busy', 'false');
-      grid.innerHTML = '';
-      const box = root.querySelector<HTMLElement>('[data-none]')!;
-      const p = box.querySelector<HTMLElement>('[data-none-msg]')!;
-      p.textContent = cfg.ui.error;
-      box.querySelectorAll('[data-none-extra]').forEach((e) => ((e as HTMLElement).hidden = true));
-      box.setAttribute('role', 'alert');
-      box.hidden = false;
-    },
-  );
+  const start = () =>
+    loadIndex(cfg).then(
+      (recs) => setup(root, grid, cfg, recs),
+      () => {
+        grid.setAttribute('aria-busy', 'false');
+        grid.innerHTML = '';
+        const box = root.querySelector<HTMLElement>('[data-none]')!;
+        const p = box.querySelector<HTMLElement>('[data-none-msg]')!;
+        p.textContent = cfg.ui.error;
+        box.querySelectorAll('[data-none-extra]').forEach((e) => ((e as HTMLElement).hidden = true));
+        box.setAttribute('role', 'alert');
+        box.hidden = false;
+      },
+    );
+  // The /library/ page needs the index at once. Embedded in the home page, the library sits several
+  // screens down: fetch the ~770 KB index only when it is within 1.5 viewports, or when the search field is used.
+  if (!root.closest('[data-home]')) return void start();
+  let started = false;
+  const go = () => {
+    if (started) return;
+    started = true;
+    io?.disconnect();
+    root.removeEventListener('focusin', go);
+    root.removeEventListener('pointerdown', go);
+    start();
+  };
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((e) => e.some((x) => x.isIntersecting) && go(), { rootMargin: '150% 0px' }) : null;
+  if (io) io.observe(root);
+  else go();
+  root.addEventListener('focusin', go);
+  root.addEventListener('pointerdown', go);
 }
 
 function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof readCfg>, recs: CardRec[]) {
@@ -67,7 +85,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
 
   // URL → controls
   const params = new URLSearchParams(urlState ? location.search : '');
-  q.value = params.get('q') ?? '';
+  if (urlState) q.value = params.get('q') ?? ''; // embedded: keep anything typed while the index was loading
   const setSort = (v: string) => sorts.forEach((r) => (r.checked = r.value === v));
   setSort(params.get('s') ?? 'relevance');
   hosted.checked = params.get('h') === '1';

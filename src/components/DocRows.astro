@@ -6,7 +6,7 @@ import type { DocumentRecord } from '../lib/schema';
 import { t, type Lang } from '../i18n/strings';
 import { href } from '../lib/paths';
 import { inlineTex } from '../lib/math';
-import { authorsLine } from '../lib/format';
+import { authorsLine, realYear } from '../lib/format';
 
 interface Props {
   rows: { doc: DocumentRecord; label: string }[];
@@ -29,7 +29,8 @@ const known = new Set(instructors ?? []);
       const author = doc.authors.length > 0 && (!instructors || doc.authors.some((a) => !known.has(a))) ? authorsLine(doc.authors) : null;
       const bits: string[] = [];
       if (showType) bits.push(s.types[doc.type]);
-      if (doc.year) bits.push(String(doc.year));
+      const yr = realYear(doc.year, doc.accessed_at);
+      if (yr) bits.push(String(yr));
       if (doc.pages) bits.push(s.course.pagesShort(doc.pages));
       return (
         <li>

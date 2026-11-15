@@ -39,7 +39,9 @@ for (const d of docs) {
   const pdf = join(PUBLIC_DIR, d.file_path!);
   const out = join(outDir, `${d.id}.webp`);
   const small = join(smallDir, `${d.id}.webp`);
-  if (existsSync(out) && existsSync(small) && statSync(out).mtimeMs > statSync(pdf).mtimeMs) continue;
+  // Locally a newer PDF re-renders its thumbnail. In CI every checkout stamps files with the current
+  // time (and cache restores keep older ones), so there an existing thumbnail is always kept.
+  if (existsSync(out) && existsSync(small) && (process.env.CI || statSync(out).mtimeMs > statSync(pdf).mtimeMs)) continue;
   const prefix = join(tmp, d.id);
   try {
     execFileSync('pdftoppm', ['-f', '1', '-l', '1', '-singlefile', '-png', '-scale-to', '900', pdf, prefix], { stdio: 'ignore', timeout: 60_000 });
