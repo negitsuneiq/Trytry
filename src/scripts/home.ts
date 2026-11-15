@@ -12,8 +12,22 @@ import { SplitText } from 'gsap/SplitText';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 type Off = () => void;
+
+let driven = false;
+/** Lenis runs on GSAP's ticker here, so ScrollTrigger follows its smoothed scroll. Called once by app.ts. */
+export function driveLenis(lenis: { raf(t: number): void; on(ev: 'scroll', fn: () => void): void }) {
+  if (driven) return;
+  driven = true;
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+export const refreshScroll = () => ScrollTrigger.refresh();
+
 const $ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector<T>(sel);
 const $$ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document) => [...root.querySelectorAll<T>(sel)];
+/** Scroll distance of the rail pin per pixel of sideways travel (was 0.8). */
+const RAIL_SCROLL = 0.42;
 const fine = () => matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 export function initHome(): Off | null {
@@ -192,7 +206,8 @@ function departments(home: HTMLElement): Off {
     scrollTrigger: {
       trigger: stage,
       start: 'top top',
-      end: () => `+=${dist() * 0.8}`,
+      // The rail moves about 2.4x faster than the page scrolls: a long row, a short pin.
+      end: () => `+=${dist() * RAIL_SCROLL}`,
       pin: true,
       scrub: 0.6,
       invalidateOnRefresh: true,
@@ -237,6 +252,10 @@ function margin(home: HTMLElement): Off {
   const fill = $('[data-margin-fill]', home);
   if (!aside || !label || !page || !fill) return () => {};
   const scenes = $$('[data-scene]', home);
+  // Numbers follow the headings on the page: Definition 1, Lemma 2, Theorem 3.
+  // The title sheet is 0 and the tombstone closes the proof.
+  const last = scenes.length - 1;
+  const steps = last - 1;
   scenes.forEach((sc, i) =>
     ScrollTrigger.create({
       trigger: sc,
@@ -244,18 +263,26 @@ function margin(home: HTMLElement): Off {
       end: 'bottom 55%',
       onToggle: (self) => {
         if (!self.isActive) return;
-        label.textContent = `§ ${i + 1} · ${sc.dataset.label}`;
-        page.textContent = `${i + 1} / ${scenes.length}`;
+        label.textContent = `§ ${i === last ? '∎' : i} · ${sc.dataset.label}`;
+        page.textContent = `${Math.min(i, steps)} / ${steps}`;
       },
     }),
   );
+  // The footer is not part of the proof: the running margin leaves with the page.
+  ScrollTrigger.create({
+    trigger: home,
+    start: 'top top',
+    end: 'bottom 45%',
+    onLeave: () => aside.classList.add('is-off'),
+    onEnterBack: () => aside.classList.remove('is-off'),
+  });
   ScrollTrigger.create({
     trigger: home,
     start: 'top top',
     end: 'bottom bottom',
     onUpdate: (self) => fill.style.setProperty('--p', self.progress.toFixed(3)),
   });
-  return () => {};
+  return () => aside.classList.remove('is-off');
 }
 
 // ── Library: client-rendered, so the page height changes after load ────────

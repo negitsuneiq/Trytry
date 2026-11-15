@@ -15,7 +15,6 @@ export const universities: University[] = load<University[]>('universities.json'
 export const documents: DocumentRecord[] = load<DocumentRecord[]>('documents.json');
 
 export const universityBySlug = new Map(universities.map((u) => [u.slug, u]));
-export const documentById = new Map(documents.map((d) => [d.id, d]));
 
 export function docsForUniversity(slug: string) {
   return documents.filter((d) => d.university === slug);
@@ -33,11 +32,6 @@ export const stats = {
   universities: new Set(documents.map((d) => d.university)).size || universities.length,
   topics: usedTopics.length || TOPICS.length,
 };
-
-/** Newest first by access date, then title. */
-export const recentDocuments = [...documents].sort(
-  (a, b) => b.accessed_at.localeCompare(a.accessed_at) || a.title.localeCompare(b.title),
-);
 
 export function similarDocuments(doc: DocumentRecord, n = 4) {
   return documents

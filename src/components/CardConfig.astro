@@ -22,6 +22,8 @@ const cfg: CardCfg = {
   types: s.types,
   levels: s.levels,
   licenses: Object.fromEntries([...new Set(documents.map((d) => d.license))].map((l) => [l, licenseLabel(l, s.licenseStatus)])),
+  course: href(lang, 'courses'),
+  courseWord: s.course.word,
   hosted: s.doc.hosted,
   external: s.doc.external,
   ui: { error: s.pager.error },

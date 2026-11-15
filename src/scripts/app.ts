@@ -1,25 +1,38 @@
-// Site-wide motion and interaction. Runs on every client-side navigation
+// Site-wide interaction. Runs on every client-side navigation
 // (astro:page-load) and tears down on astro:before-swap.
+// GSAP is NOT imported here: inner pages only need the tiny code below (reveals,
+// heading line reveal, progress bar), and Lenis is a separate small chunk. The home
+// page (the only one with scroll scenes) pulls GSAP in through ./home.
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
-import Lenis from 'lenis';
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import type Lenis from 'lenis';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
 let lenis: Lenis | null = null;
+let lenisLoading = false;
+let ownRaf = 0;
 let cleanups: (() => void)[] = [];
 
-function initLenis() {
-  if (lenis || reduced.matches) return;
-  // Touch scrolling stays native (syncTouch off): it already feels right on tablets.
-  lenis = new Lenis({ lerp: 0.11, wheelMultiplier: 0.95 });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => lenis?.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
+/** Lenis smooth scrolling. Own rAF loop, until the home page hands it to GSAP's ticker. */
+async function initLenis(withGsap: boolean) {
+  if (reduced.matches) return;
+  if (!lenis && !lenisLoading) {
+    lenisLoading = true;
+    const { default: LenisCtor } = await import('lenis');
+    // Touch scrolling stays native (syncTouch off): it already feels right on tablets.
+    lenis = new LenisCtor({ lerp: 0.11, wheelMultiplier: 0.95 });
+    const loop = (t: number) => {
+      lenis?.raf(t);
+      ownRaf = requestAnimationFrame(loop);
+    };
+    ownRaf = requestAnimationFrame(loop);
+  }
+  if (withGsap && lenis && ownRaf) {
+    const home = await import('./home');
+    cancelAnimationFrame(ownRaf);
+    ownRaf = 0;
+    home.driveLenis(lenis);
+  }
 }
 
 function initReveals() {
@@ -42,21 +55,64 @@ function initReveals() {
   cleanups.push(() => io.disconnect());
 }
 
+/** Plain-text headings: each line slides up out of a clipping mask (the .split-line styles), one after another. */
 function initSplits() {
   if (reduced.matches) return;
   document.querySelectorAll<HTMLElement>('[data-split]').forEach((el) => {
-    const split = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'split-line' });
-    const tween = gsap.from(split.lines, {
-      yPercent: 110,
-      duration: 1.25,
-      ease: 'expo.out',
-      stagger: 0.09,
-      scrollTrigger: { trigger: el, start: 'top 88%' },
+    const text = el.textContent?.trim() ?? '';
+    if (!text || el.children.length) return;
+    // Measure the lines by wrapping every word, then rebuild one block per line.
+    el.textContent = '';
+    const words = text.split(/\s+/).map((w) => {
+      const sp = document.createElement('span');
+      sp.style.display = 'inline-block';
+      sp.textContent = w;
+      el.append(sp, ' ');
+      return sp;
     });
+    const lines: string[][] = [];
+    let top = NaN;
+    for (const w of words) {
+      if (w.offsetTop !== top) {
+        top = w.offsetTop;
+        lines.push([]);
+      }
+      lines[lines.length - 1].push(w.textContent!);
+    }
+    el.textContent = '';
+    const inner = lines.map((l) => {
+      const line = document.createElement('div');
+      line.className = 'split-line';
+      const span = document.createElement('span');
+      span.textContent = l.join(' ');
+      span.style.transform = 'translateY(110%)';
+      line.append(span);
+      el.append(line);
+      return span;
+    });
+    const anims: Animation[] = [];
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        inner.forEach((span, i) => {
+          const a = span.animate([{ transform: 'translateY(110%)' }, { transform: 'translateY(0)' }], {
+            duration: 1250,
+            delay: i * 90,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            fill: 'backwards',
+          });
+          span.style.transform = '';
+          anims.push(a);
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px' },
+    );
+    io.observe(el);
     cleanups.push(() => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-      split.revert();
+      io.disconnect();
+      anims.forEach((a) => a.cancel());
+      el.textContent = text;
     });
   });
 }
@@ -70,31 +126,82 @@ function initCounters() {
       el.textContent = fmt(to);
       return;
     }
-    const obj = { v: 0 };
     el.textContent = fmt(0);
-    const tween = gsap.to(obj, {
-      v: to,
-      duration: 2.2,
-      ease: 'power3.out',
-      onUpdate: () => (el.textContent = fmt(obj.v)),
-      scrollTrigger: { trigger: el, start: 'top 95%' },
-    });
+    let raf = 0;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now();
+        const tick = (now: number) => {
+          const k = Math.min(1, (now - t0) / 2200);
+          el.textContent = fmt(to * (1 - (1 - k) ** 3));
+          if (k < 1) raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      },
+      { rootMargin: '0px 0px -5% 0px' },
+    );
+    io.observe(el);
     cleanups.push(() => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
+      io.disconnect();
+      cancelAnimationFrame(raf);
     });
   });
 }
 
+/** Reading progress, from native scroll position. */
 function initProgress() {
   const bar = document.querySelector<HTMLElement>('[data-progress]');
   if (!bar) return;
-  const st = ScrollTrigger.create({
-    start: 0,
-    end: 'max',
-    onUpdate: (self) => bar.style.setProperty('--p', self.progress.toFixed(4)),
+  let raf = 0;
+  const update = () => {
+    raf = 0;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.setProperty('--p', (max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0).toFixed(4));
+  };
+  const on = () => raf || (raf = requestAnimationFrame(update));
+  addEventListener('scroll', on, { passive: true });
+  addEventListener('resize', on, { passive: true });
+  update();
+  cleanups.push(() => {
+    removeEventListener('scroll', on);
+    removeEventListener('resize', on);
+    cancelAnimationFrame(raf);
   });
-  cleanups.push(() => st.kill());
+}
+
+/** KaTeX styles are not part of the global stylesheet: load them when math shows up in the DOM (e.g. client-built cards). */
+function watchMath() {
+  const loaded = () => !!document.querySelector('link[data-katex]');
+  const has = () => !!document.querySelector('.katex');
+  const load = async () => {
+    if (loaded()) return;
+    const { default: href } = await import('katex/dist/katex.min.css?url');
+    if (loaded()) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset.katex = '';
+    document.head.append(link);
+  };
+  if (loaded()) return;
+  if (has()) return void load();
+  let timer = 0;
+  const mo = new MutationObserver(() => {
+    clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      if (has()) {
+        mo.disconnect();
+        load();
+      }
+    }, 150);
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
+  cleanups.push(() => {
+    clearTimeout(timer);
+    mo.disconnect();
+  });
 }
 
 function initLangMemory() {
@@ -137,15 +244,17 @@ document.addEventListener('astro:page-load', () => {
   initMenu();
   initReveals();
   initCounters();
-  // Heavier set-up runs as separate idle tasks so no single task blocks input.
+  initSplits();
+  initProgress();
+  watchMath();
+  // Smooth scrolling is set up when the browser is idle.
   const gen = ++generation;
-  const tasks = [initLenis, initSplits, initProgress, () => ScrollTrigger.refresh()];
-  const next = () => {
+  const home = !!document.querySelector('[data-home]');
+  idle(async () => {
     if (gen !== generation) return; // navigated away meanwhile
-    tasks.shift()?.();
-    if (tasks.length) idle(next);
-  };
-  idle(next);
+    await initLenis(home);
+    if (home && gen === generation && !reduced.matches) (await import('./home')).refreshScroll();
+  });
 });
 
 document.addEventListener('astro:before-swap', () => {

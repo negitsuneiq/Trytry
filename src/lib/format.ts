@@ -1,10 +1,31 @@
 import type { Lang } from '../i18n/strings';
 
-export function bytes(n: number | null): string {
+/** File size with the language's decimal separator ("3,1 MB" / "3.1 MB"). */
+export function bytes(n: number | null, lang: Lang = 'en'): string {
   if (n == null) return '—';
+  const loc = lang === 'tr' ? 'tr-TR' : 'en-GB';
   if (n < 1024) return `${n} B`;
-  if (n < 1024 ** 2) return `${(n / 1024).toFixed(0)} KB`;
-  return `${(n / 1024 ** 2).toFixed(1)} MB`;
+  if (n < 1024 ** 2) return `${Math.round(n / 1024).toLocaleString(loc)} KB`;
+  return `${(n / 1024 ** 2).toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} MB`;
+}
+
+/**
+ * The course year of a document, or null. The crawler falls back to the year it
+ * accessed the page when it finds none, so a year equal to the access year is
+ * not a real course year and is never shown.
+ */
+export function realYear(year: number | null | undefined, accessedAt: string | null | undefined): number | null {
+  if (!year) return null;
+  if (accessedAt && year === Number(accessedAt.slice(0, 4))) return null;
+  return year;
+}
+
+/** "2019" or "2014–2019" over the real years of some documents; null when there are none. */
+export function yearRange(docs: { year: number | null; accessed_at: string }[]): string | null {
+  const ys = docs.map((d) => realYear(d.year, d.accessed_at)).filter((y): y is number => y != null);
+  if (!ys.length) return null;
+  const [a, b] = [Math.min(...ys), Math.max(...ys)];
+  return a === b ? String(a) : `${a}–${b}`;
 }
 
 export function date(iso: string, lang: Lang): string {

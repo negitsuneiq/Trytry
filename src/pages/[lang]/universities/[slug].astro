@@ -4,9 +4,11 @@ import DocCard from '../../../components/DocCard.astro';
 import CardConfig from '../../../components/CardConfig.astro';
 import LoadMore from '../../../components/LoadMore.astro';
 import EmptyState from '../../../components/EmptyState.astro';
+import UniCourses from '../../../components/UniCourses.astro';
 import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { universities, docsForUniversity } from '../../../lib/data';
+import { coursesForUniversity } from '../../../lib/courses';
 import type { University } from '../../../lib/schema';
 import { topicName } from '../../../lib/topics';
 import { href } from '../../../lib/paths';
@@ -21,6 +23,7 @@ const FIRST = 24;
 const lang = Astro.params.lang as Lang;
 const { u } = Astro.props as { u: University };
 const s = t(lang);
+const uniCourses = coursesForUniversity(u.slug);
 const docs = docsForUniversity(u.slug).sort((a, b) => a.title.localeCompare(b.title));
 const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp, (m.get(tp) ?? 0) + 1), new Map<string, number>())].sort(
   (a, b) => b[1] - a[1],
@@ -65,6 +68,8 @@ const topicCounts = [...docs.flatMap((d) => d.topics).reduce((m, tp) => m.set(tp
           </ul>
         )
       }
+
+      <UniCourses courses={uniCourses} lang={lang} />
 
       <div class="docs">
         {

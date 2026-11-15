@@ -1,0 +1,133 @@
+---
+// "Courses" block of a university page: compact list, first 12 visible, the
+// rest behind a "show all" button (all of them are plain links without JS).
+import type { Course } from '../lib/courses';
+import { t, type Lang } from '../i18n/strings';
+import { href } from '../lib/paths';
+
+interface Props {
+  courses: Course[];
+  lang: Lang;
+}
+const { courses, lang } = Astro.props;
+const s = t(lang);
+const FIRST = 12;
+---
+
+{
+  courses.length > 0 && (
+    <section class="courses" aria-labelledby="uni-courses" data-uni-courses>
+      <div class="head">
+        <h2 id="uni-courses" class="display h-md">{s.course.onUniversity} <span class="mono muted n">{courses.length}</span></h2>
+        <a class="mono link-u" href={href(lang, 'courses')}>{s.course.seeAll} →</a>
+      </div>
+      <ul id="uni-course-list">
+        {courses.map((c, i) => (
+          <li class:list={[i >= FIRST && 'extra']}>
+            <a class="c" href={href(lang, `courses/${c.slug}`)}>
+              <span class="code mono">{c.code ?? '—'}</span>
+              <span class="ttl" lang="en">{c.title}</span>
+              <span class="cnt mono muted">{s.course.docsCount(c.docs.length)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      {courses.length > FIRST && (
+        <button class="btn btn-sm more" type="button" aria-expanded="false" aria-controls="uni-course-list" data-uc-toggle data-all={s.course.showAll(courses.length)} data-less={s.course.showFewer}>
+          {s.course.showAll(courses.length)}
+        </button>
+      )}
+    </section>
+  )
+}
+
+<script>
+  function init() {
+    const root = document.querySelector<HTMLElement>('[data-uni-courses]');
+    const btn = root?.querySelector<HTMLButtonElement>('[data-uc-toggle]');
+    if (!root || !btn || btn.dataset.ready) return;
+    btn.dataset.ready = '1';
+    btn.addEventListener('click', () => {
+      const open = root.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? btn.dataset.less! : btn.dataset.all!;
+    });
+  }
+  document.addEventListener('astro:page-load', init);
+</script>
+
+<style>
+  .courses {
+    margin-top: clamp(48px, 7vw, 96px);
+    max-width: 1000px;
+  }
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 24px;
+    margin-bottom: 14px;
+  }
+  .n {
+    margin-left: 6px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+  li {
+    border-bottom: 1px solid var(--line);
+  }
+  .c {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr) auto;
+    gap: 4px 16px;
+    align-items: baseline;
+    padding: 10px 6px;
+    margin-inline: -6px;
+  }
+  .c:hover,
+  .c:focus-visible {
+    background: var(--bg-raised);
+  }
+  .c:focus-visible {
+    outline-offset: -2px;
+  }
+  .code {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  .ttl {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.3;
+  }
+  .c:hover .ttl {
+    color: var(--accent);
+  }
+  .cnt {
+    white-space: nowrap;
+    font-size: 0.6875rem;
+  }
+  .more {
+    margin-top: 20px;
+  }
+  /* Without JS the button is useless and every course is listed. */
+  :global(html:not(.js)) .more {
+    display: none;
+  }
+  :global(.js) .courses:not(.open) .extra {
+    display: none;
+  }
+  @media (max-width: 599px) {
+    .c {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .code {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

@@ -3,10 +3,12 @@
 QS World University Rankings by Subject: Mathematics sıralamasının ilk 20'sinden, İngilizce en çok açık öğretim materyali yayımlayan 10 üniversitenin matematik materyallerini toplayan, **ticari olmayan** bir dijital kütüphane.
 
 - Astro 7 (statik çıktı) + TypeScript, GitHub Pages'te yayınlanır.
-- Arama: MiniSearch (istemci tarafı). Filtreler URL'ye yazılır.
-- Tasarım: kâğıt ve mürekkep, tek vurgu rengi olarak kırmızı kalem. Ana sayfa bir makale gibi ilerler (Başlık → Tanım → Lemma → İspat → Teorem → ∎); sahneler kaydırmayla sabitlenir ve sürülür (`src/scripts/home.ts`). Hareket azaltma tercihinde her şey statik ve eksiksiz görünür.
-- Animasyon: GSAP + ScrollTrigger + SplitText, Lenis. Ana sayfadaki sayfalar, akış diyagramı ve raf, `data/documents.json`'dan derleme sırasında üretilir (`src/lib/home.ts`).
-- Matematik: KaTeX (build sırasında render edilir).
+- Arama: bağımlılıksız, istemci tarafı (`src/scripts/search.ts`). Her sorgu sözcüğü bir sözcük öneki olarak eşleşir; büyük/küçük harf ve aksanlar (Türkçe i/İ/ı dahil) yok sayılır, ders kodları ayraçlı ya da ayraçsız bulunur. Belge başlıkları İngilizce olduğundan Türkçe sorgular `src/lib/glossary.ts` sözlüğüyle İngilizce karşılıklarıyla da denenir. Filtreler `/library/` adresinde URL'ye yazılır.
+- Yapı: kütüphane (`/library/`), dersler (`/courses/`, her ders bir üniversite + ders kodu; derlemede `documents.json`'dan türetilir), üniversiteler, konular (MSC2020), açık lisanslı kitaplar (`/books/`, `data/books.json`; belgelerden ayrı bir koleksiyondur, hiçbir şey barındırılmaz), belge sayfaları, hakkında ve lisans.
+- Tasarım: kâğıt ve mürekkep, tek vurgu rengi olarak kırmızı kalem. Ana sayfa bir makale gibi ilerler: başlık sahnesi (gerçek ilk sayfalardan oluşan bir masa), kelime kelime mürekkeplenen tanım, yatay kayan bölümler (departmanlar), kütüphane ve Q.E.D. Sahneler kaydırmayla sabitlenir ve sürülür (`src/scripts/home.ts`). Hareket azaltma tercihinde her şey statik ve eksiksiz görünür.
+- Animasyon: yalnızca ana sayfa GSAP + ScrollTrigger + SplitText yükler (`src/scripts/home.ts`, dinamik içe aktarma). Diğer sayfalarda (`src/scripts/app.ts`) yalnızca küçük bir IntersectionObserver ile belirme, başlık satırı animasyonu ve Lenis vardır. Ana sayfadaki sayfa görselleri `data/documents.json`'dan derleme sırasında üretilir (`src/lib/home.ts`). Ana sayfada belge dizini (`docs-index.json`) kütüphane bölümüne yaklaşılınca ya da arama kutusu kullanılınca indirilir.
+- SEO: `sitemap.xml` ve `robots.txt` uç noktaları (`src/pages/`), hreflang, canonical, Open Graph/Twitter kartı (`public/og.png`) ve JSON-LD (ana sayfada `WebSite`, belge sayfalarında `LearningResource`) `src/layouts/Base.astro` içinde üretilir. GitHub Pages proje sitelerinde alan adı kökünde `robots.txt` sunulamaz; site haritası `<link rel="sitemap">` ile de bildirilir.
+- Matematik: KaTeX (build sırasında render edilir); KaTeX stilleri yalnızca matematik içeren sayfalara eklenir.
 - Arayüz TR/EN; tüm metinler `src/i18n/strings.ts` içinde.
 
 ## Hızlı başlangıç
@@ -28,6 +30,7 @@ npm run preview
 | `npm run thumbnails` | Barındırılan PDF'lerin ilk sayfasından `public/thumbs/<id>.webp` ve ana sayfa için küçük `public/thumbs/sm/<id>.webp` üretir |
 | `npm run validate` | Lisans politikası, dosya boyutu, SHA-256 ve şema kurallarını denetler; hata varsa build durur |
 | `npm run build` | Yukarıdaki doğrulama + önizleme + Astro build |
+| `npx astro check` | Tip denetimi (CI'da `.github/workflows/ci.yml` çalıştırır) |
 
 Bir proxy arkasındaysanız Node'un `fetch`'i proxy'yi ancak şu şekilde kullanır: `NODE_USE_ENV_PROXY=1 npm run crawl`.
 
@@ -104,6 +107,7 @@ Konu kimlikleri `src/lib/topics.ts`'tedir (MSC2020 ana sınıflarına eşlenmiş
 
 ## Yayın
 
+- Pull request'ler ve `main` dışındaki dallar `.github/workflows/ci.yml` ile denetlenir (`astro check`, `validate`, `astro build`; PDF önizlemeleri atlanır).
 - `main` dalına her push, `.github/workflows/deploy.yml` ile GitHub Pages'e yayınlanır. `SITE` ve `BASE_PATH`, `actions/configure-pages`'ten alınır, yani `/<repo>/` alt yolu otomatik ayarlanır.
 - İlk kurulum: depo **Settings → Pages → Source: GitHub Actions**.
 - `.github/workflows/check-links.yml` her ayın 1'inde linkleri kontrol eder, kırıkları `link_status: "broken"` olarak işaretleyip commit'ler ve siteyi yeniden yayınlar.

@@ -3,18 +3,24 @@ import Base from '../../layouts/Base.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import { t, type Lang } from '../../i18n/strings';
 import { langPaths } from '../../lib/routes';
-import { universities } from '../../lib/data';
+import { universities, stats, books } from '../../lib/data';
+import { courses } from '../../lib/courses';
+import { href } from '../../lib/paths';
 
 export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
 const s = t(lang);
 const src = universities[0];
+const n = (x: number) => x.toLocaleString(lang === 'tr' ? 'tr-TR' : 'en-GB');
+const counts = s.about.counts(n(stats.documents), n(stats.hosted), n(stats.documents - stats.hosted), n(courses.length), n(books.length));
+const extra = s.about.sections.length + 1;
 ---
 
 <Base lang={lang} title={s.about.title} description={s.about.lede}>
   <section class="page-top">
     <div class="wrap">
       <SectionHead index="∴" title={s.about.title} lede={s.about.lede} level="h1" />
+      <p class="counts mono-plain">{counts}</p>
       <ol class="points">
         {
           s.about.sections.map((sec, i) => (
@@ -25,10 +31,18 @@ const src = universities[0];
             </li>
           ))
         }
+        <li data-reveal>
+          <span class="mono accent">{String(extra).padStart(2, '0')}</span>
+          <h2 class="display h-md">{s.about.takedown.h}</h2>
+          <div class="rank">
+            <p class="muted">{s.about.takedown.p}</p>
+            <p><a class="link-u" href={href(lang, 'license')}>{s.about.takedown.link} →</a></p>
+          </div>
+        </li>
         {
           src && (
             <li data-reveal>
-              <span class="mono accent">{String(s.about.sections.length + 1).padStart(2, '0')}</span>
+              <span class="mono accent">{String(extra + 1).padStart(2, '0')}</span>
               <h2 class="display h-md">{s.about.rankingNote}</h2>
               <div class="rank">
                 <p class="muted">
@@ -47,6 +61,14 @@ const src = universities[0];
 </Base>
 
 <style>
+  .counts {
+    margin: 0 0 clamp(24px, 3vw, 40px);
+    max-width: 62ch;
+    color: var(--fg);
+    line-height: 1.6;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent);
+  }
   .points {
     list-style: none;
     padding: 0;

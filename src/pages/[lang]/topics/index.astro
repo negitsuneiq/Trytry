@@ -15,7 +15,26 @@ const s = t(lang);
   <section class="page-top">
     <div class="wrap">
       <SectionHead index="MSC2020" title={s.topicsPage.title} lede={s.topicsPage.lede} level="h1" />
-      <TopicGrid topics={TOPICS} lang={lang} />
+      <div class="tiles">
+        <TopicGrid topics={TOPICS} lang={lang} />
+      </div>
     </div>
   </section>
 </Base>
+
+<style>
+  /* The line art fades out towards the bottom, where each tile's name and count
+     sit, and a soft halo keeps the index number legible. Selectors reach into
+     TopicGrid, whose own file is shared with other pages. */
+  .tiles :global(.topics li a svg) {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 20%, transparent 58%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 20%, transparent 58%);
+  }
+  .tiles :global(.topics li a .n),
+  .tiles :global(.topics li a .name),
+  .tiles :global(.topics li a .count) {
+    text-shadow:
+      0 0 8px var(--bg),
+      0 0 16px var(--bg);
+  }
+</style>

@@ -705,11 +705,23 @@
       "https://people.math.ethz.ch/~abandeira/teaching.html",
       "https://people.math.ethz.ch/~halorenz/4students/zero.html",
       "https://people.math.ethz.ch/~wilthoma/",
-      "https://people.math.ethz.ch/~pink/"
+      "https://people.math.ethz.ch/~pink/",
+      "https://people.math.ethz.ch/~acannas/Teaching/mathematics_I.html",
+      "https://people.math.ethz.ch/~acannas/Teaching/mathematics_II.html",
+      "https://people.math.ethz.ch/~lang/",
+      "https://people.math.ethz.ch/~jteichma/index.php?content=teach_MF20",
+      "https://people.math.ethz.ch/~jteichma/index.php?content=teach_mlf2021",
+      "https://math.ethz.ch/research/probability-theory/alain-sol-sznitman/lecture-notes.html",
+      "https://metaphor.ethz.ch/x/2025/hs/401-1261-07L/",
+      "https://metaphor.ethz.ch/x/2023/hs/401-1261-07L/",
+      "https://metaphor.ethz.ch/x/2024/fs/401-1262-07L/",
+      "https://metaphor.ethz.ch/x/2025/hs/401-0213-16L/",
+      "https://metaphor.ethz.ch/x/2023/hs/401-0203-00L/"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "metaphor.ethz.ch (course pages) answers 403 to the crawler. Many D-MATH scripts are in German and are skipped by the language check."
+    "notes": "metaphor.ethz.ch (course pages) answers 403 to the crawler. Many D-MATH scripts are in German and are skipped by the language check. Personal pages (Cannas da Silva Math I/II exams, Lang geometry notes, Teichmann, Sznitman per-lecture notes on math.ethz.ch) plus metaphor.ethz.ch course pages (Figalli Analysis I/II with sheets, solutions, notes). Some metaphor/acannas files are German; crawler language filter needed. www2.math.ethz.ch and people.math.ethz.ch/~salamon returned 403 and were skipped; metaphor.ethz.ch/x/2024/hs pages not listable.",
+    "maxPdfs": 300
   },
   {
     "university": "sorbonne",
@@ -717,11 +729,12 @@
       "https://perso.lpsm.paris/~castillo/npbayes/npbayes.html",
       "https://perso.lpsm.paris/~msangnier/mlM2.html",
       "https://perso.lpsm.paris/~msangnier/refresherM2.html",
-      "https://perso.lpsm.paris/~msangnier/csM2.html"
+      "https://perso.lpsm.paris/~msangnier/csM2.html",
+      "https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/indexLN.html"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "LPSM faculty course pages (Sorbonne M2): I. Castillo's Bayesian nonparametrics page (English lecture notes notes.pdf, exercises; chaps12.pdf and an old exam are French) and M. Sangnier's M2 machine learning, ML refresher and convex optimization pages (English lecture notes). Blocked/unusable: webusers.imj-prg.fr root answers 200 but faculty pages (e.g. ~jan.nekovar/co/ln/) still return 403; ljll.fr robots.txt disallows all (User-agent *) and ljll.math.upmc.fr resets the connection; www.math.sorbonne-universite.fr and the www.lpsm.paris supports-de-cours wiki pages carry no PDFs (empty/administrative); most other LPSM course material is in French.",
+    "notes": "LPSM faculty course pages (Sorbonne M2): I. Castillo's Bayesian nonparametrics page (English lecture notes notes.pdf, exercises; chaps12.pdf and an old exam are French) and M. Sangnier's M2 machine learning, ML refresher and convex optimization pages (English lecture notes). Blocked/unusable: webusers.imj-prg.fr root answers 200 but faculty pages (e.g. ~jan.nekovar/co/ln/) still return 403; ljll.fr robots.txt disallows all (User-agent *) and ljll.math.upmc.fr resets the connection; www.math.sorbonne-universite.fr and the www.lpsm.paris supports-de-cours wiki pages carry no PDFs (empty/administrative); most other LPSM course material is in French. P. Schapira (IMJ-PRG) lecture-notes page: ~10 English PDFs (topology, sheaves, D-modules, algebraic topology, homological algebra); confirmed 200 from container. Other webusers.imj-prg.fr pages checked (Chambert-loir, Kahn, Keller, Colmez, Ducros, Maltsiniotis, Lafforgue etc.) have no English teaching PDFs, many return 403 (nekovar, benoist, bost, abbes, morel, charles); ljll.fr disallowed by robots; LPSM Tardif pages are French. Sorbonne has little English material.",
     "maxPdfs": 150
   },
   {
@@ -730,12 +743,26 @@
       "https://www.math.ucla.edu/~sharifi/",
       "https://www.math.ucla.edu/~greene/BootCamp2008.html",
       "https://www.math.ucla.edu/~greene/BootCamp2009.html",
-      "https://www.math.ucla.edu/~tao/resource/general/"
+      "https://www.math.ucla.edu/~tao/resource/general/",
+      "https://ww3.math.ucla.edu/past-qualifying-exams/",
+      "https://ww3.math.ucla.edu/qualifying-exam-dates/",
+      "https://www.math.ucla.edu/~njhu/teaching/math-131a-2024u/notes/",
+      "https://www.math.ucla.edu/~tao/247a.1.06f/",
+      "https://www.math.ucla.edu/~tao/247b.1.07w/",
+      "https://www.math.ucla.edu/~visan/PreviousTeaching/Math131AH_F18/",
+      "https://www.math.ucla.edu/~visan/PreviousTeaching/Math131AH_F19/",
+      "https://www.math.ucla.edu/~visan/PreviousTeaching/Math131A_S14/index.html",
+      "https://www.math.ucla.edu/~visan/PreviousTeaching/Math33B_F16/index.html",
+      "https://www.math.ucla.edu/~vsv/liegroups2007/liegroups2007.html",
+      "https://www.math.ucla.edu/~vsv/",
+      "https://www.math.ucla.edu/~pak/courses/184-Spring-2022/184-Spring-2022.html"
     ],
     "scope": [
       "https://www.math.ucla.edu/~tao/resource/general/"
     ],
-    "maxDepth": 2
+    "maxDepth": 2,
+    "maxPdfs": 300,
+    "notes": "Department past qualifying exams archive (~400 PDFs, ww3.math.ucla.edu, robots allows), Nicholas Hu 131A notes, Tao 247A/B notes, Visan course pages (exams/HW), Varadarajan Lie groups notes. Some pak/vsv pages link research papers/external PDFs; no hosts blocked."
   },
   {
     "university": "peking",
@@ -763,20 +790,37 @@
     "university": "toronto",
     "seeds": [
       "https://www.math.toronto.edu/mein/teaching/lectures.html",
-      "https://www.math.toronto.edu/courses/mat237y1/20199/"
+      "https://www.math.toronto.edu/courses/mat237y1/20199/",
+      "https://www.math.toronto.edu/laithy/3272023/index.html",
+      "https://www.math.toronto.edu/ivan/mat327/",
+      "https://www.math.utoronto.ca/nhoell/MAT223/",
+      "https://www.math.toronto.edu/campesat/mat237.html",
+      "https://www.math.toronto.edu/campesat/mat137.html",
+      "https://www.math.toronto.edu/fiona/courses/mat240/",
+      "https://www.math.utoronto.ca/mgualt/MAT1300/",
+      "https://www.math.toronto.edu/courses/apm236h1/20159/apm236.html",
+      "https://www.math.toronto.edu/mein/teaching/MAT363/363S.html",
+      "https://www.math.toronto.edu/mein/teaching/MAT1341_LieGroupoids/",
+      "https://www.math.toronto.edu/laithy/"
     ],
     "scope": [],
-    "maxDepth": 0
+    "maxDepth": 0,
+    "maxPdfs": 300,
+    "notes": "Instructor course pages (MAT327, MAT223, MAT137/237, MAT240, MAT1300, APM236, MAT363) with notes, problem sets, exams. Some old pdf links on mein pages 404 (utoronto.ca vs toronto.edu host). Bar-Natan classes link to drorbn.net wiki (out of scope). Mostly 2008-2023 material."
   },
   {
     "university": "epfl",
     "seeds": [
       "https://www.epfl.ch/labs/anchp/index-html/teaching/advancedna/",
-      "https://www.epfl.ch/labs/pde/fr/enseignement/equations-differentielles-ordinaires-2022-2/"
+      "https://www.epfl.ch/labs/pde/fr/enseignement/equations-differentielles-ordinaires-2022-2/",
+      "https://www.epfl.ch/labs/disopt/teaching/fall-2019-courses/graph-theory/",
+      "https://www.epfl.ch/labs/disopt/teaching/metric-embeddings-fall-2022/",
+      "https://www.epfl.ch/labs/anchp/index-html/teaching/ala/"
     ],
     "scope": [],
     "maxDepth": 0,
-    "notes": "Most EPFL course material sits on moodle.epfl.ch (deny-listed)."
+    "notes": "Most EPFL course material sits on moodle.epfl.ch (deny-listed). DISOPT (Eisenbrand) Graph Theory 2019 (notes + ~18 problem sets) and Metric Embeddings 2022 exercises; ANCHP (Kressner) numerical linear algebra page (mixed French/English). Blocked: exoset.epfl.ch (Cloudflare challenge); Moodle deny-listed. Boumal's homepage (nicolasboumal.net) links MATH-329/MAT321 lecture notes but is mostly research papers, so not seeded.",
+    "maxPdfs": 150
   },
   {
     "university": "paris-saclay",
@@ -786,7 +830,11 @@
       "https://www.imo.universite-paris-saclay.fr/~anne.moreau/",
       "https://www.imo.universite-paris-saclay.fr/~christophe.giraud/Orsay/MathIA2.html",
       "https://www.imo.universite-paris-saclay.fr/~stephane.nonnenmacher/enseign/Enseignement.html",
-      "https://www.imo.universite-paris-saclay.fr/~david.harari/enseignement/"
+      "https://www.imo.universite-paris-saclay.fr/~david.harari/enseignement/",
+      "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/notes.html",
+      "https://www.imo.universite-paris-saclay.fr/~jean-francois.le-gall/teaching.html",
+      "https://www.imo.universite-paris-saclay.fr/~christophe.giraud/Orsay/HDPS.html",
+      "https://www.imo.universite-paris-saclay.fr/~christophe.giraud/Orsay/M2PS.html"
     ],
     "scope": [
       "http://www.math.u-psud.fr/%7Eharari/enseignement/",
@@ -794,7 +842,7 @@
       "https://www.imo.universite-paris-saclay.fr/~david.harari/enseignement/"
     ],
     "maxDepth": 1,
-    "notes": "IMO Orsay faculty pages with English M2 material: Paulin (English TD/DM sheets for M2 AAG ergodic theory, dynamics, groups and geometry; the main notes are in French), Curien (English probability lecture notes), Moreau (English M2 representation theory and Lie algebra notes and problems; her homepage also lists a few research PDFs), Giraud (M1 Mathematics for AI notes), Nonnenmacher (semiclassical analysis notes; the rest is French) and Harari's teaching index (depth 1 into per-course subpages, e.g. the English M2 Brauer group notes and exam). No robots.txt on the IMO host. Pansu, Thomine, Le Gall and Massot are French-only. Léautaud's site (leautaud.perso.math.cnrs.fr) was skipped because it is mostly research papers. No usable LMV or ENS Paris-Saclay pages were found.",
+    "notes": "IMO Orsay faculty pages with English M2 material: Paulin (English TD/DM sheets for M2 AAG ergodic theory, dynamics, groups and geometry; the main notes are in French), Curien (English probability lecture notes), Moreau (English M2 representation theory and Lie algebra notes and problems; her homepage also lists a few research PDFs), Giraud (M1 Mathematics for AI notes), Nonnenmacher (semiclassical analysis notes; the rest is French) and Harari's teaching index (depth 1 into per-course subpages, e.g. the English M2 Brauer group notes and exam). No robots.txt on the IMO host. Pansu, Thomine, Le Gall and Massot are French-only. Léautaud's site (leautaud.perso.math.cnrs.fr) was skipped because it is mostly research papers. No usable LMV or ENS Paris-Saclay pages were found. J.-F. Le Gall's lecture notes (Saint-Flour random trees, Brownian motion/martingales/stochastic calculus book, Zurich/Cornell notes; English) and teaching page (M2 exams, calculus-sto TDs; partly French); Giraud's high-dimensional statistics course (English book Bookv3.pdf, notes) and M2PS slides. Duchesne, Burq, Pansu, Macri pages are research-heavy or French. IMO robots.txt redirects (302).",
     "maxPdfs": 150
   }
 ]
