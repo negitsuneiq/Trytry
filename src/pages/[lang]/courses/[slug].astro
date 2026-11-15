@@ -1,0 +1,178 @@
+---
+import Base from '../../../layouts/Base.astro';
+import DocRows from '../../../components/DocRows.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langCross } from '../../../lib/routes';
+import { courses, type Course } from '../../../lib/courses';
+import { universityBySlug } from '../../../lib/data';
+import { DOC_TYPES } from '../../../lib/schema';
+import { topicName } from '../../../lib/topics';
+import { href } from '../../../lib/paths';
+import { authorsLine } from '../../../lib/format';
+
+export function getStaticPaths() {
+  return langCross(courses.map((course) => ({ params: { slug: course.slug }, props: { course } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const { course } = Astro.props as { course: Course };
+const s = t(lang);
+const uni = universityBySlug.get(course.university);
+const uniName = uni?.name ?? course.university;
+const groups = DOC_TYPES.map((ty) => ({
+  ty,
+  rows: course.docs.filter((d) => d.type === ty).map((doc) => ({ doc, label: course.labels[doc.id] })),
+})).filter((g) => g.rows.length > 0);
+const years = course.years ? (course.years[0] === course.years[1] ? String(course.years[0]) : `${course.years[0]}–${course.years[1]}`) : null;
+const heading = [course.code, course.title].filter(Boolean).join(' ');
+const titleLong = course.title.length > 48;
+---
+
+<Base lang={lang} title={heading} description={s.course.metaDescription(course.code ?? '', course.title, uniName, course.docs.length)}>
+  <section class="page-top">
+    <div class="wrap">
+      <nav class="crumbs mono muted" aria-label={s.a11y.breadcrumb}>
+        <a href={href(lang, 'courses')}>{s.nav.courses}</a><span aria-hidden="true">/</span>
+        <a href={href(lang, `universities/${course.university}`)} lang="en">{uniName}</a>
+      </nav>
+
+      <div class="head">
+        {course.code && <p class="mono code accent">{course.code}</p>}
+        <h1 class:list={['display', 'name', titleLong ? 'h-lg' : 'h-xl']} data-rise lang="en">{course.title}</h1>
+        {course.instructors.length > 0 && <p class="lede" lang="en">{authorsLine(course.instructors.slice(0, 4))}{course.instructors.length > 4 ? ' …' : ''}</p>}
+      </div>
+
+      <dl class="facts">
+        <div>
+          <dt class="mono muted">{s.course.university}</dt>
+          <dd><a class="link-u" href={href(lang, `universities/${course.university}`)} lang="en">{uniName}</a></dd>
+        </div>
+        <div>
+          <dt class="mono muted">{s.course.level}</dt>
+          <dd>{s.levels[course.level]}</dd>
+        </div>
+        {
+          years && (
+            <div>
+              <dt class="mono muted">{s.course.years}</dt>
+              <dd>{years}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt class="mono muted">{s.course.documents}</dt>
+          <dd>{course.docs.length}{course.pages > 0 && <span class="muted"> · {s.course.pagesShort(course.pages)}</span>}</dd>
+        </div>
+      </dl>
+
+      {
+        course.topics.length > 0 && (
+          <ul class="tps" aria-label={s.course.topics}>
+            {course.topics.map((tp) => (
+              <li>
+                <a class="chip" href={href(lang, `topics/${tp}`)}>{topicName(tp, lang)}</a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+
+      {
+        groups.length > 1 && (
+          <nav class="jump mono" aria-label={s.course.documents}>
+            {groups.map((g) => (
+              <a href={`#h-${g.ty}`}>{s.course.typeHeads[g.ty]} <span class="accent">{g.rows.length}</span></a>
+            ))}
+          </nav>
+        )
+      }
+
+      {
+        groups.map((g) => (
+          <section class="grp" aria-labelledby={`h-${g.ty}`}>
+            <h2 id={`h-${g.ty}`} class="grp-h">
+              <span class="display h-md">{s.course.typeHeads[g.ty]}</span>
+              <span class="mono muted">{g.rows.length}</span>
+            </h2>
+            <DocRows rows={g.rows} lang={lang} instructors={course.instructors} />
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<style>
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+  .crumbs a:hover {
+    color: var(--fg);
+  }
+  .head {
+    display: grid;
+    gap: 14px;
+    max-width: 1100px;
+  }
+  .code {
+    font-size: 0.875rem;
+  }
+  .name {
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: clamp(32px, 5vw, 64px);
+    border-top: 1px solid var(--line);
+  }
+  .facts > div {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dd {
+    margin-top: 6px;
+  }
+  .tps {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 24px;
+  }
+  .tps .chip {
+    height: 32px;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+  .jump a {
+    color: var(--fg-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 4px;
+  }
+  .jump a:hover {
+    color: var(--fg);
+    text-decoration-color: var(--accent);
+  }
+  .grp {
+    margin-top: clamp(36px, 5vw, 64px);
+    max-width: 1000px;
+  }
+  .grp-h {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+    scroll-margin-top: calc(var(--header-h) + 16px);
+  }
+</style>

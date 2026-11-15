@@ -3,9 +3,11 @@ import Base from '../../../layouts/Base.astro';
 import Cover from '../../../components/Cover.astro';
 import DocCard from '../../../components/DocCard.astro';
 import LicenseBadge from '../../../components/LicenseBadge.astro';
+import DocRows from '../../../components/DocRows.astro';
 import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { documents, universityBySlug, similarDocuments } from '../../../lib/data';
+import { courseOfDoc, relatedDocuments } from '../../../lib/courses';
 import { LICENSE_INFO, licenseLabel, type DocumentRecord } from '../../../lib/schema';
 import { href, asset } from '../../../lib/paths';
 import { inlineTex, plainTex } from '../../../lib/math';
@@ -23,6 +25,12 @@ const uni = universityBySlug.get(doc.university);
 const lic = LICENSE_INFO[doc.license];
 const licUrl = doc.license_url ?? lic.url;
 const similar = similarDocuments(doc);
+const course = courseOfDoc.get(doc.id);
+const pos = course ? course.docs.findIndex((d) => d.id === doc.id) : -1;
+const prev = course && pos > 0 ? course.docs[pos - 1] : null;
+const next = course && pos >= 0 && pos < course.docs.length - 1 ? course.docs[pos + 1] : null;
+const related = course ? [] : relatedDocuments(doc);
+const crumbCourse = course ? course.code ?? course.title : null;
 const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected: s.doc.statusRedirected, unchecked: s.doc.statusUnchecked }[doc.link_status];
 const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
 
@@ -43,6 +51,12 @@ const rows: [string, string | null, string?][] = [
       <nav class="crumbs mono" aria-label={s.a11y.breadcrumb}>
         <a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
         <a href={href(lang, `universities/${doc.university}`)} lang="en">{uni?.name ?? doc.university}</a>
+        {course && (
+          <>
+            <span aria-hidden="true">/</span>
+            <a href={href(lang, `courses/${course.slug}`)} lang="en">{crumbCourse}</a>
+          </>
+        )}
       </nav>
 
       <div class="top">
@@ -115,6 +129,48 @@ const rows: [string, string | null, string?][] = [
               <dd>{date(doc.last_checked, lang)} · {statusLabel}</dd>
             </div>
           </dl>
+
+          {
+            course && (
+              <section class="from" aria-labelledby="from-h">
+                <div class="from-head">
+                  <h2 id="from-h" class="display h-md">{s.course.fromThis}</h2>
+                  <p class="mono muted" aria-label={`${pos + 1} / ${course.docs.length}`}>{s.course.position(pos + 1, course.docs.length)}</p>
+                </div>
+                <p class="from-course">
+                  <a class="u" href={href(lang, `courses/${course.slug}`)} lang="en">
+                    {[course.code, course.title].filter(Boolean).join(' · ')}
+                  </a>
+                </p>
+                <div class="pn">
+                  {prev ? (
+                    <a class="pn-a" href={href(lang, `doc/${prev.id}`)} rel="prev">
+                      <span class="mono muted">← {s.course.previous}</span>
+                      <span class="pn-t" set:html={inlineTex(course.labels[prev.id])} />
+                    </a>
+                  ) : <span class="pn-gap" aria-hidden="true" />}
+                  {next ? (
+                    <a class="pn-a pn-next" href={href(lang, `doc/${next.id}`)} rel="next">
+                      <span class="mono muted">{s.course.next} →</span>
+                      <span class="pn-t" set:html={inlineTex(course.labels[next.id])} />
+                    </a>
+                  ) : <span class="pn-gap" aria-hidden="true" />}
+                </div>
+                <a class="btn" href={href(lang, `courses/${course.slug}`)}>
+                  {s.course.allDocs} <span class="arrow" aria-hidden="true">→</span>
+                </a>
+              </section>
+            )
+          }
+
+          {
+            related.length > 0 && (
+              <section class="from" aria-labelledby="rel-h">
+                <h2 id="rel-h" class="display h-md">{s.course.related}</h2>
+                <DocRows rows={related.map((d) => ({ doc: d, label: d.title }))} lang={lang} showType />
+              </section>
+            )
+          }
         </div>
       </div>
 
@@ -280,6 +336,63 @@ const rows: [string, string | null, string?][] = [
   }
   .u:hover {
     text-decoration-color: var(--accent);
+  }
+  .from {
+    margin-top: clamp(40px, 6vw, 64px);
+    max-width: 760px;
+  }
+  .from-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .from-course {
+    margin-top: 6px;
+    color: var(--fg-muted);
+  }
+  .pn {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0 22px;
+  }
+  .pn-a {
+    display: grid;
+    gap: 8px;
+    align-content: start;
+    padding: 16px 18px;
+    border: 1px solid var(--line-strong);
+    background: var(--bg-raised);
+    transition: border-color 0.25s;
+  }
+  .pn-a:hover {
+    border-color: var(--accent);
+  }
+  .pn-next {
+    text-align: right;
+  }
+  .pn-t {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .pn-a:hover .pn-t {
+    color: var(--accent);
+  }
+  @media (max-width: 519px) {
+    .pn {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .pn-next {
+      text-align: left;
+    }
+    .pn-gap {
+      display: none;
+    }
   }
   .similar {
     margin-top: clamp(80px, 12vw, 160px);

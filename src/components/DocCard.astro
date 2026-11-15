@@ -6,6 +6,7 @@ import { href } from '../lib/paths';
 import { inlineTex } from '../lib/math';
 import { topicName } from '../lib/topics';
 import { universityBySlug } from '../lib/data';
+import { courseOfDoc, courseLabel } from '../lib/courses';
 import { authorsLine } from '../lib/format';
 import Cover from './Cover.astro';
 import LicenseBadge from './LicenseBadge.astro';
@@ -20,6 +21,8 @@ const { doc, lang, heading = 'h3' } = Astro.props;
 const H = heading;
 const s = t(lang);
 const uni = universityBySlug.get(doc.university);
+const course = courseOfDoc.get(doc.id);
+const cLabel = courseLabel(doc);
 ---
 
 <article class="card doc-card">
@@ -36,6 +39,15 @@ const uni = universityBySlug.get(doc.university);
       <p class="topics mono">{doc.topics.map((tp) => topicName(tp, lang)).join(' / ')}</p>
     </div>
   </a>
+  {
+    course && cLabel && (
+      <p class="mono course">
+        <a href={href(lang, `courses/${course.slug}`)}>
+          <span class="w">{s.course.word}</span> <span class="v" lang="en">{cLabel}</span>
+        </a>
+      </p>
+    )
+  }
   <div class="foot">
     <LicenseBadge doc={doc} lang={lang} />
     <span class="mono lvl">{s.levels[doc.level]}{doc.year ? ` · ${doc.year}` : ''}</span>

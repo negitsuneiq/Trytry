@@ -130,6 +130,37 @@ Astro scope attribute, are styled identically (see scripts/cards.ts). */
   color: var(--fg-muted);
 }
 
+/* Course line: its own link, outside the card's main link (no nested anchors). */
+.doc-card .course {
+  font-size: 0.6875rem;
+  color: var(--fg-muted);
+  display: flex;
+  min-width: 0;
+}
+.doc-card .course a {
+  display: inline-flex;
+  gap: 0.5em;
+  min-width: 0;
+  max-width: 100%;
+  padding: 2px 0;
+}
+.doc-card .course .w {
+  color: var(--fg-faint);
+}
+.doc-card .course .v {
+  color: var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.25s;
+}
+.doc-card .course a:hover .v {
+  text-decoration-color: currentColor;
+}
+
 /* LicenseBadge */
 .badges {
   display: inline-flex;

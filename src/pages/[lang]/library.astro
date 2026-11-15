@@ -4,6 +4,7 @@ import SectionHead from '../../components/SectionHead.astro';
 import LibraryBrowser from '../../components/LibraryBrowser.astro';
 import { t, type Lang } from '../../i18n/strings';
 import { langPaths } from '../../lib/routes';
+import { href } from '../../lib/paths';
 
 export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
@@ -13,7 +14,9 @@ const s = t(lang);
 <Base lang={lang} title={s.library.title} description={s.library.lede}>
   <section class="page">
     <div class="wrap">
-      <SectionHead index="∑" title={s.library.title} lede={s.library.lede} level="h1" />
+      <SectionHead index="∑" title={s.library.title} lede={s.library.lede} level="h1">
+        <p class="mono"><a class="link-u" href={href(lang, 'courses')}>{s.course.seeAll} →</a></p>
+      </SectionHead>
       <LibraryBrowser lang={lang} urlState />
     </div>
   </section>

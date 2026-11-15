@@ -5,6 +5,7 @@ import type { APIRoute } from 'astro';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { documents } from '../lib/data';
+import { courseOfDoc } from '../lib/courses';
 import { inlineTex } from '../lib/math';
 import type { CardRec } from '../lib/cardRec';
 
@@ -19,8 +20,10 @@ export const GET: APIRoute = () => {
     if (d.hosted) r.h = 1;
     if (d.hosted && existsSync(join(process.cwd(), 'public', `thumbs/${d.id}.webp`))) r.th = 1;
     if (d.year) r.y = d.year;
-    const course = [d.course_code, d.course_title].filter(Boolean).join(' ');
-    if (course) r.c = course;
+    const courseText = [d.course_code, d.course_title].filter(Boolean).join(' ');
+    if (courseText) r.c = courseText;
+    const course = courseOfDoc.get(d.id);
+    if (course) r.k = course.slug;
     if (d.course_code != null) r.cc = d.course_code;
     if (d.title.includes('$')) r.x = inlineTex(d.title);
     return r;

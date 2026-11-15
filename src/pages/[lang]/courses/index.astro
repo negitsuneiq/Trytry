@@ -1,0 +1,184 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langPaths } from '../../../lib/routes';
+import { courses } from '../../../lib/courses';
+import { universities } from '../../../lib/data';
+import { href } from '../../../lib/paths';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const byUni = universities
+  .map((u) => ({ u, list: courses.filter((c) => c.university === u.slug).sort((a, b) => b.docs.length - a.docs.length || a.slug.localeCompare(b.slug)) }))
+  .filter((g) => g.list.length > 0);
+---
+
+<Base lang={lang} title={s.coursesPage.title} description={s.coursesPage.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index={String(courses.length)} title={s.coursesPage.title} lede={s.coursesPage.lede} level="h1" />
+
+      {
+        courses.length === 0 ? (
+          <EmptyState lang={lang} />
+        ) : (
+          <div data-course-filter>
+            <div class="bar">
+              <label class="f">
+                <span class="sr-only">{s.coursesPage.filter}</span>
+                <input type="search" placeholder={s.coursesPage.filterPlaceholder} autocomplete="off" enterkeyhint="search" data-cf-q />
+              </label>
+              <p class="mono muted" aria-live="polite" data-cf-count data-one={s.coursesPage.count(1)} data-template={s.coursesPage.count(0)}>
+                {s.coursesPage.count(courses.length)}
+              </p>
+            </div>
+            <p class="none" hidden data-cf-none role="status">{s.coursesPage.noResults}</p>
+
+            {byUni.map(({ u, list }) => (
+              <section class="uni" aria-labelledby={`u-${u.slug}`} data-cf-group>
+                <h2 id={`u-${u.slug}`} class="uni-h">
+                  <a class="display h-md" href={href(lang, `universities/${u.slug}`)} lang="en">{u.name}</a>
+                  <span class="mono muted">{list.length}</span>
+                </h2>
+                <ul class="list">
+                  {list.map((c) => (
+                    <li data-cf-item data-q={`${c.code ?? ''} ${c.title} ${u.name} ${c.instructors.join(' ')}`.toLowerCase()}>
+                      <a class="c" href={href(lang, `courses/${c.slug}`)}>
+                        <span class="code mono">{c.code ?? '—'}</span>
+                        <span class="ttl" lang="en">{c.title}</span>
+                        <span class="n mono muted">{s.course.docsCount(c.docs.length)}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Base>
+
+<script>
+  function init() {
+    const root = document.querySelector<HTMLElement>('[data-course-filter]');
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = '1';
+    const input = root.querySelector<HTMLInputElement>('[data-cf-q]')!;
+    const items = [...root.querySelectorAll<HTMLElement>('[data-cf-item]')];
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-cf-group]')];
+    const count = root.querySelector<HTMLElement>('[data-cf-count]')!;
+    const none = root.querySelector<HTMLElement>('[data-cf-none]')!;
+    const tpl = count.dataset.template!;
+    const apply = () => {
+      const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      let n = 0;
+      for (const li of items) {
+        const hit = words.every((w) => li.dataset.q!.includes(w));
+        li.hidden = !hit;
+        if (hit) n++;
+      }
+      for (const g of groups) g.hidden = !g.querySelector('[data-cf-item]:not([hidden])');
+      count.textContent = n === 1 ? count.dataset.one! : tpl.replace(/\d+/, String(n));
+      none.hidden = n > 0;
+    };
+    input.addEventListener('input', apply);
+  }
+  document.addEventListener('astro:page-load', init);
+</script>
+
+<style>
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    margin-top: clamp(32px, 5vw, 56px);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .f {
+    flex: 1 1 280px;
+    max-width: 480px;
+  }
+  .f input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+  }
+  .f input::placeholder {
+    color: var(--fg-faint);
+  }
+  .none {
+    margin-top: 32px;
+    color: var(--fg-muted);
+  }
+  .uni {
+    margin-top: clamp(32px, 5vw, 56px);
+  }
+  .uni-h {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .uni-h a:hover {
+    color: var(--accent);
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+  .list li {
+    border-bottom: 1px solid var(--line);
+  }
+  .c {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr) auto;
+    gap: 4px 16px;
+    align-items: baseline;
+    padding: 10px 6px;
+    margin-inline: -6px;
+  }
+  .c:hover,
+  .c:focus-visible {
+    background: var(--bg-raised);
+  }
+  .c:focus-visible {
+    outline-offset: -2px;
+  }
+  .code {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  .ttl {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.3;
+  }
+  .c:hover .ttl {
+    color: var(--accent);
+  }
+  .n {
+    white-space: nowrap;
+    font-size: 0.6875rem;
+  }
+  @media (max-width: 599px) {
+    .c {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .code {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

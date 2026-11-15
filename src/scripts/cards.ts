@@ -45,6 +45,9 @@ export function cardHtml(r: CardRec, cfg: CardCfg, heading: 'h2' | 'h3' = 'h3'):
     `<${heading} class="title">${r.x ?? esc(r.t)}</${heading}>` +
     (r.a?.length ? `<p class="authors">${esc(authorsLine(r.a))}</p>` : '') +
     `<p class="topics mono">${esc(r.p.map((tp) => cfg.topics[tp]?.[cfg.lang === 'tr' ? 1 : 0] ?? tp).join(' / '))}</p></div></a>` +
+    (r.k && (r.cc ?? r.c)
+      ? `<p class="mono course"><a href="${cfg.course}${esc(r.k)}/"><span class="w">${esc(cfg.courseWord)}</span> <span class="v" lang="en">${esc((r.cc ?? r.c)!)}</span></a></p>`
+      : '') +
     `<div class="foot"><span class="badges"><span class="chip${r.h ? ' chip-accent' : ''}"><span class="dot" aria-hidden="true"></span>${esc(r.h ? cfg.hosted : cfg.external)}</span>` +
     `<span class="chip">${esc(cfg.licenses[r.li] ?? r.li)}</span></span><span class="mono lvl">${esc(lvl)}</span></div></article>`
   );

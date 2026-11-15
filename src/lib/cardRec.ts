@@ -29,6 +29,8 @@ export interface CardRec {
   d: string;
   /** position in the title-sorted order */
   n: number;
+  /** slug of the course page, only when the document's course has one */
+  k?: string;
   /** "code title" of the course, for search */
   c?: string;
   /** course code, shown on the cover */
@@ -55,6 +57,10 @@ export interface CardCfg {
   licenses: Record<string, string>;
   hosted: string;
   external: string;
+  /** href prefix for a course page, ends with "/" */
+  course: string;
+  /** word before the course code on a card, e.g. "Course" */
+  courseWord: string;
   /** "{shown} / {total}" etc. */
   ui: { error: string };
 }
