@@ -344,3 +344,66 @@ export function coverSvg(id: string, motif: Motif): string {
 }
 
 export const COVER_VIEWBOX = `0 0 ${W} ${H}`;
+
+// ── Typographic covers ──────────────────────────────────────────────────────
+// Documents without a hosted first-page thumbnail get a cream sheet set in the
+// site's type: a mono label (course code, else the university), the short
+// title in the heading font, author surnames, and a thin accent rule. The
+// markup is plain HTML (no SVG paths); sizes are container-query units in
+// card.css, so it is identical at card, phone-thumbnail and document-page size.
+// Used by components/Cover.astro and scripts/cards.ts.
+
+const UNI_SHORT: Record<string, string> = {
+  mit: 'MIT',
+  berkeley: 'UC Berkeley',
+  imperial: 'Imperial',
+  nus: 'NUS',
+  'eth-zurich': 'ETH Zürich',
+  ntu: 'NTU',
+  ucla: 'UCLA',
+  epfl: 'EPFL',
+  nyu: 'NYU',
+  'paris-saclay': 'Paris-Saclay',
+  caltech: 'Caltech',
+};
+
+/** Short university name for labels, e.g. "MIT", "UC Berkeley", "Oxford". */
+export function uniShort(slug: string, name?: string): string {
+  return UNI_SHORT[slug] ?? (name ?? slug).replace(/^(University of|Université)\s+/i, '').replace(/\s+University$/i, '');
+}
+
+/** "Evans", "Evans & Smith", "Evans et al." */
+export function surnames(authors: string[] | undefined): string {
+  if (!authors?.length) return '';
+  const s = authors.map((a) => a.trim().split(/\s+/).filter((w) => !/^(jr|sr)\.?$/i.test(w)).at(-1) ?? '').filter(Boolean);
+  return s.length <= 2 ? s.join(' & ') : `${s[0]} et al.`;
+}
+
+const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ESC[c]);
+
+export interface TypeCover {
+  id: string;
+  /** Course code, or the university's short name. */
+  label: string;
+  /** Short title (plain; TeX delimiters are dropped). */
+  title: string;
+  authors?: string[];
+}
+
+/** Inner HTML of a `.cover[data-kind="type"]`. */
+export function coverHtml(c: TypeCover): string {
+  const title = c.title.replace(/\$([^$]*)\$/g, '$1').replace(/\\([a-zA-Z]+)\s?/g, '').replace(/[{}]/g, '');
+  const n = title.length;
+  const word = Math.max(0, ...title.split(/\s+/).map((w) => w.length));
+  // Bigger type for short titles, but the longest word must fit on one line.
+  const size = Math.max(n <= 16 ? 1 : n <= 34 ? 2 : n <= 60 ? 3 : 4, word <= 8 ? 1 : word <= 11 ? 2 : word <= 15 ? 3 : 4);
+  const rule = 18 + (hash(c.id) % 5) * 7;
+  const by = surnames(c.authors);
+  return (
+    `<div class="tc" data-s="${size}" aria-hidden="true">` +
+    `<span class="tl mono">${esc(c.label)}</span>` +
+    `<span class="tt">${esc(title)}</span>` +
+    `<span class="tf"><i class="tr" style="width:${rule}%"></i>${by ? `<span class="ta mono">${esc(by)}</span>` : ''}</span></div>`
+  );
+}

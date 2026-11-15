@@ -10,6 +10,7 @@ const s = t(lang);
 const path = Astro.url.pathname;
 const links = [
   { key: 'library', label: s.nav.library },
+  { key: 'courses', label: s.nav.courses },
   { key: 'books', label: s.nav.books },
   { key: 'universities', label: s.nav.universities },
   { key: 'topics', label: s.nav.topics },
@@ -31,7 +32,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
 
     <nav class="nav" aria-label={s.a11y.navPrimary}>
       {
-        links.slice(0, 5).map((l) => (
+        links.slice(0, 6).map((l) => (
           <a href={href(lang, l.key)} aria-current={isActive(l.key) ? 'page' : undefined}>
             {l.label}
           </a>
@@ -130,7 +131,7 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
   }
   .nav {
     display: none;
-    gap: 32px;
+    gap: 22px;
     font-size: 0.9rem;
   }
   .nav a {
@@ -260,6 +261,11 @@ const isActive = (k: string) => path.includes(`/${lang}/${k}/`);
     color: var(--accent);
   }
 
+  @media (min-width: 1280px) {
+    .nav {
+      gap: 30px;
+    }
+  }
   @media (min-width: 1024px) {
     .nav {
       display: flex;

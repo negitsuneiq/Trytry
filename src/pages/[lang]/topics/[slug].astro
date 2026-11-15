@@ -4,6 +4,8 @@ import DocCard from '../../../components/DocCard.astro';
 import CardConfig from '../../../components/CardConfig.astro';
 import LoadMore from '../../../components/LoadMore.astro';
 import EmptyState from '../../../components/EmptyState.astro';
+import UniCourses from '../../../components/UniCourses.astro';
+import { courses } from '../../../lib/courses';
 import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { TOPICS, type Topic } from '../../../lib/topics';
@@ -23,6 +25,7 @@ const { topic } = Astro.props as { topic: Topic };
 const s = t(lang);
 const docs = docsForTopic(topic.slug).sort((a, b) => a.title.localeCompare(b.title));
 const topicBooks = booksForTopic(topic.slug);
+const topicCourses = courses.filter((c) => c.topics.includes(topic.slug)).sort((a, b) => b.docs.length - a.docs.length || a.slug.localeCompare(b.slug));
 const other = lang === 'tr' ? 'en' : 'tr';
 ---
 
@@ -36,6 +39,10 @@ const other = lang === 'tr' ? 'en' : 'tr';
           <p class="lede"><span lang={other}>{topic[other]}</span> · {s.home.docsCount(docs.length)}</p>
         </div>
         <svg class="art" viewBox={COVER_VIEWBOX} aria-hidden="true" set:html={coverSvg(topic.slug, topic.motif)} />
+      </div>
+
+      <div class="tcourses">
+        <UniCourses courses={topicCourses} lang={lang} title={s.course.onTopic} id="topic-courses" showUni />
       </div>
 
       <div class="docs">
@@ -113,6 +120,13 @@ const other = lang === 'tr' ? 'en' : 'tr';
   }
   .docs {
     margin-top: clamp(48px, 7vw, 96px);
+  }
+  .tcourses {
+    margin-top: clamp(40px, 6vw, 72px);
+  }
+  .tcourses :global(.courses) {
+    margin-top: 0;
+    max-width: none;
   }
   .books {
     margin-top: clamp(56px, 8vw, 112px);

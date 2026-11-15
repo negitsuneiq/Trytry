@@ -23,6 +23,21 @@ const groups = DOC_TYPES.map((ty) => ({
   ty,
   rows: course.docs.filter((d) => d.type === ty).map((doc) => ({ doc, label: course.labels[doc.id] })),
 })).filter((g) => g.rows.length > 0);
+type Row = (typeof groups)[number]['rows'][number];
+/** A course taught in several terms: consecutive rows of one term form a sub-group with its own heading. */
+function byTerm(rows: Row[]): { head: string | null; rows: Row[]; by: string[] }[] {
+  if (!course.multiTerm) return [{ head: null, rows, by: course.instructors }];
+  const out: { head: string | null; rows: Row[]; by: string[] }[] = [];
+  for (const r of rows) {
+    const head = course.terms[r.doc.id] ?? '';
+    const last = out.at(-1);
+    if (last && last.head === head) last.rows.push(r);
+    else out.push({ head, rows: [r], by: [] });
+  }
+  if (out.length < 2) return [{ head: null, rows, by: course.instructors }];
+  for (const g of out) g.by = [...new Set(g.rows.flatMap((r) => r.doc.authors))];
+  return out;
+}
 const years = yearRange(course.docs);
 const heading = [course.code, course.title].filter(Boolean).join(' ');
 const titleLong = course.title.length > 48;
@@ -94,7 +109,18 @@ const titleLong = course.title.length > 48;
               <span class="display h-md">{s.course.typeHeads[g.ty]}</span>
               <span class="mono muted">{g.rows.length}</span>
             </h2>
-            <DocRows rows={g.rows} lang={lang} instructors={course.instructors} />
+            {byTerm(g.rows).map((tg) => (
+              <>
+                {tg.head !== null && (
+                  <h3 class="term mono" data-term>
+                    <span class="accent">{tg.head.split(' · ')[0] || '—'}</span>
+                    {tg.head.includes(' · ') && <span lang="en">{tg.head.slice(tg.head.indexOf(' · '))}</span>}
+                    <span class="muted n">{tg.rows.length}</span>
+                  </h3>
+                )}
+                <DocRows rows={tg.rows} lang={lang} instructors={tg.by} />
+              </>
+            ))}
           </section>
         ))
       }
@@ -167,6 +193,25 @@ const titleLong = course.title.length > 48;
   .grp {
     margin-top: clamp(36px, 5vw, 64px);
     max-width: 1000px;
+  }
+  .term {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 26px 0 8px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--fg-muted);
+  }
+  .term .accent {
+    font-size: 0.875rem;
+  }
+  .term .n {
+    margin-left: 6px;
+  }
+  .grp > .term:first-of-type {
+    margin-top: 6px;
   }
   .grp-h {
     display: flex;

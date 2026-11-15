@@ -3,10 +3,11 @@ import '../styles/card.css';
 import type { DocumentRecord } from '../lib/schema';
 import { t, type Lang } from '../i18n/strings';
 import { href } from '../lib/paths';
-import { inlineTex } from '../lib/math';
+import { inlineTex, plainTex } from '../lib/math';
 import { topicName } from '../lib/topics';
 import { universityBySlug } from '../lib/data';
-import { courseOfDoc, courseLabel } from '../lib/courses';
+import { courseOfDoc } from '../lib/courses';
+import { shortTitle, courseLine } from '../lib/short';
 import { authorsLine, realYear } from '../lib/format';
 import Cover from './Cover.astro';
 import LicenseBadge from './LicenseBadge.astro';
@@ -22,33 +23,37 @@ const H = heading;
 const s = t(lang);
 const uni = universityBySlug.get(doc.university);
 const course = courseOfDoc.get(doc.id);
-const cLabel = courseLabel(doc);
+const cLine = courseLine(doc);
+const short = course ? shortTitle(doc) : null;
+const docHref = href(lang, `doc/${doc.id}`);
 const year = realYear(doc.year, doc.accessed_at);
 ---
 
 <article class="card doc-card">
-  <a href={href(lang, `doc/${doc.id}`)} class="hit">
+  <a href={docHref} class="hit hit-cover" tabindex="-1" aria-hidden="true">
     <Cover doc={doc} />
+  </a>
+  {
+    course && cLine && (
+      <p class="mono course">
+        <a href={href(lang, `courses/${course.slug}`)}>
+          <span class="v" lang="en">{cLine}</span>
+        </a>
+      </p>
+    )
+  }
+  <a href={docHref} class="hit hit-body">
     <div class="body">
+      <H class="title" title={short ? plainTex(doc.title) : undefined} set:html={inlineTex(short ?? doc.title)} />
+      {doc.authors.length > 0 && <p class="authors">{authorsLine(doc.authors)}</p>}
       <p class="mono meta">
         <span lang="en">{uni?.name ?? doc.university}</span>
         <span aria-hidden="true">·</span>
         <span>{s.types[doc.type]}</span>
       </p>
-      <H class="title" set:html={inlineTex(doc.title)} />
-      {doc.authors.length > 0 && <p class="authors">{authorsLine(doc.authors)}</p>}
       <p class="topics mono">{doc.topics.map((tp) => topicName(tp, lang)).join(' / ')}</p>
     </div>
   </a>
-  {
-    course && cLabel && (
-      <p class="mono course">
-        <a href={href(lang, `courses/${course.slug}`)}>
-          <span class="w">{s.course.word}</span> <span class="v" lang="en">{cLabel}</span>
-        </a>
-      </p>
-    )
-  }
   <div class="foot">
     <LicenseBadge doc={doc} lang={lang} />
     <span class="mono lvl">{s.levels[doc.level]}{year ? ` · ${year}` : ''}</span>

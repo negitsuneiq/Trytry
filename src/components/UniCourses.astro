@@ -1,39 +1,49 @@
 ---
-// "Courses" block of a university page: compact list, first 12 visible, the
+// Compact list of courses (university pages, topic pages): first 12 visible, the
 // rest behind a "show all" button (all of them are plain links without JS).
 import type { Course } from '../lib/courses';
+import { universityBySlug } from '../lib/data';
 import { t, type Lang } from '../i18n/strings';
 import { href } from '../lib/paths';
 
 interface Props {
   courses: Course[];
   lang: Lang;
+  /** Section heading; default "Courses". */
+  title?: string;
+  /** Unique id prefix when a page holds more than one list. */
+  id?: string;
+  /** Name the university in each row (lists that mix universities). */
+  showUni?: boolean;
 }
-const { courses, lang } = Astro.props;
+const { courses, lang, title, id = 'uni-courses', showUni = false } = Astro.props;
 const s = t(lang);
 const FIRST = 12;
 ---
 
 {
   courses.length > 0 && (
-    <section class="courses" aria-labelledby="uni-courses" data-uni-courses>
+    <section class="courses" aria-labelledby={id} data-uni-courses>
       <div class="head">
-        <h2 id="uni-courses" class="display h-md">{s.course.onUniversity} <span class="mono muted n">{courses.length}</span></h2>
+        <h2 id={id} class="display h-md">{title ?? s.course.onUniversity} <span class="mono muted n">{courses.length}</span></h2>
         <a class="mono link-u" href={href(lang, 'courses')}>{s.course.seeAll} →</a>
       </div>
-      <ul id="uni-course-list">
+      <ul id={`${id}-list`}>
         {courses.map((c, i) => (
           <li class:list={[i >= FIRST && 'extra']}>
             <a class="c" href={href(lang, `courses/${c.slug}`)}>
               <span class="code mono">{c.code ?? '—'}</span>
               <span class="ttl" lang="en">{c.title}</span>
-              <span class="cnt mono muted">{s.course.docsCount(c.docs.length)}</span>
+              <span class:list={['cnt', 'mono', 'muted', showUni && 'wide']}>
+                {showUni && <span lang="en">{universityBySlug.get(c.university)?.name ?? c.university} · </span>}
+                {s.course.docsCount(c.docs.length)}
+              </span>
             </a>
           </li>
         ))}
       </ul>
       {courses.length > FIRST && (
-        <button class="btn btn-sm more" type="button" aria-expanded="false" aria-controls="uni-course-list" data-uc-toggle data-all={s.course.showAll(courses.length)} data-less={s.course.showFewer}>
+        <button class="btn btn-sm more" type="button" aria-expanded="false" aria-controls={`${id}-list`} data-uc-toggle data-all={s.course.showAll(courses.length)} data-less={s.course.showFewer}>
           {s.course.showAll(courses.length)}
         </button>
       )}
@@ -43,14 +53,15 @@ const FIRST = 12;
 
 <script>
   function init() {
-    const root = document.querySelector<HTMLElement>('[data-uni-courses]');
-    const btn = root?.querySelector<HTMLButtonElement>('[data-uc-toggle]');
-    if (!root || !btn || btn.dataset.ready) return;
-    btn.dataset.ready = '1';
-    btn.addEventListener('click', () => {
-      const open = root.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? btn.dataset.less! : btn.dataset.all!;
+    document.querySelectorAll<HTMLElement>('[data-uni-courses]').forEach((root) => {
+      const btn = root.querySelector<HTMLButtonElement>('[data-uc-toggle]');
+      if (!btn || btn.dataset.ready) return;
+      btn.dataset.ready = '1';
+      btn.addEventListener('click', () => {
+        const open = root.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? btn.dataset.less! : btn.dataset.all!;
+      });
     });
   }
   document.addEventListener('astro:page-load', init);
@@ -111,6 +122,11 @@ const FIRST = 12;
   .cnt {
     white-space: nowrap;
     font-size: 0.6875rem;
+  }
+  .cnt.wide {
+    white-space: normal;
+    text-align: right;
+    max-width: 34ch;
   }
   .more {
     margin-top: 20px;

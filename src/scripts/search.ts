@@ -5,6 +5,7 @@
 
 import { GLOSSARY } from '../lib/glossary';
 import type { CardCfg, CardRec } from '../lib/cardRec';
+import type { CourseRec } from '../lib/courseRec';
 
 /** Lower-case, drop diacritics, map Turkish dotted/dotless i. "Ölçü İ" → "olcu i". */
 export function fold(s: string): string {
@@ -114,6 +115,18 @@ export function buildIndex(recs: CardRec[], cfg: CardCfg): Doc[] {
         words(r.c ?? ''),
         words(`${cfg.unis[r.u]?.[0] ?? r.u} ${topics} ${typeNames[r.ty]}`),
       ],
+      code: fold(code).replace(/[^a-z0-9]/g, ''),
+    };
+  });
+}
+
+/** Same fields as documents: course code, title, instructors, (course), university + topics. */
+export function buildCourseIndex(recs: CourseRec[], cfg: CardCfg): Doc[] {
+  return recs.map((r) => {
+    const topics = r.p.map((tp) => `${cfg.topics[tp]?.[0] ?? tp} ${cfg.topics[tp]?.[1] ?? ''}`).join(' ');
+    const code = r.c ?? '';
+    return {
+      f: [words(code), words(r.t), words((r.a ?? []).join(' ')), [], words(`${cfg.unis[r.u]?.[0] ?? r.u} ${topics}`)],
       code: fold(code).replace(/[^a-z0-9]/g, ''),
     };
   });

@@ -5,6 +5,7 @@
 import type { DocType, DocumentRecord, Level } from './schema';
 import { DOC_TYPES } from './schema';
 import { documents, universities } from './data';
+import { authorsLine, realYear } from './format';
 
 export interface Course {
   slug: string;
@@ -22,6 +23,10 @@ export interface Course {
   docs: DocumentRecord[];
   /** Short row label per document id (course prefix stripped). */
   labels: Record<string, string>;
+  /** The documents come from several terms or instructors (same lecture number repeated in different years). */
+  multiTerm: boolean;
+  /** Only when `multiTerm`: document id → term heading, e.g. "2005 · Instructor". Empty when a document has neither year nor author. */
+  terms: Record<string, string>;
 }
 
 const norm = (s: string) => s.toLowerCase().replace(/[\s_-]+/g, '');
@@ -77,6 +82,39 @@ function labelFor(doc: DocumentRecord, code: string | null, ctitle: string, comm
 const isWeakCode = (n: string) => n.length <= 4 && !/\d/.test(n);
 
 const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+
+/**
+ * The lecture/week/chapter number carried by the file name of a document's source URL
+ * ("…/ebe195…_MIT18_310F13_Ch13.pdf" → 13, "lec07.pdf" → 7, "notes_3.pdf" → 3), or null.
+ */
+export function fileNumber(url: string): number | null {
+  let seg = url.split(/[?#]/)[0].replace(/\/+$/, '').split('/').pop() ?? '';
+  try {
+    seg = decodeURIComponent(seg);
+  } catch {}
+  seg = seg.replace(/\.[a-z0-9]{1,5}$/i, '').replace(/^[0-9a-f]{16,}[_-]/i, '');
+  const key = /(?:^|[^a-z])(?:ch|chap|chapter|lec|lect|lecture|week|wk|notes?|ps|pset|hw|set|sec|section|part|unit|topic|class|day|session|handout|assignment|sheet|exercises?|problems?|module|l|w)[\s_.-]*0*(\d{1,3})(?!\d)/i.exec(seg);
+  if (key) return Number(key[1]);
+  const nums = [...seg.matchAll(/\d+/g)].map((m) => m[0]).filter((n) => n.length <= 3);
+  return nums.length ? Number(nums[nums.length - 1]) : null;
+}
+
+/** Longest run of leading (or trailing) words shared by all titles, if it names a subject. */
+function commonWords(titles: string[]): string | null {
+  const ws = titles.map((t) => t.replace(/[:(].*$/, '').trim().split(/\s+/));
+  if (ws.length < 2) return null;
+  const STOP = new Set(['a', 'an', 'the', 'of', 'to', 'and', 'in', 'on', 'for', 'introduction', 'notes', 'lecture', 'lectures']);
+  for (const tail of [false, true]) {
+    const rows = tail ? ws.map((w) => [...w].reverse()) : ws;
+    let n = 0;
+    while (rows.every((r) => r[n] != null && r[n].toLowerCase() === rows[0][n].toLowerCase())) n++;
+    if (n === 0) continue;
+    const run = rows[0].slice(0, n);
+    if (tail) run.reverse();
+    if (run.some((w) => !STOP.has(w.toLowerCase()) && w.length > 2)) return run.join(' ');
+  }
+  return null;
+}
 const sortKey = (label: string) => label.replace(/\s*\([^)]*\)\s*$/, '');
 
 function build(): Course[] {
@@ -100,7 +138,10 @@ function build(): Course[] {
     const prefixes = docs.map((d) => titlePrefix(d.title, code)).filter((p): p is string => !!p);
     const prefixTop = mostCommon(prefixes)[0];
     const common = prefixTop && prefixes.filter((p) => p === prefixTop).length >= Math.max(2, docs.length * 0.4) ? prefixTop : null;
-    const title = mostCommon(docs.map((d) => d.course_title).filter((c): c is string => !!c))[0] ?? common ?? code ?? docs[0].title;
+    let title = mostCommon(docs.map((d) => d.course_title).filter((c): c is string => !!c))[0] ?? common ?? code ?? docs[0].title;
+    // A "title" that merely repeats the code: take the subject the documents share, else show the code once.
+    const codeOnly = code != null && norm(title) === norm(code);
+    if (codeOnly) title = common ?? commonWords(docs.map((d) => titlePrefix(d.title, code) ?? d.title)) ?? title;
 
     const labels: Record<string, string> = {};
     for (const d of docs) labels[d.id] = labelFor(d, code, title, common);
@@ -116,16 +157,40 @@ function build(): Course[] {
       if (seen.has(k) && seen.get(k) !== d.year) multiTerm = true;
       seen.set(k, d.year);
     }
-    const sorted = [...docs].sort(
-      (a, b) =>
+    const termOf = (d: DocumentRecord) => {
+      const yr = realYear(d.year, d.accessed_at);
+      const by = d.authors.length ? authorsLine(d.authors.slice(0, 2)) : '';
+      return { key: `${yr ?? ''}|${by}`, label: [yr, by].filter(Boolean).join(' · '), year: yr ?? d.year ?? 0 };
+    };
+    const termKey = (d: DocumentRecord) => (multiTerm ? termOf(d).key : '');
+    // Within one type (and term), titles that carry no number are ordered by the number in the source file name.
+    const byFile = new Set<string>();
+    const fileNo = new Map(docs.map((d) => [d.id, fileNumber(d.source_url)] as const));
+    const grouped = new Map<string, DocumentRecord[]>();
+    for (const d of docs) grouped.set(`${typeIdx(d)}|${termKey(d)}`, [...(grouped.get(`${typeIdx(d)}|${termKey(d)}`) ?? []), d]);
+    for (const [k, g] of grouped) {
+      const numbered = g.filter((d) => /\d/.test(sortKey(labels[d.id]))).length;
+      const nums = g.map((d) => fileNo.get(d.id)).filter((n): n is number => n != null);
+      // The numbers must form one series (mostly distinct); "fourierint1, fseries1, fourierint2…" does not.
+      if (g.length > 2 && numbered < g.length / 2 && nums.length >= g.length / 2 && new Set(nums).size >= nums.length * 0.85) byFile.add(k);
+    }
+    const sorted = [...docs].sort((a, b) => {
+      const ka = `${typeIdx(a)}|${termKey(a)}`;
+      const same = ka === `${typeIdx(b)}|${termKey(b)}`;
+      return (
         typeIdx(a) - typeIdx(b) ||
-        (multiTerm ? (a.year ?? 0) - (b.year ?? 0) : 0) ||
+        (multiTerm ? termOf(a).year - termOf(b).year || collator.compare(termOf(a).key, termOf(b).key) : 0) ||
+        (same && byFile.has(ka) ? (fileNo.get(a.id) ?? 1e9) - (fileNo.get(b.id) ?? 1e9) : 0) ||
         collator.compare(sortKey(labels[a.id]), sortKey(labels[b.id])) ||
         (a.year ?? 0) - (b.year ?? 0) ||
-        collator.compare(a.title, b.title),
-    );
+        collator.compare(a.title, b.title)
+      );
+    });
+    const terms: Record<string, string> = {};
+    if (multiTerm) for (const d of docs) terms[d.id] = termOf(d).label;
 
     const base = `${university}-${slugify(code && !isWeakCode(norm(code)) ? code : title)}`.replace(/-+$/, '');
+    const showCode = codeOnly && norm(title) === norm(code!) ? null : code;
     let slug = base;
     for (let n = 2; used.has(slug); n++) slug = `${base}-${n}`;
     used.add(slug);
@@ -136,7 +201,7 @@ function build(): Course[] {
     out.push({
       slug,
       university,
-      code,
+      code: showCode,
       title,
       instructors: mostCommon(docs.flatMap((d) => d.authors)),
       level: mostCommon(docs.map((d) => d.level))[0],
@@ -146,6 +211,8 @@ function build(): Course[] {
       pages: docs.reduce((n, d) => n + (d.pages ?? 0), 0),
       docs: sorted,
       labels,
+      multiTerm,
+      terms,
     });
   }
   return out.sort(

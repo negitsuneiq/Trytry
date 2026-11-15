@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { documents, universities } from '../lib/data';
 import { courses, courseOfDoc } from '../lib/courses';
 import { inlineTex } from '../lib/math';
+import { shortTitle } from '../lib/short';
 import type { CardRec } from '../lib/cardRec';
 
 const order = new Map(
@@ -70,7 +71,9 @@ export const GET: APIRoute = () => {
     const course = courseOfDoc.get(d.id);
     if (course) r.k = course.slug;
     if (d.course_code != null) r.cc = d.course_code;
-    if (d.title.includes('$')) r.x = inlineTex(d.title);
+    const short = shortTitle(d);
+    if (short) r.s = short;
+    if ((short ?? d.title).includes('$')) r.x = inlineTex(short ?? d.title);
     return r;
   });
   return new Response(JSON.stringify(recs), { headers: { 'Content-Type': 'application/json' } });

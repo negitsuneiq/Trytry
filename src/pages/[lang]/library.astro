@@ -23,8 +23,19 @@ const s = t(lang);
 </Base>
 
 <style>
+  /* Tighter than other pages: the search field is the page's tool and belongs in the first screen. */
   .page {
-    padding-top: calc(var(--header-h) + clamp(48px, 8vw, 112px));
+    padding-top: calc(var(--header-h) + clamp(28px, 3.4vw, 44px));
     padding-bottom: clamp(64px, 10vw, 120px);
+  }
+  .page :global(.sec-head) {
+    gap: 12px;
+    margin-bottom: clamp(18px, 2.4vw, 28px);
+  }
+  .page :global(.sec-index) {
+    margin-bottom: 10px;
+  }
+  .page :global(.sec-head .side) {
+    gap: 10px;
   }
 </style>
