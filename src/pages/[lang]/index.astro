@@ -3,8 +3,7 @@ import Base from '../../layouts/Base.astro';
 import TitleScene from '../../components/home/TitleScene.astro';
 import DefinitionScene from '../../components/home/DefinitionScene.astro';
 import DepartmentsRail from '../../components/home/DepartmentsRail.astro';
-import FlowScene from '../../components/home/FlowScene.astro';
-import ShelfScene from '../../components/home/ShelfScene.astro';
+import LibraryScene from '../../components/home/LibraryScene.astro';
 import QedScene from '../../components/home/QedScene.astro';
 import { t, type Lang } from '../../i18n/strings';
 import { langPaths } from '../../lib/routes';
@@ -19,14 +18,13 @@ const s = t(lang);
     <TitleScene lang={lang} />
     <DefinitionScene lang={lang} />
     <DepartmentsRail lang={lang} />
-    <FlowScene lang={lang} />
-    <ShelfScene lang={lang} />
+    <LibraryScene lang={lang} />
     <QedScene lang={lang} />
 
     <aside class="margin" aria-hidden="true">
       <span class="mono m-label" data-margin-label>§ 1 · {s.home.margin.title}</span>
       <span class="m-rule"><span class="m-fill" data-margin-fill></span></span>
-      <span class="mono m-page" data-margin-page>1 / 6</span>
+      <span class="mono m-page" data-margin-page>1 / 5</span>
     </aside>
   </div>
 </Base>
@@ -60,8 +58,7 @@ const s = t(lang);
   .home:global(.is-staged) :global(.rail-scene) {
     z-index: 3;
   }
-  .home > :global(.flow-scene),
-  .home > :global(.shelf-scene),
+  .home > :global(.library-scene),
   .home > :global(.qed-scene) {
     position: relative;
     z-index: 4;

@@ -1,0 +1,44 @@
+---
+import { t, type Lang } from '../../i18n/strings';
+import LibraryBrowser from '../LibraryBrowser.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = t(lang);
+---
+
+<section class="scene library-scene" data-scene="library" data-label={s.home.margin.library} aria-labelledby="lib-h">
+  <div class="wrap">
+    <header class="head">
+      <h2 id="lib-h">
+        <span class="thm">{s.home.libLabel} <b>3.</b></span>
+        <span class="display h-lg">{s.home.libTitle}</span>
+      </h2>
+      <p class="lede">{s.home.libLede}</p>
+    </header>
+    <LibraryBrowser lang={lang} cardHeading="h3" />
+  </div>
+</section>
+
+<style>
+  .library-scene {
+    padding-block: clamp(72px, 10vw, 140px) clamp(64px, 9vw, 120px);
+  }
+  .head {
+    display: grid;
+    gap: 20px clamp(24px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(28px, 4vw, 48px);
+  }
+  .head h2 {
+    display: grid;
+    gap: 14px;
+  }
+  @media (min-width: 900px) {
+    .head {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    }
+  }
+</style>

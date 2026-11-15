@@ -1,6 +1,7 @@
 // Library search and filtering over the shared /docs-index.json. Filtering,
 // sorting and search run on the full set; only the cards of the current page
-// of results are created (in batches, see pager.ts). Every control is mirrored into the URL.
+// of results are created (in batches, see pager.ts). On the /library/ page every control is
+// mirrored into the URL (data-url-state); embedded on the home page the state stays in memory.
 
 import MiniSearch from 'minisearch';
 import { appendCards, loadIndex, readCfg } from './cards';
@@ -20,7 +21,8 @@ const HAVE: Record<(typeof FACETS)[number], (r: CardRec) => string[]> = {
 
 export function initLibrary() {
   const root = document.querySelector<HTMLElement>('[data-library]');
-  if (!root) return;
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = '1';
   const cfg = readCfg();
   const grid = root.querySelector<HTMLElement>('[data-grid]')!;
   loadIndex(cfg).then(
@@ -37,6 +39,8 @@ export function initLibrary() {
 }
 
 function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof readCfg>, recs: CardRec[]) {
+  const urlState = root.dataset.urlState === '1';
+  const heading = root.dataset.cardHeading === 'h3' ? 'h3' : 'h2';
   const rank = (r: CardRec) => cfg.unis[r.u]?.[1] ?? 99;
   const topicNames = (r: CardRec) => r.p.map((tp) => `${cfg.topics[tp]?.[0] ?? tp} ${cfg.topics[tp]?.[1] ?? tp}`).join(' ');
   const records: Rec[] = recs.map((r) => ({
@@ -63,7 +67,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     size: BATCH,
     mount: (items, from, to) => {
       if (from === 0) grid.replaceChildren();
-      return appendCards(grid, items.slice(from, to), cfg, 'h2');
+      return appendCards(grid, items.slice(from, to), cfg, heading);
     },
   });
   const none = root.querySelector<HTMLElement>('[data-none]')!;
@@ -74,7 +78,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
   const showResults = root.querySelector<HTMLElement>('[data-show-results]')!;
 
   // URL → controls
-  const params = new URLSearchParams(location.search);
+  const params = new URLSearchParams(urlState ? location.search : '');
   q.value = params.get('q') ?? '';
   const setSort = (v: string) => sorts.forEach((r) => (r.checked = r.value === v));
   setSort(params.get('s') ?? 'relevance');
@@ -146,6 +150,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     activeCount.hidden = picked.length === 0;
 
     // controls → URL
+    if (!urlState) return;
     const out = new URLSearchParams();
     if (query) out.set('q', query);
     for (const k of FACETS) if (active[k].length) out.set(k, active[k].join(','));
