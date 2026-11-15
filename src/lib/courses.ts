@@ -106,9 +106,20 @@ function build(): Course[] {
     for (const d of docs) labels[d.id] = labelFor(d, code, title, common);
 
     const typeIdx = (d: DocumentRecord) => DOC_TYPES.indexOf(d.type === 'book' ? 'other' : d.type);
+    // A course taught in several terms repeats "Lecture 1", "Lecture 2"…; keep each term together.
+    const lead = (d: DocumentRecord) => `${d.type}|${(/^\D*\d+/.exec(sortKey(labels[d.id])) ?? [''])[0].toLowerCase()}`;
+    const seen = new Map<string, number | null>();
+    let multiTerm = false;
+    for (const d of docs) {
+      const k = lead(d);
+      if (k.endsWith('|')) continue;
+      if (seen.has(k) && seen.get(k) !== d.year) multiTerm = true;
+      seen.set(k, d.year);
+    }
     const sorted = [...docs].sort(
       (a, b) =>
         typeIdx(a) - typeIdx(b) ||
+        (multiTerm ? (a.year ?? 0) - (b.year ?? 0) : 0) ||
         collator.compare(sortKey(labels[a.id]), sortKey(labels[b.id])) ||
         (a.year ?? 0) - (b.year ?? 0) ||
         collator.compare(a.title, b.title),
