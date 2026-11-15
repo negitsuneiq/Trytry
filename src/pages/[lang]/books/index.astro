@@ -1,0 +1,266 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langPaths } from '../../../lib/routes';
+import { books } from '../../../lib/data';
+import { TOPICS, topicName } from '../../../lib/topics';
+import { bookLicenseLabel } from '../../../lib/schema';
+import { authorsLine } from '../../../lib/format';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const b = s.booksPage;
+const topicOptions = TOPICS.filter((tp) => books.some((bk) => bk.topics.includes(tp.slug)));
+---
+
+<Base lang={lang} title={b.title} description={b.lede}>
+  <section class="page-top">
+    <div class="wrap">
+      <SectionHead index="∎" title={b.title} lede={b.lede} level="h1" />
+
+      {
+        books.length === 0 ? (
+          <EmptyState lang={lang} />
+        ) : (
+          <div data-books data-none={b.noResults}>
+            <div class="filters">
+              <label class="search">
+                <span class="sr-only">{b.search}</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+                <input type="search" name="q" placeholder={b.searchPlaceholder} autocomplete="off" enterkeyhint="search" data-q />
+              </label>
+              <label class="topic-select">
+                <span class="mono muted">{b.topic}</span>
+                <select name="topic" data-topic>
+                  <option value="">{b.allTopics}</option>
+                  {topicOptions.map((tp) => (
+                    <option value={tp.slug}>{tp[lang]}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <div class="status">
+              <p class="mono muted" aria-live="polite" data-books-count data-one={b.results(1)} data-many={b.results(2)}>
+                {b.results(books.length)}
+              </p>
+              <button class="btn btn-sm" type="button" data-clear hidden>{b.clear}</button>
+            </div>
+
+            <ul class="list">
+              {
+                books.map((bk) => (
+                  <li class="book" data-book data-topics={bk.topics.join(' ')} data-search={`${bk.title} ${bk.authors.join(' ')}`.toLowerCase()}>
+                    <article>
+                      <p class="mono meta">
+                        <span>{s.levels[bk.level]}</span>
+                        {bk.year && (
+                          <>
+                            <span aria-hidden="true">·</span>
+                            <span>{bk.year}</span>
+                          </>
+                        )}
+                      </p>
+                      <h2 class="title" lang="en">{bk.title}</h2>
+                      {bk.authors.length > 0 && <p class="authors" lang="en">{authorsLine(bk.authors)}</p>}
+                      <p class="desc">{lang === 'tr' ? bk.description_tr : bk.description_en}</p>
+                      <p class="topics mono">{bk.topics.map((tp) => topicName(tp, lang)).join(' / ')}</p>
+                      <div class="foot">
+                        <span class="badges">
+                          {bk.license_url ? (
+                            <a class="chip" href={bk.license_url} target="_blank" rel="noopener" aria-label={`${b.licence}: ${bookLicenseLabel(bk.license)} ${b.newTab}`}>
+                              {bookLicenseLabel(bk.license)}
+                            </a>
+                          ) : (
+                            <span class="chip">{bookLicenseLabel(bk.license)}</span>
+                          )}
+                        </span>
+                        <span class="actions">
+                          <a class="btn btn-sm btn-primary" href={bk.home_url} target="_blank" rel="noopener" aria-label={`${b.openLabel(bk.title)} ${b.newTab}`}>
+                            {b.open}<span class="arrow" aria-hidden="true">↗</span>
+                          </a>
+                          {bk.pdf_url && (
+                            <a class="btn btn-sm" href={bk.pdf_url} target="_blank" rel="noopener" aria-label={`${b.pdfLabel(bk.title)} ${b.newTab}`}>
+                              {b.pdf}
+                            </a>
+                          )}
+                        </span>
+                      </div>
+                    </article>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="none" hidden data-empty>{b.noResults}</p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { initBooks } from '../../../scripts/books';
+  document.addEventListener('astro:page-load', initBooks);
+</script>
+
+<style>
+  .filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px 28px;
+    align-items: end;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 720px) {
+    .filters {
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    }
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    border-bottom: 1px solid var(--line-strong);
+    transition: border-color 0.3s;
+  }
+  .search:focus-within {
+    border-color: var(--accent);
+  }
+  .search svg {
+    width: 22px;
+    height: 22px;
+    color: var(--fg-muted);
+    flex: none;
+  }
+  .search input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: 0;
+    outline: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    padding: 8px 0;
+  }
+  .search input::placeholder {
+    color: var(--fg-faint);
+  }
+  .topic-select {
+    display: grid;
+    gap: 4px;
+  }
+  .topic-select select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+  }
+  .topic-select select:focus-visible {
+    outline-offset: 2px;
+  }
+  .status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 56px;
+    padding-block: 8px;
+  }
+  .status .btn[hidden] {
+    display: none;
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+  @media (min-width: 900px) {
+    .list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(28px, 4vw, 64px);
+    }
+  }
+  .book[hidden] {
+    display: none;
+  }
+  .book article {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: clamp(20px, 3vw, 32px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+  }
+  .title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    line-height: 1.1;
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
+    margin-top: 4px;
+  }
+  .authors {
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+  }
+  .desc {
+    max-width: 62ch;
+    margin-top: 4px;
+  }
+  .topics {
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+    margin-top: 4px;
+  }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+  .badges {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .actions .btn {
+    gap: 8px;
+  }
+  .none {
+    padding: 48px 0;
+    color: var(--fg-muted);
+    border-bottom: 1px solid var(--line);
+  }
+</style>

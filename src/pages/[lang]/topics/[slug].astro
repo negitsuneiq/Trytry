@@ -7,9 +7,10 @@ import EmptyState from '../../../components/EmptyState.astro';
 import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { TOPICS, type Topic } from '../../../lib/topics';
-import { docsForTopic } from '../../../lib/data';
+import { docsForTopic, booksForTopic } from '../../../lib/data';
 import { coverSvg, COVER_VIEWBOX } from '../../../lib/cover';
 import { href } from '../../../lib/paths';
+import { authorsLine } from '../../../lib/format';
 
 export function getStaticPaths() {
   return langCross(TOPICS.map((topic) => ({ params: { slug: topic.slug }, props: { topic } })));
@@ -21,6 +22,7 @@ const lang = Astro.params.lang as Lang;
 const { topic } = Astro.props as { topic: Topic };
 const s = t(lang);
 const docs = docsForTopic(topic.slug).sort((a, b) => a.title.localeCompare(b.title));
+const topicBooks = booksForTopic(topic.slug);
 const other = lang === 'tr' ? 'en' : 'tr';
 ---
 
@@ -52,6 +54,29 @@ const other = lang === 'tr' ? 'en' : 'tr';
           )
         }
       </div>
+
+      {
+        topicBooks.length > 0 && (
+          <section class="books" aria-labelledby="topic-books">
+            <h2 id="topic-books" class="display h-md">{s.booksPage.onTopic}</h2>
+            <ul>
+              {topicBooks.slice(0, 12).map((bk) => (
+                <li>
+                  <a class="title" href={bk.home_url} target="_blank" rel="noopener" lang="en" aria-label={`${bk.title} ${s.booksPage.newTab}`}>
+                    {bk.title}<span aria-hidden="true"> ↗</span>
+                  </a>
+                  {bk.authors.length > 0 && <span class="authors" lang="en">{authorsLine(bk.authors)}</span>}
+                </li>
+              ))}
+            </ul>
+            <p class="mono">
+              <a class="link-u" href={`${href(lang, 'books')}?topic=${topic.slug}`}>
+                {s.booksPage.allOnTopic} ({topicBooks.length}) →
+              </a>
+            </p>
+          </section>
+        )
+      }
     </div>
   </section>
   <CardConfig lang={lang} />
@@ -88,5 +113,41 @@ const other = lang === 'tr' ? 'en' : 'tr';
   }
   .docs {
     margin-top: clamp(48px, 7vw, 96px);
+  }
+  .books {
+    margin-top: clamp(56px, 8vw, 112px);
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 20px;
+  }
+  .books ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    max-width: 72ch;
+  }
+  .books li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .books .title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    transition: color 0.3s;
+  }
+  .books .title:hover {
+    color: var(--accent);
+  }
+  .books .authors {
+    color: var(--fg-muted);
+    font-size: 0.92rem;
   }
 </style>

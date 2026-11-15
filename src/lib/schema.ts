@@ -131,3 +131,32 @@ export const LEVELS: Level[] = ['undergraduate', 'graduate'];
 /** GitHub Pages limits, see README. */
 export const MAX_HOSTED_FILE_BYTES = 50 * 1024 * 1024;
 export const MAX_HOSTED_TOTAL_BYTES = 700 * 1024 * 1024;
+
+/** An openly licensed textbook. Lives in data/books.json, apart from the course documents; nothing is hosted. */
+export interface BookRecord {
+  id: string; // "book-…"
+  title: string;
+  authors: string[];
+  year: number | null;
+  level: Level;
+  topics: string[]; // 1–3 topic slugs, see topics.ts
+  /** SPDX-like identifier as printed by the book, e.g. "CC-BY-SA-4.0", "GFDL", "public-domain". */
+  license: string;
+  license_url: string | null;
+  home_url: string;
+  pdf_url: string | null;
+  /** Which lists include the book: AIM Open Textbook Initiative, Open Textbook Library. */
+  listed_by: ('aim' | 'otl')[];
+  description_en: string;
+  description_tr: string;
+}
+
+export const BOOK_LISTS = ['aim', 'otl'] as const;
+
+/** "CC-BY-SA-4.0" → "CC BY-SA 4.0"; anything else is shown as written. */
+export function bookLicenseLabel(license: string): string {
+  const m = /^CC-(BY(?:-[A-Z]{2})*)(?:-(\d\.\d))?$/.exec(license);
+  if (m) return m[2] ? `CC ${m[1]} ${m[2]}` : `CC ${m[1]}`;
+  if (license === 'CC0-1.0') return 'CC0 1.0';
+  return license === 'public-domain' ? 'Public domain' : license;
+}
