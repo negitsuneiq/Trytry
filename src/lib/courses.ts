@@ -119,11 +119,30 @@ const sortKey = (label: string) => label.replace(/\s*\([^)]*\)\s*$/, '');
 
 function build(): Course[] {
   const groups = new Map<string, DocumentRecord[]>();
+  // A number reused for different subjects ("Topics in ..." courses) is several courses, told apart by title.
+  const titleCounts = new Map<string, Map<string, number>>();
+  for (const d of documents) {
+    if (!d.course_code || !d.course_title) continue;
+    const k = `${d.university}|${norm(d.course_code)}`;
+    const m = titleCounts.get(k) ?? new Map<string, number>();
+    m.set(norm(d.course_title), (m.get(norm(d.course_title)) ?? 0) + 1);
+    titleCounts.set(k, m);
+  }
+  const SPLIT_MIN = 8;
+  const splitTitle = (uni: string, code: string, title: string) => {
+    const m = titleCounts.get(`${uni}|${code}`);
+    if (!m || !title) return false;
+    const big = [...m.entries()].filter(([, n]) => n >= SPLIT_MIN).sort((a, b) => b[1] - a[1]);
+    // The most common title keeps the plain code; other well-populated titles become their own course.
+    return big.length > 1 && big[0][0] !== title && (m.get(title) ?? 0) >= SPLIT_MIN;
+  };
   for (const d of documents) {
     const code = d.course_code ? norm(d.course_code) : '';
     const title = d.course_title ? norm(d.course_title) : '';
     // Tripos parts such as "IA" or "II" name a year, not a course: the title tells the courses apart.
-    const key = code && !(isWeakCode(code) && title) ? `${d.university}|c|${code}` : title ? `${d.university}|t|${title}` : null;
+    const key = code && !(isWeakCode(code) && title)
+      ? splitTitle(d.university, code, title) ? `${d.university}|c|${code}|${title}` : `${d.university}|c|${code}`
+      : title ? `${d.university}|t|${title}` : null;
     if (!key) continue;
     groups.set(key, [...(groups.get(key) ?? []), d]);
   }
