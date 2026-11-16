@@ -37,7 +37,9 @@ export interface CardRec {
   c?: string;
   /** course code, shown on the cover */
   cc?: string;
-  /** title as HTML, only when it contains TeX */
+  /** short title (course prefix stripped), only for documents of a course */
+  s?: string;
+  /** displayed title (short if any) as HTML, only when it contains TeX */
   x?: string;
 }
 
@@ -65,4 +67,6 @@ export interface CardCfg {
   courseWord: string;
   /** "{shown} / {total}" etc. */
   ui: { error: string };
+  /** labels of the reading-list toggle */
+  save: { add: string; remove: string };
 }

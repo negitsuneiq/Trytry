@@ -5,8 +5,10 @@
 
 import { appendCards, loadIndex, readCfg } from './cards';
 import { BATCH, createPager } from './pager';
-import { buildIndex, parseQuery, scoreDoc } from './search';
+import { buildCourseIndex, buildIndex, parseQuery, scoreDoc } from './search';
+import { appendCourseCards, loadCourses, readCourseCfg, stripRowHtml } from './courseCards';
 import type { CardRec } from '../lib/cardRec';
+import type { CourseRec } from '../lib/courseRec';
 
 const FACETS = ['u', 't', 'l', 'ty', 'li'] as const;
 const HAVE: Record<(typeof FACETS)[number], (r: CardRec) => string[]> = {
@@ -17,15 +19,27 @@ const HAVE: Record<(typeof FACETS)[number], (r: CardRec) => string[]> = {
   li: (r) => [r.li],
 };
 
+type View = 'courses' | 'docs';
+const COURSE_HAVE: Record<(typeof FACETS)[number], ((r: CourseRec, types: string[]) => string[]) | null> = {
+  u: (r) => [r.u],
+  t: (r) => r.p,
+  l: (r) => [r.l],
+  ty: (r, types) => types.filter((_, i) => r.ct[i] > 0),
+  li: null, // a licence belongs to a document, not to a course
+};
+/** Courses listed in the strip above document results. */
+const STRIP = 3;
+
 export function initLibrary() {
   const root = document.querySelector<HTMLElement>('[data-library]');
   if (!root || root.dataset.ready) return;
   root.dataset.ready = '1';
   const cfg = readCfg();
   const grid = root.querySelector<HTMLElement>('[data-grid]')!;
+  const ccfg = readCourseCfg();
   const start = () =>
-    loadIndex(cfg).then(
-      (recs) => setup(root, grid, cfg, recs),
+    Promise.all([loadIndex(cfg), ccfg ? loadCourses(ccfg).catch(() => [] as CourseRec[]) : Promise.resolve([] as CourseRec[])]).then(
+      ([recs, crecs]) => setup(root, grid, cfg, recs, ccfg, crecs),
       () => {
         grid.setAttribute('aria-busy', 'false');
         grid.innerHTML = '';
@@ -56,14 +70,25 @@ export function initLibrary() {
   root.addEventListener('pointerdown', go);
 }
 
-function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof readCfg>, recs: CardRec[]) {
+function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof readCfg>, recs: CardRec[], ccfg: ReturnType<typeof readCourseCfg>, crecs: CourseRec[]) {
   const urlState = root.dataset.urlState === '1';
   const heading = root.dataset.cardHeading === 'h3' ? 'h3' : 'h2';
   const rank = (r: CardRec) => cfg.unis[r.u]?.[1] ?? 99;
   const docs = buildIndex(recs, cfg);
+  const haveCourses = !!ccfg && crecs.length > 0;
+  const cdocs = haveCourses ? buildCourseIndex(crecs, cfg) : [];
+  const switcher = root.querySelector<HTMLElement>('[data-view-switch]');
+  const viewBtns = [...(switcher?.querySelectorAll<HTMLButtonElement>('[data-view]') ?? [])];
+  const strip = root.querySelector<HTMLElement>('[data-strip]')!;
+  const stripList = root.querySelector<HTMLElement>('[data-strip-list]')!;
+  const stripN = root.querySelector<HTMLElement>('[data-strip-n]')!;
+  const stripAll = root.querySelector<HTMLButtonElement>('[data-strip-all]')!;
+  if (!haveCourses && switcher) switcher.hidden = true;
+  const defaultView: View = haveCourses && root.dataset.defaultView === 'courses' ? 'courses' : 'docs';
 
   const q = root.querySelector<HTMLInputElement>('[data-q]')!;
   const sorts = [...root.querySelectorAll<HTMLInputElement>('[data-sort]')];
+  const viewOnly = [...root.querySelectorAll<HTMLElement>('[data-view-only]')];
   const hosted = root.querySelector<HTMLInputElement>('[data-hosted]')!;
   const boxes = [...root.querySelectorAll<HTMLInputElement>('[data-facet]')];
   const countLabel = root.querySelector<HTMLElement>('[data-count-label]')!;
@@ -71,6 +96,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     size: BATCH,
     mount: (items, from, to) => {
       if (from === 0) grid.replaceChildren();
+      if (view === 'courses') return appendCourseCards(grid, (items as unknown as CourseRec[]).slice(from, to), ccfg!, cfg, heading);
       return appendCards(grid, items.slice(from, to), cfg, heading);
     },
   });
@@ -85,6 +111,7 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
 
   // URL → controls
   const params = new URLSearchParams(urlState ? location.search : '');
+  let view: View = haveCourses ? (params.get('v') === 'docs' ? 'docs' : params.get('v') === 'courses' ? 'courses' : defaultView) : 'docs';
   if (urlState) q.value = params.get('q') ?? ''; // embedded: keep anything typed while the index was loading
   const setSort = (v: string) => sorts.forEach((r) => (r.checked = r.value === v));
   setSort(params.get('s') ?? 'relevance');
@@ -95,54 +122,117 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
   }
 
   const sortValue = () => sorts.find((r) => r.checked)?.value ?? 'relevance';
-  const selected = (key: string) => boxes.filter((b) => b.dataset.facet === key && b.checked).map((b) => b.value);
+  // Licence filters and the "newest" sort belong to documents only, "most documents" to courses only.
+  const inView = (el: HTMLElement) => {
+    const only = el.closest<HTMLElement>('[data-view-only]')?.dataset.viewOnly;
+    return !only || only === (view === 'courses' ? 'c' : 'd');
+  };
+  const selected = (key: string) => boxes.filter((b) => b.dataset.facet === key && b.checked && inView(b)).map((b) => b.value);
+  const syncView = () => {
+    for (const el of viewOnly) el.hidden = !inView(el);
+    if (sorts.find((r) => r.checked)?.closest<HTMLElement>('[data-view-only]')?.hidden) setSort('relevance');
+    viewBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    grid.dataset.mode = view === 'courses' ? 'c' : 'd';
+  };
 
   const apply = () => {
+    syncView();
     const query = q.value.trim();
     const parsed = parseQuery(query);
-    const scores = new Map<string, number>();
-    if (parsed) {
-      for (let k = 0; k < recs.length; k++) {
-        const sc = scoreDoc(docs[k], parsed);
-        if (sc >= 0) scores.set(recs[k].i, sc);
+    const active = Object.fromEntries(FACETS.map((k) => [k, selected(k)]));
+    const hostedOn = hosted.checked;
+
+    // Courses matching the query and the filters (the course view, and the strip above document results).
+    const cScores = new Map<string, number>();
+    let courseHits: CourseRec[] = [];
+    if (haveCourses) {
+      for (let k = 0; k < crecs.length; k++) {
+        const r = crecs[k];
+        let sc = 0;
+        if (parsed) {
+          sc = scoreDoc(cdocs[k], parsed);
+          if (sc < 0) continue;
+        }
+        if (hostedOn && r.h === 0) continue;
+        let ok = true;
+        for (const f of FACETS) {
+          const have = COURSE_HAVE[f];
+          if (!ok || !active[f].length || !have) continue;
+          const h = have(r, ccfg!.types);
+          ok = active[f].some((v) => h.includes(v));
+        }
+        if (!ok) continue;
+        cScores.set(r.s, sc);
+        courseHits.push(r);
       }
     }
 
-    const active = Object.fromEntries(FACETS.map((k) => [k, selected(k)]));
+    const scores = new Map<string, number>();
     const visible: CardRec[] = [];
-    for (const r of recs) {
-      let ok = !parsed || scores.has(r.i);
-      if (ok && hosted.checked) ok = r.h === 1;
-      for (const k of FACETS) {
-        if (!ok || !active[k].length) continue;
-        const have = HAVE[k](r);
-        ok = active[k].some((v) => have.includes(v));
+    if (view === 'docs') {
+      if (parsed) {
+        for (let k = 0; k < recs.length; k++) {
+          const sc = scoreDoc(docs[k], parsed);
+          if (sc >= 0) scores.set(recs[k].i, sc);
+        }
       }
-      if (ok) visible.push(r);
+      for (const r of recs) {
+        let ok = !parsed || scores.has(r.i);
+        if (ok && hostedOn) ok = r.h === 1;
+        for (const k of FACETS) {
+          if (!ok || !active[k].length) continue;
+          const have = HAVE[k](r);
+          ok = active[k].some((v) => have.includes(v));
+        }
+        if (ok) visible.push(r);
+      }
     }
 
     const by = sortValue();
-    // A year equal to the year of access is the crawl date, not the document's.
-    const year = (r: CardRec) => (r.y && r.y < Number(r.d.slice(0, 4)) ? r.y : 0);
-    const cmp: Record<string, (a: CardRec, b: CardRec) => number> = {
-      relevance: (a, b) => (scores.get(b.i) ?? 0) - (scores.get(a.i) ?? 0) || a.o - b.o,
-      newest: (a, b) => year(b) - year(a) || a.o - b.o,
-      title: (a, b) => a.n - b.n,
-      rank: (a, b) => rank(a) - rank(b) || a.n - b.n,
-    };
-    visible.sort(cmp[by] ?? cmp.relevance);
-    pager.set(visible);
+    let n: number;
+    if (view === 'courses') {
+      const crank = (r: CourseRec) => cfg.unis[r.u]?.[1] ?? 99;
+      const ccmp: Record<string, (a: CourseRec, b: CourseRec) => number> = {
+        relevance: (a, b) => (cScores.get(b.s) ?? 0) - (cScores.get(a.s) ?? 0) || a.o - b.o,
+        size: (a, b) => b.d - a.d || a.o - b.o,
+        title: (a, b) => a.n - b.n,
+        rank: (a, b) => crank(a) - crank(b) || a.n - b.n,
+      };
+      courseHits.sort(ccmp[by] ?? ccmp.relevance);
+      pager.set(courseHits as unknown as CardRec[]);
+      n = courseHits.length;
+    } else {
+      // A year equal to the year of access is the crawl date, not the document's.
+      const year = (r: CardRec) => (r.y && r.y < Number(r.d.slice(0, 4)) ? r.y : 0);
+      const cmp: Record<string, (a: CardRec, b: CardRec) => number> = {
+        relevance: (a, b) => (scores.get(b.i) ?? 0) - (scores.get(a.i) ?? 0) || a.o - b.o,
+        newest: (a, b) => year(b) - year(a) || a.o - b.o,
+        title: (a, b) => a.n - b.n,
+        rank: (a, b) => rank(a) - rank(b) || a.n - b.n,
+      };
+      visible.sort(cmp[by] ?? cmp.relevance);
+      pager.set(visible);
+      n = visible.length;
+    }
     grid.setAttribute('aria-busy', 'false');
 
-    const n = visible.length;
-    countLabel.textContent = (n === 1 ? countLabel.dataset.templateOne! : countLabel.dataset.template!).replace(/\d+/, String(n));
-    showResults.textContent = (n === 1 ? showResults.dataset.templateOne! : showResults.dataset.template!).replace(/\d+/, String(n));
+    // Course strip: the best few courses for a query, above the document results.
+    const strong = view === 'docs' && parsed && haveCourses ? [...courseHits].sort((a, b) => (cScores.get(b.s) ?? 0) - (cScores.get(a.s) ?? 0) || b.d - a.d || a.o - b.o) : [];
+    strip.hidden = strong.length === 0;
+    stripList.innerHTML = strong.slice(0, STRIP).map((r) => stripRowHtml(r, ccfg!, cfg)).join('');
+    stripN.textContent = strong.length ? String(strong.length) : '';
+    stripAll.hidden = strong.length <= STRIP;
+    stripAll.textContent = ccfg ? ccfg.stripAll.replace('0', String(strong.length)) : '';
+
+    const tpl = (el: HTMLElement, one: boolean) => el.dataset[(one ? 'templateOne' : 'template') + (view === 'courses' ? 'C' : '')]!;
+    countLabel.textContent = tpl(countLabel, n === 1).replace(/\d+/, String(n));
+    showResults.textContent = tpl(showResults, n === 1).replace(/\d+/, String(n));
     none.hidden = n > 0;
 
     // Active filters, shown (and removable) outside the panel.
     const picked: { label: string; input: HTMLInputElement }[] = [];
     if (hosted.checked) picked.push({ label: hosted.closest('label')!.textContent!.trim(), input: hosted });
-    for (const b of boxes) if (b.checked) picked.push({ label: b.nextElementSibling!.textContent!.trim(), input: b });
+    for (const b of boxes) if (b.checked && inView(b)) picked.push({ label: b.nextElementSibling!.textContent!.trim(), input: b });
     chips.replaceChildren(
       ...picked.map(({ label, input }) => {
         const li = document.createElement('li');
@@ -172,9 +262,21 @@ function setup(root: HTMLElement, grid: HTMLElement, cfg: ReturnType<typeof read
     for (const k of FACETS) if (active[k].length) out.set(k, active[k].join(','));
     if (hosted.checked) out.set('h', '1');
     if (by !== 'relevance') out.set('s', by);
+    if (haveCourses && view !== defaultView) out.set('v', view);
     const qs = out.toString();
     history.replaceState(history.state, '', qs ? `?${qs}` : location.pathname);
   };
+
+  const setView = (v: View) => {
+    if (v === view) return;
+    view = v;
+    apply();
+  };
+  viewBtns.forEach((b) => b.addEventListener('click', () => setView(b.dataset.view as View)));
+  stripAll.addEventListener('click', () => {
+    setView('courses');
+    root.querySelector('.status')?.scrollIntoView({ block: 'start' });
+  });
 
   let timer = 0;
   q.addEventListener('input', () => {

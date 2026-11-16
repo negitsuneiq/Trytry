@@ -1,0 +1,222 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SectionHead from '../../../components/SectionHead.astro';
+import CardConfig from '../../../components/CardConfig.astro';
+import { t, type Lang } from '../../../i18n/strings';
+import { langPaths } from '../../../lib/routes';
+import { href } from '../../../lib/paths';
+import { courseCfg } from '../../../lib/courseCfg';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const cfg = s.saved;
+---
+
+<Base lang={lang} title={s.saved.title} description={s.saved.lede}>
+  <meta slot="head" name="robots" content="noindex, follow" />
+  <section class="page-top saved" data-saved-page>
+    <div class="wrap">
+      <SectionHead index="§" title={s.saved.title} lede={s.saved.lede} level="h1" />
+
+      <p class="mono muted status" role="status" data-sp-status>{s.saved.loading}</p>
+      <noscript><p class="none">{s.pager.noscript}</p></noscript>
+
+      <div class="empty" hidden data-sp-empty>
+        <p class="display h-md">{s.saved.emptyTitle}</p>
+        <p class="muted">{s.saved.emptyBody}</p>
+        <p><a class="btn btn-primary" href={href(lang, 'library')}>{s.saved.emptyCta} <span class="arrow" aria-hidden="true">→</span></a></p>
+      </div>
+
+      <section class="grp" hidden data-sp-group="courses" aria-labelledby="sp-c">
+        <h2 id="sp-c" class="grp-h"><span class="display h-md">{s.saved.coursesHead}</span> <span class="mono muted" data-sp-n></span></h2>
+        <ul class="srows" data-sp-list></ul>
+      </section>
+
+      <section class="grp" hidden data-sp-group="docs" aria-labelledby="sp-d">
+        <h2 id="sp-d" class="grp-h"><span class="display h-md">{s.saved.docsHead}</span> <span class="mono muted" data-sp-n></span></h2>
+        <ul class="srows" data-sp-list></ul>
+      </section>
+
+      <section class="grp" hidden data-sp-group="recent" aria-labelledby="sp-r">
+        <h2 id="sp-r" class="grp-h"><span class="display h-md">{s.saved.recentHead}</span></h2>
+        <ul class="srows" data-sp-list></ul>
+      </section>
+
+      <footer class="sp-foot">
+        <p class="mono muted" data-sp-local>{s.saved.local}</p>
+        <p class="mono accent" data-sp-nostore hidden>{s.saved.noStorage}</p>
+        <div class="sp-clear" hidden data-sp-clear>
+          <button class="btn btn-sm" type="button" data-sp-clear-btn>{s.saved.clear}</button>
+          <div class="confirm" role="group" aria-label={s.saved.clear} hidden data-sp-confirm>
+            <p>{s.saved.confirm}</p>
+            <div class="acts">
+              <button class="btn btn-sm btn-primary" type="button" data-sp-yes>{s.saved.confirmYes}</button>
+              <button class="btn btn-sm" type="button" data-sp-no>{s.saved.confirmNo}</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <CardConfig lang={lang} />
+    <script type="application/json" id="course-cfg" set:html={JSON.stringify(courseCfg(s))} />
+    <script type="application/json" id="saved-cfg" set:html={JSON.stringify(cfg)} />
+  </section>
+</Base>
+
+<script>
+  import { initSavedPage } from '../../../scripts/savedPage';
+  let stop: (() => void) | null = null;
+  document.addEventListener('astro:page-load', () => {
+    stop?.();
+    stop = initSavedPage();
+  });
+  document.addEventListener('astro:before-swap', () => {
+    stop?.();
+    stop = null;
+  });
+</script>
+
+<style is:global>
+  .saved .status {
+    margin-top: clamp(24px, 4vw, 40px);
+  }
+  .saved [hidden] {
+    display: none !important;
+  }
+  .saved .empty {
+    display: grid;
+    gap: 14px;
+    justify-items: start;
+    margin-top: clamp(28px, 4vw, 48px);
+    padding: clamp(28px, 5vw, 56px);
+    border: 1px dashed var(--line-strong);
+  }
+  .saved .empty .muted {
+    max-width: 56ch;
+  }
+  .saved .grp {
+    max-width: 1000px;
+    margin-top: clamp(32px, 5vw, 56px);
+  }
+  .saved .grp-h {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .srows {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+  .srows > li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sp-main {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    padding: 12px 6px;
+    margin-inline: -6px;
+    transition: background-color 0.2s;
+  }
+  .sp-main:hover,
+  .sp-main:focus-visible {
+    background: var(--bg-raised);
+  }
+  .sp-t {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    transition: color 0.2s;
+  }
+  .sp-main:hover .sp-t,
+  .sp-main:focus-visible .sp-t {
+    color: var(--accent);
+  }
+  .sp-code {
+    color: var(--accent);
+    font-size: 0.8125rem;
+    margin-right: 10px;
+  }
+  .sp-m {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+    line-height: 1.5;
+  }
+  .sp-m {
+    column-gap: 14px;
+  }
+  .sp-m [aria-hidden='true'] {
+    display: none;
+  }
+  .sp-m .hosted {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--fg);
+  }
+  .sp-m .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .sp-rm {
+    min-height: 44px;
+    padding: 0 6px;
+    color: var(--fg-muted);
+    font-size: 0.75rem;
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  .sp-rm:hover,
+  .sp-rm:focus-visible {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  .sp-save {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+  }
+  .sp-save:hover {
+    color: var(--fg);
+  }
+  .sp-save[aria-pressed='true']:hover {
+    color: var(--accent);
+  }
+  .sp-foot {
+    display: grid;
+    gap: 14px;
+    justify-items: start;
+    max-width: 1000px;
+    margin-top: clamp(40px, 6vw, 72px);
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .sp-foot .confirm {
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+  }
+  .sp-foot .confirm .acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>

@@ -1,0 +1,179 @@
+/* Course card of the library's course view and the course strip above document
+results. Global, scoped by class, because the markup is built client-side
+(scripts/courseCards.ts). */
+
+.course-card {
+  min-width: 0;
+  display: flex;
+}
+.course-card .hit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  padding: clamp(16px, 1.8vw, 22px);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  transition:
+    border-color 0.4s,
+    transform 0.6s var(--ease-out),
+    box-shadow 0.6s var(--ease-out);
+}
+.course-card .hit:hover,
+.course-card .hit:focus-visible {
+  border-color: rgb(var(--accent-rgb) / 0.55);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px -16px rgb(23 20 15 / 0.35);
+}
+.course-card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--fg-muted);
+  font-size: 0.6875rem;
+}
+.course-card .ccode {
+  color: var(--accent);
+  font-size: 0.8125rem;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+.course-card .ctitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  line-height: 1.1;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+  transition: color 0.3s;
+}
+.course-card .ccode + .ctitle {
+  margin-top: -2px;
+}
+.course-card .hit:hover .ctitle,
+.course-card .hit:focus-visible .ctitle {
+  color: var(--accent);
+}
+.course-card .cby {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+.course-card .cnts {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--fg);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+}
+.course-card .cby + .cnts,
+.course-card .ctitle + .cnts {
+  margin-top: auto;
+}
+.course-card .cfoot {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+  color: var(--fg-muted);
+  font-size: 0.6875rem;
+}
+.course-card .yrs {
+  white-space: nowrap;
+}
+
+/* Phones: compact rows like the document cards. */
+@media (max-width: 480px) {
+  .course-card .hit {
+    background: none;
+    border-width: 0 0 1px;
+    padding: 18px 0;
+  }
+  .course-card .hit:hover,
+  .course-card .hit:focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Course strip above document results. */
+.course-strip {
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+.course-strip[hidden] {
+  display: none;
+}
+.course-strip .strip-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 20px;
+  margin-bottom: 8px;
+}
+.course-strip .strip-h h2 {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 400;
+}
+.course-strip ul {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+}
+.course-strip li {
+  border-bottom: 1px solid var(--line);
+}
+.course-strip .sr {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: baseline;
+  padding: 10px 6px;
+  margin-inline: -6px;
+}
+.course-strip .sr:hover,
+.course-strip .sr:focus-visible {
+  background: var(--bg-raised);
+}
+.course-strip .sr:focus-visible {
+  outline-offset: -2px;
+}
+.course-strip .scode {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+.course-strip .sttl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+.course-strip .sr:hover .sttl {
+  color: var(--accent);
+}
+.course-strip .smeta {
+  display: inline-flex;
+  gap: 6px;
+  color: var(--fg-muted);
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+@media (max-width: 599px) {
+  .course-strip .sr {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .course-strip .smeta {
+    white-space: normal;
+  }
+}
+
+/* Room for the bookmark tab in the top-right corner (lib/saveBtn.ts). */
+.course-card .meta {
+  padding-right: 40px;
+}

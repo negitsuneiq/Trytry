@@ -8,11 +8,13 @@ import { t, type Lang } from '../../../i18n/strings';
 import { langCross } from '../../../lib/routes';
 import { documents, universityBySlug, similarDocuments } from '../../../lib/data';
 import { courseOfDoc, relatedDocuments } from '../../../lib/courses';
+import { shortTitle, courseLine } from '../../../lib/short';
 import { LICENSE_INFO, licenseLabel, type DocumentRecord } from '../../../lib/schema';
 import { href, asset } from '../../../lib/paths';
 import { inlineTex, plainTex } from '../../../lib/math';
 import { topicName } from '../../../lib/topics';
 import { bytes, date, authorsLine, realYear } from '../../../lib/format';
+import { saveText } from '../../../lib/saveBtn';
 
 export function getStaticPaths() {
   return langCross(documents.map((doc) => ({ params: { id: doc.id }, props: { doc } })));
@@ -30,11 +32,13 @@ const pos = course ? course.docs.findIndex((d) => d.id === doc.id) : -1;
 const prev = course && pos > 0 ? course.docs[pos - 1] : null;
 const next = course && pos >= 0 && pos < course.docs.length - 1 ? course.docs[pos + 1] : null;
 const related = course ? [] : relatedDocuments(doc);
+const short = course ? shortTitle(doc) : null;
 const crumbCourse = course ? course.code ?? course.title : null;
 const statusLabel = { ok: s.doc.statusOk, broken: s.doc.statusBroken, redirected: s.doc.statusRedirected, unchecked: s.doc.statusUnchecked }[doc.link_status];
 const primary = doc.hosted && doc.file_path ? asset(doc.file_path) : doc.source_url;
 const canPreview = doc.hosted && !!doc.file_path && doc.file_path.toLowerCase().endsWith('.pdf');
 const year = realYear(doc.year, doc.accessed_at);
+const saveBtn = saveText('doc', doc.id, false, { add: s.saved.save, remove: s.saved.unsave });
 
 const rows: [string, string | null, string?][] = [
   [s.doc.university, uni?.name ?? doc.university, href(lang, `universities/${doc.university}`)],
@@ -48,7 +52,7 @@ const rows: [string, string | null, string?][] = [
 ---
 
 <Base lang={lang} title={plainTex(doc.title)} description={`${doc.authors.join(', ')} — ${uni?.name ?? ''}. ${s.types[doc.type]}, ${s.levels[doc.level]}.`}>
-  <article class="doc">
+  <article class="doc" data-doc-view={doc.id} data-doc-title={plainTex(short ?? doc.title)} data-doc-course={courseLine(doc) ?? undefined} data-course-slug={course?.slug}>
     <div class="wrap">
       <nav class="crumbs mono" aria-label={s.a11y.breadcrumb}>
         <a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span>
@@ -70,7 +74,16 @@ const rows: [string, string | null, string?][] = [
 
         <div class="main-col">
           <LicenseBadge doc={doc} lang={lang} />
-          <h1 class="display title" data-rise set:html={inlineTex(doc.title)} />
+          {
+            course && (
+              <p class="kicker mono">
+                <a href={href(lang, `courses/${course.slug}`)} lang="en">
+                  {[course.code, course.title].filter(Boolean).join(' · ')}
+                </a>
+              </p>
+            )
+          }
+          <h1 class:list={['display title', { 'has-kicker': !!course }]} data-rise title={short ? plainTex(doc.title) : undefined} set:html={inlineTex(short ?? doc.title)} />
           {doc.authors.length > 0 && <p class="by">{authorsLine(doc.authors)}</p>}
           {doc.description && <p class="desc muted" lang="en">{doc.description}</p>}
 
@@ -79,6 +92,7 @@ const rows: [string, string | null, string?][] = [
               {doc.hosted ? (doc.file_size ? `${s.doc.openPdf} · ${bytes(doc.file_size, lang)}` : s.doc.openPdf) : s.doc.openSource}
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
+            <Fragment set:html={saveBtn} />
             {
               canPreview && (
                 <button class="btn preview-btn" type="button" data-preview-toggle aria-expanded="false" aria-controls="pdf-preview" data-show={s.doc.preview} data-hide={s.doc.previewHide}>
@@ -301,6 +315,30 @@ const rows: [string, string | null, string?][] = [
     font-size: clamp(2.6rem, 6.4vw, 6rem);
     margin-top: 20px;
     text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  .kicker {
+    margin-top: 22px;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+  .kicker a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.25s;
+  }
+  .kicker a:hover {
+    text-decoration-color: currentColor;
+  }
+  .kicker + .title {
+    margin-top: 8px;
+  }
+  @media (max-width: 480px) {
+    .title {
+      font-size: clamp(2rem, 9.5vw, 2.6rem);
+    }
   }
   .by {
     font-size: clamp(1.1rem, 1.6vw, 1.35rem);

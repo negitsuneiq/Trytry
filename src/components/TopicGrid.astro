@@ -8,12 +8,17 @@ import { docsForTopic } from '../lib/data';
 interface Props {
   topics: Topic[];
   lang: Lang;
+  /** A closing tile that fills the last row (the topics index links on to the courses). */
+  closing?: { href: string; label: string; sub?: string };
 }
-const { topics, lang } = Astro.props;
+const { topics, lang, closing } = Astro.props;
 const s = t(lang);
+/** Columns the closing tile spans, per grid width, so that the last row is full. */
+const span = (cols: number) => cols - (topics.length % cols || cols) || cols;
+const spanVars = `--s2:${span(2)};--s3:${span(3)};--s4:${span(4)}`;
 ---
 
-<ul class="topics">
+<ul class="topics" style={closing ? spanVars : undefined}>
   {
     topics.map((tp, i) => (
       <li data-reveal style={`--d:${(i % 4) * 0.06}s`}>
@@ -25,6 +30,17 @@ const s = t(lang);
         </a>
       </li>
     ))
+  }
+  {
+    closing && (
+      <li class="closing" data-reveal>
+        <a href={closing.href}>
+          <span class="mono n" aria-hidden="true">→</span>
+          <span class="name display">{closing.label}</span>
+          {closing.sub && <span class="mono count">{closing.sub}</span>}
+        </a>
+      </li>
+    )
   }
 </ul>
 
@@ -98,6 +114,31 @@ const s = t(lang);
     font-size: clamp(1.5rem, 2.6vw, 2.3rem);
     line-height: 1;
     hyphens: auto;
+  }
+  .closing {
+    grid-column: span var(--s2, 1);
+  }
+  .closing a {
+    background: var(--bg-raised);
+  }
+  .closing .name {
+    color: var(--accent);
+  }
+  .closing a:hover .name,
+  .closing a:focus-visible .name {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+  }
+  @media (min-width: 720px) {
+    .closing {
+      grid-column: span var(--s3, 1);
+    }
+  }
+  @media (min-width: 1100px) {
+    .closing {
+      grid-column: span var(--s4, 1);
+    }
   }
   .count {
     margin-top: 10px;

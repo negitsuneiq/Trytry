@@ -673,3 +673,133 @@ input[type='search']::-webkit-search-cancel-button {
     content: none;
   }
 }
+
+/* ── Reading list ───────────────────────────────────────────────────────────
+   The bookmark toggle (lib/saveBtn.ts), the "where you left off" strip on the
+   home page and the "viewed" ticks. State comes from scripts/saved.ts. */
+.save {
+  color: var(--fg-muted);
+  touch-action: manipulation;
+}
+.save svg {
+  flex: none;
+}
+.save svg path {
+  transition: fill 0.25s;
+}
+.save[aria-pressed='true'] {
+  color: var(--accent);
+}
+.save[aria-pressed='true'] svg path {
+  fill: currentColor;
+}
+html:not(.js) .save {
+  display: none;
+}
+/* On a card: a small round tab over the corner, outside the card's own links. */
+.save-icon {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgb(248 245 238 / 0.92);
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+.save-icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+}
+.save-icon:hover {
+  color: var(--fg);
+  border-color: var(--line-strong);
+}
+.save-icon[aria-pressed='true']:hover {
+  color: var(--accent);
+}
+.save-icon:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.save-text[aria-pressed='true'] {
+  border-color: var(--accent);
+}
+.save-text:hover,
+.save-text:focus-visible {
+  color: var(--accent-ink);
+}
+.doc-card,
+.course-card {
+  position: relative;
+}
+@media (max-width: 480px) {
+  .doc-card .save-icon {
+    top: auto;
+    bottom: 12px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .doc-card .foot {
+    padding-right: 46px;
+  }
+}
+
+.resume {
+  display: flex;
+  align-items: baseline;
+  gap: 4px 16px;
+  min-width: 0;
+  margin-bottom: clamp(16px, 2.2vw, 24px);
+  padding: 10px 0;
+  border-block: 1px solid var(--line);
+  font-size: 0.75rem;
+}
+.resume[hidden] {
+  display: none;
+}
+.resume .r-l {
+  flex: none;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.resume .r-main {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: color 0.25s;
+}
+.resume .r-main:hover {
+  color: var(--accent);
+}
+.resume .r-c {
+  color: var(--fg-muted);
+}
+.resume .r-list {
+  flex: none;
+  margin-left: auto;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.resume .r-list:hover {
+  color: var(--fg);
+}
+@media (max-width: 560px) {
+  .resume .r-l {
+    display: none;
+  }
+}

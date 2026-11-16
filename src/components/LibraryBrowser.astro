@@ -6,6 +6,8 @@ import { t, type Lang } from '../i18n/strings';
 import { documents, universities, usedTopics } from '../lib/data';
 import { TOPICS } from '../lib/topics';
 import { DOC_TYPES, LEVELS, licenseLabel, type License } from '../lib/schema';
+import { courses } from '../lib/courses';
+import { courseCfg } from '../lib/courseCfg';
 
 interface Props {
   lang: Lang;
@@ -13,6 +15,8 @@ interface Props {
   urlState?: boolean;
   /** Heading level of the cards: below the page's own headings. */
   cardHeading?: 'h2' | 'h3';
+  /** Which view is shown without a `v` parameter; default: courses on the library page, documents embedded. */
+  defaultView?: 'courses' | 'docs';
 }
 const { lang, urlState = false, cardHeading = 'h2' } = Astro.props;
 const s = t(lang);
@@ -21,6 +25,9 @@ const topicOptions = usedTopics.length ? usedTopics : TOPICS;
 const uniOptions = universities.filter((u) => documents.some((d) => d.university === u.slug));
 const licenses = [...new Set(documents.map((d) => d.license))].sort() as License[];
 const types = DOC_TYPES.filter((ty) => documents.some((d) => d.type === ty));
+const defaultView = Astro.props.defaultView ?? (urlState ? 'courses' : 'docs');
+const hasCourses = courses.length > 0;
+const cc = courseCfg(s);
 
 const groups = [
   { key: 'u', label: s.library.university, options: uniOptions.map((u) => ({ value: u.slug, label: u.name, en: true })) },
@@ -35,7 +42,7 @@ const groups = [
   documents.length === 0 ? (
     <EmptyState lang={lang} />
   ) : (
-    <div class="lib" data-library data-url-state={urlState ? "1" : undefined} data-card-heading={cardHeading}>
+    <div class="lib" data-library data-url-state={urlState ? "1" : undefined} data-card-heading={cardHeading} data-default-view={hasCourses ? defaultView : 'docs'}>
       <div class="searchbar">
         <label class="search">
           <span class="sr-only">{s.library.search}</span>
@@ -71,12 +78,13 @@ const groups = [
                 <legend class="mono">{s.library.sort}</legend>
                 <div class="opts">
                   {[
-                    ['relevance', s.library.sortRelevance],
-                    ['newest', s.library.sortNewest],
-                    ['title', s.library.sortTitle],
-                    ['rank', s.library.sortRank],
-                  ].map(([value, label], i) => (
-                    <label class="opt">
+                    ['relevance', s.library.sortRelevance, ''],
+                    ['newest', s.library.sortNewest, 'd'],
+                    ['size', s.library.sortSize, 'c'],
+                    ['title', s.library.sortTitle, ''],
+                    ['rank', s.library.sortRank, ''],
+                  ].map(([value, label, only], i) => (
+                    <label class="opt" data-view-only={only || undefined} hidden={only === 'c'}>
                       <input type="radio" name="s" value={value} checked={i === 0} data-sort />
                       <span>{label}</span>
                     </label>
@@ -93,7 +101,7 @@ const groups = [
               </label>
 
               {groups.map((g) => (
-                <fieldset class="group">
+                <fieldset class="group" data-view-only={g.key === 'li' ? 'd' : undefined}>
                   <legend class="mono">{g.label}</legend>
                   <div class="opts">
                     {g.options.map((o) => (
@@ -111,7 +119,7 @@ const groups = [
               <button class="btn btn-sm" type="button" data-clear>
                 {s.library.clear}
               </button>
-              <button class="btn btn-sm btn-primary" type="button" data-fs-close data-show-results data-template-one={s.library.showResults(1)} data-template={s.library.showResults(2)}>
+              <button class="btn btn-sm btn-primary" type="button" data-fs-close data-show-results data-template-one={s.library.showResults(1)} data-template={s.library.showResults(2)} data-template-one-c={s.library.showCourses(1)} data-template-c={s.library.showCourses(2)}>
                 {s.library.showResults(documents.length)}
               </button>
             </div>
@@ -120,14 +128,29 @@ const groups = [
       </div>
 
       <div class="status">
-        <p class="mono muted count" aria-live="polite" data-count-label data-template-one={s.library.results(1)} data-template={s.library.results(2)}>
-          {s.library.results(documents.length)}
+        {
+          hasCourses && (
+            <div class="seg mono" role="group" aria-label={s.library.viewLabel} data-view-switch>
+              <button type="button" data-view="courses" aria-pressed={defaultView === 'courses' ? 'true' : 'false'}>{s.library.viewCourses}</button>
+              <button type="button" data-view="docs" aria-pressed={defaultView === 'docs' ? 'true' : 'false'}>{s.library.viewDocs}</button>
+            </div>
+          )
+        }
+        <p class="mono muted count" aria-live="polite" data-count-label data-template-one={s.library.results(1)} data-template={s.library.results(2)} data-template-one-c={s.library.courseResults(1)} data-template-c={s.library.courseResults(2)}>
+          {defaultView === 'courses' && hasCourses ? s.library.courseResults(courses.length) : s.library.results(documents.length)}
         </p>
         <ul class="active" data-active data-remove={s.library.removeFilter} />
       </div>
 
       <div class="results">
-        <div class="grid" data-grid aria-busy="true">
+        <section class="course-strip" aria-label={s.library.stripTitle} hidden data-strip>
+          <div class="strip-h">
+            <h2 class="mono">{s.library.stripTitle} <span class="muted" data-strip-n></span></h2>
+            <button class="mono link-u" type="button" data-strip-all data-template={s.library.stripAll(0)} hidden></button>
+          </div>
+          <ul data-strip-list></ul>
+        </section>
+        <div class="grid" data-grid data-mode={hasCourses ? defaultView : 'docs'} aria-busy="true">
           {Array.from({ length: 12 }, () => (
             <div class="sk" aria-hidden="true" />
           ))}
@@ -146,6 +169,7 @@ const groups = [
         </div>
       </div>
       <CardConfig lang={lang} />
+      {hasCourses && <script type="application/json" id="course-cfg" set:html={JSON.stringify(cc)} />}
     </div>
   )
 }
@@ -442,7 +466,40 @@ const groups = [
     align-items: center;
     gap: 10px 16px;
     min-height: 34px;
-    margin: 20px 0 28px;
+    margin: 16px 0 24px;
+  }
+  /* View switch: the same pill as the language switch in the header. */
+  .seg {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  html:not(.js) .seg {
+    display: none;
+  }
+  .seg button {
+    height: 28px;
+    padding: 0 14px;
+    border-radius: 999px;
+    color: var(--fg-muted);
+    white-space: nowrap;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+  .seg button:hover {
+    color: var(--fg);
+  }
+  .seg button[aria-pressed='true'] {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .seg button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
   .active {
     list-style: none;
@@ -498,6 +555,10 @@ const groups = [
   .grid > :global([hidden]) {
     display: none;
   }
+  .opt[hidden],
+  .group[hidden] {
+    display: none;
+  }
   /* Phones: single column of compact cards (see styles/card.css). */
   @media (max-width: 480px) {
     .grid {
@@ -511,6 +572,10 @@ const groups = [
     }
   }
   /* Placeholder cards until the index arrives: same cell shape, so nothing jumps. */
+  .grid[data-mode='c'] .sk {
+    aspect-ratio: auto;
+    height: 210px;
+  }
   .sk {
     aspect-ratio: 3 / 4;
     background: var(--bg-raised);

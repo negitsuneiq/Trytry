@@ -5,6 +5,7 @@
 // page (the only one with scroll scenes) pulls GSAP in through ./home.
 
 import type Lenis from 'lenis';
+import { initSaved } from './saved';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -242,6 +243,7 @@ document.addEventListener('astro:page-load', () => {
   // Cheap, needed at once.
   initLangMemory();
   initMenu();
+  initSaved();
   initReveals();
   initCounters();
   initSplits();

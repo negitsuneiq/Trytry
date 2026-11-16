@@ -3,8 +3,9 @@ import '../styles/card.css';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import type { DocumentRecord } from '../lib/schema';
-import { TOPIC_BY_SLUG } from '../lib/topics';
-import { coverSvg, COVER_VIEWBOX } from '../lib/cover';
+import { coverHtml, uniShort } from '../lib/cover';
+import { shortTitle } from '../lib/short';
+import { universityBySlug } from '../lib/data';
 import { asset } from '../lib/paths';
 
 interface Props {
@@ -14,16 +15,18 @@ interface Props {
 const { doc, eager = false } = Astro.props;
 const thumb = `thumbs/${doc.id}.webp`;
 const hasThumb = doc.hosted && existsSync(join(process.cwd(), 'public', thumb));
-const topic = TOPIC_BY_SLUG.get(doc.topics[0] ?? '') ?? TOPIC_BY_SLUG.get('analysis')!;
+const label = doc.course_code ?? uniShort(doc.university, universityBySlug.get(doc.university)?.name);
 ---
 
-<div class="cover" data-kind={hasThumb ? 'thumb' : 'art'}>
+<div class="cover" data-kind={hasThumb ? 'thumb' : 'type'}>
   {
     hasThumb ? (
-      <img src={asset(thumb)} alt="" width="600" height="800" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+      <>
+        <img src={asset(thumb)} alt="" width="600" height="800" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+        {doc.course_code && <span class="code mono" aria-hidden="true">{doc.course_code}</span>}
+      </>
     ) : (
-      <svg viewBox={COVER_VIEWBOX} preserveAspectRatio="xMidYMid slice" aria-hidden="true" set:html={coverSvg(doc.id, topic.motif)} />
+      <Fragment set:html={coverHtml({ id: doc.id, label, title: shortTitle(doc) ?? doc.title, authors: doc.authors })} />
     )
   }
-  <span class="code mono" aria-hidden="true">{doc.course_code ?? topic.msc[0] + '-XX'}</span>
 </div>

@@ -5,6 +5,8 @@ import TopicGrid from '../../../components/TopicGrid.astro';
 import { t, type Lang } from '../../../i18n/strings';
 import { langPaths } from '../../../lib/routes';
 import { TOPICS } from '../../../lib/topics';
+import { courses } from '../../../lib/courses';
+import { href } from '../../../lib/paths';
 
 export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
@@ -16,7 +18,7 @@ const s = t(lang);
     <div class="wrap">
       <SectionHead index="MSC2020" title={s.topicsPage.title} lede={s.topicsPage.lede} level="h1" />
       <div class="tiles">
-        <TopicGrid topics={TOPICS} lang={lang} />
+        <TopicGrid topics={TOPICS} lang={lang} closing={{ href: href(lang, 'courses'), label: `${s.course.seeAll} →`, sub: s.coursesPage.count(courses.length) }} />
       </div>
     </div>
   </section>

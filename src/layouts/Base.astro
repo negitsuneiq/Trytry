@@ -51,6 +51,8 @@ const ldJson = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
 const body = await Astro.slots.render('default');
 const hasMath = body.includes('class="katex');
 // The display face draws the LCP headline; Turkish text also needs latin-ext.
+// Labels of the reading-list controls, read by scripts/saved.ts.
+const saveCfg = { add: s.saved.save, remove: s.saved.unsave, addCourse: s.saved.saveCourse, list: s.saved.listWithCount, seenCount: s.saved.seenCount };
 const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] : [displayLatin, bodyLatin];
 ---
 
@@ -96,6 +98,7 @@ const preloadFonts = lang === 'tr' ? [displayLatin, displayLatinExt, bodyLatin] 
   </head>
   <body>
     <a class="skip" href="#main">{s.a11y.skip}</a>
+    <script type="application/json" id="save-cfg" set:html={JSON.stringify(saveCfg)} />
     <Header lang={lang} />
     <main id="main" tabindex="-1">
       <Fragment set:html={body} />
