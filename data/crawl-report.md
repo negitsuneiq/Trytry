@@ -1,6 +1,6 @@
 # Crawl report
 
-Run: 2026-11-15T20:08:13.200Z  
+Run: 2026-11-16T00:26:12.030Z  
 User-Agent: `OpenLemmaBot/1.0 (+https://github.com/negitsuneiq/Trytry; non-commercial open-course-material index)`  
 Policy: robots.txt obeyed; ≥ 2 s between requests per host; no LMS/SSO/login pages; PDFs only; English only.
 
@@ -8,78 +8,88 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 | # | University | HTML pages | PDFs checked | Host-eligible | Link-only | Skipped |
 |---|---|---:|---:|---:|---:|---:|
-| 1 | Massachusetts Institute of Technology | 177 | 1200 | 1124 | 12 | 64 |
-| 2 | University of Oxford | 9 | 224 | 1 | 194 | 29 |
-| 3 | University of Cambridge | 10 | 350 | 0 | 348 | 2 |
-| 4 | Harvard University | 30 | 950 | 36 | 788 | 126 |
+| 1 | Massachusetts Institute of Technology | 282 | 1963 | 1737 | 12 | 214 |
+| 2 | University of Oxford | 10 | 249 | 14 | 194 | 41 |
+| 3 | University of Cambridge | 29 | 599 | 1 | 578 | 20 |
+| 4 | Harvard University | 35 | 1150 | 36 | 899 | 215 |
 | 5 | Princeton University | 12 | 411 | 0 | 261 | 150 |
 | 6 | Stanford University | 26 | 507 | 67 | 321 | 119 |
-| 7 | University of California, Berkeley | 18 | 120 | 0 | 105 | 15 |
+| 7 | University of California, Berkeley | 22 | 152 | 0 | 130 | 22 |
 | 8 | Imperial College London | 9 | 277 | 0 | 224 | 53 |
 | 9 | National University of Singapore | 10 | 71 | 0 | 71 | 0 |
 | 10 | ETH Zurich | 14 | 300 | 0 | 150 | 150 |
 | 11 | Sorbonne Université | 5 | 20 | 0 | 14 | 6 |
 | 12 | Nanyang Technological University | 2 | 120 | 1 | 114 | 5 |
-| 13 | University of California, Los Angeles | 5 | 300 | 0 | 110 | 190 |
+| 13 | University of California, Los Angeles | 10 | 506 | 1 | 193 | 312 |
 | 14 | Peking University | 13 | 144 | 0 | 97 | 47 |
-| 15 | University of Toronto | 7 | 300 | 0 | 209 | 91 |
+| 15 | University of Toronto | 17 | 500 | 0 | 359 | 141 |
 | 16 | EPFL – École polytechnique fédérale de Lausanne | 5 | 84 | 0 | 61 | 23 |
 | 17 | New York University | 18 | 250 | 0 | 156 | 94 |
 | 18 | Université Paris-Saclay | 10 | 150 | 1 | 48 | 101 |
 | 19 | California Institute of Technology | 13 | 408 | 0 | 223 | 185 |
-| | **Total** | | **6407** | **1102** | **2194** | **3111** |
+| | **Total** | | **7978** | **1565** | **2475** | **3938** |
 
 ## Skip and link-only reasons
 
 ### Massachusetts Institute of Technology
 
-- no extractable text (scanned?): 28
-- language not confidently English: 14
-- looks like student work: 13
+- no extractable text (scanned?): 168
+- looks like student work: 18
+- language not confidently English: 17
 - licence: link only: 12
 - file says it is excluded from the open licence: 8
 - language: it: 5
-- duplicate (SHA-256): 2
+- duplicate (SHA-256): 3
 - not a PDF (bad magic bytes): 1
 - disallowed by robots.txt: 1
-- not visited — deny-listed host (learn.mit.edu): 2222
+- language: es: 1
+- not visited — deny-listed host (learn.mit.edu): 3848
 - not visited — too many redirects: 1
 
 ### University of Oxford
 
 - licence: link only: 194
+- no extractable text (scanned?): 13
 - disallowed by robots.txt: 8
-- duplicate (SHA-256): 5
-- no extractable text (scanned?): 5
+- duplicate (SHA-256): 6
 - language: es: 5
-- language not confidently English: 4
+- language not confidently English: 5
 - language: it: 1
 - HTTP 404: 1
+- HTTP 403: 1
+- language: de: 1
 - not visited — login/portal path: 3
 - not visited — deny-listed host (www.springer.com): 1
 - not visited — deny-listed host (www.ams.org): 1
+- not visited — non-http scheme: 1
 
 ### University of Cambridge
 
-- licence: link only: 348
+- licence: link only: 578
+- no extractable text (scanned?): 6
+- duplicate (SHA-256): 5
+- HTTP 404: 3
+- disallowed by robots.txt: 2
 - HTTP 403: 1
-- HTTP 404: 1
-- not visited — deny-listed host (www.vle.cam.ac.uk): 5
+- language not confidently English: 1
+- language: de: 1
+- language: es: 1
+- not visited — deny-listed host (www.vle.cam.ac.uk): 6
 - not visited — disallowed by robots.txt: 4
 - not visited — login/portal path: 2
 
 ### Harvard University
 
-- licence: link only: 783
-- no extractable text (scanned?): 38
-- language not confidently English: 26
+- licence: link only: 894
+- HTTP 404: 66
+- no extractable text (scanned?): 45
+- HTTP 403: 33
+- language not confidently English: 28
 - duplicate (SHA-256): 20
 - disallowed by robots.txt: 19
-- HTTP 404: 17
 - over 50 MB: link only: 5
 - language: it: 4
-- HTTP 403: 2
-- not visited — deny-listed host (canvas.harvard.edu): 20
+- not visited — deny-listed host (canvas.harvard.edu): 23
 - not visited — deny-listed host (www.ams.org): 2
 - not visited — deny-listed host (www.dropbox.com): 2
 - not visited — deny-listed host (www.gradescope.com): 1
@@ -110,13 +120,16 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### University of California, Berkeley
 
-- licence: link only: 105
-- no extractable text (scanned?): 10
+- licence: link only: 130
+- no extractable text (scanned?): 16
 - encrypted PDF: 2
 - language: de: 1
-- disallowed by robots.txt: 1
 - language: fr: 1
+- disallowed by robots.txt: 1
+- language not confidently English: 1
+- not visited — deny-listed host (drive.google.com): 25
 - not visited — login/portal path: 1
+- not visited — deny-listed host (www.cambridge.org): 1
 
 ### Imperial College London
 
@@ -175,10 +188,11 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### University of California, Los Angeles
 
-- no extractable text (scanned?): 168
-- licence: link only: 110
-- looks like student work: 22
-- not visited — login/portal path: 1
+- no extractable text (scanned?): 272
+- licence: link only: 193
+- looks like student work: 38
+- duplicate (SHA-256): 2
+- not visited — login/portal path: 2
 
 ### Peking University
 
@@ -192,14 +206,17 @@ Counts are crawl candidates. Only entries accepted in `data/curation.json` are p
 
 ### University of Toronto
 
-- licence: link only: 209
-- no extractable text (scanned?): 41
-- HTTP 404: 26
+- licence: link only: 359
+- no extractable text (scanned?): 75
+- HTTP 404: 32
 - HTTP 403: 19
-- language not confidently English: 3
-- duplicate (SHA-256): 2
+- language not confidently English: 8
+- duplicate (SHA-256): 6
+- language: es: 1
+- not visited — deny-listed host (piazza.com): 5
 - not visited — non-http scheme: 4
-- not visited — deny-listed host (piazza.com): 4
+- not visited — login/portal path: 1
+- not visited — deny-listed host (www.piazza.com): 1
 
 ### EPFL – École polytechnique fédérale de Lausanne
 
